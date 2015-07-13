@@ -1,3 +1,12 @@
+The following libraries are required on newer versions of Debian:
+libext-dev
+libxpm-dev
+libxt-dev
+libx11-dev
+libxmu-headers
+libxmu-dev
+
+
 This is fvwm-2.0.43 hacked for a look and feel similar to Windows-95.
 
 The installation process is more or less the same as for the standard
