@@ -1,0 +1,53 @@
+<!--#exec cmd="header FvwmBanner" -->
+<ul>
+</ul><H2>NAME </H2><ul>
+
+FvwmBanner - the FVWM Banner
+
+</ul><H2>SYNOPSIS </H2><ul>
+
+FvwmBanner is intended to be spawned by fvwm.
+
+<p>
+</ul><H2>DESCRIPTION </H2><ul>
+
+The FvwmInitBanner displays an Fvwm Logo in the center of the screen
+for 3 seconds.
+
+<p>
+</ul><H2>COPYRIGHTS </H2><ul>
+
+None.
+
+<p>
+</ul><H2>INITIALIZATION </H2><ul>
+
+Nothing interesting.
+
+<p>
+</ul><H2>INVOCATION </H2><ul>
+
+FvwmBanner can be invoked by binding the action 'Module FvwmBanner' to
+a menu or key-stroke in the .fvwmrc file.  Fvwm will search directory
+specified in the ModulePath configuration option to attempt to locate
+FvwmBanner. Although nothing keeps you from launching FvwmBanner at
+start-up time, you probably don't want to.  You can also give it an
+optional file parameter, like 'FvwmBanner doomface.xpm' or spcify an
+alternate default pixmap via configuration options.
+
+<p>
+</ul><H2>CONFIGURATION OPTIONS </H2><ul>
+
+
+<p><p><dl compact><dt>*FvwmBannerPixmap <i>file</i><dd>Tells the module to display <i>file</i> instead of the built in pixmap.
+
+<p><dt>*FvwmBannerTimeout <i>sec</i><dd>Tells the module to display for <i>sec</i> seconds instead of default of 3.
+
+<p>
+<p></dl>
+</ul><H2>AUTHOR </H2><ul>
+
+Robert Nation 
+
+<p></ul>
+<!--#exec cmd="trailer" -->

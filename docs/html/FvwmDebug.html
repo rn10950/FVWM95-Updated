@@ -1,0 +1,59 @@
+<!--#exec cmd="header FvwmDebug" -->
+<ul>
+</ul><H2>NAME </H2><ul>
+
+FvwmDebug - the FVWM module debugger
+
+</ul><H2>SYNOPSIS </H2><ul>
+
+FvwmDebug is spawned by fvwm, so no command line invocation will work.
+
+<p>
+</ul><H2>DESCRIPTION </H2><ul>
+
+The FvwmDebug captures the stream of module packets coming from
+fvwm, and displays them on stderr.
+
+<p>
+</ul><H2>COPYRIGHTS </H2><ul>
+
+The FvwmDebug program, and the concept for
+interfacing this module to the Window Manager, are all original work
+by Robert Nation
+
+<p>Copyright 1994, Robert Nation. No guarantees or warranties or anything
+are provided or implied in any way whatsoever. Use this program at your
+own risk. Permission to use this program for any purpose is given,
+as long as the copyright is kept intact. 
+
+<p>
+<p>
+</ul><H2>INITIALIZATION </H2><ul>
+
+During initialization, the FvwmDebug requests that fvwm dump a
+complete window list into its pipe. These packets are terminated with
+and "end Send_WindowList" message.
+
+<p>
+</ul><H2>INVOCATION </H2><ul>
+
+FvwmDebug can be invoked by inserting the line 'Module FvwmDebug' in
+the .fvwmrc file. This can be placed on a line by itself, if FvwmDebug
+is to be spawned during fvwm's initialization, or can be bound to a
+menu or mouse button or keystroke to invoke it later. Fvwm will search
+directory specified in the ModulePath configuration option to attempt
+to locate FvwmDebug.
+
+<p>
+</ul><H2>CONFIGURATION OPTIONS </H2><ul>
+
+There are no configuration options.
+
+<p>
+<p>
+</ul><H2>AUTHOR </H2><ul>
+
+Robert Nation 
+
+<p></ul>
+<!--#exec cmd="trailer" -->

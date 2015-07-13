@@ -1,0 +1,103 @@
+<!--#exec cmd="header FvwmM4" -->
+<ul>
+</ul><H2>NAME </H2><ul>
+
+FvwmM4 - the FVWM  M4 pre-processor
+
+</ul><H2>SYNOPSIS </H2><ul>
+
+FvwmM4 is spawned by fvwm, so no command line invocation will work.
+
+<p>
+</ul><H2>DESCRIPTION </H2><ul>
+
+When called, this module will attempt to have M4 pre-process the file
+specified in its invocation, and then have fvwm read the resulting file.
+
+<p>
+</ul><H2>INVOCATION </H2><ul>
+
+FvwmM4 can be invoked by inserting the line 'FvwmM4' in
+the .fvwmrc file. It can also be called from a menu or mouse binding.
+If the user wants his entire .fvwmrc file pre-processed with FvwmM4,
+then fvwm should be invoked as fvwm -f "FvwmM4 .fvwmrc". Note that the
+argument to the option "-f" should be enclosed 
+in quotes, and no other quoting should be used. For example, a
+typical invocation might be
+fvwm -f "FvwmM4 -m4-squote { -m4-equote } .fvwmrc"
+
+<p>Some options can be specified on the command line:
+<p><dl compact><dt>-m4-prefix<dd>I think this makes all the m4 directives require the prefix "m4_".
+
+<p><dt>-m4opt<dd>Lets you pass an option to the m4 program.
+
+<p><dt>-m4-squote<dd>Lets you change the m4 start-of-quote character to <i>character</i>.
+<dt>-m4-equote<dd>Lets you change the m4 end-of-quote character to <i>character</i>.
+<dt>-m4prog<dd>Instead of invoking "m4", fvwm will invoke <i>name</i>.
+<dt>-debug<dd>Causes the temporary file create by m4 to
+be retained. This file is usually called "/tmp/fvwmrcXXXXXX"
+
+<p>
+<p></dl>
+</ul><H2>CONFIGURATION OPTIONS </H2><ul>
+
+FvwmM4 defines some values for use in the pre-processor file:
+
+<p><p><dl compact><dt>TWM_TYPE<dd>Always set to "fvwm".
+<dt>SERVERHOST<dd>The name of the machine running the X Server.
+<dt>CLIENTHOST<dd>The name of the machine running fvwm.
+<dt>HOSTNAME<dd>The hostname of the machine running fvwm. Generally the same as CLIENTHOST.
+<dt>OSTYPE<dd>The operating system for CLIENTHOST.
+<dt>USER<dd>The name of the person running fvwm.
+<dt>VERSION<dd>The X11 version.
+<dt>REVISION<dd>The X11 revision number.
+<dt>VENDOR<dd>The X server vendor.
+<dt>RELEASE<dd>The X server release number.
+<dt>WIDTH<dd>The screen width in pixels.
+<dt>HEIGHT<dd>The screen height in pixels.
+<dt>X_RESOLUTION<dd>Some distance/pixel measurement for the horizontal direction, I think.
+<dt>Y_RESOLUTION<dd>Some distance/pixel measurement for the vertical direction, I think.
+<dt>PLANES<dd>Number of color planes for the X server display
+<dt>BITS_PER_RGB<dd>Number of bits in each rgb triplet.
+<dt>CLASS<dd>The X11 visual class, ie PsuedoColor.
+<dt>COLOR<dd>Yes or No, Yes if the display class is neither StaticGrey or GreyScale.
+<dt>FVWM_VERSION<dd>The fvwm version number, ie 2.0
+<dt>OPTIONS<dd>Some combination of SHAPE, XPM, NO_SAVEUNDERS, and M4, as defined in
+configure.h at compile time.
+<dt>FVWMDIR<dd>The directory where fvwm looks for .fvwmrc and modules by default, as
+determined at compile time.
+
+<p></dl>
+</ul><H2>EXAMPLE PROLOG </H2><ul>
+
+<pre>
+define(TWM_TYPE,``fvwm'')dnl
+define(SERVERHOST,``spx20'')dnl
+define(CLIENTHOST,``grumpy'')dnl
+define(HOSTNAME,``grumpy'')dnl
+define(OSTYPE,``SunOS'')dnl
+define(USER,``nation'')dnl
+define(HOME,``/local/homes/dsp/nation'')dnl
+define(VERSION,``11'')dnl
+define(REVISION,``0'')dnl
+define(VENDOR,``HDS human designed systems, inc. (2.1.2-D)'')dnl
+define(RELEASE,``4'')dnl
+define(WIDTH,``1280'')dnl
+define(HEIGHT,``1024'')dnl
+define(X_RESOLUTION,``3938'')dnl
+define(Y_RESOLUTION,``3938'')dnl
+define(PLANES,``8'')dnl
+define(BITS_PER_RGB,``8'')dnl
+define(CLASS,``PseudoColor'')dnl
+define(COLOR,``Yes'')dnl
+define(FVWM_VERSION,``1.24l'')dnl
+define(OPTIONS,``SHAPE XPM M4 '')dnl
+define(FVWMDIR,``/local/homes/dsp/nation/modules'')dnl
+</pre>
+<p>
+</ul><H2>AUTHOR </H2><ul>
+
+FvwmM4 is the result of a random bit mutation on a hard disk,
+presumably a result of a  cosmic-ray or some such thing.
+</ul>
+<!--#exec cmd="trailer" -->

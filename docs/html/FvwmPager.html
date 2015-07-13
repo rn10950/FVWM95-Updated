@@ -1,0 +1,209 @@
+<!--#exec cmd="header FvwmPager" -->
+<ul>
+</ul><H2>NAME </H2><ul>
+
+FvwmPager - the FVWM Pager module
+
+</ul><H2>SYNOPSIS </H2><ul>
+
+FvwmPager is spawned by fvwm, so no command line invocation will work.
+From within the .fvwmrc file, FvwmPager is spawned as follows:
+<pre>
+
+<p>
+Module FvwmPager 0 3
+<br>
+<p>
+</pre>
+or from within an fvwm pop-up menu:
+<pre>
+
+<p>
+AddToMenu Module-Popup "Modules"      Title
+<br>+                      "Audio"        Module FvwmAudio
+<br>+                      "Auto"         Module FvwmAuto 200
+<br>+                      "Buttons"      Module FvwmButtons
+<br>+                      "Ident"        Module FvwmIdent
+<br>+                      "Banner"       Module FvwmBanner
+<br>+                      "Pager"        Module FvwmPager 0 3
+<br>
+<p>
+</pre>
+where "0" is the first desktop to show, and "3" is the last.
+
+<p>
+</ul><H2>DESCRIPTION </H2><ul>
+
+The FvwmPager module shows a miniature view of the Fvwm desktops which
+are specified in the command line. This is a useful reminder of where
+your active windows are. Windows in the pager are shown in the same
+color as their fvwm decorations. 
+
+<p>The pager can be used to change your viewport into the current
+desktop, to change desktops, or to move windows around.
+
+<p>Pressing mouse button 1 in the pager will cause you viewport to
+change to the selected page of the selected desk. If you click with
+button 1 in the desk-label area, you will switch desks but not
+pages within the desk.
+
+<p>Dragging mouse button 2 on a miniature view of a window will cause
+that window to be move to the location where you release the mouse
+button, but your viewport will not change. If you drag the window
+out of the pager and onto your desktop, a full size image of
+the window will appear for you to place. There is no way to
+pick up a full size image of the window and move it into the pager,
+however. Since some mice do not have button 2, I have made provisions to drag 
+windows in the pager by using pressing modifier-1 (usually Alt) and dragging 
+with button 3.
+
+<p>Clicking mouse button 3 on a location within the current desktop will
+cause the viewport to move to the selected location, but will not
+align the viewport to a page boundary. Dragging button 3 will
+cause the viewport to move as you drag. Button 3 operations are
+limited to the current desktop only.
+
+<p>When iconified, the pager will work as a fully functional current page
+only pager. Windows and viewports can be moved within the icon of the
+pager. Users will want to make sure that they have no lines similar to
+<pre>
+
+<p>
+Icon "Fvwm Pager" whatever
+<br>
+<p>
+</pre>
+in their .fvwmrc files.
+
+<p>
+<p>
+</ul><H2>COPYRIGHTS </H2><ul>
+
+The FvwmClean program, and the concept for
+interfacing this module to the Window Manager, are all original work
+by Robert Nation.
+
+<p>Copyright 1994, Robert Nation. No guarantees or warranties or anything
+are provided or implied in any way whatsoever. Use this program at your
+own risk. Permission to use this program for any purpose is given,
+as long as the copyright is kept intact. 
+
+<p>
+<p>
+</ul><H2>INITIALIZATION </H2><ul>
+
+During initialization, <i>FvwmPager</i> will eventually search a 
+configuration file which describes the time-outs and actions to take.
+The configuration file is the same file that fvwm used during initialization.
+
+<p>If the FvwmPager executable is linked to another name, ie ln -s
+FvwmPager OtherPager, then another module called OtherPager can be
+started, with a completely different configuration than FvwmPager,
+simply by changing the keyword  FvwmPager to OtherPager. This way multiple
+pager programs can be used.
+
+<p>
+</ul><H2>KEYBOARD FOCUS CONTROL </H2><ul>
+
+You can direct the keyboard focus to any window on the current desktop
+by clicking with button 2 on its image in the pager. The window does
+not need to be visible, but it does need to be on the current page.
+
+<p>
+</ul><H2>INVOCATION </H2><ul>
+
+The invocation method was shown in the synopsis section
+
+<p>
+</ul><H2>CONFIGURATION OPTIONS </H2><ul>
+
+FvwmPager reads the same .fvwmrc file as fvwm reads when it starts up,
+and looks for certain configuration options:
+
+<p><p><dl compact><dt>*FvwmPagerGeometry <i>geometry</i><dd>Completely or partially specifies the pager windows location and
+geometry, in standard X11 notation. 
+In order to maintain an undistorted aspect ratio, you might
+want to leave out either the width or height dimension of the
+geometry specification
+
+<p><dt>*FvwmPagerRows <i>rows</i><dd>Tells fvwm how many rows of desks to use when laying out the pager
+window.
+
+<p><dt>*FvwmPagerColumns <i>columns</i><dd>Tells fvwm how many columnss of desks to use when laying out the pager
+window.
+
+<p><dt>*FvwmPagerIconGeometry <i>geometry</i><dd>Specifies a size (optional) and location (optional) for the pager's icon 
+window. Since there is no easy way for FvwmPager to determine the height of the
+icon's label, you will have to make an allowance for the icon  label height
+when using negative y-coordinates in the icon location specification (used to
+specify a location relative to the bottom instead of the top of the screen).
+
+<p><dt>*FvwmPagerStartIconic<dd>Causes the pager to start iconified. 
+
+<p><dt>*FvwmPagerFont <i>font-name</i><dd>Specified a font to use to label the desktops. If <i>font_name</i> is
+"none" then no desktop labels will be displayed.
+
+<p><dt>*FvwmPagerSmallFont <i>font-name</i><dd>Specified a font to use to label the window names in the pager. If not
+specified, the window labels will be omitted. Window labels seem to
+be fairly useless for desktop scales of 32 or greater.
+
+<p><dt>*FvwmPagerFore <i>color</i><dd>Specifies the color to use to write the desktop labels, and
+to draw the page-grid lines.
+
+<p><dt>*FvwmPagerBack <i>color</i><dd>Specifies the background color for the window.
+
+<p><dt>*FvwmPagerHilight <i>color</i><dd>The active page and desk label will be highlighted by using this
+background pattern instead of the normal background.
+
+<p><dt>*FvwmPagerLabel <i>desk label</i><dd>Assigns the text <i>label</i> to desk <i>desk</i> in the pager window.
+Useful for assigning symbolic names to desktops, ie
+<pre>
+</dl>
+<p>
+*FvwmPagerLabel 1 Mail
+<br>*FvwmPagerLabel 2 Maker
+<br>*FvwmPagerLabel 2 Matlab
+<br>
+<p>
+</pre>
+
+<p><p><dl compact><dt>*FvwmPagerDeskColor <i>desk color</i><dd>Assigns the color <i>color</i> to desk <i>desk</i> in the pager window.
+This replaces the background color for the particular <i>desk</i>.  This
+only works when the pager is full sized.  When Iconified, the pager uses
+the color specified by *FvwmPagerBack.  
+</dl>
+<p>
+<b>TIP:</b>	Try using *FvwmPagerDeskColor in conjunction with
+FvwmCpp (or FvwmM4) and FvwmBacker to assign identical
+colors to your various desktops and the pager representations.
+
+<p><p><dl compact><dt>*FvwmPagerDeskTopScale <i>number</i><dd>If the geometry is not specified, then a desktop reduction factor is
+used to calculate the pager's size. Things in the pager window
+are shown at 1/<i>number</i> of the actual size.
+
+
+<p><dt>*FvwmPagerMiniIcons<dd>Tells the pager to display a
+window's title/mini icon instead of it's name (or instead of nothing). Note
+that if you also have SmallFont set, this will unset it (i.e., you can't
+have both the mini icon and the title at the same time). Also, no attempt is
+made to scale the icons -- they are centered in the window and clipped where
+necessary.
+
+
+<p><dt>*FvwmPagerWindowColors <i>normalFore normalBack hiFore hiBack</i><dd> 
+Assigns the normal/highlight colors of the windows. This
+option is useful for picking colors that will make your icons stand out
+better than the default window colors set up via the FvwmDefaultColors
+resource. It also works when having the pager display the window titles.
+
+
+<p>
+<p></dl>
+</ul><H2>AUTHOR </H2><ul>
+
+Robert Nation 
+<br>
+DeskColor patch contributed by Alan Wild
+
+<p></ul>
+<!--#exec cmd="trailer" -->

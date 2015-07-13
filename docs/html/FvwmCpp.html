@@ -1,0 +1,98 @@
+<!--#exec cmd="header FvwmCpp" -->
+<ul>
+</ul><H2>NAME </H2><ul>
+
+FvwmCpp - the FVWM  Cpp pre-processor
+
+</ul><H2>SYNOPSIS </H2><ul>
+
+FvwmCpp is spawned by fvwm, so no command line invocation will work.
+
+<p>
+</ul><H2>DESCRIPTION </H2><ul>
+
+When called, this module will attempt to have /usr/lib/cpp pre-process
+the file specified in its invocation, and then have fvwm read the
+resulting file.
+
+<p>
+</ul><H2>INVOCATION </H2><ul>
+
+FvwmCpp can be invoked by inserting the line 'FvwmCpp' in the .fvwmrc
+file. It can also be called from a menu or mouse binding.  If the user
+wants his entire .fvwmrc file pre-processed with FvwmCpp, then fvwm
+should be invoked as "fvwm -f /usr/lib/X11/fvwm/FvwmCpp
+
+<p>Some options can be specified on the command line:
+<p><dl compact><dt>-Cppopt<dd>Lets you pass an option to the cpp program.
+
+<p><dt>-Cppprog<dd>Instead of invoking "/usr/lib/cpp", fvwm will invoke <i>name</i>.
+<dt>-debug<dd>Causes the temporary file create by Cpp to
+be retained. This file is usually called "/tmp/fvwmrcXXXXXX"
+
+<p>
+<p></dl>
+</ul><H2>CONFIGURATION OPTIONS </H2><ul>
+
+FvwmCpp defines some values for use in the pre-processor file:
+
+<p><p><dl compact><dt>TWM_TYPE<dd>Always set to "fvwm".
+<dt>SERVERHOST<dd>The name of the machine running the X Server.
+<dt>CLIENTHOST<dd>The name of the machine running fvwm.
+<dt>HOSTNAME<dd>The hostname of the machine running fvwm. Generally the same as CLIENTHOST.
+<dt>OSTYPE<dd>The operating system for CLIENTHOST.
+<dt>USER<dd>The name of the person running fvwm.
+<dt>VERSION<dd>The X11 version.
+<dt>REVISION<dd>The X11 revision number.
+<dt>VENDOR<dd>The X server vendor.
+<dt>RELEASE<dd>The X server release number.
+<dt>WIDTH<dd>The screen width in pixels.
+<dt>HEIGHT<dd>The screen height in pixels.
+<dt>X_RESOLUTION<dd>Some distance/pixel measurement for the horizontal direction, I think.
+<dt>Y_RESOLUTION<dd>Some distance/pixel measurement for the vertical direction, I think.
+<dt>PLANES<dd>Number of color planes for the X server display
+<dt>BITS_PER_RGB<dd>Number of bits in each rgb triplet.
+<dt>CLASS<dd>The X11 visual class, ie PsuedoColor.
+<dt>COLOR<dd>Yes or No, Yes if the display class is neither StaticGrey or GreyScale.
+<dt>FVWM_VERSION<dd>The fvwm version number, ie 2.0
+<dt>OPTIONS<dd>Some combination of SHAPE, XPM, NO_SAVEUNDERS, and Cpp, as defined in
+configure.h at compile time.
+<dt>FVWMDIR<dd>The directory where fvwm looks for .fvwmrc and modules by default, as
+determined at compile time.
+
+<p></dl>
+</ul><H2>EXAMPLE PROLOG </H2><ul>
+
+
+<pre>
+#define TWM_TYPE fvwm
+#define SERVERHOST spx20
+#define CLIENTHOST grumpy
+#define HOSTNAME grumpy
+#define OSTYPE SunOS
+#define USER nation
+#define HOME /local/homes/dsp/nation
+#define VERSION 11
+#define REVISION 0
+#define VENDOR HDS human designed systems, inc. (2.1.2-D)
+#define RELEASE 4
+#define WIDTH 1280
+#define HEIGHT 1024
+#define X_RESOLUTION 3938
+#define Y_RESOLUTION 3938
+#define PLANES 8
+#define BITS_PER_RGB 8
+#define CLASS PseudoColor
+#define COLOR Yes
+#define FVWM_VERSION 2.0 pl 1
+#define OPTIONS SHAPE XPM Cpp 
+#define FVWMDIR /local/homes/dsp/nation/modules
+</pre>
+<p>
+<p>
+</ul><H2>AUTHOR </H2><ul>
+
+FvwmCpp is the result of a random bit mutation on a hard disk,
+presumably a result of a  cosmic-ray or some such thing.
+</ul>
+<!--#exec cmd="trailer" -->

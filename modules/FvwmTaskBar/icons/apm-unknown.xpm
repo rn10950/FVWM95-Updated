@@ -1,0 +1,30 @@
+/* XPM */
+static char *batterie[] = {
+/* width height num_colors chars_per_pixel */
+"    16    16        8            1",
+/* colors */
+"  c None",
+". c #000000",
+"# c #ffff00",
+"a c #c0c0c0",
+"b c #a0a0a0",
+"c c #808080",
+"d c #ff0000",
+"f c #ffffff",
+/* pixels */
+"     ccc.       ",
+"  cccfac...     ",
+" ccfcaac.ac.    ",
+" caccccccc#.    ",
+" ca########.    ",
+" ca##ddd###.    ",
+" ca#d###d##.    ",
+" ca#d###d##.    ",
+" ca####d###.    ",
+" ca###d####.    ",
+" ca###d####.    ",
+" ca########.    ",
+" ca###d####.    ",
+" cc########.    ",
+"  .#######.     ",
+"   .......      "};

@@ -1,0 +1,81 @@
+<!--#exec cmd="header FvwmSaveDesk" -->
+<ul>
+</ul><H2>NAME </H2><ul>
+
+FvwmSaveDesk - another FVWM desktop-layout saving module
+
+</ul><H2>SYNOPSIS </H2><ul>
+
+FvwmSaveDesk is spawned by fvwm, so no command line invocation will work.
+
+<p>
+</ul><H2>DESCRIPTION </H2><ul>
+
+When called, this module will attempt to save your current desktop
+layout as a fvwm function definition into the file
+<i>.fvwmdesk</i> 
+in your home directory. The function is named
+<i>StartupFunction</i> 
+. This Function can be called in Function
+<i>InitFunction</i> 
+to startup all Programms on all Workspaces.
+If fvwm is compiled with the M4 option, you can include this file in
+<i>.fvmrc</i> 
+else you have to insert this file by hand.
+Your applications must supply certain hints to the X window system.
+Emacs, for example, does not, so FvwmSaveDesk can't get any
+information from it.  
+ 
+Also, FvwmSaveDesk assumes that certain command line options are
+globally accepted by applications, which may not be the case.
+
+<p>
+</ul><H2>SETUP IF FVWM IS COMPILED WITH THE M4 OPTION </H2><ul>
+
+Fvwm has to be called with the option
+
+<p>-m4opt -I$HOME.
+
+<p>The first line in .fvwmrc should be
+
+<p>undefine(`include`),
+
+<p>to avoid problems.
+You can the include the file
+<i>.fvwmdesk</i> 
+with 
+
+<p>sinclude(`.fvwmdesk') .
+
+<p>Insert the following line into the Function
+<i>InitFunction</i> 
+
+<p>Function "I"    StartupFunction
+
+<p>If you have GNU's m4 another possiblity is to compile fvwm with
+GNU_M4_OPTION_P and use
+
+<p>m4_include(`.fvwmdesk')m4_dnl
+
+<p>So you don't need to undefine `include'.
+
+<p>
+</ul><H2>INVOCATION </H2><ul>
+
+FvwmSaveDesk can be invoked by inserting the line 'Module FvwmSaveDesk' in
+the 
+<i>.fvwmrc</i> 
+file.
+This should be bound to a menu or mouse button or keystroke
+to invoke it later. Fvwm will search directory specified in the ModulePath
+configuration option to attempt to locate FvwmSaveDesk.
+
+<p>
+</ul><H2>AUTHOR </H2><ul>
+
+Carsten Paeth (calle@calle.in-berlin.de)
+
+<p>based on FvwmSave written by Robert Nation
+and Mr. Per Persson &lt;pp@solace.mh.se&gt; (Omnion on IRC)
+</ul>
+<!--#exec cmd="trailer" -->

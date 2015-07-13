@@ -1,0 +1,35 @@
+
+SHELL=/bin/sh
+
+prefix=@prefix@
+indexdir=@prefix@/lib/X11/fvwm95
+htmldir=@prefix@/lib/X11/fvwm95/html
+
+INSTALL = @INSTALL@
+INSTALL_DATA = @INSTALL_DATA@
+RM=@RM@
+
+
+
+
+all:
+
+install:
+	@echo Installing documentation in ${htmldir}  
+	@mkdir -p ${htmldir}
+	@${INSTALL_DATA} index.html ${indexdir}
+	@${INSTALL_DATA} GPL.html ${indexdir}
+	@${INSTALL_DATA} html/*.html ${htmldir}  
+
+
+uninstall:
+	@echo Uninstalling documentation
+	@${RM} ${indexdir}/index.html
+	@${RM} ${indexdir}/GPL.html
+	@${RM} ${htmldir}/*.html  
+
+
+clean:
+
+distclean:
+

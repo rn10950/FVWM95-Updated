@@ -1,0 +1,106 @@
+Sat Aug 10 2002
+
+	* Fixed return type of 'main' in modules (must be 'int').
+
+Fri Aug 9 2002
+
+	* Applied the stacking order patch from ??
+
+	  This patch changes three things:
+
+          1. FVWM now keeps track of window stacking order:
+
+	  First, it makes FVWM keep track of the stacking order of the
+	  windows, by using a second set of chain pointers (the original
+	  chain keeps track of the order in which windows have been focused,
+	  which is often not the same as the stacking order). So now FVWM
+	  can easily answer the question "who's on third?" at any time (and,
+	  since the new chain is closed into a ring anchored at both ends on
+	  Scr.FvwmRoot, it can tell you who's third from the bottom as
+	  quickly as who's third from the top).
+
+	  2. Reversal of window stacking order when FVWM restarts:
+
+	  Second, by using this new-found knowledge, FVWM will reparent
+	  windows back to the root window (on a Restart or a Recapture
+	  operation) in the reverse of the current stacking order. This
+	  eliminates the old quirk of having the stacking order appear more
+	  or less reversed after restarting FVWM.
+
+	  3. Smoother, faster page/desk transition
+
+	  Third, it restructures the the Desktop and Viewport (page)
+	  switching routines to perform a simultaneous bidirectional loop
+	  through the window list (via the new stacking order chain).
+	  Windows that are moving off the visible screen are unmapped/moved
+	  from the bottom of the stacking order upwards. Windows that are
+	  moving onto the visible screen are mapped/moved from the top down.
+
+	  The intent is to minimize the amount of expose/redraw overhead
+	  during these operations when there are a number of overlapping
+	  windows involved.  It also serves to equalize the visual
+	  disturbance between the moving-out and the moving-in operations. 
+	  Previously, moving out of a page/desktop with many overlapping
+	  windows could be disturbing and slow because, as the windows moved
+	  from the top down, the ones underneath got redrawn as they were
+	  exposed. Moving into such a page/desktop, on the other hand, would
+	  appear quick and smooth because, as the upper windows appeared
+	  first, the underlying portions of the subsequently mapped/moved
+	  windows didn't need to get drawn.
+
+	  Now, if you never have any overlapping windows on your desktop,
+	  you won't see any improvement from this. If you only occasionally
+	  have a couple of overlapping windows, you might not notice any
+	  difference. But if you have several windows that overlap
+	  significantly, the transition to or from the page where they are
+	  should be very noticeably quicker and smoother.
+
+Mon Jul 29 2002 Hector Peraza <peraza@uia.ua.ac.be>
+	* Corrected a bug in add_window.c: left buttons with window id of
+	  None were being added to the window's context.
+	* Added an extra check for null windows in HandleModuleInput().
+
+Mon Jul 1 2002 Hector Peraza <peraza@uia.ua.ac.be>
+	* Fixed placement of windows with StaticGravity.
+
+Tue Nov 27 2001 Hector Peraza <peraza@uia.ua.ac.be>
+	* Fixed background color of titlebar buttons.
+	* FvwmBacker: fixed color problems.
+	* FvwmPager: applied MiniIcons and WindowColors patches.
+
+Mon Feb 23 1998 Emmanuel Rouat <rouat@dsys.ceng.cea.fr>
+	* Bug fix ScreenSetup & DeskSetup scripts
+	* updated taskbar manpage
+	
+Sun Feb 15 1998 Emmanuel Rouat <rouat@dsys.ceng.cea.fr>
+	* renamed source fvwm95-2.0.43b
+	* Removed example.fvwm95rc (outdated)
+	* renamed icons/ to pixmaps/ for consistency
+
+
+Tue Feb 10 1998 Emmanuel Rouat <rouat@dsys.ceng.cea.fr>
+	* created "uninstall" target in Makefiles
+	* added Batstat module for TaskBar 
+	* cleanup done
+	* Docs in HTML look MUCH better - used as on-line doc
+	
+Wed Feb 4 1998 Emmanuel Rouat <rouat@dsys.ceng.cea.fr>
+	* created system.fvwm95rc.in
+	
+Wed Jan 28 1998 Emmanuel Rouat <rouat@dsys.ceng.cea.fr>
+	* Makefile of FvwmConsole corrected (FvwmConsoleC was missing)
+
+Tue Jan 27 1998 Emmanuel Rouat <rouat@dsys.ceng.cea.fr>
+	* Makefiles updated - should compile and install smoothly now
+
+Thu Jan 22 1998 Emmanuel Rouat <rouat@dsys.ceng.cea.fr>
+	* Scripts for FvwmScripts adapted
+	
+Tue Jan 20 1998 Emmanuel Rouat <rouat@dsys.ceng.cea.fr>
+	* sample/system.fvwm95rc lots of tweaking (on going work)
+	* FvwmScript module added (from fvwm-2.0.46)
+	* FvwmForm module updated ( ''    ''    '' )
+	* FvwmWharf module added  ( ''    ''    '' )
+
+Tue Jan 6 1998 Emmanuel Rouat <rouat@dsys.ceng.cea.fr>
+	* modules/FvwmTaskBar 'Enhanced FvwmTasbar' instead of regular one

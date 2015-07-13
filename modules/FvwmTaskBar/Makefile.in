@@ -1,0 +1,117 @@
+#
+SHELL=/bin/sh
+
+@SET_MAKE@
+
+top_srcdir=@top_srcdir@
+srcdir=@srcdir@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+bin_dir=@exec_prefix@/bin
+x_includes=@x_includes@
+x_libraries=@x_libraries@
+fvwm_icons=@fvwm_icons@
+fvwm_rc=@fvwm_rc@
+fvwm_name=@fvwm_name@
+#
+# This is where the modules will be installed
+fvwm_dir=@prefix@/lib/X11/@fvwm_name@
+man_dir=@prefix@/man/man1
+
+#
+# Libs
+X_LIBRARY=-lX11
+XPM_LIBRARY=-lXpm
+XEXT_LIBRARY=-lXext
+FVWM_LIBRARY=-l${fvwm_name}
+LIBS=-L${top_srcdir}/libs ${x_libraries} ${FVWM_LIBRARY} ${XPM_LIBRARY} ${XEXT_LIBRARY} ${X_LIBRARY} -ldl
+
+EXTRA_DEFINES=-DXPM -DSHAPE
+CC=@CC@ -rdynamic -pipe
+INCLUDES=-I${top_srcdir}/include ${x_includes}
+CFLAGS=${INCLUDES} @CFLAGS@ ${EXTRA_DEFINES}
+MAKEDEPEND=@MAKEDEPEND@
+INSTALL=@INSTALL@
+INSTALL_PROGRAM=@INSTALL_PROGRAM@
+INSTALL_DATA=@INSTALL_DATA@
+RM=@RM@
+
+
+PROG=FvwmTaskBar
+
+SRCS=FvwmTaskBar.c \
+	List.c \
+	ButtonArray.c \
+	Mallocs.c \
+	Colors.c \
+	Goodies.c \
+	Start.c \
+	GoodyLoadable.c
+
+OBJS=FvwmTaskBar.o \
+	List.o \
+	ButtonArray.o \
+	Mallocs.o \
+	Colors.o \
+	Goodies.o \
+	Start.o \
+	GoodyLoadable.o
+
+MODULES_SRC=CheckLockModule.c \
+	GoodyModule.c \
+	ShowDateModule.c \
+	MailCheckModule.c \
+	BatStatModule.c
+
+MODULES=CheckLockModule.so \
+	GoodyModule.so \
+	ShowDateModule.so \
+	MailCheckModule.so \
+	BatStatModule.so
+
+
+all: ${PROG} modules
+
+depend:
+	${MAKEDEPEND} ${CFLAGS} ${SRCS}
+
+install: all
+	${INSTALL_PROGRAM} ${PROG} ${fvwm_dir}
+	${INSTALL_DATA} ${PROG}.man ${man_dir}/${PROG}.1 
+	@mkdir -p ${fvwm_dir}/plugins
+	@for i in ${MODULES}; do \
+		echo Installing $$i ; \
+		(${INSTALL_PROGRAM} $$i  ${fvwm_dir}/plugins/ ) \
+	done
+uninstall: 
+	${RM} ${fvwm_dir}/${PROG}
+	${RM} ${man_dir}/${PROG}.1
+	@for i in ${MODULES}; do \
+		echo Removing $$i ; \
+		(${RM} ${fvwm_dir}/plugins/$$i) \
+	done
+
+clean:
+	${RM} ${PROG} ${OBJS} *~ core *.bak *.so
+
+distclean: clean
+
+modules: ${MODULES}
+
+CheckLockModule.so: CheckLockModule.c GoodyLoadable.h
+	${CC} ${INCLUDES} -shared CheckLockModule.c -o CheckLockModule.so
+
+GoodyModule.so: GoodyModule.c GoodyLoadable.h
+	${CC} ${INCLUDES} -shared GoodyModule.c -o GoodyModule.so
+
+ShowDateModule.so: ShowDateModule.c GoodyLoadable.h
+	${CC} ${INCLUDES} -shared ShowDateModule.c -o ShowDateModule.so
+
+MailCheckModule.so: MailCheckModule.c GoodyLoadable.h
+	${CC} ${INCLUDES} -shared MailCheckModule.c -o MailCheckModule.so
+
+BatStatModule.so: BatStatModule.c GoodyLoadable.h
+		  ${CC} ${INCLUDES} -shared BatStatModule.c -o BatStatModule.so
+
+${PROG}: ${OBJS}
+	${CC} -o ${PROG} ${OBJS} ${LIBS}

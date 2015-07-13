@@ -1,0 +1,90 @@
+<!--#exec cmd="header FvwmBacker" -->
+<ul>
+</ul><H2>NAME </H2><ul>
+
+FvwmBacker - the FVWM background changer module
+
+</ul><H2>SYNOPSIS </H2><ul>
+
+FvwmBacker is spawned by fvwm, so no command line invocation will work.
+
+<p>
+</ul><H2>DESCRIPTION </H2><ul>
+
+The FvwmBacker module provides functionality to change the background
+when changing desktops.  Any command can be executed to change the
+backgrounds.  The commands used to change the backgrounds must exit
+after changing the root window, (i.e. 'xv -root zzz.gif' does not,
+without the -quit option) otherwise FvwmBacker will hang.
+
+<p>
+</ul><H2>COPYRIGHTS </H2><ul>
+
+The FvwmBacker module is the original work of Mike Finger.
+
+<p>Copyright 1994, Mike Finger. The author makes no guarantees or
+warranties of any kind about the use of this module.  Use this modules
+at your own risk.  You may freely use this module or any portion of it
+for any purpose as long as the copyright is kept intact.
+
+<p>
+</ul><H2>INITIALIZATION </H2><ul>
+
+During initialization, <i>FvwmBacker</i> will scan the same
+configuration file that FVWM used during startup to find the options
+that pertain to it.  These options are discussed in a later section.
+
+<p>
+</ul><H2>INVOCATION </H2><ul>
+
+FvwmBacker can be invoked by fvwm during initialization by inserting
+the line 'Module FvwmBacker' in the .fvwmrc file.
+
+<p>FvwmBacker must reside in a directory that is listed in the ModulePath
+option of FVWM for it to be executed by FVWM.
+
+<p>
+</ul><H2>CONFIGURATION OPTIONS </H2><ul>
+
+The following is the only supported option at present:
+
+<p><p><dl compact><dt>*FvwmBackerDesk <i>DeskNumber command</i><dd>Specifies the <i>command</i> to execute when the specified
+<i>DeskNumber</i> becomes active.
+
+<p>If the command begins with <i>-solid</i> FvwmBacker uses the next
+argument as a color in the X database and sets the background to that
+color without generating a system call to xsetroot. Only single word
+color names may be used.
+
+<p></dl>
+</ul><H2>SAMPLE CONFIGURATION </H2><ul>
+
+The following are excepts from a .fvwmrc file which describe
+FvwmBacker initialization commands:
+
+<p><pre>
+
+<p>
+####
+<br># Set Up Backgrounds for different desktops.
+<br>####
+<br>*FvwmBackerDesk 0 -solid steelblue
+<br>*FvwmBackerDesk 1 -solid midnightblue
+<br>*FvwmBackerDesk 2 -solid yellow
+<br>*FvwmBackerDesk 3 xpmroot /usr/include/X11/pixmaps/background2.xpm
+<br>
+<p>
+</pre>
+
+<p>
+</ul><H2>AUTHOR </H2><ul>
+
+Mike Finger (mfinger@mermaid.micro.umn.edu)
+            (Mike_Finger@atk.com)
+            (doodman on IRC, check the #linux channel)
+
+</ul><H2>Modified by </H2><ul>
+
+Andrew Davison (davison@cs.monash.edu.au)
+</ul>
+<!--#exec cmd="trailer" -->

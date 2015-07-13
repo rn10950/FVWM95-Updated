@@ -1,0 +1,100 @@
+<HTML>
+<HEAD>
+<TITLE>FVWM Patches</TITLE>
+<LINK REV="made" HREF="mailto:proteus@pcnet.com">
+</HEAD>
+
+<BODY bgcolor="#faf4dc" text="#700000" link="#0000ff">
+
+<a name="updates"></a>
+<a name="relnotes">
+<center><h1>Dr. Bob's Unofficial Patches</h1></center>
+</a>
+<br>
+<center><img src="fvwm.gif"></center>
+
+<br>
+<br>
+
+
+
+<br>
+<font size=+1>The <u>StackingOrder</u> Patch</font>
+<p>
+This patch changes three things:
+<p>
+<b>FVWM now keeps track of window stacking order</b>
+<p>
+    First, it makes FVWM keep track of the stacking order of the windows,
+by using a second set of chain pointers (the original chain keeps track
+of the order in which windows have been focused, which is often not the
+same as the stacking order). So now FVWM can easily answer the question
+"who's on third?" at any time.*
+
+
+<p>
+<b>Reversal of window stacking order when FVWM restarts</b>
+<p>
+    Second, by using this new-found knowledge, FVWM will reparent windows
+back to the root window (on a Restart or a Recapture operation) in the
+reverse of the current stacking order. This eliminates the old quirk
+of having the stacking order appear more or less reversed after restarting
+FVWM.
+
+<p>
+
+<b>Smoother, faster page/desk transition</b>
+<p>
+    Third, it restructures the the Desktop and Viewport (page) switching
+routines to perform a simultaneous bidirectional loop through the window
+list (via the new stacking order chain). Windows that are moving off the
+visible screen are unmapped/moved from the bottom of the stacking order
+upwards. Windows that are moving onto the visible screen are mapped/moved
+from the top down.
+<p>
+    The intent is to minimize the amount of expose/redraw overhead during
+these operations when there are a number of overlapping windows involved.
+It also serves to equalize  the visual disturbance between the moving-out
+and the moving-in operations. Previously, moving out of a page/desktop 
+with many overlapping windows could be disturbing and slow because, as the 
+windows moved from the top down, the ones underneath got redrawn as they
+were exposed. Moving into such a page/desktop, on the other hand, would 
+appear quick and smooth because, as the upper windows appeared first, the
+underlying portions of the subsequently mapped/moved windows didn't need
+to get drawn.
+<p>
+	Now, if you never have any overlapping windows on your desktop, you
+won't see any improvement from this. If you only occasionally have a couple
+of overlapping windows, you might not notice any difference. But if you have
+several windows that overlap significantly, the transition to or from the
+page where they are should be very noticeably quicker and smoother.
+
+<br><br>
+<hr>
+
+    *  And, since the new chain is closed into a ring anchored at both ends
+      on Scr.FvwmRoot, it can tell you who's third from the bottom as 
+      quickly as who's third from the top.
+<hr>
+
+<ul>
+<li><a href="StackingOrder.patch">StackingOrder.patch</a> (18029 bytes)</li>
+</ul>
+
+
+
+<br>
+<br>
+<br>
+<p>
+<a href="../index.html">Back to Dr. Bob's Home Page.</a>
+<hr>
+
+<HR>
+<img src="../TkZip/anybro.gif">
+
+Send comments regarding this page or the IconRecap patch to <A HREF="mailto:proteus@pcnet.com">Bob Woodside</A> (<A HREF="mailto:proteus@pcnet.com">proteus@pcnet</A>)
+<hr>
+</BODY>
+</HTML>
+

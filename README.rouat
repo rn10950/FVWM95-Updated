@@ -1,0 +1,9 @@
+NOTE: this version of fvwm95 is hacked even further. The taskbar has been
+modified and some new modules are included. Also the system.fvwm95rc has
+been heavily modified and commented. The man pages have been mostly updated
+and converted to html format. Some settings (background, focus ...) can
+be saved automaticaly using the 'screen setup' and 'desktop setup' entries
+in the 'Settings' menu.
+
+Emmanuel Rouat
+rouat@dsys.ceng.cea.fr

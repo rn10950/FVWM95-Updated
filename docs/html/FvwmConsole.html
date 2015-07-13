@@ -1,0 +1,100 @@
+<!--#exec cmd="header FvwmConsole" -->
+<ul>
+</ul><H2>NAME </H2><ul>
+
+FvwmConsole - the FVWM command input interface
+
+</ul><H2>SYNOPSIS </H2><ul>
+
+FvwmConsole is spawned by fvwm, so no command line invocation will work.
+From within the .fvwm2rc file or from a menu, FvwmConsole takes any
+options xterm will take, except -e, -name, and -title.
+
+<p><ul>Module FvwmConsole -g 40x10 -fg black -bg green3
+</ul>
+<p>Also X resources can be set in .Xdefaults file
+
+<p><ul>FvwmConsole*geometry: 40x4
+<br>
+FvwmConsole*font: 7x14
+</ul>
+<p>
+</ul><H2>DESCRIPTION </H2><ul>
+
+The FvwmConsole allows the user to type fvwm commands into xterm, and
+have them executed immediately. These commands are usually specfified
+in the .fvwmrc file, or are bound to menu/mouse items as specified
+in that file. This tools is particularly useful for testing new
+configuration ideas, or for implementing temporary changes to your
+environment.
+
+<p>GNU readline library is called to edit command line.
+Also a perl script is supplied as alternative command editor. Its
+commands are similar to emacs.
+
+<p><ul><p><dl compact><dt>Cntl-A
+<dd>- begining of line
+<dt>Cntl-B
+<dd>- previous char
+<dt>Cntl-D
+<dd>- delete char
+<dt>Cntl-E
+<dd>- end of line
+<dt>Cntl-F
+<dd>- next char
+<dt>Cntl-H
+<dd>- backspace
+<dt>Cntl-K
+<dd>- erase to the end of line
+<dt>Cntl-N
+<dd>- next line
+<dt>Cntl-P
+<dd>- previous line
+<dt>Cntl-R
+<dd>- search reverse
+<dt>Cntl-U
+<dd>- delete line
+<dt>Meta-B
+<dd>- previous word
+<dt>Meta-F
+<dd>- next word
+<dt>Esc &lt;
+<dd>- begining of history
+<dt>Esc &gt;
+<dd>- end of history
+</ul>
+<p></dl>
+</ul><H2>COPYRIGHTS </H2><ul>
+
+Copyright 1996, Toshi Isogai. No guarantees or warranties are provided.
+Use this program at your own risk. Permission to use this program for
+any purpose is given, as long as the copyright is kept intact. 
+
+<p>
+<p>
+</ul><H2>INVOCATION </H2><ul>
+
+FvwmConsole can be invoked by inserting the line 'Module FvwmConsole' in
+the .fvwmrc file. This can be placed on a line by itself, if FvwmConsole
+is to be spawned during fvwm's initialization, or can be bound to a
+menu or mouse button or keystroke to invoke it later. Fvwm will search
+directory specified in the ModulePath configuration option to attempt
+to locate FvwmConsole.
+
+<p>
+</ul><H2>CONFIGURATION OPTIONS </H2><ul>
+
+FvwmConsole uses xterm. All resources set for xterm are inherited
+unless overiden by command line options.
+
+<p>
+</ul><H2>SEE ALSO </H2><ul>
+
+xterm(1), GNU readline library
+
+<p>
+</ul><H2>AUTHOR </H2><ul>
+
+Toshi Isogai  toshi_isogai@maxtor.com
+</ul>
+<!--#exec cmd="trailer" -->
