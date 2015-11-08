@@ -1,0 +1,20 @@
+/* XPM */
+static char *XCP_rbutton_ond[] = {
+"12 12 5 1",
+" 	c None s None",
+".	c #808080 s FrameShadowColor",
+"X	c black",
+"o	c white s FrameHiliteColor",
+"t	c black s DocumentFgndColor",
+"    ....    ",
+"  ..XXXX..  ",
+" .XX    XXo ",
+" .X       o ",
+".X   tt    o",
+".X  tttt   o",
+".X  tttt   o",
+".X   tt    o",
+" .X       o ",
+" .        o ",
+"  oo    oo  ",
+"    oooo    "};

@@ -1,0 +1,25 @@
+#!/bin/sh
+#ident go_netscape Time-stamp: <97/03/24 21:30:12 bav>
+#******************************************************************
+# go_netscape <URL>
+#******************************************************************
+#                           Gerd Bavendiek  bav@rw.sni.de  97-02-28
+# 
+# Wrapper to call Netscape appropriately. For use from e.g.
+# addressbook and file managers.
+#------------------------------------------------------------------
+
+if [ -r $1 ]; then # Seems to be a file
+   URL="file:$1" 
+else
+   URL=$1
+fi
+
+# If you want to look at the URL in a new window,
+# use "openURL($URL, new-window)".
+if [ -h $HOME/.netscape/lock ]; then
+   netscape -remote "openURL($URL)"
+else
+   netscape "$URL"
+fi
+

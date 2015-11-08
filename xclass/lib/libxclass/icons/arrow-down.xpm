@@ -1,0 +1,17 @@
+/* XPM */
+static char *XCP_arrow_down[] = {
+"12 12 2 1",
+" 	c None s None",
+".	c black s FrameFgndColor",
+"            ",
+"            ",
+"            ",
+"            ",
+"  .......   ",
+"   .....    ",
+"    ...     ",
+"     .      ",
+"            ",
+"            ",
+"            ",
+"            "};

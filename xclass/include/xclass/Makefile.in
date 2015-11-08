@@ -1,0 +1,133 @@
+
+SHELL=/bin/sh
+
+prefix=@prefix@
+header_dir=@prefix@/include/xclass
+
+INSTALL = @INSTALL@
+INSTALL_DATA = @INSTALL_DATA@
+
+
+HEADERS = O2ColumnsLayout.h \
+	OColor.h \
+	OBaseObject.h \
+	OComponent.h \
+	ODNDmanager.h \
+	ODimension.h \
+	OException.h \
+	OExec.h \
+	OFileHandler.h \
+	OFocusManager.h \
+	OGC.h \
+	OGifImage.h \
+	OHashTable.h \
+	OHtmlTokens.h \
+	OHtmlUri.h \
+	OIdleHandler.h \
+	OImage.h \
+	OIniFile.h \
+	OLayout.h \
+	OListViewLayout.h \
+	OMessage.h \
+	OMessageCodes.h \
+	OMimeTypes.h \
+	OPicture.h \
+	OQuaternion.h \
+	ORectangle.h \
+	OResourcePool.h \
+	OSelectedPicture.h \
+	OString.h \
+	OTextBuffer.h \
+	OTimer.h \
+	OTrackball.h \
+	OVector3D.h \
+	OX3dLines.h \
+	OXAboutDialog.h \
+	OXButton.h \
+	OXCanvas.h \
+	OXCheckButton.h \
+	OXClient.h \
+	OXColorDialog.h \
+	OXColorSelect.h \
+	OXComboBox.h \
+	OXCompositeFrame.h \
+	OXDDListBox.h \
+	OXDockableFrame.h \
+	OXDragWindow.h \
+	OXFSDDListBox.h \
+	OXFileDialog.h \
+	OXFileList.h \
+	OXFont.h \
+	OXFontDialog.h \
+	OXFrame.h \
+	OXGLFrame.h \
+	OXGLView.h \
+	OXGroupFrame.h \
+	OXHelpDoc.h \
+	OXHelpPopup.h \
+	OXHelpWindow.h \
+	OXHtml.h \
+	OXIcon.h \
+	OXImageView.h \
+	OXItemView.h \
+	OXLabel.h \
+	OXListBox.h \
+	OXListTree.h \
+	OXListView.h \
+	OXMainFrame.h \
+	OXMdi.h \
+	OXMdiDecorFrame.h \
+	OXMdiFrame.h \
+	OXMdiMainFrame.h \
+	OXMdiMenu.h \
+	OXMenu.h \
+	OXMsgBox.h \
+	OXObject.h \
+	OXPictureButton.h \
+	OXProgressBar.h \
+	OXPropertiesDialog.h \
+	OXRadioButton.h \
+	OXResizer.h \
+	OXRootWindow.h \
+	OXSList.h \
+	OXScrollBar.h \
+	OXSecretTextEntry.h \
+	OXShutter.h \
+	OXSlider.h \
+	OXSpinner.h \
+	OXStatusBar.h \
+	OXTab.h \
+	OXTextButton.h \
+	OXTextEdit.h \
+	OXTextEntry.h \
+	OXTip.h \
+	OXToolBar.h \
+	OXToolBarButton.h \
+	OXTransientFrame.h \
+	OXView.h \
+	OXWidget.h \
+	OXWindow.h \
+	XCconfig.h \
+	utils.h \
+	version.h
+
+all:
+
+shared:
+
+install_shared: install
+
+install:
+	mkdir -p ${header_dir}
+	rm -f ${header_dir}/*.h
+	for i in ${HEADERS} ; do \
+		${INSTALL_DATA} ./$$i ${header_dir} ; \
+	done
+
+distclean: clean
+
+clean:
+	rm -f *~ core *.bak
+
+distclean:
+

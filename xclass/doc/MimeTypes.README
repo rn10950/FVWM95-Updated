@@ -1,0 +1,100 @@
+The current structure of the .mime.types file is quite similar to the
+Windows .ini files. The format is as follows (it still may change): 
+
+- Each entry begins with a header line, describing the content type.
+  The header is just an arbitrary string enclosed in []. The brackes
+  cannot be nested.
+
+- Each header is followed by several entries of the type "name = argument".
+  The following names are recognized:
+    description -- an optional description string;
+    pattern     -- specifies a list of regular expressions, separated by
+                   spaces;
+    icon        -- specifies an icon to display for filenames matching the
+                   specified expression(s);
+    action      -- specifies the action (command) to execute when a file
+                   matching the specified expression is double-clicked;
+                   switches can be specified as usual, and if a %s is
+                   included somewhere after the command name, it will be
+                   substituted with the full path to the file.
+
+- Comments are not allowed. However, lines are usually ignored as far as
+  they don't contain any reserved name.
+
+The pattern is just a regular expression, simplified in order to make the
+expression a little easier to write, at expenses of loosing a little bit
+of flexibility. For example, a pattern of "*.txt" can be specified instead
+of ".*\.txt".  The code automatically inserts a '.' when it sees a '*' and
+insert a '\' when it sees a '.' if that makes any sense. Still, things
+like "*.te?xt" can be specified, which matches anything with "txt" or
+"text" as the extension.
+
+For example, the following entry:
+
+[application/postscript]
+description = Postscript files
+pattern = *.e?ps
+icon = ps.xpm
+action = ghostview %s
+
+defines an entry of type "application/postscript" for files with extension
+.eps or .ps, the ps.xpm pixmap is used to represent these files, and the
+ghostview program is executed when a file with any of these extensions is
+double-clicked, the full path to the file is passed to ghostview as
+argument.
+
+You should edit the .mime.types file to adapt the existing entries or to
+add new ones according to your needs (soon it will be possible to change
+the entries with the explorer by using a more convenient interface). For
+example, the following suggestion was sent by Gerd Bavendiek <bav@rw.sni.de>: 
+
+> Starting Netscape as it comes with your mime.types gives an error
+> when there is Netscape already up and running. Why not use the
+> following construct:
+> 
+> [text/html]
+> pattern = *.html?
+> icon = netscape.xpm
+> action = go_netscape %s
+> 
+> 
+> #!/bin/sh
+> #ident go_netscape Time-stamp: <97/03/24 21:30:12 bav> 
+> #******************************************************************
+> # go_netscape <URL>
+> #******************************************************************
+> #                           Gerd Bavendiek  bav@rw.sni.de  97-02-28
+> #
+> # Wrapper to call Netscape appropriately. For use from e.g.
+> # addressbook and file managers.
+> #------------------------------------------------------------------
+> 
+> if [ -r $1 ]; then # Seems to be a file
+>    URL="file:$1"
+> else
+>    URL=$1
+> fi
+> 
+> # If you want to look at the URL in a new window,
+> # use "openURL($URL, new-window)".
+> if [ -h $HOME/.netscape/lock ]; then
+>    netscape -remote "openURL($URL)"
+> else
+>    netscape "$URL"
+> fi
+> 
+> 
+> Quite analogous I use Xemacs. My .mime.types reads:
+> 
+> [text/plain]
+> pattern = *.te?xt
+> icon = emacs.xpm
+> action = gnuclient %s
+> 
+> In my .emacs I do
+> 
+> (gnuserv-start)
+> 
+> So I start Xemacs 19.14 in the morning and keep it up and running the
+> whole day.
+> 

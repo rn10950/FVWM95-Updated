@@ -1,0 +1,7 @@
+#
+# Rules for compiling .cc sources
+.SUFFIX: .cc .o
+.cc.o:
+	$(CXX) $(CXXFLAGS) -c $<
+
+#

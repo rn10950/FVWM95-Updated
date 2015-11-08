@@ -1,0 +1,149 @@
+ChangeLog
+---------
+
+23/08/98 (Harry)
+
+- First release.
+
+
+23/08/98 v2 (Harry)
+
+- Now all subframes of OXMdiChild are unmapped when minimizing (except the
+  titlebar).
+
+- Window label is now correctly displayed after resizing from max to normal.
+
+- Fixed a button release bug which occurred when window is maximized.
+
+
+24/08/98 (Harry)
+
+- Partly rewrote OXMdiChild source, resizing now handled by resizer windows.
+
+
+25/08/98 (Harry)
+
+- Renamed OXMdiChild to OXMdiFrame.
+
+- Added OXMdiFrame::Add/RemoveMdiButtons() for the window header buttons
+  (it uses an or'ed bit mask, see OXMdi.h)
+
+- Moving from the menu now works.
+
+- Fixed lotsa stuff for proper closure of OXMdiFrames.
+
+- Now OXMdiMain is a subclass of OXCanvas so the border bug is fixed.
+
+- Implemented my own double-click handler for OXHeadIcon, now correctly
+  reacts on single/double-click.
+
+
+05/09/98 (Harry)
+
+- Heavy source clean up... well all in all the source is really cleaned up.
+
+- OXMdiFrame now doesn't perform window operations, but is remotely modified
+  by OXMdiFrame.
+
+- Changed the message system to the new OMessage style.
+
+
+27/01/99 (Harry)
+
+- Various modifications in all classes, drawing bugs are mostly fixed.
+
+- OXMdiFrame registers itself at OXMdiMainFrame in constructor and
+  unregisters itself in the destructor.
+
+- OXWinResizer and OXMdiDecorFrame now have static members (GC, Colors and
+  Fonts).
+
+- ArrangeFrames now checks if a frame is minimized or maximized and restores
+  it (nevertheless the buttons are not correct).
+
+- Perhaps some new bugs added??
+
+
+28/01/99 v6 (Harry)
+
+- I think, that all the 'drawing bugs' are now fixed (keep the fingers
+  crossed).
+				
+- Did some code cleanup and fixed the memory leaks. Changed the static
+  members another time, they are now all members of OXMdiMainFrame (GC and
+  Fonts).
+
+
+09/07/02 v7 (Hector)
+
+- Fixed OXMdiMainFrame scrollbars, now they do appear and work properly.
+
+- Implemented arrangement (lineup) of minimized windows.
+
+- Fixed system menu box behavior, now it works the way Windows95/98 does,
+  and not the strange fvwm95 way.
+
+- Fixed resizes and moves: when resizing a window the border stays where
+  the mouse cursor is, and not a bunch of pixels away.
+
+- Cleaned up the code a bit.
+
+- Window self-resizes are now properly tracked by OXMdiMainFrame. Calling
+  Resize(GetDefaultSize()) in OXMdiFrame now gives the desired result.
+
+- Implemented a circular list to keep track of window stacking order.
+
+- Added OXMdiMainFrame::CirculateUp() and CirculateDown() methods.
+
+- Fixed Tile/Cascading of windows: minimized windows are not restored,
+  but rearranged instead; cascading windows is now done using the current
+  stacking order.
+
+- Added keyboard shortcuts: Ctrl+Tab cycles windows, bringing each time
+  the previous recent window to the top, Shift+Ctrl+Tab cycles windows in
+  reverse order. Ctrl+F4 closes the window.
+
+- Added OXMdiMainFrame::Cascade(), TileHorizontal() and TileVertical()
+  methods as a synonymous to calling ArrangeFrames() with the corresponding
+  mode argument.
+
+
+11/07/02 v8 (Hector)
+
+- Changed OXMdiMainFrame so it works with OXMdiMenu set to NULL.
+
+- Added a hint to enable/disable the system menu box of an OXMdiFrame.
+
+- Added a hint to enable/disable resizing of OXMdiFrames.
+
+- Added OXMdiFrame::Help() virtual method, which is called when the help
+  (question mark) button is pressed.
+
+- Clicking on the client area of a window now brings it to the top and gives
+  it the focus (before the window's titlebar had to be clicked for that
+  purpose).
+
+- Split the source into a set of *.h and *.cc files and added to the
+  xclass distribution.
+
+
+TODO
+----
+
+- Fix focus management.
+
+- Remove the need for XReparentWindow() regarding menubar icons and buttons.
+
+- Fix dynamic titlebar buttons/icons/title settings while maximized.
+
+- Right-click on title bars and window frame should popup window menu.
+
+- Limit window movements to the allowed canvas' coordinate space.
+
+- Fix maximized state: must be global.
+
+- Fixed size windows: cascade - move, but do not resize;
+                      tile - do not move or resize
+                      maximize - disable, do not maximize
+
+- Check everything once again.

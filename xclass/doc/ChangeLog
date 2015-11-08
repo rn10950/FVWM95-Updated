@@ -1,0 +1,2597 @@
+Library change log
+------------------
+
+
+23/5/96
+
+- Modified OXObject to have a _client pointer instead of a Display pointer:
+  we still have the ability to obtain the X connection structure
+  (_client->GetDisplay, inline so optimized by the compiler), and clean
+  the design: graphical objects have a lot of work to do with the X client
+  (picture caching, resource handling, etc...).
+
+- Modified the redraw code to implement Tk delayed redraw idea: it states
+  that there is no need to redraw as soon as we get Expose event, but is
+  rather preferable to wait for the event queue to be empty (at least it
+  does not contain expose event anymore). This implementation is not optimal
+  yet. We have to make a lot of window lookup in the SListWindowElt stack,
+  that should be made via a hash table algorithm rather than a simple loop.
+
+- Enhanced WaitFor code: a simple (dangerous, because it accesses directly
+  OXWindow protected _parent member) loop checks if the event window belongs
+  to the hierarchy of the 'wait-for' top level window. If not, it discards
+  the event.  This is mainly for modal dialog boxes. Popup utility windows
+  don't need to call WaitFor if they still want the rest of the application
+  to be active.
+
+- New OPicture and OPicturePool to load pixmaps, caching implemented (fairly
+  easy thanks to the nice Picture.c module in fvwm). On this point I used
+  const char * instead of OString. This class is not clean yet. I fear to
+  add a default type adapter between char * and OString.
+
+- Modified Debug routine to accept a 'level' parameter to filter unneeded
+  debug display the 'utils.cc' module now contains a _debugMask variable to
+  tune display overhead.
+
+- Some tricks to avoid include files problems: forward declarations of some
+  classes in OXClient.h
+
+- Problem with the naming convention: should graphical object only have the
+  OX prefix, or rather all objects referring to the X connection via _client
+  pointer?  That is, should we have OPicture, or OXPicture?
+
+
+10/7/96
+
+- Frames are now automatically registered/unregistered on object
+  creation/destruction, so it is no longer necessary for the user to use the
+  Register/Unregister functions.
+
+
+11/7/96
+
+- Modified (again!) the structure of OXCanvas. Now OXCanvas creates the
+  scrollbars and viewport (as before), but the viewport doesn't create
+  automatically the container frame (maybe we can use another constructor).
+  Instead is the user responsibility to create the container and notify the
+  viewport using the OXViewPort::SetContainer function (or the equivalent
+  OXCanvas::SetContainer).
+
+  Before:
+  =======
+
+  OXCanvas CanvasWindow(mainWindow, 400, 240,
+                                    HORIZONTAL_FRAME | SUNKEN_FRAME);
+
+  CanvasWindow.AddFrame(new OXSimpleFrame(CanvasWindow.GetContainer(),
+                                          32, 32, 0,
+                                          GetColorByName("red")),
+                          new OLayoutHints(LHINTS_EXPAND_Y | LHINTS_RIGHT));
+
+  CanvasWindow.AddFrame(new OXSimpleFrame(CanvasWindow.GetContainer(),
+                                          32, 32, 0,
+                                          GetColorByName("blue")),
+                          new OLayoutHints(LHINTS_EXPAND_Y | LHINTS_RIGHT));
+  ...
+
+  mainWindow->AddFrame(&CanvasWindow,
+                       new OLayoutHints(LHINTS_EXPAND_X | LHINTS_EXPAND_Y,
+                                        0, 0, 2, 2));
+
+  Now:
+  ====
+
+  OXCanvas CanvasWindow(mainWindow, 400, 240,
+                                    HORIZONTAL_FRAME | SUNKEN_FRAME);
+
+  OXContainerFrame Container(CanvasWindow.GetViewPort(),
+                             10, 10, HORIZONTAL_FRAME,
+                             clientX->GetColorByName("white"));
+
+  CanvasWindow.SetContainer(&Container);
+
+
+  CanvasWindow.AddFrame(new OXSimpleFrame(CanvasWindow.GetContainer(),
+                                          32, 32, 0,
+                                          clientX->GetColorByName("red")),
+                          new OLayoutHints(LHINTS_EXPAND_Y | LHINTS_RIGHT));
+
+  CanvasWindow.AddFrame(new OXSimpleFrame(CanvasWindow.GetContainer(),
+                                          32, 32, 0,
+                                          clientX->GetColorByName("blue")),
+                          new OLayoutHints(LHINTS_EXPAND_Y | LHINTS_RIGHT));
+
+  ...
+
+  mainWindow->AddFrame(&CanvasWindow,
+                       new OLayoutHints(LHINTS_EXPAND_X | LHINTS_EXPAND_Y,
+                                        0, 0, 2, 2));
+
+  That way we can specify a different class (derived form OXContainerFrame)
+  in OXCanvas, so we have more control of the events (OXContainerFrame is
+  who receives the clicks, and is who decides what to do with it contents),
+  otherwise it becomes a nightmare to handle events.
+
+  The OXCanvas::SetContainer function must be called before any
+  OXCanvas::AddFrame, of course, otherwise a Segmentation Fault will occur
+  (no checks are made).
+
+  Implementing VERTICAL_TILE_FRAME and HORIZONTAL_TILE_FRAME could change
+  things in a fashion similar to the OXTab's AddTab.
+
+- OXStatusBar::SetText(OString *s) receives the argument as a pointer to a
+  OString class, often as a result of calling statusBar->SetText(new
+  OString("some text")). In that case OXStatusBar should be responsible for
+  deleting the allocated object (i.e. the OString becomes "property" of
+  OXStatusBar), but what if we call it with something like
+  statusBar->SetText(MyOString)? MyOString must exist until is replaced by
+  another call to SetText, in the other hand if we destroy MyOString in
+  OXStatusBar, the program could try to make use of it after being deleted.
+
+  I'll stick to the first case (deletion in OXStatusBar), restricting the
+  use in the caller program. In any case it would be possible to implement
+  something like OXStatusBar(new OString(MyOString)), i.e., to make a copy
+  of the existing string for the status bar.
+
+
+20/7/96
+
+- OXTab:
+
+  AddTab(OString *text) creates a Tab frame (composite frame + tab window
+  with the specified name), the function returns a pointer to the composite
+  frame. That pointer must be used to add widgets to the frame and should
+  never be freed.
+
+  Example:
+
+    OXTab myTab(Parent, x, y);
+ 
+    OXCompositeFrame *tf = myTab.AddTab(new OString("MyTabName"));
+    OXCompositeFrame f1(tf, 60, 20, VERTICAL_FRAME);
+    f1.AddFrame(new OXTextButton(&f1, new OHotString("&My button")),
+                                 myButtonLayout);
+
+    tf->AddFrame(&f1, MyFrameLayout);
+
+  etc.
+
+
+14/8/96
+
+- Changed the function-callback-like method of widget event notification to
+  a client-message one, as the callback method horribly breaks the OO design
+  and cannot handle a inter-class notifications.
+
+  Now OXFrame and derivates include a SendMessage member function, and the
+  HandleClientMessage automatically calls a ProcessMessage virtual member
+  function. By overriding this last, the window can process the desired
+  messages.  Note that the window processing messages must be associated to
+  the widget by calling the Associate member function in order to receive
+  messages, by default they are sent to the parent window.
+
+  A _XC_MESSAGE atom was defined to identify the ClientMessage type. 
+
+- Changed explorer's main.cc file. Now a OXExplorerMainFrame object is
+  created, which processes the menu and button commands. Similarly, an
+  OXOptionsDialog object is used for the Options dialog. At least it is
+  looking less like a test program :-)
+
+
+15/8/96
+
+- Changed OXClient::NeedRedraw(Window id) to ...(OXWindow *w), and the 'rdw'
+  flag moved to the OXWindow class, so we don't have to do a search through
+  all the registered windows.
+
+- Added OPicturePool::FreePicture.
+
+
+17/8/96
+
+- Added support for drawing wrapped text in OString (is not extended to
+  OHotString yet). Experimentally used in OXRadioButton.
+
+
+18/8/96
+
+- Changed the scrollbar background so it now matches the Win95 one.
+
+- Implemented 3-state buttons.
+
+- Implemented MWM-hints stuff, moved the top-level windows operations from
+  OXWindow to OXMainFrame.
+
+
+24/8/96
+
+- Started implementation of OXListBox class.
+
+
+5/9/96
+
+- Changed behavior of the menu bar to match Win95 one (popus appearing as
+  mouse is moved)
+
+
+19/9/96
+
+- Implemented list sort routine, sort-by-name, type, size already selectable
+  by menus.
+
+
+15/10/96
+
+- OXTextEntry widget now accepts proper keyboard input, entered text is
+  stored on a OTextBuffer object and can be read from there. Autoscroll and
+  selections are still missing.
+
+
+18/10/96
+
+- OXTab corrected, tabs now have the correct width according to the text
+  length, instead of a fixed one.
+
+
+30/10/96
+
+- OXTextEntry accepts paste from clipboard or cut buffer 0 (mouse button 2)
+
+- Most widgets are now in different files
+
+
+
+16/02/97
+
+- Implemented OXSList class using the X context manager. OXClient is now 
+  dispatching events to the windows approx 50% faster.
+
+
+20/02/97
+
+- OXCompositeFrame::Layout(): The CENTER hints have the same behavior as the
+  EXPAND hints. A X-Centered Widget can now be packed in an HORIZONTAL
+  Frame. The OXCompositeFrame::Layout() routine now calls separate
+  OXCompositeFrame protected member routines according to the kind of frame.
+
+- OXTab::Layout, OXTab::DefaultWidth and Height: The Tab Widgets are
+  expandable now. A new _container was frame added in order to avoid border
+  blinking when switching tabs.
+
+
+21/02/97
+
+- Changed *all* the width and height types from unsigned int to just int.
+  While that contradicts XCreateWindow, XResizeWindow, etc., it allows
+  better checking when calculating sizes (negative results aren't converted
+  into a huge positive number). Checkings are now implemented in the
+  corresponding OXWindow functions.  Applications can be resized even to a
+  size 1x1 without crashing.
+
+
+25/02/97
+
+- Implemented OTimer class (by now only single-shot timers) and added
+  HandleTimer member function to OXWindow in order to handle timer events.
+  The event loop code in OXClient has been rewritten, there is now a
+  ProcessOneEvent member function (although not as complete as I wanted).
+
+- OXScrollBar now has autorepeat capabilities (still unfinished, but already
+  works).
+
+- OXPopupMenu now implements a small delay before showing a cascaded child
+  menu a la Win95.
+
+
+26/02/97
+
+- Fixed some (but not all) buggy OXScrollBar code.
+
+- Some widget global declarations were moved from the original files to
+  OXClient.cc, in order to prevent the linker from including unnecessary
+  widgets in executable files (it was including always nearly all the widget
+  set). The size of the clock program, for example, was reduced from 119908
+  bytes to 66544.
+
+
+28/02/97
+
+- Added code to utils.h (which can be enabled by a compile-time directive)
+  to help tracing memory allocation problems. The code just redefines the
+  new/delete operators and writes the debug information into a log file. A
+  SIGSEGV is forced when an attempt to delete a NULL object is detected
+  (that condition was very difficult to trace even with gdb because the
+  program often crashed long and randomly *after* that, and the stack frame
+  was always screwed up).
+
+
+05/03/97
+
+- Added code in OXClient (experimental) to support a color server.
+
+- Added primitive support for keyboard shortcuts needed in menus, buttons
+  and other widgets containing hotchars. IMPORTANT: When deleting objects
+  which use keyboard shortcuts, be sure to delete them *before* deleting any
+  parent object(s).
+
+- Text justification mode can be specified for label and button objects.
+
+- DestroyWindow is now called explicitely in OXMainFrame destructor. That
+  way a top level window is always destroyed every time the corresponding
+  object is destroyed.
+
+
+10/03/97
+
+- OXMsgBox added, so there is now an easy way to display short app's
+  messages.
+
+  Use as follows:
+
+    new OXMsgBox(parent, transient_for,
+                 new OString ("Window Title"),
+                 new OString ("Message... blah blah..."),
+                 icon_type [, button_set [, &ret_code]]);
+
+  where:
+
+    OXWindow *parent         -- is usually _client->GetRoot()
+
+    OXWindow *transient_for  -- is the 'transient for' window, normally
+                                the app's OXMainFrame
+
+    int icon_type            -- specifies which 'standard' icon to use,
+                                and can be one of the following predefined
+                                values:
+                                  MB_ICONSTOP
+                                  MB_ICONQUESTION
+                                  MB_ICONEXCLAMATION
+                                  MB_ICONASTERISK
+                                a custom icon can be specified if an OPicture
+                                object is passed in place of icon_type.
+
+    int button_set           -- specifies which buttons should appear, can
+                                be one or more of the following values OR'ed
+                                together:
+                                  ID_YES
+                                  ID_NO
+                                  ID_OK
+                                  ID_RETRY
+                                  ID_APPLY
+                                  ID_IGNORE
+                                  ID_CANCEL
+                                  ID_CLOSE
+                                  ID_DISMISS
+                                if not specified, ID_DISMISS is assumed.
+
+    int *ret_code            -- used to return the code of the button pressed
+                                by the user, always one of the above ID_... 
+                                if the box was closed by clicking on the close
+                                ("X") titlebar button, ID_CLOSE is returned.
+
+
+  For a quick test, run the wintest app and click the "Click here..." button
+  at the bottom, then use the dialog box to change the icons, button sets,
+  message, etc.
+
+
+11/03/97
+
+- OXTextButtons, OXCheckButtons and OXRadioButtons now own the OString
+  passed as argument (like OXLabels), so the strings are deleted on button
+  object deletion.
+
+
+12/03/97
+
+- OXListBox can be already used, although is not completely finished.
+
+
+13/03/97
+
+- OXListBox reimplemented, now there is a OXLBEntry which would allow to
+  build custom (trees, pixmaps, etc.) entries. The implementation is
+  compatible with the previous one.
+
+- OXDDListBox is now usable. OXTreeDDListBox in explorer already working,
+  but is a mere code duplication of the OXDDListBox (there is still a small
+  problem to solve in order to be able to implement it as a derived class).
+
+
+18/03/97
+
+- OPicturePool does not force anymore a fatal error when a pixmap is not
+  found. Instead, it returns NULL to the calling routine, so the checking
+  now should be done there.
+
+- Changed the OPicture class to allow it to return a scaled icon.
+
+- Explorer enhancements (see the Explorer.status file).
+
+
+20/03/97
+
+- Fixed small bug in OXCompositeFrame::HorizontalLayout.
+
+
+25/03/97
+
+- OXMainFrame::SetWindowName and OXMainFrame::SetClassHints now use 'char *'
+  instead of 'OString *'.
+
+- More explorer enhancements and bug corrections (see Explorer.status).
+
+
+29/03/97
+
+- OPicture now uses width, height instead of xscale, yscale. Fixed also a
+  few defects with the scaling algorithm (it allows now xpm files with more
+  than one char per pixel).
+
+- Some OXListBox, OXIcon and OXScrollBar changes/corrections.
+
+
+31/03/97  David Barth <dbarth@alpha-c.net>
+
+- New class tree OLayoutManager: the base abstract class defines an
+  interface, OVerticalLayout & OHorizontalLayout implement the old stuff
+  previously found in the OXCompositeFrame class. This redesign splits the
+  notion of layout and the notion of composite frame. Still, we should
+  separate the container code from the rest of the class (see Work in
+  progress at the end of OXFrame.cc).
+
+- OXCompositeFrame now holds a _layoutManager parameter. This member is
+  used in the Layout method.
+
+- SListFrameElt is defined outside of class OXFrame for compatibility
+  reasons. Soon an OListFrameElt class should replace it in a better OO
+  manner.
+
+- Read "Inside the C++ Object Model" - Stanley B. Lippman - ADDISON-WESLEY
+  1996 Recommended ;-)
+
+- New include files created to group some classes outside of the OXWidgets.h
+  bag.
+
+- IS_VISIBLE state defined.
+
+- Commented out the virtual ~OXObject() {} destructor: is it really
+  necessary?
+
+
+07/04/97
+
+- Fixed a bug in OVerticalLayout and OHorizontalLayout algorithms.
+
+- Commented out some unused arguments in class declarations to avoid lots
+  of warnings when using "g++ -Wall -ansi -pedantic"
+
+- Changed the explorer's mime.types format again. Now it allows the use
+  of a simplified regular expression for filename matching.
+
+- When loading a pixmap, OPicture doesn't rescale anymore the ones 
+  having already the requested size (1:1).
+
+- Added some member functions to OXMainFrame for a more convenient way of
+  setting WM size hints, icon name, initial state, etc. More to come...
+
+- Added two new clients: run (for the start menu) and login (perhaps a
+  future xdm replacement?)
+
+
+08/04/97  David Barth <dbarth@alpha-c.net>
+
+- New ODimension class to group (w,h) dimensions.
+
+- New ORowLayout & OColumnLayout managers. Those are very simple, and are
+  in fact, down-sized OVerticalLayout & OHorizontalLayout managers.
+
+- New OMatrixLayout: this one is really exciting, as it will simplify
+  OXContainer greatly.
+
+- Generalized use of GetDefaultSize(): GetDefaultWidth/Height() should not
+  be used anymore: their call is through a GetDefaultSize() now... (they can
+  be used, but only GetDefaultSize() should be redefined if necessary when
+  deriving classes - H).
+
+- Time for profiling :-) this will help track down the bogus parts of the
+  layout code!
+
+- The new layout code triggers a bug in the Scrollbar or Canvas: sadly
+  the Explorer seg faults with those changes :-(  (09/04/07 corrected - H).
+
+- Take a look at the "Linux Applications & Utilities" page hosted on RedHat
+  site: there are 2 new interesting libraries: JX and Mime++
+
+
+09/04/97
+
+- Changed the OXCanvas algorithm, so there is no need in having a special
+  OXContainerFrame anymore. Instead, any OXCompositeFrame can be used.
+  Just set the desired layout manager...
+
+
+14/04/97
+
+- OXListView partially implemented, still the detail mode (multi-column
+  with column headers) is missing, and there are many things duplicated
+  in OXFolder. It is temporarily in the explorer's directory.
+
+
+17/04/97
+
+- Changed the msg/parm structure in SendMessage and ProcessMessage:
+     SendMessage:
+       msg   -- now is formed as MK_MSG(msg, submsg)
+       parm1 -- previously was the submsg type, now mostly the widget ID.
+       parm2 -- previously was the widget ID or widget data, now is used
+                only for widget data.
+     ProcessMessage:
+       msg   -- becomes GET_MSG(msg)
+       parm1 -- becomes GET_SUBMSG(msg)
+       parm2 -- becomes parm1, and parm2 can be used for extra data.
+
+- OXListBox redraw bug corrected.
+
+
+23/04/97
+
+- OIniFile, OMimeTypes, OXListView objects moved to the core library.
+  Still a *lot* of work and rework pending for these, but they can be used
+  already by any application.
+
+- New fileview example application in the clients/ directory. Implements
+  a very simple OXTextView widget, the code is based on an example found
+  in an old Xt programming book.
+
+
+24/04/97
+
+- Moved more files from the explorer directory to the library core:
+    OXFolder       --  now OXFileContainer
+    OXTreeListBox  --  now OXFSDDListBox, the redundant OXTreeDDListBox
+                       was removed, a new OXFileSystemDDListBox object
+                       is implemented instead for filesystem selection 
+                       in explorer and OXFileDialog
+
+- New objects: OFileInfo and OXFileDialog for implementing 'Open' and
+  'Save as...' dialogs (premiliminary versions, but usable).
+
+- The fileview application now uses the OXFileDialog for opening files.
+
+
+25/04/97
+
+- Lowered the resource requirements for OXTreeLBEntry, OXListItem and
+  derivates, now they use a single window instead of 3.
+
+- Changed the constructor for OXListBox, OXDDListBox and derivates:
+  Like the rest of (almost) other controls they now have an ID:
+
+   before:  OXListBox(parent, w, h [, options, bkgnd])
+   now:     OXListBox(parent, ID [, options, bkgnd])
+
+
+26/04/97
+
+- OXFrame is not anymore an abstract class, now it can be instantiated
+  and is used as the base class for simple widgets, making OXSimpleFrame
+  obsolete.
+
+- OXScrollBar simplified : there is no need to have a composite frame
+  as there will only be 3 items and the layout algorithm is trivial
+
+
+28/04/97
+
+- OXSimpleFrame removed.
+
+
+16/05/97
+
+- New OXListTree widget. It uses experimentally a windowless item class
+  (OListTreeItem instead of OXListTreeItem), much like the OMenuEntry items
+  in OXPopupMenu (perhaps OXListBox should be rewritten in the same way?).
+  These "O" objects require less X resources than their corresponding "OX"
+  version, but in the other hand they are less flexible. Also, drawing and
+  managing routines can become complicated.
+
+
+20/05/97
+
+- New OXWidget class implemented. Now all widgets should derivate from
+  OXFrame/OXCompositeFrame _and_ OXWidget.
+
+  Widgets actually share many common properties that can be grouped
+  together into the OXWidget class. A new set of common properties can be
+  added in order to improve the management, for example:
+
+  - user-given ID (currently implemented in many widgets).
+  - widget-type ID (some sort of magic number or string? It might be
+                    useful for doing run-time type checking and some
+                    other niceties)
+  - has focus flag
+  - is enabled / is disabled flag
+  - is default widget flag (i.e. it grabs the Enter key)
+  - is active flag (but this is mostly of interest for some widgets only)
+  - want focus flag (for focus traversal)
+  - has a hot key attached (i.e. it wants to grab a certain key).
+
+  Normally the key-grab should be managed by the top-level window
+  (OXMainFrame or OXTransientFrame). In addition, the top-level window
+  grabs the Tab key for itself and uses it for focus traversal. It should
+  keep a list of the frames wanting focus (or it could use the available
+  frame linked-list and check for the want focus flag), and should
+  remember as well which frame has gotten the focus last time, so if the
+  window manager changes the focus to another window and then back it
+  could restore the focus to the corresponding widget.
+
+  In order to implement the focus traversal, OXMainFrame could analyze the
+  list of child frames, but the problem is that only widget classes will
+  have the _widgetFlag variable, ordinary frames won't. Also, there might
+  be widgets wanting focus which are not direct children of the main
+  frame, so it would be necessary to analyze the whole tree.
+
+  A solution could be to include some special function in OXMainFrame
+  (something like RegisterFocus(), much like the current BindKey()
+  function) and to keep a separate list of only-widgets. This could have
+  several advantages, as widgets could be registered in specific order,
+  not exactly in the order they were created, making the focus traversal
+  more comfortable to the user. Disadvantages: the fact that we have to
+  manually register the widgets (in a second thought, they could register
+  automatically themselves, but we can finish with a weird focus order). 
+
+  The idea of _widgetName is to put there some identifier, perhaps the
+  same class name (e.g. "OXButton"). That way we could do some run-time
+  checking when/if required, and it would be helpful for a visual 
+  programming environment.
+
+  The OXWidget class is being used experimentally in OXButton and
+  OXTextEntry.
+
+
+07/07/97
+
+- New slider objects implemented (OXHSlider, OXVSlider), thanks to Matzka
+  Gerald <matzka@venus.hil.siemens.at>. For a test, run the wintest
+  program and select Test / Sliders... menu option.
+
+
+08/07/97
+
+- Corrected OPicturePool bug which generated a BadPixmap error when
+  deleting an OPicture without mask.
+
+
+12/09/97
+
+- Changed the constructor for the OXGroupFrame class, the options parameter
+  moved behind the title parameter, now is easier to create a horizontal
+  group frame without having to specify font, gc, etc.
+
+
+23/09/97
+
+- Added support for .xclassrc ini file in OXClient::OXClient()
+
+
+11/01/98 (After a BIG pause...)
+
+- Added support for inlined XPM's. Now XPM files can be used for OPictures
+  just by #including the image in the source. Usage is:
+
+    GetPicture(char *name, char **data);
+
+  where "name" is the name under which the pixmap will be registered (usually
+  the original file name), needed for sharing purposes; "data" is a pointer
+  to the pixmap data.
+
+  Some client programs (cdplay, login) were modified in order to make use
+  of these.
+
+- Added *experimental* support for background pixmaps. To try it, add the
+  following line to the [defaults] section of your ~/.xclassrc file:
+
+    back pixmap = my_background.xpm
+
+  Do not specify a full path to the pixmap, just the filename.xpm and copy
+  it to your "icon dir" or "OX_POOL" directory.
+
+  Again, this is just *experimental* and I'm still a bit reluctant to
+  keep for future releases, for several reasons.
+
+- Added support for tip-able frames, use OXFrame::SetTip(char *tip_text)
+  to enable this feature. This current implementation is generating some
+  troubles to widgets like OXButton, OXScrollBar, etc., as these widgets
+  relied on events generated by button grabs only, and now the parent
+  frame is selecting for additional mouse events. OXButton is almost OK
+  now, but some of the derivate (OXRadioButton, etc...) are not.
+
+- Buttons now can be one of the following types:
+
+    BUTTON_NORMAL   - standard push-button
+    BUTTON_ONOFF    - on/off type of button
+    BUTTON_STAYDOWN - button which can be released only by software, 
+                      useful for creating groups of dependent buttons
+                      in toolbars, etc.
+
+- Modified OXSliders, as they were a bit too big compared to Win95 ones
+  (hope they aren't too small now... ;-) ).
+
+- Moved OXHorizontal3dLine and OXVertical3dLine to the library side. Include
+  xclass/OX3dLines to use them.
+
+- Added constructor and destructor for OFileInfo.
+
+- fileinfo.ini_dir is updated now by OXFileDialog. The path to the selected
+  file is stored there on output.
+        
+- DLG_BROWSE option added to OXFileDialog.
+
+- OXTextEntry updates:
+
+   - void OXTextEntry::SetState(int state) was added.
+
+     when state = DISABLED, the widget doesn't react on events anymore,
+     and the background color is set to gray. ENABLED is the default,
+     the background is set to white.
+
+   - int OXTextEntry::GetState() returns the current state.
+
+
+28/01/98 (from Wim Delvaux)
+
+Global changes
+==============
+
+- OX_DEFAULT_POOL now defaults to /usr/local/xclass-icons
+
+- Added ';' to Makefile in include directory to avoid syntax error
+  messages with bash 2.0
+
+Explorer
+========
+
+OXListTree
+
+- Behavior closer to Win95 (click on entry collapses open, double click
+  collapses and rereads)
+
+OXOptions
+
+- Options now fully use the mime.types file (this is not finished!)
+
+- Icons are read and text in listbox is either 
+        'files matching ...'
+        or the NEW but optional description field in the mime.types file
+
+- OMimeTypes now has a methods that returns the OMime entry that corresponds
+  to a particular file pattern. This allows for enormous speedup because the
+  pointer to this description can be stored when modifying the entry. Also
+  with one lookup you now have all information (previous version had to scan
+  through the list several times).
+
+- Modifying and updating to the mime.types file is now supported. 
+
+main.cc
+
+- Children of an opened (not-collapsed) entry in the ListTree are now
+  properly sorted.
+
+- All entries in the subdirectory are processed and not one (removed the
+  break).
+
+- Swapped DBLCLICK code with CLICK code and remove the ChangeDirectory in
+  the single click to match win95 behavior.
+
+Xclass library includes
+=======================
+
+OIniFile.h
+
+- GetItem now returns a pointer to the value.  This is either the same
+  as the value parameter (arg 2) or if the arg 2 is NULL a newly allocated 
+  memory buffer (this allows for entries of a undetermined size in the
+  INI files)
+
+OMimeTypes.h
+
+- Added description field (default can be NULL)
+
+- Added description argument to AddType method 
+
+- Added Modify method that updates the values for a mime entry. Arg 1 is
+  the OMime* entry returned by next method
+
+- Added NextMime call. This call allows you to iterate over all available
+  mime entries (if arg == 0, go to first) returns NULL if at end
+
+- Added GetDescription method, returning description
+
+- Added GetIcon call based on the OMime *Pointer and not on the pattern
+
+OPicture.h
+
+- Added support for system directory. When creating an OPicturePool object,
+  it is not strictly necessary to provide a path. The path argument is now
+  interpreted as a true PATH value (colon separated directory list like the
+  PATH environment variable). If NULL is specified, then OPicturePool looks
+  for an OX_POOL environment variable; if not found, the compiled-in
+  OX_DEFAULT_POOL is used instead.
+
+- Path is now a pointer (non-fixed length)
+
+- Added LocatePicture private call. This call locates in all given
+  directories the requested icon file. It returns the path where the file
+  is found. This path can then be used to get the picture.
+
+Xclass library
+==============
+
+OIniFile.c
+
+- Offset variable is initialized in constructor (see bug)
+
+- When all keys of a given entry are read, the filepointer was being
+  positioned beyond the header of the next entry, causing every second entry
+  to be missed. Now the filepointer is properly repositioned.
+
+- strstr replaced by faster strchr when looking for [ ].
+
+OMimeTypes.cc
+
+- Support for description field
+
+- Support for direct access of OMime information with NextMime API
+
+OPicture.cc
+
+- When getting a picture, the picture is located first in a PATH-like
+  variable.
+
+
+19/03/98
+
+- OXCompositeFrame does a more complete cleanup on deletion.
+
+- Corrected error in OXFrame::HandleClientMessage which caused it to
+  always return True, even if it didn't processed the event.
+
+
+20/03/98
+
+- Implemented file events in OXClient: new OFileHandler class, and a
+  HandleFileEvent member function added to OXWindow. The usage is quite
+  similar to OTimer/HandleTimer
+
+  Now applications doing file/pipe/socket I/O can benefit from non-blocking
+  operations, without hanging the UI until operation has finished.
+
+
+21/03/98
+
+- Implemented dispatching of PropertyChange events.
+
+
+30/03/98
+
+- Added FindEntry and RemoveAllEntries methods to OXListBox.
+
+- Changed OXListBox so it now allows multiple item selection.
+
+
+31/03/98
+
+- Added RemoveEntry/RemoveAllEntries methods to OXPopupMenu, which can be
+  useful when building dynamic menus (AddEntryAfter/AddEntryBefore methods
+  will be added soon).
+
+
+05/04/98
+
+- Some OXListBox bugs corrected. Added AutoUpdate() and Update()
+  methods.
+
+
+06/04/98 (Matzka Gerald)
+
+- Some memory leaks and OMatrixLayout bugs fixed.
+
+
+08/04/98
+
+- Implemented OXGC object and OGCPool for GC sharing. The interface is still
+  not finished, and so far only OXClient uses it for a few GCs.
+
+- OXFileDialog: if specified, the file dialog now starts in the
+  OFileInfo.ini_dir directory. The behavior when selecting a folder or
+  typing the name of a valid directory in the entry box and clicking Open is
+  now correct: it opens the directory and shows the contents.
+
+
+15/04/98
+
+- Minor fixes to OXMenu and OXLabel.
+
+
+17/04/98
+
+- The keyboard support for OXMenu/OXPopupMenu is now more complete.
+  Code still ugly, and arrow keys do not work properly yet.
+
+
+06/07/98
+
+- Added AddInput, RemoveInput and GetEventMask methods to OXFrame in order
+  to manipulate the event mask of the associated window. These methods are
+  useful in those cases when widgets need to select for additional events,
+  as the current set of selected events is not known unless an _expensive_
+  call to XGetWindowAttributes is performed. Now the current event mask is
+  cached in a protected _eventMask variable. AddInput and RemoveInput should
+  replace direct calls to XSelectInput, for grabs XGrabButton still must
+  be used.
+
+
+09/07/98
+
+- Corrected the XSizeHints problem which caused SetWMPosition to be ignored
+  if a call to SetWMSizeHints was made afterwards, and vice-versa.
+
+
+24/08/98
+
+- Corrected a bug affecting LHINTS_CENTER_X and LHINTS_CENTER_Y.
+
+- The description string in OMime/OMimeTypes was being shared among several
+  OMime objects, that caused some crashes during the destruction of OMimeTypes.
+
+
+25/08/98
+
+- OBaseObject created. This should be the base object for *all* classes.
+  By now it is just an empty object.
+
+- Added copy constructor to OLayoutHints.
+
+- OXTextEntry: now the text manipulation (AddText, RemoveText, Clear) can
+  (and should) be done only through this class. That maintains correct
+  cursor positioning all the times among other things. Also, the
+  application program does not need anymore to keep a pointer to the
+  OTextBuffer variable. Note that now it is possible to pass NULL to the
+  OTextBuffer argument in the constructor, in that case a default 256-char
+  buffer is created. Automatic buffer resizing will be added later.
+
+- Changed the OXDDListBox resize patch. As a good policy, widgets should
+  not resize themselves, they should rather specify the desired size
+  through the GetDefaultSize interface.
+
+
+26/08/98 (by Rod)
+
+- Replaced the old way of sending messages from one widget to another
+  by a more flexible method. Instead of passing few integer values
+  (msg, parm1, parm2), a OMessage object is sent to the receiver:
+
+  * To send a message: SendMessage(OXWindow *w, OMessage *msg)
+  * To process messages: ProcessMessage(OMessage *msg)
+
+  OMessage can be sub-classed to accommodate more data fields in order to
+  increase the volume of passed information. Backward compatibility with
+  the old method will be kept until existing applications are updated.
+
+
+27/08/98
+
+- Scrollbars in OXCanvas can be now disabled/enabled selectively by the
+  application. Scrolling options are initialized to CANVAS_SCROLL_BOTH.
+
+- Added new class OComponent which becomes the base class for most classes
+  in the lib. OComponent is capable of sending and receiving messages.
+
+
+28/08/98
+
+- OXTextEntry now scrolls the text properly when the cursor goes out of the
+  window.
+
+- XCconfig.h moved to include/xclass
+
+- Modified some widgets so SendMessage is the last action performed in
+  member functions. That should minimize by now the chances of crashes
+  due OMessage implementation problems. Right now it is not safe to
+  to delete the message sender object inside a ProcessMessage routine.
+
+- OXFrame now keeps track of its background color.
+
+
+30/08/98 (Harry)
+
+- All clients except of fOXIrc were updated to the new OMessage system...
+  as Rod is heavily working on the irc app he should update it himself
+  
+
+31/08/98
+
+- OXMenuBar was not doing a proper cleanup when deleted. That caused some
+  X error messages when exiting non-modal dialogs and other transient
+  frames with menus.
+
+- OXTextEntry: the keysym is also sent in TE_TEXTCHANGED messages.
+
+
+02/09/98
+
+- Bug correction: OXFrame will not crash with a NULL layout manager.
+
+
+10/09/98
+
+- OXMenu/OXPopupMenu: XFlush() added right after ungrabbing keyboard and
+  pointer in order to avoid infinite-looping or bad-written programs from
+  freezing the X server.
+
+
+15/09/98
+
+- Separate header files for OXListBox, OXIcon and OXLabel (no longer in
+  OXWidgets.h).
+
+- Library Makefile: 'make shared' for building shared library, 'make both'
+  for building both shared and static.
+
+
+20/09/98
+
+- Added support for idle-time events, implemented via an OIdleHandler
+  class.
+
+  Idle events work in much similar way as file or timeout events do. In
+  other words, you schedule an idle event by creating an OIdleEvent object,
+  and the corresponding HandleIdleEvent member function of the frame will be
+  called by OXClient when xclass has nothing to do (i.e. no X or file events
+  waiting to be processed, all pending redraws done and no timeouts yet
+  expired).
+
+  Idle events are single-shot events, i.e. when the idle event occurs the
+  OIdleHandler object is removed from OXClient's internal list, so if you
+  want to receive a idle notification again you have to reschedule
+  (re-create) it.
+
+  See the clients/test/ftest.cc for an usage example.
+
+- OXCompositeFrame now deletes recursively its children. That means that
+  applications do not have to keep track of what they add to a frame in
+  order to delete them later. Applications now should take care of deleting
+  only OLayoutHints objects (because these can be shared, they are not
+  automatically deleted), OXPopupMenus (as these are not added to frames)
+  and other miscellaneous objects.
+
+
+21/09/98
+
+- OXMainFrame: _bindlist set explicitely to NULL on deletion in order to
+  avoid problem with button deletion during automatic OXCompositeFrame
+  cleanups. AddBind and RemoveBind are no longer virtual. By some reason
+  OXTransientFrame did not call these appropriately (gcc problem?).
+
+
+22/09/98 ( my birthday :) )
+
+- OXWindow now contains a shadow variable _toplevel, which is a pointer to
+  the corresponding OXMainFrame or OXTransientFrame "grand-parent" object.
+  The previous _GetTopLevel() method was removed, as it could cause problems
+  during object deletion, it looked back the chain of frames until the
+  toplevel was found.
+
+
+24/09/98
+
+- Removed some unnecessary Resize()'s from OXButton/OXLabel.
+
+- OMatrixLayout: use MoveResize() instead of just Move() to resize the
+  frames to their default size.
+
+
+25/09/98
+
+- OXMainFrame::CloseWindow() no longer exits the application by default.
+
+- OXClient destructor no longer exits the application.
+
+- OXClient::Run() now does return (i.e. it is no longer an infinite loop).
+  In order to achieve that, OXClient now keeps track of how many top-level
+  windows (OXMainFrame and derivates) have been created, and when the last
+  one is closed the event processing loop is terminated. Two new OXSList
+  structures have been created: one in OXClient itself for keeping track
+  of the top-level frames (the global window list could not be used because
+  an improper window/frame cleanup would keep OXClient running forever).
+  The second list is maintained by OXMainFrame in order to keep track of its
+  transient windows, these have to be destroyed automatically when the main
+  window is destroyed.
+
+
+30/09/98
+
+- Corrected a bug in OXClient::ProcessOneEvent() returning False if there
+  were pending file events.
+
+
+04/10/98 (Harry)
+
+- Added character handling to OTextBuffer. Now you can Add/Remove/Get
+  characters like text/string before. AddChar/RemoveChar actually use
+  AddText/RemoveText so they are only kinda front end (:
+
+
+04/10/98
+
+- OXPopupMenu::AddPopup() by default associates the popup menu to its
+  own _msgObject.
+
+- Added "Yes all" button to OXMsgBox.
+
+- Added GetPicture(const OPicture *) method to OPicturePool.
+
+
+13/10/98
+
+- The 'owner_events' argument in XGrabButton set to False in all the
+  widgets using it.
+
+
+15/10/98
+
+- Added Append() method to OString and OTextBuffer.
+
+
+19/10/98
+
+- Added GetGC()/FreeGC() methods to OXClient.
+
+- When setting the thumb position, OXScrollBar can optionally send a
+  message back to the associated object.
+
+
+24/10/98
+
+- OGCPool: be more careful with the tile/stipple fields of a GC when
+  finding a matching one.
+
+
+27/10/98
+
+- OXFrame: Added support for triple-clicks.
+
+
+13/11/98
+
+- Added some utility methods to OXTab:
+  RemoveTab(i)       - remove the i-th tab
+  RemoveTab(name)    - remove the first tab whose name matches
+                       the given one
+  GetNumTabs()       - returns the current number of tabs
+  GetTabNumber(name) - returns the number of the tab with the given name
+
+
+16/11/98
+
+- Added OHashTable class based on tcl 8.0 hash table implementation.
+
+- OPicturePool now uses OHashTable instead of a single linked list.
+
+
+18/11/98 (MG)
+
+- OXTextEntry.cc: HandleKey treats XK_Tab as special event and doesn't add
+  a character.
+
+
+19/11/98
+
+- Added OXFont and OFontPool, based on tk 8.0 font implementation.
+
+
+23/11/98 (MG)
+
+- Fix in OArrayHashEntry and OStringHashEntry destructors: delete[]
+  instead of delete.
+
+
+11/05/99
+
+- Added OXComboBox to the widget collection.
+
+- Fixed some small resize/redraw bugs in OXTextEntry
+
+
+12/05/99
+
+- Changed the default drawing border style for SUNKEN_FRAME | DOUBLE_BORDER
+  options in OXFrame to a canvas-like sunken border. Before it was being
+  drawn as a sunken button border, as result of which widgets like canvases,
+  listboxes, and such had to overload DrawBorder() in order to draw the
+  border in the proper way, otherwise they would look a bit weird. Now only
+  OXButton overloads DrawBorder for its special case and all the duplicated
+  code was removed from OXCanvas, OXComboBox, OXListBox, OXTextEntry,
+  OXListBox and OXDDListBox. The duplicated code in some of the client
+  application's widgets will be removed as well.
+
+- Added the OXSpinner widget to the library core.
+
+
+17/05/99
+
+- Added methods to OXWindow for most of the X drawing primitives.
+  Applications should use these as much as possible instead of doing direct
+  X calls.
+
+- Added an OResourcePool object. All the resource manipulations (GCs, fonts,
+  pixmaps, etc.) should be done through this object. All the previous GC
+  initializations done by OXClient for the different widgets will be
+  removed.
+
+- OXLabel, OXButton (and soon other widgets as well) now use the OXFont
+  object instead of manipulating GCs ans XFontStructs directly. Several
+  methods were added to these in order to be able to change the font size,
+  text color and alignment. Note that now OXLabel (and therefore, widgets
+  using it such as OXMsgBox) will process properly the tab and newline 
+  control characters embedded in strings. Note also that the constructor
+  is now somewhat different for OXTextButton, OXLabel, etc. (you do not
+  have to specify a GC and XFontStruct anymore), which could cause some
+  minor incompatibilities with existing code.
+
+- Corrected minor bugs in OString copy constructor and 
+  OXFont::ComputeTextLayout().
+
+- Slightly changed the way OXRadioButtons work, the behavior is now
+  hopefully as it should be, it allows to cancel the selection by
+  releasing the mouse button somewhere outside the widget.
+
+
+18/05/99
+
+- Removed redundant calls to XGetWindowAttributes(...) in OXClient's
+  GetColorByName, GetHilite() and GetShadow().
+
+- Added a convenience NeedRedraw() method to OXWindow, to be used instead
+  of the more clumsy _client->NeedRedraw(this).
+
+- Corrected minor bugs in OXGC::SetForeground() and OXGC::SetBackground().
+
+
+20/05/99
+
+- More GC initializations removed from OXClient.
+
+- OXGroupFrame and OXDDListBox are now in separate files.
+
+- Changed OXFont to use XFontStruct.max_bounds.ascent/descent instead of
+  just XFontStruct.ascent/descent.
+
+- Corrected OXCheckButton behavior, see OXRadioButton 17/05/99 notes
+  above.
+
+
+21/05/99
+
+- Added OXListTree, OXResizer and OXShutter to the library core.
+
+- Corrected OXListTree: clicking on a node's [+] or [-] symbol now
+  contracts or collapses the node as it should be, clicking on a item's
+  folder only opens that folder.
+
+
+24/05/99
+
+- Added OXSecretTextEntry.
+
+
+26/05/99
+
+- Changed OXCompositeFrame's linked list of child frames from a single
+  linked list to a double one. That's would simplify future Tab and
+  Shift/Tab focus cycling.
+
+- Added _GotFocus() and _LostFocus() protected methods to OXFrame.
+  Applications and widgets should preferably use these methods instead
+  of overriding directly HandleFocusChange(). Note that by default
+  XFocusChangeEvents are not sent to frames, and therefore these methods
+  would never be called, unless the widget explicitely select for these
+  events by calling AddInput(FocusChangeMask).
+
+- Added focus highlighting to OXButton, OXCheckButton, OXRadioButton.
+
+
+27/05/99
+
+- Added preliminary focus management and Tab/Shift-Tab focus cycling.
+  The focus cycling is managed mostly by a OFocusManager object belonging
+  to OXMainFrame. It even remembers the last focused object in order to
+  restore the focus to it when the top level window gets the focus again.
+
+
+31/05/99
+
+- Removed the 'state' variable from SListFrameElt, OXFrame::_flags now
+  does the job instead. The GetState() method was removed as well. To test
+  whether a given frame is visible or not, use its IsVisble() method,
+  which returns True when the given frame and all its parents are visible.
+
+- OXTab can now accept focus, tabs can be changed using left and right
+  arrows. Home and End select the first and last tab respectively. The
+  Tab key cycles focus only through the widgets in the current tab.
+
+- Added SelectTab method to OXTab.
+
+
+01/06/99
+
+- Widgets that accepts input focus must select for KeyPress/KeyRelease
+  events _only_ during the time they own the focus. Otherwise composite
+  widgets wont receive keyboard input if the mouse pointer happens to be
+  over a child widget accepting these events, even when the later is not
+  owning the focus. OXButton and OXTextEntry were changed accordingly.
+
+
+04/06/99
+
+- Added keyboard support to OXListBox (not 100% correct: scrolling is not
+  done yet, for example, and there is quite a lot of duplicated code that
+  should be cleaned up).
+
+
+05/06/99
+
+- Added Enable() and Disable() methods to OXFrame. These methods should be
+  used in order to enable/disable any widget, instead of the widget-specific
+  ones used so far. Similarly, use the IsEnabled() method to test the
+  state of a widget.
+
+  The following methods are therefore deprecated and will be eventually
+  removed:
+
+    OXButton::SetState(BUTTON_DISABLED) -> use OXButton::Disable(),
+                                           OXButton::Enable() to enable it.
+
+    OXButton::GetState() should not be used to test for BUTTON_DISABLED,
+                         use OXButton::IsEnabled() instead
+
+    OXTextEntry::SetState(ENABLED) or
+    OXTextEntry::SetState(DISABLED)  -> use OXTextEntry::Enable() and
+                                        OXTextEntry::Disable() respectively.
+
+    OXTextEntry::GetState() -> Use OXTextEntry::IsEnabled()
+
+- OFontPool now does a proper cleanup.
+
+- OFocusManager: disabled widgets do not get the input focus.
+
+
+08/06/99
+
+- Added StrDup utility function to utils.cc that uses new to allocate
+  the space for the string.
+
+
+09/06/99
+
+- Added OXProgressBar.
+
+
+11/06/99
+
+- OXListBox now does properly scroll when using the up/down arrow keys.
+
+- Added SetDefault() method to OXButton. "Default" buttons are used to
+  indicate the action that is taken when the Enter key is pressed. These
+  have a black border around it and are most often used in dialogs. There
+  should be only one default button per dialog.
+
+
+12/06/99
+
+- Added HandleMapNotify and HandleUnmapNotify methods to OXFrame.
+
+
+14/06/99
+
+- Added a generic OXAboutDialog.
+
+- Implemented a workaround for a potential OXDDListBox lockup problem.
+
+
+22/06/99
+
+- OXClient does not allocate GCs or colors anymore.
+
+
+09/08/99  (Mike)
+
+- Added symbolic names for xpms.
+
+- Extended support for OResourcePool.
+
+- Most core widget now support user defined colors. There are still a lot of
+  places where black and white are used.
+ 
+
+31/08/99 (MG)
+
+- Added ReparentWindow() method to OXWindow.
+
+
+03/10/99 (Mike)
+
+- Added a default OMimeType to the resource pool.
+
+- Added a Focus Lost message to the listbox, we should send these every time
+  we change focus.
+
+- Added a prepend method to OString.
+
+
+11/10/99 (Mike)
+
+- Moved _client to OComponent.
+
+- Moved all things related to OTimers, OFileHandler, OIdleHandler to
+  OComponent.
+
+- Added new message for widgets XC_COMMAND (CM_FOCUSGAINED).
+
+- Added new message for widgets XC_CONTAINER (CT_SELCLEARED).
+
+- Modified OXListBox to send CT_SELCLEARED messages, now preferences can
+  disable buttons if nothing is selected.
+
+
+10/02/00
+
+- OXMenu reworked a bit: mouse events are now propagated to the appropriate
+  nested menu by the OXMenu code itself, instead of letting the X server
+  to do the job. That should correct the problem with some widgets eating
+  mouse clicks that should be delivered to the menus.
+ 
+
+18/02/00
+
+- Added a second constructor to OXClient which accepts argc and argv[],
+  so it can look for "-display dpy:n" options and such.
+
+- OXTip destroys the window on deletion.
+
+- Corrected a minor glitch in OIniFile::GetBool()
+
+- Check for _focusMgr everywhere in OXMainFrame, a derivate class might
+  have set it to NULL;
+
+
+22/02/00
+
+- OFocusManager is now in a separate file.
+
+- Message codes are in a separate OMessageCodes.h file
+
+
+24/02/00
+
+- OPicturePool: added AddPath, SetPath and GetPath methods.
+
+
+16/06/00 (0.5.0)
+
+- Changed OXScrollBar: added SetDelay() and SetMode() methods.
+  * Use SetDelay() to set the initial and autorepeat timings.
+  * Use SetMode() to switch between SB_NORMAL and SB_ACCELERATED modes.
+  Similar methods were added to OXCanvas as well.
+
+  The default mode is as it was originally (SB_NORMAL == slow mode),
+  as I believe is what it should be in order to avoid problems with
+  other widgets like OXListBox. If you want to setup a canvas widget
+  with fast scrolling do the following:
+
+    _canvas->SetScrollDelay(10, 10);
+    _canvas->SetScrollMode(SB_ACCELERATED);
+
+  but please, *do not* modify the default behavior of the OXScrollBar
+  widget (we should add the necessary support in OResourcePool for
+  default scrollbar preferences).
+
+
+20/06/00
+
+- Reworked again the OMessage stuff, the most important details are:
+
+  * All widget messages are derived from OMessage, as before. However,
+    the base class OMessage does not contain any parameter fields anymore,
+    and thus, is not very useful by itself. Instead, widgets should derive
+    their own message objects from it, adding the necessary parameters.
+
+  * As a direct consequence of above, derived messages now use meaningful
+    names for their parameters instead of the rather cryptic _parm1, _parm2
+    ones. The _msg and _submsg names in the base OMessage class were
+    changed, specifically msg->_msg now becomes msg->type, and msg->_submsg
+    now becomes msg->action.
+
+  * There is a convenience OWidgetMessage class defined in OMessage.h,
+    which has a single data field (id), usually corresponding to the widget
+    ID. The idea is to use OWidgetMessage for most simple widgets like
+    OXButton, OXMenu and such, which usually do not need to pass any extra
+    information to the application, therefore avoiding the need to declare
+    identical message classes for each one of these widgets. Complex
+    widgets, needing to pass extra information to the application are
+    encouraged to use OWidgetMessage as the base class for their messages.
+
+  * Both versions of SendMessage() and ProcessMessage() method which took
+    integer and long arguments were removed from OComponent.
+
+  * The macros MK_MSG, GET_MSG and GET_SUBMSG are gone.
+
+  * I've also changed the names for the message types and actions, and I
+    think that these still would change, as I'm trying to put some order
+    there. The idea I have in mind is to use some sort of unique identifier,
+    like a static string or a hashed string value, thus eliminating the need
+    to maintain the OMessageCodes.h file. Message types and actions would be
+    declared then locally in the header file of the corresponding widget. 
+    In any case, the changes should still allow the use of the switch
+    statement in the ProcessMessage() method.
+
+- OXFrame, OXCompositeFrame, OXMainFrame and OXTransientFrame are now in
+  separate .cc/.h files. Note, however, that applications would never have
+  to includes all four headers, since each header to the right in the list
+  above already includes the left ones (i.e. including OXMainFrame or
+  OXTransientFrame would be enough).
+
+- OXWidgets.h is now OXWidget.h and it just contains the declaration of
+  the OXWidget interface. The previously included widget headers were all
+  removed. Applications now must explicitely include the header file for
+  each widget they use (perhaps we should have a OXAllWidgets.h anyway?).
+
+
+21/06/00
+
+- Corrected a minor glitch in OXScrollBar::SetPosition().
+
+- Updated most applications to the new OMessage object format (ufff!!!...).
+
+
+24/06/00
+
+- OXTip: avoid having to destroy and recreate the tip window when the text
+  changes.
+
+
+27/06/00
+
+- Added some Get...() methods to OXGC.
+
+- Corrected OXTextButton, OXRadioButton, OXCheckButton: disabled text is
+  drawn with the proper font, and not with the default one.
+
+
+22/07/00
+
+- Added GetFrameFromPoint() method to OXFrame.
+
+- Corrected a bug in OXFrame::HandleEvent() - compression of pointer motion
+  events was wrong.
+
+
+11/08/00
+
+- Removed unused OXFileIcon class from OXFileContainer.h/.cc
+
+
+12/08/00
+
+- Added O2ColumnsLayout, a very simple two-column layout manager often 
+  used in dialogs.
+
+- Corrected OTabLayout: the default size for hidden frames is now properly
+  calculated.
+
+
+14/08/00
+
+- Added FindIniFile() method to OResourcePool, as an easy way of finding
+  ini files in the user and system directories.
+
+
+15/08/00
+
+- Added a file properties dialog (OXPropertiesDialog) to the library.
+
+- Added an drag-and-drop manager (ODNDmanager) implementing XDND protocol
+  version 4.
+
+- OXCanvas::GetFrameFromPoint() now returns the correct value.
+
+
+17/08/00 (0.5.1)
+
+- Modified OXProgressBar::_Redraw() to eliminate some sporadic blinking of
+  the colored bar.
+
+- OXFrame::HandleDNDenter() and OXFrame::HandleDNDposition() now return
+  an Atom instead of an int.
+
+
+19/08/00
+
+- OXButton, OXTextButton, OXPictureButton, OXCheckButton and OXRadioButton
+  now are in separate files.
+
+- Added Jens Wagner's patch which implements default focus management for
+  buttons.
+
+
+22/08/00 (0.5.2)
+
+- OXGroupFrame: shade label when disabled.
+
+- Changed some widget names in OXPropertiesDialog to avoid compiler
+  complains.
+
+- ODNDmanager: added action specification in Drag() method.
+
+- OXFileContainer: more dnd support added.
+
+
+24/08/00 (0.5.3)
+
+- Added a xc-config script, similar to gtk-config.
+
+- Corrected a bug in OXButton: when more than one mouse button were pressed
+  simultaneously, OXButton would keep the BUTTON_DOWN state forever and
+  become unusable.
+
+- Dialog boxes: check and correct x,y coordinates to avoid appearing
+  partially off-screen.
+
+
+01/09/00 (0.5.4)
+
+- Overloaded operators == + and - in OPosition, ODimension.
+
+
+03/09/00
+
+- Fixed a bug in OXHScrollBar::SetPosition()
+
+
+04/09/00
+
+- Scrollbars now also send message actions like MSG_LINEUP, MSG_LINEDOWN,
+  MSG_PAGEUP, MSG_PAGEDOWN.
+
+- OSelectedPicture is now in a separate file.
+
+
+06/09/00
+
+- OXFrame/OXWindow: accept None windows in the constructor that takes an
+  existing window ID.
+
+- OXResizer:
+  * Do not crash when _next is NULL.
+  * Added a transparent "handle" button
+  * Send messages to other widgets so they could process size changes as
+    well
+
+- Added an ORectangle class
+
+
+07/09/00
+
+- Added OXView from the development dir.
+
+
+17/09/00
+
+- Modified OMimeTypes::GetIcon(): if an icon filename is specified in
+  the mime.types file without the .xpm extension, GetIcon() will try to
+  locate a .t.xpm for a small icon or an .s.xpm for a big icon. If none
+  found, it loads a normal .xpm file and stretches it to the convenient
+  size.
+
+- Added OXItemView from the development dir.
+
+
+19/09/00
+
+- Corrected a bug in ORectangle.merge()
+
+
+02/10/00
+
+- Replaced OXListView with the new Harry's implementation, which does
+  not suffers from the restrictions of the X coordinate space.
+  Additionally it can handle multiple columns properly.
+
+- Likewise, replaced OXFileContainer with OXFileList.
+
+- Updated OXFileDialog to make use of the new OXFileList.
+
+
+03/10/00
+
+- Corrected a bug in OXFileList::DisplayDirectory().
+
+
+10/10/00 (0.5.5)
+
+- Corrected a bug in OXResizer.cc
+
+- Corrected a bug in OXItemView: x and y coordinated were swapped in
+  MSG_CLICK/MSG_DBLCLICK.
+
+- Added SetColumnWidth()/GetColumnWidth() to OXListView.
+
+
+02/02/01 (0.5.6)
+
+- Added OIniFile::PutBool().
+
+
+04/03/01
+
+- Added DrawMask() to OPicture.
+
+- Added disabled pixmap to OXPictureButton.
+
+- OResourcePool: argv[] array changed to a structure.
+
+
+02/09/01
+
+- OResourcePool: changed _focusGC. The XSetOnOffDashes is not called
+  anymore, since it seems to be broken for some X servers (XFree 4.x with
+  ATI Radeon cards, for example). Instead, FillStippled mode is used with a
+  checkered bitmap.
+
+- Added Set3DStyle() and Get3DStyle() methods to OXLabel for 3D-text.
+
+- OXTextEntry bug fix: cursor color and selected text font were
+  incorrect.
+
+
+05/09/01
+
+- Minor ODNDmanager fixes.
+
+- Removed XSetOnOffDashes call from OXListTree (see 02/09/01 notes).
+
+- Fixed OXClient event dispatcher: under some circumstances idle events
+  would block file I/O events.
+
+
+09/09/01
+
+- Added OXCompositeFrame::TranslateCoordinates()
+
+- Added OXFontDialog, a font selection dialog box.
+
+- Added OXToolBar and OXStatusBar widgets.
+
+
+16/09/01
+
+- OXTextEntry: select all text when acquiring focus.
+
+
+19/09/01
+
+- OXPopupMenu: added support for right-column text.
+
+
+20/09/01
+
+- OXListBox: ensure selected entry is visible.
+
+- OXListView: send all messages with the correct MSG_LISTVIEW type.
+
+- Corrected an obscure bug in OXView.
+
+
+23/09/01
+
+- Added OXTextEdit: a simple text editor/viewer.
+
+
+24/09/01 (0.5.7)
+
+- Added SetWMMinSize(), SetWMMaxSize(), SetWMResizeIncrement() to
+  OXMainFrame as alternatives to SetWMSizeHints().
+
+- OXItemView::DrawRegion(): clip the region to the canvas size.
+
+
+25/09/01
+
+- Corrected some redraw problems in OXTextEdit and OXTextEntry.
+
+
+26/09/01
+
+- OXFileDialog: do not return a name containing wildcards.
+
+- OXFileList: corrected a bug in _compileFilter() regarding usage of
+  the '?' wildcard.
+
+- OXMenu, OXTextButton: grab also key combinations that include Caps Lock
+  and Num Lock.
+
+
+27/09/01
+
+- OResourcePool::FindIniFile(): automatically create ~/.xclass/etc
+  directory if it does not exists yet.
+
+- Improved keyboard support for OXDDListBox and OXComboBox: F4 drops-down,
+  up/down keys move selection, Escape cancels drop-down selection.
+
+
+29/09/01
+
+- Removed scrollbar's default pixmap initialization from OXClient.cc.
+
+- Removed superfluous "friend class OXClient" from many widgets.
+
+- Corrected OXTreeLBEntry redraw bug.
+
+- OXFileDialog: added accelerator support for text entries and drop-down
+  listboxes.
+
+- OXFontDialog: added accelerator support for listboxes.
+
+
+04/10/01  (0.5.8)
+
+- OXFileDialog: added FDLG_FAVOURITES option, added tips to the toolbar
+  buttons.
+
+
+06/10/01
+
+- OXFileList: FileMatch() is now public; added AutoRefresh() and
+  ShowDotFiles().
+
+- Corrected an ORectangle bug.
+
+- Added preliminary keyboard support to OXListView.
+
+
+07/10/01
+
+- OXToolBar: allow specification of loadable pixmaps (pixmap data set
+  to NULL).
+
+- Corrected a bug in OMimeTypes::PrintTypes().
+
+- OMime strings are now dynamically allocated.
+
+- OMimeTypes: recompile regular expression when pattern is changed.
+
+
+10/10/01
+
+- OXListTree now subclasses OXView, and does not needs OXCanvas anymore.
+
+- OXClient::HandleMaskEvent(): allow dispatching of pointer enter/leave
+  events during WaitFor().
+
+
+11/10/01
+
+- OXTextEdit::InsertText(): flag text as changed.
+
+- Added preliminary keyboard support to OXListTree.
+
+
+13/10/01
+
+- OXFileList: handle "desktop" and "recycle bin" folders properly.
+
+- OXListTree: improved keyboard support.
+
+
+15/10/01
+
+- OResourcePool: must search for xclassrc file exactly as specified in
+  doc/INSTALL.
+
+
+20/10/01 (0.5.9)
+
+- OXFileList: show regular folders always as folders, regardless of their
+  mime-types.
+
+
+25/10/01 (0.6.1)
+
+- OXItemView: send MSG_CLICK after the mouse button is released (that
+  allows right-button drags in OXFileList).
+
+- ODNDmanager: added GetSource() and GetTarget() methods. Set _source to
+  None only after HandleDNDdrop has been called.
+
+- ODNDmanager: pass also root coordinates to OXFrame::HandleDNDposition().
+
+
+27/10/01
+
+- OXPopupMenu:: added PopupMenu() convenience method.
+
+- Fixed a minor bug in ODNDmanager. Now the proper action is set in ODNDdata
+  before the drop is sent to the target widget.
+
+
+03/11/01
+
+- Corrected a bug in OXHorizontalResizer.
+
+- Corrected a bug in OXListTree::_HighlightItem().
+
+
+04/11/01
+
+- Added OExec class.
+
+- Removed call to ReapChildren() from OXClient.
+
+
+06/11/01
+
+- OExec: postpone sending MSG_APPEXITED message until we exit from the
+  signal handler.
+
+- Added Associate() method to OComponent, removed it from OXWidget().
+
+- Removed XK_Execute from key handling methods, since it seems to give
+  problems with newer versions of XFree86
+
+
+07/11/01 (0.6.2)
+
+- Corrected a bug in OExec's destructor that could potentially cause the
+  application to crash.
+
+- Corrected a bug in OXFileList::HandleDNDposition() - needed to convert
+  to virtual coordinates.
+
+
+08/11/01
+
+- Modified OXFileDialog class so it could be easily extended by sub-classing
+  and adding extra controls, like a document preview window and such.
+
+
+10/11/01
+
+- OResourcePool now parses tip colors and monospaced font settings from
+  xclassrc file.
+
+- Added preliminary support for dynamic look changes to OXClient and
+  OResourcePool.
+
+
+12/11/01
+
+- OXListBox, OXDDListBox: the default width is now 200 pixels, and not 10.
+
+
+13/11/01
+
+- More work on OResourcePool's support for dynamic look changes.
+
+
+14/11/01
+
+- Corrected Makefiles.in in test, include and example_app for shared and 
+  install_shared targets.
+
+
+15/11/01
+
+- Corrected a bug in OResourcePool: the resource file was not always being
+  read. (Thanks to Rick Sivernell)
+
+- Added OXTransientFrame::CenterOnParent() method.
+
+
+20/11/01
+
+- Added OXClient::FreeColor(), must be used to free the r/o color
+  allocated by OXClient::GetColorByName(), OXClient::GetHilite() and
+  OXClient::GetShadow().
+
+
+22/11/01
+
+- Added OColor class.
+
+- OXClient::GetColorByName(): always return an *allocated* color.
+
+- OXTip: get colors from OResourcePool. Implemented Reconfig() method.
+
+- Added OXColorDialog and OXColorSelect classes. The "custom" colors are
+  not handled yet by OXColorDialog.
+
+
+24/11/01
+
+- OXView and OXCanvas now derivate from OXCompositeFrame, as they should.
+
+
+25/11/01
+
+- OListViewItem: allow NULL icons.
+
+- OIniFile::GetBool(): accept "yes" as a synonym for "true".
+
+
+27/11/01
+
+- Added OXItemView::DeleteSelection().
+
+
+06/12/01  (0.6.3)
+
+- Corrected a bug in OXItemView::DrawRegion().
+
+
+12/02/02
+
+- Added SetEventMask() method to OFileHandler.
+
+
+21/03/02
+
+- Corrected a coding mistake in OXItemView.cc and OXTextEdit.cc: 
+  std::vector::erase() and insert() both take an iterator as argument,
+  and not an actual element.
+
+- Corrected the configure script: added the AC_LANG_CPLUSPLUS macro to
+  ensure that all the tests are done using the c++ compiler, and *not*
+  simply cc. That should correct the const problem in Solaris machines
+  with gcc. (Well, it didn't, so I just disabled the 'const' test).
+
+- Corrected the Makefile.in for the icons directory.
+
+
+26/03/02
+
+- Disabled the 'inline' test in the configure script.
+
+
+18/06/02  (0.6.4)
+
+- Changed the return type of OXMainFrame::CloseWindow() from void to int.
+  Now the function returns True if the window was successfully closed,
+  False otherwise. Note that this change introduces incompatibilities
+  with existing applications, but these shouldn't be difficult to update.
+  Right now the xclass library does not make any use of the return value,
+  but it can be useful to applications that manage several top-level
+  windows (like rx320 and foxirc).
+
+
+23/06/02
+
+- OMime: call regfree only if a regular expression has been previously
+  compiled.
+
+- OIniFile::PutItem(): second argument is now const.
+
+
+26/02/02
+
+- OExec: keep program name, the application might want to request it.
+
+
+27/06/02
+
+- OXShutter widget now sends OShutterMessages when tabs are changed.
+
+- OXShutterItem: added GetCanvas(), GetButton() and SetContainer() methods.
+
+- OXTab now uses a valid widget ID.
+
+- OXCanvas: OXViewPort now deletes the old frame on SetContainer().
+
+
+28/06/02
+
+- OExec: added an optional start directory argument to the constructor.
+
+- Corrected a bug in OXMainFrame::SetFocusOwner() that caused it to crash
+  when NULL was passed as argument.
+
+- OXShutter: added RemoveItem() and InsertItem() methods.
+
+
+30/06/02
+
+- Added OXMainFrame::HandleConfigureNotify() to properly track window moves.
+
+- Added OXMainFrame::SetWMGravity() method.
+
+
+04/07/02 (0.7.1)
+
+- All the library classes have now OBaseObject as the common root.
+
+
+06/07/02
+
+- OXCanvas::GetViewPort() must return an OXViewPort object and not an
+  OXFrame.
+
+- Added OXFrame::GetPosition() (why wasn't this already there???).
+
+
+07/07/02
+
+- OXMainFrame::HandleKey(): if a frame has established a bind on the Tab key
+  and explicitely states HANDLES_TAB, give it the priority over the current
+  focus owner.
+
+
+08/07/02
+
+- OXFrame's compression of motion and configure events can be now
+  enabled/disabled.
+
+
+09/07/02
+
+- OFocusManager: do not assume that _focusOwner is always valid.
+
+- OXTextButton::~OXTextButton(): unregister button from OXMainFrame list.
+
+
+10/07/02
+
+- OXClient::WaitFor(): added a safety check against infinite loops.
+
+
+11/07/02
+
+- Added the OXMdi set of classes from H. Radke. These classes have been
+  around for a while (available from old fOX ftp sites), but I wanted to
+  correct most of the bugs and to make the behavior consistent before
+  adding them to xclass. MDI is usable and stable now, but there are some
+  things that still need to be done and bugs to correct, specially
+  concerning focus management. The doc/MDI.notes file contains the
+  ChangeLog and TODO lists.
+
+
+12/07/02 (0.7.2)
+
+- OXProgressBar: use double in calculations to avoid integer overflows.
+  Also corrected a possible infinite loop condition in _DoRedraw().
+
+
+13/07/02
+
+- Added a "dockable" frame widget (originally from H. Radke).
+
+- OXWindow::ReparentWindow(): update the _toplevel field too.
+
+
+16/07/02 (0.7.3)
+
+- Corrected a redrawing bug in OXListView::DrawRegion(). The bug triggered
+  only when there were more than 10000 items.
+
+- OXClient: update _Root every time a new OXRootWindow or derivate object
+  is created.
+
+- Removed OXPopupMenu::HandleCrossing() method, it was no longer necessary.
+
+- Corrected a bug in OXPopupMenu::HandleMotion().
+
+
+17/07/02
+
+- OXPopupMenu: added support for side pixmaps.
+
+
+21/07/02
+
+- OXColorPick: colormap[] and pixel[] arrays are now private class members.
+
+
+23/07/02
+
+- OXClient::HandleMaskEvent(): allow dispatching events to the root window
+  in case some client established a WaitFor() on it.
+
+
+25/07/02
+
+- OIniFile.h: renamed MAX_LINE_LEN to INI_MAX_LINE_LEN, and increased its
+  value to PATH_MAX+256.
+
+- OXPopupMenu::RemoveEntry(): allow removing separators and popups as
+  well.
+
+- OXPopupMenu::PopupMenu(): return the correct entry ID if it came from
+  another popup.
+
+- OXTextButton() added SetMargins() method, similar to OXLabel's one.
+
+
+28/07/02
+
+- Added HandleMaskEvent() method to OXWindow. This is a hook for events that
+  would be otherwise discarded by OXClient::HandleMaskEvent(). This can be
+  required to properly handle sync pointer grabs (GrabModeSync) during
+  WaitFor() loops, which otherwise would freeze the whole client. The
+  function returns False if no further dispatching of the event is desired,
+  the event will be then discarded by OXClient::HandleMaskEvent(). If True
+  is returned, HandleMaskEvent() will then dispatch the event in the usual
+  way by issuing a call to OXWindow::HandleEvent().
+
+
+29/07/02
+
+- Added wheel-mouse support to OXCanvas and OXView. It works on derivates as
+  well: OXItemView, OXListView, OXFileList, OXListTree, OXTextEdit and
+  OXMdiMainFrame.
+
+
+06/08/02 (0.7.4)
+
+- OXListBox::MoveSelectUp/Down(): do nothing if lbe is NULL.
+
+
+08/08/02
+
+- OXColorSelect: added an extra optional argument to the constructor to
+  control the inclusion of the "Other..." button.
+
+- ODList: added SetFirst() and SetLast() methods.
+
+
+09/08/02
+
+- OXTextEntry::_DoRedraw(): avoid having all the text scrolled to the left.
+
+
+12/08/02
+
+- OXDockableFrame::SetAspect() - added forgotten 'void'.
+
+
+14/08/02
+
+- OTimer: time argument type set to unsigned long.
+
+
+20/08/02
+
+- Added OInsets class. OXFrame's now have the notion of insets, which
+  determines the inner rectangle where children windows can be positioned. 
+  Before we assumed that all OXFrame borders (left, right, top and bottom)
+  were of equal width. But there are some special widgets (OXGroupFrame, for
+  example) which have different border widths, and therefore require this.
+
+- Added OXListTree::AddItem(OListTreeItem *parent, OListTreeItem *item).
+
+- Optimized OXListTree redraws.
+
+
+22/08/02
+
+- OXTextEntry: removed RequestFocus() call from SelectAll() to avoid focus
+  loops.
+
+- OXComboBox: improved focus handling.
+
+- OXListTree: added OpenNode() and CloseNode(). These should be used instead
+  of directly manipulating the 'open' property of OListTreeItem.
+
+
+23/08/02
+
+- Added RenameEntry() and SetEntryPic() to OXPopupMenu.
+
+
+30/08/02  (0.7.5)
+
+- OXView: added SetupBackgroundColor() method.
+
+
+06/09/02
+
+- OXTextButton (OXCheckButton, OXRadioButton): allow the string to be NULL.
+
+- OFocusOwner: do not (re)assign focus to a window if it was unmapped.
+
+
+09/09/02
+
+- Added AutoUpdate() method to OXTextEdit. When inserting large amounts of
+  text to the widget by calling repeatedly InsertText(), the time spent in
+  doing a full document layout can become considerable. In that case it
+  is better to switch off the automatic re-layout, do the necessary text
+  insertions, then turn the automatic re-layout on again. A full layout is
+  automatically done by the widget when the AutoUpdate() is set to True.
+
+
+17/09/02
+
+- Added an OException class to be used as a base for exceptions thrown by
+  xclass objects.
+
+
+19/09/02
+
+- Corrected a bug in OXSpinner::GetValue().
+
+
+05/11/02
+
+- Corrected a bug in OMimeTypes::AddType().
+
+
+24/04/03
+
+- OXMdiMainFrame: added GetWindowList().
+
+- OXPopupMenu: do not pop-down a submenu if the corresponding popup entry
+  is disabled.
+
+
+25/04/03
+
+- Added the following methods to OXMdiMainFrame:
+    GetWindowGeometry() - returns the full geometry information (decoration
+                          geometry, client window geometry and icon position)
+                          for the specified MDI window.
+    ConfigureWindow()   - configures the MDI window geometry (decoration or
+                          client window geometry, and/or icon position)
+  These operations are very useful for saving/restoring MDI workspaces.
+
+
+03/05/03
+
+- OResourcePool::FindIniFile(): changed the search order for read operations,
+  the system ini file must be the last in the chain.
+
+
+10/05/03
+
+- OXComboBox now has its own message structure. Also, MSG_TEXTCHANGED is
+  now properly sent to the associated frame.
+
+- Added OXComboBox::Select().
+
+- OXColorDialog now remembers custom color settings.
+
+
+13/05/03  (0.8.1)
+
+- Added OXHtml, a quite complete implementation of an html widget. The code
+  is heavily based on tkhtml. Supported features:
+  * tables
+  * images (only static and animated GIFs)
+  * forms (selection listboxes and drop-down lists do not work quite OK yet)
+  * background images, most text styles
+  Bugs and unsupported features:
+  * missing </td> in tables (allowed by the standard) are not handled
+    correctly
+  * some modifiers, like "hspace" and "vspace" in tables, and "absbottom"
+    alignment in images are not processed.
+  * scattered images built with tables may not render always in the
+    expected way.
+
+
+14/05/03
+
+- OXComboBox::SetText() must erase OXTextEntry contents prior to adding
+  the text.
+
+
+15/05/03  (0.8.2)
+
+- Corrected 'std::' namespace and C++ standard header problems, xclass
+  should compile now with g++ 3.2.
+
+- Added a test to the configure script to check whether ${prefix}/include
+  is already in the compiler's search path (g++ 3 series are very picky
+  about that).
+
+- OXComboBox: defer sending messages until the popdown listbox is unmapped
+  (like OXDDListBox does).
+
+
+18/05/03  (0.8.3)
+
+- Fixed Reconfig() for OXScrollBar and OXButton.
+
+- Added Reconfig() to OXDDListBox, OXComboBox, OXPopupMenu, OXMenuTitle.
+
+
+15/09/03
+
+- Fixed a bug in OXClient's destructor: _Root must be deleted before _wlist.
+
+
+18/09/03
+
+- Added x_root and y_root fields to OHtmlMessage.
+
+
+12/12/03  Valeriy Onuchin <onuchin@users.sourceforge.net>
+
+- Corrected a bug in OHorizontalLayout.
+
+
+30/01/04
+
+- Corrected a problem in OXMdiDecorFrame that could potentially hang the
+  X session (for example, when clicking on a MDI window other than the last
+  focused while a modal dialog box is being displayed).
+
+
+27/06/04
+
+- Added OXToolBarButton from foxftp to the core lib.
+
+- Added FindHelpFile() method to OResourcePool.
+
+- Added OXHelpDoc, OXHelpPopup and OXHelpWindow classes. These implement a
+  html-based help system. To use it, user applications need only to create
+  a OXHelpWindow top-level window object and to pass the application and
+  root document names.
+
+
+24/07/04  (0.9.1)
+
+- OXColorPick: corrected the max hue range and min saturation range when
+  using the mouse to select a color, both were off by one.
+
+- Added OXImageView, a simple OXView-based widget for viewing rgb images.
+  The widget can do dithering (Floyd-Steinberg or Bayer) in display modes
+  with reduced number of color cells.
+
+
+25/07/04
+
+- Added default compiled-in pixmaps to the following widgets: OXFileList,
+  OXFSDDListBox, OXListTree, OXFileDialog and OXPropertiesDialog. No more of
+  these annoying "Fatal Error: missing required pixmaps" messages when an
+  application cannot find the icon directory. Statically-linked xclass
+  programs can now run on machines that do not have xclass installed.
+
+
+28/07/04
+
+- Added _Moved() and _Resized() virtual methods to OXFrame. They are called
+  after the frame has been moved and/or resized. It is easier to override
+  one of these methods than the bunch of Resize(x,y), Resize(ODimension(w,h)),
+  Move(x,y) and MoveResize(x,y,w,h).
+
+
+11/08/04
+
+- Added HandleCreateNotify() and HandleDestroyNotify() virtual methods to
+  OXFrame.
+
+
+06/09/04
+
+- OXTextEntry::HandleMotion: check event->state and make sure not to select
+  any text if no buttons are pressed.
+
+- OXDDPopup: set owner_events to False in XGrabPointer and propagate mouse
+  events manually. This should eliminate the effect of some windows eating
+  OXDDListBox clicks.
+
+
+08/09/04
+
+- OFileInfo: added file_types_index field. This makes possible to specify
+  a default initial value for the file types entry other than the first.
+  On return from OXFileDialog, file_types_index points to the latest file
+  type selected. Note that since file_types[] is arranged in pairs, a
+  file_type_index value of N actually points to the 2*N-th entry in
+  file_types[].
+
+
+09/09/04
+
+- Fixed some minor OXTextEntry redraw problems.
+
+
+11/09/04
+
+- OXMainFrame::HandleConfigureNotify(): update _x and _y and call _Moved()
+  only when send_event is True.
+
+- OXFrame::HandleConfigureNotify(): call _Resized() from here too to keep
+  OnyX IDE happy.
+
+
+16/09/04
+
+- OXListBox: allow the specification of a background color other than the
+  default document background color.
+
+- OXWindow::SetBackgroundColor(), OXFrame::SetBackgroundColor() type of
+  'color' must be unsigned long.
+
+
+18/09/04  (0.9.2)
+
+- OXFileDialog: upper bound checking of file_type_index was incorrect.
+
+- OXSpinner now sends messages when the value changes.
+
+
+20/09/04
+
+- OXHtml::DrawRegion() - must draw immediately and not to schedule for a
+  redraw. Otherwise scrolling on slow machines may leave unpainted areas.
+
+
+22/09/04
+
+- Corrected a bug in OXHelpWindow::DoContents(): the help root document
+  must be loaded and not the initial specified document.
+
+- Added DoSetCurrent() method to OXHelpWindow.
+
+
+05/10/04
+
+- Added public version of the ProcessOneEvent() method to OXClient (needed
+  by OnyX Script).
+
+
+07/10/04
+
+- Added SetOptions(), ClearOptions() and SetBorderStyle() convenience
+  methods to OXFrame.
+
+- OXClient: recognize "-synchronize" option.
+
+
+12/10/04
+
+- OXListView: highlight the full selected line when in detail mode if
+  _fullLine is set to True.
+
+
+15/04/06
+
+- Added OXGLFrame and OXGLView classes that support OpenGL. OXGLFrame
+  creates a simple no-frills OpenGL window. OXGLView is a viewer that
+  performs more advanced OpenGL initializations (lighting, colors and
+  matrices) and supports scene manipulations (rotation, shift, etc.)
+
+- Added OVector3D, OQuaternion and OTrackball classes, needed by OXGLView.
+
+- Modified the configure.in script in order to detect whether OpenGL is
+  installed in the host machine.
+
+- Added a simple 'gltest' application to the test suite.
+
+
+16/04/06
+
+- OXPopupMenu: EnableEntry() and CheckEntry() now take an optional True/False
+  argument (default value is True).
+
+
+17/04/06
+
+- OXGLFrame: keep track of the current rendering context and restore it
+  when necessary. Updated OXGLView accordingly. Now an application can have
+  several OpenGL windows working simultaneously.
+
+
+25/05/06
+
+- OXListView: added a 'GridLines' option (LV_DETAILS mode only).

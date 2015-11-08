@@ -1,0 +1,48 @@
+
+SHELL=/bin/sh
+
+@SET_MAKE@
+
+top_srcdir=@top_srcdir@
+srcdir=@srcdir@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+x_includes=@x_includes@
+x_libraries=@x_libraries@
+
+CXX=@CXX@
+INCLUDES=-I${top_srcdir}/include ${x_includes}
+CXXFLAGS=${INCLUDES} @CXXFLAGS@
+LIBS=-L${top_srcdir}/lib/libxclass -lxclass ${x_libraries}
+EXTRALIBS=-lXpm -lXext -lX11
+LDFLAGS=@LDFLAGS@
+MAKEDEPEND=@MAKEDEPEND@
+
+SRCS = main.cc
+
+OBJS = $(SRCS:.cc=.o)
+
+PROG = example
+
+include ${top_srcdir}/config/C++.rules.in
+
+
+all: ${PROG}
+
+shared: all
+
+depend:
+	${MAKEDEPEND} ${CXXFLAGS} ${SRCS}
+
+install_shared: install
+
+install: 
+
+clean:
+	${RM} ${OBJS} $(PROG) *~ core *.bak
+
+distclean: clean
+
+${PROG}: ${OBJS}
+	$(CXX) -o $@ $(OBJS) $(LDFLAGS) $(LIBS) $(EXTRALIBS)
+	strip $@

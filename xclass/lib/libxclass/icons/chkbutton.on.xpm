@@ -1,0 +1,25 @@
+/* XPM */
+static char *XCP_chkbutton_on[] = {
+/* width height num_colors chars_per_pixel */
+"13 13 6 1",
+/* colors */
+".	c white s FrameHiliteColor",
+"X	c black",
+"o	c #c0c0c0 s FrameBgndColor",
+"O	c black s DocumentFgndColor",
+"I	c white s DocumentBgndColor",
+"#      c #808080 s FrameShadowColor",
+/* pixels */
+"############.",
+"#XXXXXXXXXXo.",
+"#XIIIIIIIIIo.",
+"#XIIIIIIIOIo.",
+"#XIIIIIIOOIo.",
+"#XIOIIIOOOIo.",
+"#XIOOIOOOIIo.",
+"#XIOOOOOIIIo.",
+"#XIIOOOIIIIo.",
+"#XIIIOIIIIIo.",
+"#XIIIIIIIIIo.",
+"#ooooooooooo.",
+"............."};

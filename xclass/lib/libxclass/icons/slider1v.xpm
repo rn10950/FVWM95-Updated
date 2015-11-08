@@ -1,0 +1,22 @@
+/* XPM */
+static char *XCP_slider1v[] = {
+"11 14 5 1",
+" 	c white s FrameHiliteColor",
+".	c #c0c0c0 s FrameBgndColor",
+"X	c #808080 s FrameShadowColor",
+"o	c black",
+"O	c None s None",
+"           ",
+" ........Xo",
+" ........Xo",
+" ........Xo",
+" ........Xo",
+" ........Xo",
+" ........Xo",
+" ........Xo",
+"O ......XoO",
+"OO ....XoOO",
+"OOO ..XoOOO",
+"OOOO XoOOOO",
+"OOOOOoOOOOO",
+"OOOOOOOOOOO"};

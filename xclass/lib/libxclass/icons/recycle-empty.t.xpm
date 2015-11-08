@@ -1,0 +1,28 @@
+/* XPM */
+static char * XCP_recycle_empty_t_xpm[] = {
+/* width height num_colors chars_per_pixel */
+"16 16 6 1",
+/* colors */
+" 	s None	c None",
+".	c #808080",
+"X	c white",
+"o	c black",
+"O	c #c0c0c0",
+"+	c #008000",
+/* pixels */
+"    ....        ",
+"  ..X.XX..      ",
+"..XX.oOOXX..    ",
+".XX..o.OOOXX..  ",
+".OOXXo..OOOOXXo ",
+".OOOOXX.OOOXX.o ",
+" .OOO++XXXX...o ",
+" .OO+OO++O....o ",
+" .O+++O++O...o  ",
+" .OO+OOOOO...o  ",
+"  .O+O+O+O...o  ",
+"  .OO++++O...o  ",
+"  .oOO+OOO..o   ",
+"    ooOOOO..o   ",
+"      ooOO..o   ",
+"        oooo    "};

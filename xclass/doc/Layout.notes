@@ -1,0 +1,49 @@
+Some ideas about layout:
+
+About the way to organize the class hierarchy, it's not ideal to have a
+specialized descendant of OXCompositeFrame for each type of layout,
+because general widgets (like dialog boxes) can either be vertically or
+horizontally arranged. If we choose a structure like this
+
+ OXCompositeFrame
+   |
+   +--OXVerticalFrames
+   |
+   +--OXHorizontalFrames
+
+  etc...
+
+then we must have multiple descendant for each type of layout, e.g.:
+OXMenuVertical, OXMenuHorizontal, etc.
+
+We can't either to have a pointer to a layout function for technical
+reasons (C++ won't let us point at a member function).
+
+So far, we have used flags to implement all the different layout policies
+in a single OXCompositeFrame object: it's not clean, and it's not easily
+expandable. 
+
+So, I propose to consider layout as a separate entity (read: object),
+similar to the Java AWT concept. 
+
+ OLayoutManager
+   |
+   +--OVerticalLayout
+   |
+   +--OHorizontalLayout
+   |
+   +--OVerticalTiledLayout
+
+That way a OXCompositeFrame object contains a layout manager object that
+could even be changed at runtime.
+
+Layout Policy: 
+
+- inner (child) frames *never* modify parent's size; instead the parent
+  can (or cannot) adapt it's own size in order to show all (or part) of
+  its content. 
+
+- a frame (particularly OXSimpleFrame) has a default minimum size under
+  which it cannot shrink: the limit is 1,1 to avoid XLib errors. 
+
+- we do not define a maximum size yet.

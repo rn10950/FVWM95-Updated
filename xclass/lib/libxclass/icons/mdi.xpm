@@ -1,0 +1,100 @@
+/* XPM */
+static char * closeButtonIconData[] = {
+"9 9 2 1",
+" 	c None s None",
+".	c #000000",
+"         ",
+" ..    ..",
+"  ..  .. ",
+"   ....  ",
+"    ..   ",
+"   ....  ",
+"  ..  .. ",
+" ..    ..",
+"         "};
+
+/* XPM */
+static char * defaultMdiIconData[] = {
+"16 16 5 1",
+" 	s None	c None",
+".	c #808080",
+"X	c white",
+"o	c #c0c0c0",
+"O	c black",
+"  ..........    ",
+"  .XXXXXXXXo.   ",
+"  .XXXXXXXXoX.  ",
+"  .XXXXXXXXOOOO ",
+"  .XXXXXXXXXXoO ",
+"  .XXXXXXXXXXoO ",
+"  .XXXXXXXXXXoO ",
+"  .XXXXXXXXXXoO ",
+"  .XXXXXXXXXXoO ",
+"  .XXXXXXXXXXoO ",
+"  .XXXXXXXXXXoO ",
+"  .XXXXXXXXXXoO ",
+"  .XXXXXXXXXXoO ",
+"  .XXXXXXXXXXoO ",
+"  .oooooooooooO ",
+"  OOOOOOOOOOOOO "};
+
+/* XPM */
+static char * minimizeButtonIconData[] = {
+"9 9 2 1",
+" 	c None s None",
+".	c #000000",
+"         ",
+"         ",
+"         ",
+"         ",
+"         ",
+"         ",
+"         ",
+" ......  ",
+" ......  "};
+
+/* XPM */
+static char * maximizeButtonIconData[] = {
+"9 9 2 1",
+" 	c None s None",
+".	c #000000",
+"......... ",
+"......... ",
+".       . ",
+".       . ",
+".       . ",
+".       . ",
+".       . ",
+".       . ",
+"......... "};
+
+/* XPM */
+static char * restoreButtonIconData[] = {
+"9 9 2 1",
+" 	c None s None",
+".	c #000000",
+"   ......  ",
+"   ......  ",
+"   .    .  ",
+" ...... .  ",
+" ...... .  ",
+" .    ...  ",
+" .    .    ",
+" .    .    ",
+" ......    "};
+
+/* XPM */
+static char * helpButtonIconData[] = {
+"9 9 2 1",
+"       c None s None",
+".      c #000000",
+"  .....  ",
+" ... ... ",
+" ..   .. ",
+"     ..  ",
+"    ..   ",
+"    ..   ",
+"         ",
+"    ..   ",
+"    ..   "};
+

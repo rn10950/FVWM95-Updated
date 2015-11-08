@@ -1,0 +1,202 @@
+xclass OpenGL support
+---------------------
+
+OpenGL support is included in the library if detected at compile time.
+There are two new frames: OXGLFrame and OXGLView.
+
+
+OXGLFrame
+---------
+
+This is a simple bare-bones OpenGL window. Just the window, no frills, no
+bells and whistles. Created by default in RGBA mode, with double-buffering
+support, depth and stencil buffers, so it should suit most applications. If
+wanted, a different list of attributes can be passed in the constructor.
+
+
+OXGLView
+--------
+
+Derived from OXGLFrame, this class implements a complete 3D model viewer
+featuring a mouse-oriented virtual trackball, so the scene can be rotated,
+shifted and zoomed in and out. OXGLView also performs basic OpenGL
+initializations (background color, projection and model view matrices,
+lights, default material), so the user needs only to write the rendering
+code in order to produce a working 3D viewer application.
+
+Overridables:
+
+  InitGL() - this method initializes the trackball, transformation matrices,
+       sets the background color to a dark grey with a bluish tint, enables
+       depth testing, specifies the clear depth as 1 (back of the buffer)
+       and calls the other initialization routines (see further) in the
+       following order:
+
+         SetupLighting()
+         SetupMaterials()
+         SetupTextures()
+         CreateObjects()
+
+       Usually there would be little reason to override this method.
+
+  SetupLighting() - by default a single white light, located behind and
+       slightly to the left of the viewing point is created here. Ambient
+       light is set to black, diffuse and specular lights to white, then
+       GL_LIGHTING is enabled. Override this function to implement your own
+       lights.
+
+  SetupMaterials() - by default, a light-gray material color is specified.
+       Ambient color is set to black, specular to white, diffuse to light
+       gray, emission to black, the shininess value to 100. Then
+       GL_COLOR_MATERIAL is enabled. Note that this last setting assumes
+       that the scene does not specify any new material properties, but
+       calls glColor() to give color to the objects. If that is not the
+       case you will have to either override this function or disable
+       GL_COLOR_MATERIAL before rendering, otherwise your objects may be
+       appear colorless.
+
+  SetupTextures() - by default an empty routine. Override this to create
+       your textures, set texture modes, etc.
+
+  CreateObjects() - by default an empty routine. This is a good place to
+       place code that creates display lists, perform preliminary
+       computations and so on.
+
+  SetupFrustum() - this routine is called with the projection matrix set
+       to the identity as the current matrix. By default, a perspective
+       viewing volume is selected. Override this to select another view,
+       for example, an orthographic projection. In most cases, this routine
+       will consist of a single call to gluPerspective, glOrtho, or
+       glFrustum.
+
+  SetupModelView() - this routine is called with the model view matrix
+       set to the identity as the current matrix. By default, a single
+       translation by the current zoom value along the Z-axis is performed.
+       Override this if you want a different behavior. Usually should be
+       little reason to override this function.
+
+  DeleteObjects() - called from the destructor, this is a good place to
+       put code to free memory allocated to objects, destroy display lists,
+       textures, and so on.
+
+  RenderScene() - this is called every time the window needs to be
+       repainted. Prior to the call, OXGLView clears both the depth and
+       color buffers. Note that there is no need to save and restore the
+       projection or model matrices, OXGLView takes care of that. Note also
+       that the apparent light position remains where it was defined
+       originally, so 3D model manipulations will look as if both the
+       observer and light were stationary and the model was rotated and/or
+       shifted, showing every time a different face to the light. If you
+       want the opposite effect, i.e. to give the impression that the model
+       and light are both stationary, but only the observer moves instead,
+       then you should issue a call to SetupLighting() just before starting
+       rendering your objects (alternatively you can just call again
+       glLight(..., GL_POSITION, ...), etc.)
+
+Note that you do not have to be too strict when overriding the above
+methods. For example, you could override just the CreateObjects() method
+and place there the lighting, material and texture initializations.
+Similarly, you do not have to override DeleteObjects(), you can put
+the corresponding code directly in the class destructor.
+
+Of course, the usual xclass event routines can also be overridden. The
+following methods are overridden in OXGLView:
+
+  _DoRedraw()
+  _Resized()
+  HandleButton(XButtonEvent *)
+  HandleMotion(XMotionEvent *)
+  HandleTimer(OTimer *)
+
+Overriding these methods in your derived class, except for HandleTimer(),
+is not recommended. When overriding HandleTimer() (to implement your own
+animations, for example), be sure to call the base implementation if the
+pointer to the timer object received in the argument does not reference
+your timer, for example:
+
+int MyGLView::HandleTimer(OTimer *t) {
+
+  if (t != myTimer) return OXGLView::HandleTimer(t);
+
+  // my timer handling code follows...
+  ...
+
+  return True;
+}
+
+OXGLView contains a number of non-virtual methods that allows the user to
+(re)orient the scene to a one of the standard predefined views:
+
+  LeftSideView()
+  RightSideView()
+  FrontView()
+  RearView()
+  TopView()
+  BottomView()
+  PerspectiveView()
+  ResetView() - this one restores also centering and initial zoom level.
+  
+The transition from one view to another is done in an animated fashion.
+Animations can be turned off by setting the _animate variable to false
+(see below).
+
+There are also a number of protected OXGLView variables of interest:
+
+  float _initialZoom - this sets the initial zoom value, and the value the
+       zoom is reset to after calling ResetView(). The default value of 400
+       may be too large in practice, and your scene may be rendered too
+       small. If that is the case, specify a lower value in your class
+       constructor. A smaller value zooms in, larger zooms out.
+
+  OTimer *_timer - this is the name of the timer used internally for
+       animations. Be sure you call your timer something else to avoid
+       conflicts.
+
+  bool _animate - set this to false if you do not want animations in
+       response to calls to the scene preview functions listed above.
+
+Scene manipulation:
+
+  - Rotate the scene by clicking and dragging the left mouse button around.
+  - Shift the scene by holding the SHIFT key and clicking and dragging the
+    left mouse button.
+  - Zoom in and out using the mouse wheel, or alternatively by holding down
+    the CTRL key and clicking and dragging the left mouse button up and down.
+
+There is no keyboard support, but it can be added by overriding HandleKey()
+as usual.
+
+Auxiliary objects used by OXGLView:
+
+  OVector3D, OQuaternion, OTrackball
+
+Note that neither OXGLFrame nor OXGLView have a border. If you want the
+typical OXFrame double-border feature, just use a OXCompositeFrame container
+with the desired type of border, and add the OpenGL frame specifying a
+OLayoutHints(LHINTS_EXPAND_ALL).
+
+
+Multi-window support
+--------------------
+
+OXGLFrame keeps track of the current OpenGL rendering context, and uses
+this information to switch automatically rendering contexts in response to 
+events that could call OpenGL functions (such as screen redraw). This makes
+possible to have several OXGLFrames in the same application without
+interfering with each other. OXGLView further makes sure that the
+overridable functions described above are called with the corresponding
+rendering context made current, so the user will not have to worry about
+switching contexts manually. The exception is the timer handling function
+HandleTimer, since it is called directly by xclass and not by OXGLView: if
+you ever need to issue OpenGL calls from the timer handler, make sure to
+call first the RestoreContext() method of OXGLFrame. In practice, that
+would be seldom necessary, since you would be calling NeedRedraw() from
+HandleTimer and performing the actual redraw from RenderScene().
+
+In the other hand, if you are designing your special OpenGL class using
+OXGLFrame as parent, or if you are writing your own mouse and keyboard event
+handlers, then you will need to place a call to RestoreContext() in each
+event handling function before calling any OpenGL function.
+
+
+For more information, consult the source code.

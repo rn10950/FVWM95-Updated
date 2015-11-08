@@ -1,0 +1,99 @@
+[application/postscript]
+description = Postscript files
+pattern = *.e?ps
+icon = ps.xpm
+action = ghostview %s
+
+[application/pdf]
+description = Adobe Portable Document Format files
+pattern = *.pdf
+icon = pdf.xpm
+action = acroread %s
+
+[folder/recycle bin]
+description = Recycle bin folder
+pattern = .xclass.recycle Recycle*
+icon = recycle-full.s.xpm
+action = explorer %s
+
+[audio/x-wav]
+description = Sound wave files
+pattern = *.wave?
+icon = audio.s.xpm
+action = vplay -s 22500 %s
+
+[audio/basic]
+description = Audio files
+pattern = *.snd *.au
+icon = audio.s.xpm
+action = cat %s /dev/audio
+
+[audio/midi]
+description = Midi files
+pattern = *.midi?
+icon = midi.s.xpm
+action = cat %s /dev/midi
+
+[video/mpeg]
+description = MPEG video files
+pattern = *.mpeg? *.mpg
+icon = video.s.xpm
+action = xanim %s
+
+[image/gif]
+description = GIF image files
+pattern = *.gif
+icon = image.xpm
+action = xv %s
+
+[image/jpeg]
+description = JPEG image files
+pattern = *.jpeg *.jp(g|e)
+icon = image.xpm
+action = xv %s
+
+[image/tiff]
+description = TIFF image files
+pattern = *.tiff?
+icon = image.xpm
+action = xv %s
+
+[image/x-xpixmap]
+description = X bitmap files
+pattern = *.x(b|p)m
+icon = image.xpm
+action = xv %s
+
+[text/html]
+pattern = *.html
+icon = netscape.xpm
+action = netscape %s
+
+[text/plain]
+description = Plain text files
+pattern = *.te?xt
+icon = emacs.xpm
+action = emacs %s
+
+[text/tex]
+description = TEX document files
+pattern = *.tex
+icon = tex.xpm
+action = emacs %s
+
+[settings/explorer]
+pattern = .mime.types .explorerrc
+icon = settings.xpm
+action = emacs %s
+
+[settings/executable]
+description = Shell startup files
+pattern = .bash_profile .bashrc .profile .login .kshrc .cshrc .xsession
+icon = run-config.xpm
+action = emacs %s
+
+[settings/config]
+description = Application resource files
+pattern = .*rc
+icon = settings.xpm
+action = emacs %s

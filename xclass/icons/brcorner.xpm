@@ -1,0 +1,10 @@
+/* XPM */
+static char * mini_font_xpm[] = {
+"5 5 2 1",
+" 	c None s None",
+".	c black",
+"   ..",
+"   ..",
+"   ..",
+".....",
+"....."};

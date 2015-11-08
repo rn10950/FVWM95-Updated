@@ -1,0 +1,47 @@
+
+SHELL=/bin/sh
+
+prefix=@prefix@
+lib_dir=@prefix@/lib
+doc_dir=@prefix@/xclass/docs
+etc_dir=@prefix@/xclass/etc
+
+INSTALL = @INSTALL@
+INSTALL_DATA = @INSTALL_DATA@
+
+
+XCLASSRC = xclassrc
+MIMETYPES = mime.types
+DOCS = GPL \
+	LGPL \
+	LICENSE \
+	tcl.license.terms \
+	tk.license.terms \
+	ChangeLog \
+	INSTALL \
+	Programming.notes \
+	Layout.notes \
+	MimeTypes.README \
+	Drag-and-Drop \
+	OpenGL \
+	MDI.notes
+
+all:
+
+shared:
+
+install_shared: install
+
+install:
+	mkdir -p ${etc_dir}
+	${INSTALL_DATA} ${XCLASSRC} ${etc_dir}
+	${INSTALL_DATA} ${MIMETYPES} ${etc_dir}
+	mkdir -p ${doc_dir}
+	for i in ${DOCS} ; do \
+		${INSTALL_DATA} ./$$i ${doc_dir} ; \
+	done
+
+clean:
+	rm -f core *~ *.bak
+
+distclean: clean

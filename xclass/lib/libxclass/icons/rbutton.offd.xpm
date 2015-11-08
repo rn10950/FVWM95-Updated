@@ -1,0 +1,19 @@
+/* XPM */
+static char *XCP_rbutton_offd[] = {
+"12 12 4 1",
+" 	c None s None", /* #c0c0c0 */
+".	c #808080 s FrameShadowColor",
+"X	c black",
+"o	c white s FrameHiliteColor",
+"    ....    ",
+"  ..XXXX..  ",
+" .XX    XXo ",
+" .X       o ",
+".X         o",
+".X         o",
+".X         o",
+".X         o",
+" .X       o ",
+" .        o ",
+"  oo    oo  ",
+"    oooo    "};

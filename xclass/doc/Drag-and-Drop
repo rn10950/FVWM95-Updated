@@ -1,0 +1,87 @@
+In order to fully understand the xclass dnd (drag and drop) mechanism, and
+to make efficient use of it, we strongly recommend that you become
+familiar first with the Xdnd protocol. For that purpose see the excellent
+documentation available at http://www.newplanetsoftware.com/xdnd/
+
+=========================================================================
+
+Xclass applications wanting to participate in dnd operations must first
+create an ODNDmanager object on its top-level window, since none is
+available by default. Usually this operation is done in the constructor of
+the top-level window (a derivate of OXMainFrame or OXTransientFrame), with a
+statement like the following:
+
+  _dndManager = new ODNDmanager(_client, this, typelist);
+
+The ODNDmanager takes care of all the low-level communication details
+between dnd source and target windows. Xclass' ODNDmanager implements XDND
+protocol version 4.
+
+From an application's point of view, there are two kinds of dnd operations:
+those on which the application acts as the source of data and those on which
+it acts as the receiver (or target).
+
+The application becomes the source of the dnd operation when the user
+selects an element in the application by clicking on it and drags it into
+another application, eventually dropping the element there. The classic
+example is clicking a document icon in a filemanager and dragging it into
+another filemanager window. When the opposite operation is performed (i.e.
+dragging an icon from another application and dropping it in the current
+one), the current application becomes the target. There are cases, of
+course, when the same application acts as both source and target.
+
+...
+
+To become the source of a dnd operation, an xclass application must call the
+ODNDmanager's StartDrag() in response to the user action
+
+When the application receives dnd events from another application, the
+ODNDmanager object processes those events and calls the appropriate OXFrame
+methods. Thus, the processing of dnd events is done in a way similar to
+message or window event processing.
+
+Atom HandleDNDenter(Atom *typelist)
+
+  This method is called whenever the drag enters the frame. typelist is an
+  array of atoms containing the data types supported by the source, the last
+  element in the array is set to None. After examining the typelist array
+  the frame must return the atom representing the data type it is interested
+  in, None otherwise. This method can be also used to change the widget
+  appearance in order to give some feedback to the user (for example, icon
+  highlight in filemanagers).
+
+
+int HandleDNDleave()
+
+  This method is called whenever the drag leaves the frame. The return value
+  is currently ignored by the default ODNDmanager, but for consistency with
+  other methods (and for compatibility with future versions and/or other
+  derived dnd managers), it is recommended to return True if the frame
+  processes the action, False otherwise. Similarly to above, this method can
+  be used to restore the appearance of the widget to its normal way.
+
+
+Atom HandleDNDposition(int x, int y, Atom action)
+
+  This method is called when the user is moving the drag object over the
+  frame. Usually it gets called several times after HandleDNDenter and
+  before HandleDNDleave events. The current cursor coordinates [relative to
+  the frame FIX THAT!] are passed in x and y. The atom action represents the
+  desired xdnd action to be taken.
+
+  This method does not get called at all if the frame refused to handle the
+  drop in the HandleDNDenter() method (see above).
+
+
+int HandleDNDdrop(ODNDdata *data)
+
+  ...
+  Note that this is the last method called in the chain of successful dnd
+  events. The frame receiving HandleDNDdrop, therefore, will NOT receive a
+  call to HandleDNDleave() after it. Thus, the appearance of the widget
+  should be restored here if necessary, much like if it was a
+  HandleDNDleave event.
+
+  The data stored in ODNDdata will be deleted upon return from this method.
+  Thus, if the user needs to keep the data available for later user, he/she
+  must create a copy of it (that means data->data).

@@ -1,0 +1,248 @@
+# Process this file with autoconf to produce a configure script.
+
+AC_INIT
+AC_PREREQ(2.59)     dnl -- Minimum Autoconf version required.
+
+
+dnl ---------------------------------- xclass version number
+
+XCLASS_MAJOR_VERSION=0
+XCLASS_MINOR_VERSION=9
+XCLASS_PATCH_LEVEL=2
+XCLASS_VERSION=$XCLASS_MAJOR_VERSION.$XCLASS_MINOR_VERSION.$XCLASS_PATCH_LEVEL
+XCLASS_RELEASE_DATE=10-Sep-2006
+
+AC_SUBST(XCLASS_MAJOR_VERSION)
+AC_SUBST(XCLASS_MINOR_VERSION)
+AC_SUBST(XCLASS_PATCH_LEVEL)
+AC_SUBST(XCLASS_VERSION)
+AC_SUBST(XCLASS_RELEASE_DATE)
+
+
+dnl ---------------------------------- configuration header
+
+AC_CONFIG_HEADER(include/xclass/XCconfig.h)
+
+
+dnl ---------------------------------- determine debugging default
+
+if test `expr $XCLASS_MINOR_VERSION \% 2` = 1 ; then
+  debug_default=yes
+else
+  debug_default=no
+fi
+
+AC_ARG_WITH(gcc,
+[  --with-gcc              use GCC to compile])
+AC_ARG_WITH(gmake,
+[  --with-gmake            use GNU MAKE to build])
+AC_ARG_ENABLE(debug,
+[  --enable-debug=[yes/no]   turn debugging on/off [default=$debug_default]],,
+enable_debug=$debug_default)
+
+if test "x$enable_debug" = "xyes"; then
+  test "$cflags_set" = set || CXXFLAGS="$CXXFLAGS -g"
+else
+  test "$cflags_set" = set || CXXFLAGS="$CXXFLAGS -O2"
+fi
+
+
+dnl ---------------------------------- OpenGL default
+
+AC_ARG_ENABLE(opengl,
+[  --enable-opengl=[yes/no]  turn OpenGL support on/off [default=yes]],,
+enable_opengl=yes)
+
+
+dnl ---------------------------------- check for programs
+
+AC_CHECK_PROG(AR, ar, ar, ar)
+AC_PROG_RANLIB
+AC_PROG_YACC
+AC_PROG_MAKE_SET
+AC_PROG_INSTALL
+
+
+dnl ---------------------------------- choose a compiler
+
+#with_gcc=yes
+
+test -n "$CXX" && cxx_specified=yes
+
+case ${with_gcc} in
+  yes ) CXX=g++ ;; 
+  no  ) CXX=c++ ;;
+  *   ) AC_PROG_CXX;;
+esac
+
+case ${with_gmake} in
+  yes ) with_gmake=yes;;
+  no  ) with_gmake=no;;
+  *   ) with_gmake=no;;
+esac
+
+AC_LANG([C++])
+
+AC_AIX
+
+
+dnl ---------------------------------- check for headers
+
+AC_HEADER_STDC
+AC_CHECK_HEADERS(memory.h unistd.h string.h)
+AC_CHECK_HEADERS(fcntl.h sys/time.h sys/systeminfo.h sys/stat.h)
+AC_CHECK_HEADERS(sys/select.h pwd.h sys/types.h sys/wait.h)
+AC_HEADER_DIRENT
+AC_HEADER_TIME
+if test "x$enable_opengl" = "xyes"; then
+  AC_CHECK_HEADERS(GL/glx.h GL/gl.h GL/glu.h)
+fi
+
+
+dnl ---------------------------------- check for specific functions
+
+AC_TYPE_SIGNAL
+AC_CHECK_FUNCS(gethostname putenv select strstr strcasecmp strncasecmp sysconf)
+AC_CHECK_FUNCS(strerror waitpid getitimer setitimer)
+
+AC_FUNC_STRCOLL
+
+
+dnl ---------------------------------- check for libraries
+
+AC_PATH_X
+
+x_inc_path="$x_includes"
+x_lib_path="$x_libraries"
+
+if test "x$x_libraries" != x ; then
+  x_libraries="-L$x_libraries"
+fi
+if test "x$x_includes" != x ; then
+  x_includes="-I$x_includes"
+fi
+
+# Check for the X11 library
+
+# This apparently doesn't work on some Sun OSes...
+#AC_CHECK_LIB(X11, XOpenDisplay, x_libs="-lX11",
+#  AC_MSG_ERROR([*** libX11 not found. Check 'config.log' for more details.]),
+#  $x_libraries)
+
+x_libs="-lX11"
+
+# Check for shared memory extension
+
+#if test "x$enable_shm" = "xyes"; then
+#  # Check for the Xext library (needed for XShm extention)
+#  AC_CHECK_LIB(Xext, XShmAttach, 
+#      x_libraries="-lXext $x_libraries", 
+#      # On AIX, it is in XextSam instead, but we still need -lXext
+#      AC_CHECK_LIB(XextSam, XShmAttach, 
+#          x_libraries="-lXextSam -lXext $x_libraries", 
+#          no_xext_lib=yes, $x_libraries),
+#      $x_libraries)
+#fi
+
+# Check for shaped window extension
+
+AC_CHECK_LIB(Xext, XShapeCombineMask,
+      if test -z "`echo $x_libs | grep "\-lXext" 2> /dev/null`"; then
+           x_libs="-lXext $x_libs"
+      fi
+      AC_DEFINE(HAVE_SHAPE_EXT),
+      ,
+      $x_libraries $x_libs)
+
+# Check for the Xpm library
+
+AC_CHECK_LIB(Xpm, XpmCreatePixmapFromData,
+      x_libs="-lXpm $x_libs"
+      AC_DEFINE(HAVE_XPM_LIB),
+      ,
+      $x_libraries $x_libs)
+
+# Check for OpenGL
+
+if test "x$enable_opengl" = "xyes"; then
+  # Check for the GL library
+  AC_CHECK_LIB(GL, glXCreateContext,
+      x_libs="-lGL $x_libs"
+      AC_DEFINE(HAVE_GL_LIB),
+      AC_CHECK_LIB(MesaGL, glXCreateContext,
+            x_libs="-lMesaGL $x_libs"
+            AC_DEFINE(HAVE_GL_LIB),
+            ,
+            $x_libraries $x_libs),
+      $x_libraries $x_libs)
+
+  # Check for the GLU library
+  AC_CHECK_LIB(GLU, gluNewQuadric,
+      x_libs="-lGLU $x_libs"
+      AC_DEFINE(HAVE_GLU_LIB),
+      AC_CHECK_LIB(MesaGLU, gluNewQuadric,
+            x_libs="-lMesaGLU $x_libs"
+            AC_DEFINE(HAVE_GLU_LIB),
+            ,
+            $x_libraries $x_libs),
+      $x_libraries $x_libs)
+fi
+
+x_libraries="$x_libraries $x_libs"
+
+
+dnl ---------------------------------- misc stuff
+
+# add copious amounts of debugging with gcc
+
+#if test "${CXX}" = "g++" ; then
+#  CXXFLAGS="${CXXFLAGS} -Wall -ansi -pedantic"  
+#  CXXFLAGS="${CXXFLAGS} -Wall"
+#fi
+
+# gcc 3.x series complain about adding include directories that they already
+# know about, so we will take those off from the include path.
+
+if test "$prefix" = "NONE" ; then
+    xclass_include=${ac_default_prefix}/include
+else
+    xclass_include=${prefix}/include
+fi
+
+echo -n "checking for $xclass_include in ${CXX} include path... "
+
+echo "int main() { return 0; }" > try.cc
+warn=`${CXX} -I$xclass_include -c try.cc 2>&1 | grep 'warning: changing search order '`
+if test "$warn" != ""; then
+    echo "yes"
+    xclass_include=""
+else
+    echo "no"
+fi
+rm -f try try.*
+
+dnl ---------------------------------- produce output
+
+AC_SUBST(x_lib_path)
+AC_SUBST(x_libraries)
+AC_SUBST(x_inc_path)
+AC_SUBST(x_includes)
+AC_SUBST(xclass_cflags)
+AC_SUBST(xclass_include)
+AC_SUBST(xclass_libs)
+# AC_SUBST(R6libs)
+
+AC_CONFIG_FILES([Makefile \
+           config/Makefile config/xc-config \
+           include/Makefile include/xclass/Makefile include/xclass/version.h\
+           icons/Makefile \
+           doc/Makefile \
+           lib/Makefile lib/libxclass/Makefile \
+           test/Makefile \
+           example-app/Makefile])
+AC_CONFIG_COMMANDS([default],[[chmod +x config/xc-config]],[[]])
+AC_OUTPUT
+
+#
+# The End.
+#

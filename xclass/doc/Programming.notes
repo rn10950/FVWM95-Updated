@@ -1,0 +1,317 @@
+NOTE: This file is *VERY* outdated!
+===================================
+
+OXObject is an abstract base class for all X Window related objects (with a
+XID).
+
+OXWindow is a simple general encapsulation of X 'Window'. It is seldom used
+directly by the application.
+
+OXFrame is an abstract base class for all windows that need to be laid out
+(either OXSimpleFrame for a single window, or OXCompositeFrame for container
+frame). The layout algorithm is quite robust and in some aspects resembles
+the one used by Tk (see below). When using OXSimpleFrame, child windows must
+register to the OXClient in order to receive events. It's automatic for
+child of a composite frame (not anymore, see Changelog note 10/7/96).
+
+The OXCompositeFrame can be one of the following types, according to the way
+it arrange its contents:
+
+VERTICAL_FRAME - This kind of composite frame arrange the internal frames as
+a vertical stack of frames, in the same order they were added to the
+composite frame, and according to the hint preferences.
+
+HORIZONTAL_FRAME - This kind of composite frame arrange the internal frames
+as an horizontal row of frames, in the same order they were added to the
+composite frame, and according to the hint preferences.
+
+VERTICAL_TILE_FRAME - to be implemented, similar to the current canvas
+layout algorithm. Given a width, this frame would arrange its contents in a
+matrix-like way, the height could extend beyond the specified.
+
+HORIZONTAL_TILE_FRAME - to be implemented, similar to the current canvas
+layout algorithm.
+
+MATRIX_FRAME - or something like that, should be similar to the TILE_FRAMEs,
+but with fixed number of columns or rows.
+
+FIXED_POS_FRAME - also to be implemented, the internal frames are in fixed
+X, Y locations, and perhaps w/fixed W, H too. The layout algorithm does
+nothing, the user's program is responsible for the initial placement of the
+internal frames.  Useful for non-resizable dialog boxes and other widgets.
+
+The layout hints are used by the container frame to decide how to arrange a
+particular internal frame:
+
+LHINTS_NOHINTS - No hints. Use the default preference according to the frame
+type: left-top for the vertical and horizontal frames.
+
+LHINTS_EXPAND_X - Expand this frame to fit the available width of the
+container frame. If the container frame is a vertical frame, fit the full
+width. If is an horizontal frame, fit the available width after positioning
+the other frames; if there are more than one expandable frames, the
+available width is divided by the number of these frames to keep all them
+with the same width.
+
+LHINTS_EXPAND_Y - Expand this frame to fit the available height of the
+container frame. If the container frame is an horizontal frame, resize to
+fit the full height. If is a vertical frame, fit the available height after
+positioning the other frames; if there are more than one expandable frames,
+the available height is divided by the number of these frames to keep all
+them with the same height.
+
+LHINTS_CENTER_X - Center this frame horizontally. Use with vertical
+container frames only, currently is ignored in horizontal frames.
+
+LHINTS_CENTER_Y - Center this frame vertically. Use with horizontal
+container frames only, currently is ignored in vertical frames.
+
+LHINTS_LEFT - Position this frame to the left of the container frame, after
+other previous frames with the same hint attributes.
+
+LHINTS_RIGHT - Position this frame to the right of the container frame,
+before any other previous frames with the same hint attributes.
+
+LHINTS_TOP - Position this frame to the top of the container frame, below
+any other previous frames with the same hint attributes.
+
+LHINTS_BOTTOM - Position this frame at the bottom of the container frame,
+above any other previous frames with the same hint attributes.
+
+LHINTS_NORMAL - Is the combination of (LHINTS_LEFT | LHINTS_TOP).
+
+The hints can be OR'ed in a way the settings don't interfere with each
+other, i.e. LHINTS_TOP | LHINTS_LEFT is OK, but LHINTS_TOP | LHINTS_BOTTOM
+is not. The behavior of these "prohibited" combinations is undefined.
+
+The additional parameters (paddings) determine the distance to keep from the
+borders of the next closer frame edge (i.e. the border another internal
+frame or the edge of the container frame, not counting the borders).
+
+------
+
+The layout algorithm of a container frame should never call the layout
+algorithm of the inner frame. It is automatically called on resizing
+operations.
+
+------
+
+The 3d derivative (in OXWidgets.h) are a bit overkill. Creating new objects
+in this hierarchy will surely help redesign more cleanly what each class
+should exactly have or do. For example, we need to have a OXCompositeFrame
+that understand more free layout hints for the Folder module: that is,
+perhaps, a son of OLayoutHints (note not OX, as it is not a X Window object,
+but only hints for the frames), that could handle (x,y) coordinates to place
+OXSimpleFrame.
+
+Another derivative of OLayoutHints could also handle the min/max sizes for
+the purpose of an object oriented taskbar button class.
+
+Currently we have implemented the following widgets:
+
+OXLabel         - simple widget holding a text
+OXIcon          - simple widget holding a pixmap
+
+OXTextEntry     - when finished, an editable text entry, w/support for
+                  cut & paste, etc.
+
+OXButton        - an abstract button class
+OXTextButton    - a simple text button class
+OXPictureButton - a button holding a pixmap
+
+OXCheckButton   - a checkmark-like button class
+OXRadioButton   - a radio button class
+
+OXPopupMenu     - a popup menu class, with menu-cascading possibilities
+OXMenuBar       - an application top-level menu bar
+
+OXScrollBar     - an abstract scrollbar class
+OXHScrollBar    - an horizontal scrollbar class
+OXVScrollBar    - a vertical scrollbar class
+
+OXCanvas        - a generic scrollable canvas
+
+OXTab           - a multiple "tab" widget
+
+OXListBox       - a list box
+
+OXDDListBox     - when finished, a "drop-down"-like list box
+
+OXMsgBox        - a message box dialog object
+
+OXFileDialog    - a file open / save as... dialog objects
+
+plus some others...
+
+The implementation of these widgets lacks several things, still we have to
+correct several deficiencies and optimize the code, but they are already
+usable.
+
+We have also implemented a OXMainFrame class for the application top-level
+windows, and OXTransientFrame for dialog windows.
+
+
+Class Hierarchy, the classes in () are specific to the explorer app.
+--------------------------------------------------------------------
+
+OXObject
+  |
+  +--OXWindow
+       |
+       +--OXFrame
+            |
+            +--OXSimpleFrame
+            |    |
+            |    +--OXButton
+            |    |    |
+            |    |    +--OXTextButton
+            |    |    |
+            |    |    +--OXPictureButton
+            |    |    |
+            |    |    +--OXCheckButton
+            |    |    |
+            |    |    +--OXRadioButton
+            |    |
+            |    +--OXIcon
+            |    |    |
+            |    |    +--OXListItemIcon
+            |    |         |
+            |    |         +--OXFileIcon
+            |    |
+            |    +--OXLabel
+            |    |    |
+            |    |    +--OXListItemLabel
+            |    |
+            |    +--OXMenuTitle
+            |    |
+            |    +--OXTextEntry
+            |    |
+            |    +--OXPopupMenu
+            |    |
+            |    +--OXScrollBarElt
+            |    |
+            |    +--OXTabElt
+            |    |
+            |    +--(OXStatusBar)
+            |
+            +--OXCompositeFrame
+                 |
+                 +--OXScrollBar
+                 |    |
+                 |    +--OXHScrollBar
+                 |    |
+                 |    +--OXVScrollBar
+                 |
+                 +--OXListItem
+                 |    |
+                 |    +--OXFileItem
+                 |
+                 +--OXListViewContainer
+                 |    |
+                 |    +--OXFileContainer
+                 |
+                 +--OXViewPort
+                 |
+                 +--OXCanvas
+                 |    |
+                 |    +--OXListView
+                 |
+                 +--OXTab
+                 |
+                 +--OXGroupFrame
+                 |
+                 +--OXLBEntry
+                 |    |
+                 |    +--OXTextLBEntry
+                 |    |
+                 |    +--OXTreeLBEntry
+                 |
+                 +--OXLBContainer
+                 |
+                 +--OXListBox
+                 |
+                 +--OXDDPopup
+                 |
+                 +--OXDDListBox
+                 |    |
+                 |    +--OXFileSystemDDListBox
+                 |
+                 +--(OXToolBar)
+                 |
+                 +--OXHorizontalFrame
+                 |    |
+                 |    +--OXMenuBar
+                 |
+                 +--OXVerticalFrame
+                 |
+                 +--OXMainFrame
+                      |
+                      +--(OXExplorerMainFrame)
+                      |
+                      +--OXTransientFrame
+                           |
+                           +--OXMsgBox
+                           |
+                           +--OXFileDialog
+                           |
+                           +--(OXOptionsDialog)
+
+OXClient
+  |
+  +--(OXExplorerClient)
+
+ODimension
+
+OFileInfo
+
+OIniFile
+
+OLayoutHints
+
+OLayoutManager
+  |
+  +--OHorizontalLayout
+  |
+  +--OVerticalLayout
+  |
+  +--ORowLayout
+  |
+  +--OColumnLayout
+  |
+  +--OTabLayout
+  |
+  +--OTileLayout
+  |
+  +--OListViewLayout
+
+OMimeTypes
+
+OPicture
+  |
+  +--(OSelectedPicture)
+
+OPicturePool
+
+OString
+  |
+  +--OHotString
+
+OTextBuffer
+
+OTimer
+
+ODimension
+
+OXSNode
+
+OXSList
+  |
+  +--OXSTimerList
+
+
+There is an example program included (main.cc) which can be used to test the
+widget library. To compile it, just edit the Makefile to point to your XLib
+location, then do a 'make'. A 'wintest' executable will be created,
+containing a menu bar with some cascaded menus, a scrollable canvas with
+some colored windows inside, etc. The File/Open option should popup a simple
+dialog window.

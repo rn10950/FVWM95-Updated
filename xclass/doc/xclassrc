@@ -1,0 +1,30 @@
+[defaults]
+
+; Fonts used by buttons, menus, etc.
+
+normal font = -adobe-helvetica-medium-r-*-*-12-*-*-*-*-*-iso8859-1
+bold font = -adobe-helvetica-bold-r-*-*-12-*-*-*-*-*-iso8859-1
+small font = -adobe-helvetica-medium-r-*-*-10-*-*-*-*-*-iso8859-1
+
+; Color scheme
+
+back color = #c0c0c0
+fore color = black
+hifore color = white
+hiback color = #000080
+;doc fore color = red
+;doc back color = lightyellow
+
+; Scroll bar width, in pixels
+
+sb width = 16
+
+; Icon directory
+
+icon dir = /usr/local/xclass/icons
+
+; More settings to be added... :-)
+
+;background pixmap = login-bckgnd.xpm
+
+mime type file = mime.types

@@ -1,0 +1,89 @@
+Here you will find some programs used to test the different
+widgets and features of the xclass library.
+
+wintest  - used to test the dialog and message boxes, as
+           well as the following widgets:
+             - menu bar and popup menus
+             - side pixmaps in menus
+             - scrollable canvas
+             - buttons
+             - tab
+             - sliders
+             - text entries
+
+ftest    - used to test timers and file event handlers, just open
+           a big file (try the unstripped libxclass.a one) and
+           watch the count of bytes read fly. The interface keeps 
+           operational and the clock keeps updating the time during
+           the read operation. To cancel the file access, do a
+           File/Open again and answer 'yes' to the message box.
+
+test4    - used to test the OXClient::Run() loop, the method should
+           return everytime the last top-level window is closed.
+
+combotest - used to test the combo box widget.
+
+spinnertest - used to test the spinner (text entry with spin buttons)
+              widget.
+
+shutter,
+shutter1  - used to test the OXShutter widget. OXShutter was adapted
+            from FXShutter from the FOX (not fOX) library of Jeroen
+            van der Zijp.
+
+progbar  - used to test the OXProgressBar widget.
+
+listview - used to test the OXListView widget.
+
+xdnd     - used to test drag-and-drop operations.
+
+textedit - used to test the OXTextEdit widget.
+
+favordlg - used to test the file dialog in normal and favourites mode.
+
+exec     - used to test the OExec class.
+
+colorsel - used to test the color select button and color selection dialog.
+
+mditest  - a simple MDI application, used to test the OXMdi set of classes.
+
+docktest - used to test the "dockable" frame widget.
+
+flies,
+trails   - simple animation programs, used to test OTimer and animation
+           with OXFrames. These programs are based on popular JavaScripts.
+
+root_flies,
+root_trails - similar to the above programs, but they run on the root window
+              of the screen. Used to test the OXRootWindow object, shows how
+              to subclass it. The root_flies program accepts an '-ontop'
+              option to keep the "flies" on top of all other windows. BUT
+              warning: that option makes some XFree86 servers to become
+              sloooow, apparently because the "flies" request save-under,
+              which supposedly should make things faster, but in reality
+              many XFree86 servers have buggy save-under implementations. If
+              you have an ATI-Radeon card you better disable the save-under
+              option if you haven't done so already due to the obvious
+              redraw bugs. If you have a Riva-TNT card you can expect your
+              server even to crash. Matrox cards, in the other hand, are
+              known to work with no problems at all.
+
+exception - used to test xclass exception objects.
+
+htmltest  - used to test the OXHtml widget. Select File/Open, go to the
+            html directory and open index.html
+
+helptest  - used to test the help browser widget. Use the following command
+            line when invoking it:
+
+               helptest appname [filename]
+
+            where appname is the name of an installed application, helptest
+            will try to automotically locate the help files and show the
+            index page. If a filename is specified, helptest will display
+            that page instead of the index page.
+
+gltest    - used to test the OpenGL support (only if OpenGL was detected
+            during xclass library build). Click and drag the mouse to
+            rotate the scene, hold down SHIFT and drag the mouse to shift
+            the object position, use the mouse wheel to change the zoom.

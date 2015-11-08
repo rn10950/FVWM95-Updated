@@ -1,0 +1,24 @@
+FVWM95 Updated README
+=====================
+
+This is the FVWM95 sources and xclass applications and library updated
+to work and compile on modern Linux distributions. I have included 
+three root level directories:
+
+  - fvwm95/             - the FVWM95 window manager source
+  - xclass/             - the source for the xclass library
+  - all-applications/   - the source for the xclass applications
+
+Each individual directory contains its own readme and license, and 
+all modifications to the projects are licensed to their respective
+licenses.
+
+My ultimate goal for this project is to create a Linux distribution
+as close to the Windows 95 "classic" theme as possible. My goal is to
+have something to fall back on once program developers finally pull the
+plug on Windows XP/2003 compatibility.
+
+In the future, I wish to create a GTK2 and GTK3 theme to include by default,
+it would do wonders for OS integration. Possibly a modification of "Redmond"
+mapped closer to the Windows 95 style. Maybe even have the system colors
+match up to the colors of the GTK themes.

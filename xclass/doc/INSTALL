@@ -1,0 +1,131 @@
+INSTALLATION
+------------
+
+Unpack the 'xclass-x.y.z.tar.gz' file (x.y.z is the version number):
+
+   tar zxvf xclass-x.y.z.tar.gz
+
+after this operation some directories will be created:
+
+   xclass-x.y.z
+     |
+     +--config
+     |
+     +--doc                 -- contains some documentation files
+     |
+     +--icons               -- contains common icons used by the library
+     |                         and some applications
+     |
+     +--include
+     |    |
+     |    +--xclass         -- contains the header files needed to compile 
+     |                         the library and applications using the library
+     +--lib
+     |    |
+     |    +--libxclass      -- contains the main library code
+     |         |
+     |         +--icons     -- contains some pixmaps used internally by xclass
+     |
+     +--example-app         -- contains an skeleton application you can use
+     |                         as your starting point when creating a new
+     |                         application
+     |
+     +--test                -- contains a few test programs.
+
+
+To build a static version of the library, cd to the xclass-x.y.z directory
+and type:
+
+   ./configure
+   make clean
+   make
+   make install
+
+or, if you prefer to build a shared library instead:
+
+   ./configure
+   make clean
+   make shared
+   make install_shared
+
+the last step (make install) is optional and should be done by the
+superuser.
+
+That's all concerning the library. You can now use it to build the
+application packages available separatedly, or for writing your own apps.
+
+
+CONFIG FILES
+------------
+
+During initialization, xclass searches for a configuration file containing
+settings like colors, fonts and other miscellaneous stuff in the following
+sequence:
+
+ 1.  $HOME/.xclassrc
+ 2.  $HOME/etc/xclassrc
+ 3.  /usr/local/xclass/etc/xclassrc
+
+The first file found is used. If no configuration file was found, some
+default values are used. That structure allows to have both system-wide and
+user-level configuration files. Any user's configuration file would override
+the system's one.
+
+The installation process installs the system-wide startup file by default
+in the /usr/local/xclass/etc directory. In addition, each user can have a
+customized .xclassrc on its home directory.
+
+Specific applications may need some other additional configuration files,
+they would usually go to $HOME/.xclass/etc or /usr/local/xclass/etc
+
+The format of the startup files is very similar to the well-known windows'
+.ini files, i.e., they are divided into several named sections, under
+which a list of option-value pairs is specified. Each named section is
+identified with a header line, consisting of the section name enclosed in
+square brackets []. The header is followed by the list of option-value
+pairs, which are in the form "option = value", with only one option per
+line allowed. Spaces at both sides of the equal sign are ignored.
+
+
+PIXMAPS AND ICONS
+-----------------
+
+Many xclass applications make use of run-time loadable pixmaps and icons.
+They usually rely on the proper setting of the 'icon dir' option of the
+xclass configuration file.
+
+The installation process copies all the icons supplied with xclass to
+the /usr/local/xclass/icons directory, and the 'icon dir' option of the
+default supplied xclassrc file points to it. Individual applications
+might add some extra icons into that directory, or to put them somewhere
+else, for example, in a directory under the user's account. In the last
+case is up to the user to change accordingly his/her .xclassrc file
+in order to add the new path to the 'icon dir' option. The 'icon dir'
+option is found under the '[defaults]' section, and it may consist of
+several paths separated by colons. Note that the current xclass version
+does not allow environment variables to be specified in the path, so
+things like $HOME/icons will not work.
+
+Another way of specifying the icon path is through the OX_POOL environment
+variable. As before, it may consist of several directory names separated
+by colons, and its value overrides the configuration file settings.
+
+
+MIME TYPES FILE
+---------------
+
+Some xclass widgets (like the file open dialog) need to use a special
+mime-type file which defines actions and icons associated to certain file
+types. 
+
+As with the case of configuration files there way be system-wide and
+user-level mime-type files. The system-wide file is usually in the
+/usr/local/xclass/etc directory, the user's one should be put in
+$HOME/.xclass/etc, the filename defaults to mime.types, but a different one
+can be specified in the xclassrc file ('mime type file' option).
+
+See the supplied MimeTypes.README file for details about the file format.
+
+
+That's all.
+Enjoy!

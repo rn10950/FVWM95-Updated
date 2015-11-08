@@ -1,0 +1,11 @@
+This directory contains the base xclass library code and include files.
+Note that the client applications are no longer included here, they are
+available separatedly.
+
+For installation instructions, please read the INSTALL file under the
+doc directory.
+
+Visit the official xclass homepage at http://xclass.sourceforge.net
+
+Send comments, patches, etc. to hperaza@users.sourceforge.net or use the
+xclass forums (https://sourceforge.net/forum/?group_id=36313)

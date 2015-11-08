@@ -1,0 +1,17 @@
+
+all: ${PROG}
+
+depend:
+	${MAKEDEPEND} ${CXXFLAGS} ${SRCS}
+
+install: 
+
+clean:
+	${RM} ${OBJS} $(PROG) *~ core *.bak
+
+distclean: clean
+
+${PROG}: ${OBJS}
+	$(CXX) -o $@ ${OBJS} $(LDFLAGS) $(LIBS) $(EXTRALIBS)
+	strip $@
+
