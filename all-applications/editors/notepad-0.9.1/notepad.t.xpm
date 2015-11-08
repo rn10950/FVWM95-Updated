@@ -1,0 +1,31 @@
+/* XPM */
+static char *notepad[] = {
+/* width height num_colors chars_per_pixel */
+"    16    16        8            1",
+/* colors */
+". c none s none",
+"# c #000000",
+"a c #00ffff",
+"b c #007979",
+"c c #868686",
+"d c #c7c7c7",
+"e c #ffffff",
+"f c #008686",
+/* pixels */
+"....###.##.##...",
+"...#aa#aa#aa#b#.",
+"...#aaaaaaaaa#c.",
+"..#aa#####aabdc.",
+"..#aa#####aa#dc.",
+".#aaaaaaaaabdec.",
+".#aaaaaaaaa#ccc.",
+"#aaaaaaaaabddec.",
+"#aaaaaaaaa#deec.",
+"#bbbbbbbbfccccc.",
+"...#ddddddddeec.",
+"...#dddddddeeec.",
+"...#ccccccccccc.",
+"...#deeeeeeeedc.",
+"....cccccccccc#.",
+"................"
+};

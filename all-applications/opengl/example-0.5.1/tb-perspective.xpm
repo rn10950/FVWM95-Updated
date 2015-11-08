@@ -1,0 +1,22 @@
+/* XPM */
+static char * tb_perspective_xpm[] = {
+"16 16 3 1",
+" 	s None	c None",
+".	c black",
+"X	c red",
+"    ............",
+"   .XXXXXXXXXX..",
+"  .XXXXXXXXXX.X.",
+" .XXXXXXXXXX.XX.",
+"............XXX.",
+".XXXXXXXXXX.XXX.",
+".XXXXXXXXXX.XXX.",
+".XXXXXXXXXX.XXX.",
+".XXXXXXXXXX.XXX.",
+".XXXXXXXXXX.XXX.",
+".XXXXXXXXXX.XXX.",
+".XXXXXXXXXX.XX. ",
+".XXXXXXXXXX.X.  ",
+".XXXXXXXXXX..   ",
+"............    ",
+"                "};

@@ -1,0 +1,26 @@
+/* XPM */
+static char *xcd_intro[] = {
+/* width height num_colors chars_per_pixel */
+"    16    16        3            1",
+/* colors */
+". c #000080",
+"# c #800000",
+"a c None s None",
+/* pixels */
+"aaaaaaaaaaaaaaaa",
+"aa..aaaaaaaa#aaa",
+"aa..aaa#######aa",
+"aaaaaaaaaaaa#aaa",
+"aaaaaaaaaaaaaaaa",
+"aaaaaaaaaaaaaaaa",
+"aa..aaaaaaaa#aaa",
+"aa..aaa#######aa",
+"aaaaaaaaaaaa#aaa",
+"aaaaaaaaaaaaaaaa",
+"aaaaaaaaaaaaaaaa",
+"aa..aaaaaaaa#aaa",
+"aa..aaa#######aa",
+"aaaaaaaaaaaa#aaa",
+"aaaaaaaaaaaaaaaa",
+"aaaaaaaaaaaaaaaa"
+};

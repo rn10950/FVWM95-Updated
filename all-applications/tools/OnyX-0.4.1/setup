@@ -1,0 +1,13 @@
+#!/bin/sh
+#onyx_script=`which oxs >& /dev/null | cut -f1 -d ":"`
+#if [ "${onyx_script}" != "which" ]
+onyx_script=`which oxs >& /dev/null`
+if [ "${onyx_script}" != "" ]
+then
+	$onyx_script .setup/setup.oxs
+else
+	echo ""
+	echo "'oxs' command not found. Using text based setup."
+	echo ""
+	./.setup/setup.txt
+fi

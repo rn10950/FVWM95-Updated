@@ -1,0 +1,88 @@
+Intro
+-----
+
+This is the beta version 0.6.1 of rx320, a Linux control program for the
+Ten-Tec RX320 receiver with a graphical user interface.
+
+Currently the program is capable of communicating with the receiver using
+one of the available serial ports. There is also support for managing
+frequency database files: the program can read and save files in Clifton
+Turner's *.320 format, and the receiver can be tuned to selected stations.
+New stations can be entered and existing ones can be edited.
+
+The program can also scan a frequency band, displaying a graphical view
+of the station activity.
+
+The program saves the whole receiver state on exit, including the two VFO
+frequencies and scan window settings, and restores it on startup. The
+receiver is also reinitialized every time a power-on is detected.
+
+Right-clicking on an empty space between buttons pops-up a menu which lets
+you to open a new frequency database window, show the scan window, access
+the configuration dialog, display the on-line help, or exit the program.
+
+You can have any given number of database windows open simultaneously. To
+load a frequency file (*.320 or *.cdf) use the Open option from the File
+menu of the database window. Double-click on station names to tune the
+receiver into that station. Select "Edit/Add new station" to enter a new
+station into the database, "Edit/Change entry" lets you edit the currently
+selected database entry.
+
+The main tuning knob works more like a real one (i.e. you click on the small
+hole and move the mouse around in circles), and not like the knob in the
+Ten-Tec's Windows program. If you have a wheel mouse supported by your X
+server, then you can use the wheel to tune up and down with the selected
+step, or ten times the step value if you hold Shift down (note that for this
+to work the mouse pointer must be located somewhere over the main window).
+
+You can also use the Right and Left arrow keys on your keyboard to tune up
+and down in frequency with the currently selected tuning step, or PgUp and
+PgDn to tune by 10 times the current step. Use the number keys to enter
+directly a frequency (in Hertz), finish with Enter to tune to that
+frequency or with Escape to abort the operation.
+
+The Up and Down arrow keys can be used to increase/decrease the speaker
+volume, or the line-out volume if you hold the Shift key down.
+
+For more help, consult the provided on-line help. Press the F1 key to
+display the help index.
+
+
+Home Page
+---------
+
+  http://xclass.sourceforge.net/rx320.html
+
+
+Installation
+------------
+
+To compile and run the program you need to have xclass version 0.8.3 or
+newer installed in your system (xclass is currently available from
+http://xclass.sourceforge.net).
+
+In order to build the executable go to the directory where you unpacked the
+sources and enter the following commands:
+
+  make
+  make install
+
+The last command must be run as superuser. If you do not have root access,
+you can install the application locally in your home directory, by typing
+
+  make install_user
+
+instead of 'make install'. That will cause the executable to be copied
+in $HOME/.xclass/bin and the help files in $HOME/.xclass/docs/rx320. You
+should then to either add $HOME/.xclass/bin to your $PATH environment
+variable, or to copy the rx320 executable to a suitable directory.
+
+To run the program, just type rx320 and the main window should appear. The
+serial port device initially defaults to /dev/ttyS1, and if you're using
+another port you'll have to use the configuration dialog (accessible from
+the popup menu as described above) to enter the new device name. Make sure
+you have the correct permissions to access the serial port.
+
+
+Have fun,
+Hector.

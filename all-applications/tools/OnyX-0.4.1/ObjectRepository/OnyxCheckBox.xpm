@@ -1,0 +1,20 @@
+/* XPM */
+static char * OnyxCheckBox_xpm[] = {
+"13 13 4 1",
+" 	c #808080",
+".	c white",
+"X	c black",
+"o	c #c0c0c0",
+"            .",
+" XXXXXXXXXXo.",
+" X.........o.",
+" X.......X.o.",
+" X......XX.o.",
+" X.X...XXX.o.",
+" X.XX.XXX..o.",
+" X.XXXXX...o.",
+" X..XXX....o.",
+" X...X.....o.",
+" X.........o.",
+" ooooooooooo.",
+"............."};

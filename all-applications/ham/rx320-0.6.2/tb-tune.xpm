@@ -1,0 +1,25 @@
+/* XPM */
+static char * tb_tune_xpm[] = {
+/* width height num_colors chars_per_pixel */
+"16 16 3 1",
+/* colors */
+" 	s None	c None",
+".	c black",
+"X	c #808080",
+/* pixels */
+"       .  ....  ",
+"       .X  X..X ",
+"       .X  . .X ",
+"       .X . X.X ",
+"       .X. X  X ",
+"  ...........   ",
+"   XXXX.XXXXXX  ",
+"     .....      ",
+"   ...X.XX..    ",
+"  . . X.X  X.   ",
+"   . X .X    X  ",
+"  . X  .X       ",
+" . X   .X       ",
+"  X    .X       ",
+"        X       ",
+"                "};

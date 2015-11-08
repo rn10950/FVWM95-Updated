@@ -1,0 +1,21 @@
+/* XPM */
+static char * Digit8_t_xpm[] = {
+"10 15 3 1",
+" 	c None",
+".	c green",
+"X	s None	c None",
+" ........ ",
+". ......X.",
+"..XXXXXX..",
+"..XXXXXX..",
+"..XXXXXX..",
+"..XXXXXX..",
+".X......X.",
+"X........X",
+".X......X.",
+"..XXXXXX..",
+"..XXXXXX..",
+"..XXXXXX..",
+"..XXXXXX..",
+".X......X.",
+"X........X"};

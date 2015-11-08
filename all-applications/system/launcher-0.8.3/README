@@ -1,0 +1,153 @@
+Intro
+-----
+
+This is xclauncher, a simple program launcher application for X windows.
+
+The application allows you to have an arbitrary group of command buttons
+arranged into several logical groups. A group is a container with a button
+at the top (a "tab"). By clicking on the tab button the corresponding
+container is opened and the previous is closed. The command buttons have, as
+you probably guessed, a command associated to it, which is executed when the
+button is pressed.
+
+
+Installation
+------------
+
+This version of xclauncher requires xclass 0.6.4 or later. To build the
+executable, cd to the directory where you unpacked the sources and type
+'make'. Copy the resulting 'xclauncher' executable to a directory in your
+$PATH (or use 'make install' as superuser).
+
+Optionally, copy the supplied xclauncher.rc file to the directory where
+the xclass ini files reside (usually ~/.xclass/etc).
+
+If you're using fvwm95 you might want to make the application sticky, so
+it would remain present on the screen after you change desktops or virtual
+windows. Just add the following line to your .fvwm95rc file:
+
+  Style "xclauncher" Sticky
+
+If you want it to start automatically when the WM is started, just add it to
+the InitFunction:
+
+  AddToFunc "InitFunction" "I" Exec xclauncher &
+
+or, if you want to give an explicit window geometry:
+
+  AddToFunc "InitFunction" "I" Exec xclauncher -geometry 90x700-5+5 &
+
+You can also, of course, start xclauncher directly from the shell command
+line prompt. A summary of command line options can be found at the end of
+this document.
+
+
+Usage
+-----
+
+The very first time you start the application, it will show an empty group
+named "Default". You can proceed then to rename this default group, add
+buttons and/or more groups as explained below.
+
+If you used the supplied xclaunch.rc file, then there will be a number of
+groups containing a few commands buttons. You may have to edit some of the
+button commands in order to make them work properly on your system.
+
+Adding buttons:
+
+   Select the group where you want the button to appear, right-click somewhere
+   in the empty space between buttons and select "Add button..." from the
+   context menu. In the dialog window that appears, type a name for the
+   button and a command to be excuted when the button is clicked. You can
+   also select an alternate icon for the button if you wish. Finish with OK.
+
+Changing button names and commands:
+
+   Right-click over the desired button and select "Edit..." from the context
+   menu. Use the dialog box to change the name, associated command and/or
+   icon.
+
+Removing buttons:
+
+   Right-click over the desired button, and then select "Remove" from the
+   context menu.
+
+Adding a new group:
+
+   Select a group after which you want new group to be inserted, then
+   right-click somewhere in the empty space between buttons and select
+   "Add group..." from the context menu. Type the desired group name in
+   the dialog that appears and click OK.
+
+Changing group names:
+
+   Right-click somewhere in the empty space between buttons, and select
+   "Rename group..." from the context menu.
+
+Removing a whole group:
+
+   Select the group you want to remove. Bring up the context menu by
+   right-clicking somewhere in the empty space between buttons and select
+   "Remove group". If the group is not empty a confirmation dialog will
+   appear, if you respond with "Yes" the group and all its buttons will be
+   removed. Note that if you delete all the groups, a "Default" group
+   will then appear which cannot be removed. That "Default" group can
+   be only renamed, or removed after some other group has been created.
+
+Changing the application window's name:
+
+   You can change the name that is displayed on the application's title bar.
+   Right-click somewhere in the empty space between buttons, and select
+   "Rename window..." from the context menu.
+
+Changing button order:
+
+   Not implemented yet.
+
+Changing group order:
+
+   Not implemented yet.
+
+Changing colors:
+
+   Not implemented yet.
+
+Changing fonts:
+
+   Not implemented yet.
+
+The application saves the window position on exit, so it will appear on the
+same place next time you start it. Note that in order for this to work
+properly you'll need a window manager that recognizes and correctly
+processes a StaticGravity hint in the WM_NORMAL_HINTS property. I found a
+bug in fvwm95-2.0.43c that caused the window to appear with a small offset
+from the requested position, a patch is included in this package to correct
+the problem (file fvwm95-placement.patch). To apply the patch, cd to the
+'fvwm' directory in the fvwm95 source tree, copy the patch file there and
+issue the command:
+
+  patch < fvwm95-placement.patch
+
+then recompile and reinstall fvwm95.
+
+Without the patch you'll have to specify the -geometry option to make the
+window appear in the desired location. Fvwm95-2.0.43d has the patch applied.
+The KDE window manager seems to have some problems as well, it seems to
+offset the position by one pixel each time the application is started, but I
+do not have a patch for it.
+
+
+Command line options
+--------------------
+
+The following command line options are recongnized:
+
+  -display displayspec
+
+    Starts the application on a different display or remote machine.
+
+  -geometry geometryspec
+
+    Specifies the startup window size and/or location. The geometryspec
+    argument is a standard X11 window geometry specification. This option
+    overrides the geometry specified in the .ini file.

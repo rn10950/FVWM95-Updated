@@ -1,0 +1,82 @@
+Intro
+-----
+
+This is a battery-status plugin for the taskbar, useful for laptop
+computers. It shows a small status icon in the tray window, which can be
+one of the following:
+
+- Blue battery: the computer's battery is fully charged.
+
+- Half-blue battery: the battery is partially discharged.
+
+- Gray battery with an exclamation mark next to it: the battery is almost
+  completely discharged (this is the "alert" state).
+
+- Gray battery with a red X in top of it: the battery is totally discharged.
+
+- AC plug-in cord: the computer is working from mains power, the battery
+  is not being charged.
+
+- AC plug-in cord in front of a half-yellow battery: the computer is working
+  from mains power and the battery is being charged.
+
+- Yellow battery with a question mark: APM support is not enabled in your
+  computer and therefore the battery status cannot be determined.
+
+In addition, a tooltip text is displayed when the mouse cursor stops for a
+second or more over the icon, showing the current status and battery power
+level in percent.
+
+The plugin also allows you to execute fvwm95 commands in response to
+certain actions, like clicking and/or double-clicking the icon, or during
+the "alert" status.
+
+In order for this plugin to work, you should have enabled APM support in
+your Linux kernel.
+
+
+Configuration options
+---------------------
+
+The plugin is loaded by the taskbar at startup time by specifying a
+"[plugin]" command in your .taskbarrc file (see the taskbar's README file
+for more details), for example:
+
+[plugin]
+file = battstat.so
+
+In addition, the following optional commands can be specified:
+
+update_interval - specifies how often (in seconds) the plugin should check
+    the battery status, and defaults to 30 seconds.
+
+fvwm_action_click - specifies the fvwm95 command to execute when the
+    status icon is clicked. Defaults to none.
+
+fvwm_action_doubleclick - specifies the fvwm95 command to execute when
+    the status icon is double-clicked. Defaults to none.
+
+fvwm_action_alert - specifies the fvwm95 command to be executed when the
+    "alert" status is entered. This command will be executed periodically,
+    with the interval specified by the "update_interval" option (see above),
+    which is by default every 30 secons, until the "alert" status finishes.
+
+
+Examples:
+
+This sets the update interval to 10 seconds, and beeps on alert every 10
+seconds:
+
+[plugin]
+file = battstat.so
+update_interval = 10
+fvwm_action_alert = Beep
+
+
+This one shows a message window every 30 seconds when the battery is low
+and executes a 'control_panel' program when the icon is double-clicked:
+
+[plugin]
+file = battstat.so
+fvwm_action_alert = Exec xmessage "Battery low! Save your data!"
+fvwm_action_doubleclick = Exec control_panel

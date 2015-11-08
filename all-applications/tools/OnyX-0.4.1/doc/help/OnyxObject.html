@@ -1,0 +1,49 @@
+<html>
+<head>
+<title>OnyxObject</title>
+</head>
+<body bgcolor="#FFFFF0">
+
+<H1>OnyxObject</H1>
+
+OnyxObject is the root class in the OnyX object hierarchy. All OnyX objects
+are derived from it. This class is never directly instantiated.<p>
+
+<hr>
+<b>Methods:</b><p>
+<ul>
+<li><tt>OnyxObject(char *ObjectType)</tt>
+<li><tt>virtual ~OnyxObject()</tt>
+<li><tt>virtual int Create()</tt>
+<li><tt>virtual void Move(int x, int y)</tt>
+<li><tt>virtual void Resize(int width, int height)</tt>
+<li><tt>virtual void MoveResize(int x, int y, int width, int height)</tt>
+<li><tt>virtual void Update()</tt>
+<li><tt>virtual void Enable()</tt>
+<li><tt>virtual void Disable()</tt>
+</ul>
+<p>
+
+<hr>
+<b>Properties:</b><p>
+<ul>
+<li><tt>int ID</tt>
+<li><tt>int X</tt>
+<li><tt>int Y</tt>
+<li><tt>int Width</tt>
+<li><tt>int Height</tt>
+<li><tt>int Size</tt>
+<li><tt>int IsChecked</tt>
+<li><tt>int IsEnabled</tt>
+<li><tt>int EnableToolTip</tt>
+<li><tt>char Text[256]</tt>
+<li><tt>char FontFamily[256]</tt>
+<li><tt>int FontSize</tt>
+<li><tt>char Picture[256]</tt>
+<li><tt>char ToolTip[256]</tt>
+<li><tt>const OXWindow *Parent</tt>
+</ul>
+<p>
+
+</body>
+</html>

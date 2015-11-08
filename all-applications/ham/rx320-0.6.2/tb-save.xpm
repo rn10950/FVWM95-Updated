@@ -1,0 +1,27 @@
+/* XPM */
+static char * tb_save_xpm[] = {
+/* width height num_colors chars_per_pixel */
+"16 16 5 1",
+/* colors */
+" 	s None	c None",
+".	c black",
+"X	c #808000",
+"o	c #c0c0c0",
+"O	c #808080",
+/* pixels */
+"                ",
+" .............. ",
+" .X.oooooooo.o.O",
+" .X.oooooooo...O",
+" .X.oooooooo.X.O",
+" .X.oooooooo.X.O",
+" .X.oooooooo.X.O",
+" .X.oooooooo.X.O",
+" .XX........XX.O",
+" .XXXXXXXXXXXX.O",
+" .XX.........X.O",
+" .XX......oo.X.O",
+" .XX......oo.X.O",
+" .XX......oo.X.O",
+"  .............O",
+"   OOOOOOOOOOOOO"};

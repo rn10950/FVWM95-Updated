@@ -1,0 +1,5 @@
+Toolbox 0
+Property MenuParent $X=$Y NULL
+Property Text strcpy($X,"$Y") MenuEntry
+Event MenuItemSelected
+Event MenuItemHighlighted

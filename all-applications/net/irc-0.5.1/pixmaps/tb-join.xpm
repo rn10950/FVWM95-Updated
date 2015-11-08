@@ -1,0 +1,22 @@
+/* XPM */
+static char * tb_join[] = {
+"16 16 3 1",
+" 	s None	m none	c None",
+".	s iconColor1	m black	c black",
+"X	c #000080",
+"    ........... ",
+"    .         . ",
+"    .         . ",
+"    .  X  X   . ",
+"       X  X   . ",
+"  .   XXXXXX  . ",
+"  ..   X  X   . ",
+".....  X  X   . ",
+"  ..   X  X   . ",
+"  .   XXXXXX  . ",
+"       X  X   . ",
+"    .  X  X   . ",
+"    .         . ",
+"    .         . ",
+"    ........... ",
+"                "};

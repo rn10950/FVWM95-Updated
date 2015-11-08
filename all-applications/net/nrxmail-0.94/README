@@ -1,0 +1,220 @@
+							Aachen, 98/09/10
+=============================================================================
+
+                         NRX Mail (Version 0.92dev)
+                           Written by Harald Radke
+			
+    A mail client using the XClass95 toolkit and part of the fOX project
+=============================================================================
+
+
+Release notes:
+--------------
+
+This is the first official "release" of NRX Mail. Right now it is only a
+development snapshot, so no final release, nor beta not even alpha!!!
+Besides the normal "no warranty" warning, this is a "Beware, pre-alpha
+stuff" warning.
+
+To all those, who ran the cvs version: 
+
+  The "Outbox" folder moved to "Unsent", so
+
+1) delete the ~/.nrxmail folder, or
+2) rename "Outbox" to "Unsent" and change the nrxmail.ini file apropriate
+
+
+Introduction:
+-------------
+
+NRX Mail is just another mail client for X. It uses the Xclass toolkit,
+for more information on Xclass, see:
+
+	http://xclass.sourceforge.net/
+
+Furthermore it is part of the fOX Project, fOX home is:
+
+	http://www.foxproject.org
+
+The final version of this program will provide all necessary features you
+would expect from a mail client. To get an overview of the current
+features/missing stuff, have a look at the TODO file.
+
+
+Installation:
+-------------
+
+See the INSTALL file for instructions about how to install NRX Mail
+
+
+Usage:
+------
+
+After starting the program you will see several items:
+
+- the menu bar:
+  All actions dealing with individual mail messages and folders can be
+  selected via the menu.
+
+- the toolbar:
+  Here you will find some shortcuts for features find in the menu bar.
+  If you are unsure about the action of a particular button, just move the
+  pointer over the pointer and wait a short time.
+  A tip window with a short explanation will appear.
+
+- the header window:
+  All mail messages of a folder are displayed in this window with state,
+  date, origin and subject.
+  By clicking at one header line, you will see the contents of the
+  particular message
+
+- the message window:
+  Shows the contents of the currently selected mail message.
+
+- attachments frame:
+  If you selected a mail message containing attachments (files which where
+  send with the mail) a button is shown which will open the attachments
+  frame. Every attached file will be represented by an icon, depending on
+  the type of file (as defined in your .mime.types file).
+  If the document type is known, you will see the corresponding icon.
+  By double clicking on such an icon, the apropriate application will be
+  launched, dispaying the file contents.
+  By clicking at the icon with the right mouse button, you can select
+  between viewing the file contents or save the file to disc.
+  Attachments of unknown file type can only be saved.
+
+- status bar:
+  Displays the number of message of the current folder.
+
+
+Folders:
+--------
+
+A folder contains several mail messages.
+NRX Mail creates four folders which are essential for using it.
+These folders are:
+
+- Inbox:
+  New mail messages are stored in this folder
+
+- Unsent:
+  When composing a mail message you can select wether to send it at once or
+  send it later.
+  If you choose the latter, the composed message will be stored at this folder.
+  You can send all mail messages inside this folder at any time by selecting
+  "Send Unsent Messages" from the "File" menu.
+
+- Sentmail:
+  A copy of every sent mail message is stored inside this folder.
+
+- Trash:
+  If you delete a mail message, it will not be deleted immediately, but
+  instead will be stored in this folder.
+  This way you can ban it from the origin folder without loosing it.
+  To remove deleted messages, select "File" -> "Empty Trash" or switch
+  to folder Trash and select "Folder" -> "Clear Folder"
+
+These four folders are called "System Folders". System folders can't be
+deleted nor renamed.
+
+Of course you can create your own folders to store mail messages wich are
+related to each other by any mean. These folders are "User Folders". You can
+rename and delete them.
+
+When deleting a folder, all the messages on it are immediately erased, and
+not moved to the Trash folder!!! Clearing a folder (execpt "Trash") will
+move all mail messages from this folder to folder "Trash".
+
+Besides system and user folders, there are two more folder attributes:
+"Linked Folder" and "Regular Folder".
+
+- Regular Folder:
+  Well, normal folder, a file inside ~/.nrxmail
+
+- Linked Folder:
+  A link inside ~/.nrxmail pointing to a regular folder somewhere in your
+  disk. The idea is to be able to access folders created by other mail
+  clients without duplicating them.
+
+Both System folders and User folders can be either linked or regular.
+
+Deleting a regular folder will cause the particular file inside ~/.nrxmail
+to be deleted. When deleting a linked folder, a dialog box will pop up
+which lets you select wether you want to:
+ 
+ - delete only the link in ~/.nrxmail
+ - delete also the linked folder
+
+
+Incoming Mails:
+---------------
+
+Incoming mail messages are stored at the Inbox folder.
+Messages can be deleted (moved to folder "Trash") and moved between folders.
+You can reply to any mail messages or forward them to other ppl.
+All those actions can be selected via the "Message" menu.
+Finally you can have a look at the message source itself.
+Besides the information of the message header window and the message itself,
+you can see additional information added by all mail delivery system the
+message passed from it's origin up to your Inbox folder.
+
+To check for the new mail which might have arrived while you are running NRX
+Mail, select "File"->"Check Mail".
+
+
+Composing Mail:
+---------------
+
+To compose a message, select "File"->"Compose".
+A new window will appear which is divided into three parts:
+
+- Adresses:
+  Here you can enter recipient adresses and those which
+  should get a copy.
+  Furthermore you specify the subject of your message
+
+- Message:
+  Enter the message text
+
+- Attachments:
+  Here you can attach files to your mail message.
+
+
+You can send a message right after composing it or, e.g.
+you have no permanent Internet connect, send it later.
+In this case the message is stored in folder "Unsent".
+You can send unsent messages at any time you want (and
+have a connect).
+
+More:
+-----
+
+Later...
+
+
+
+
+
+Contact:
+--------
+
+For bug reports, suggestions, or if you just want to say what you think,
+mail to:
+
+	harryrat@kawo1.rwth-aachen.de
+
+Information about the latest version can be found at the fOX project page
+at the "projects" section (Network - Applications).
+
+	http://www.foxproject.org
+
+The latest version of the source package can be found at (FTP):
+
+        postnuklear.kawo1.rwth-aachen.de/fOX/projects/network/applications/
+
+
+Hope you will like this program and it will be more useful than annoying.
+
+
+Greets,
+	Harry

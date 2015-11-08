@@ -1,0 +1,26 @@
+Toolbox 1
+ToolTip Message Box
+Property Title strcpy($X,"$Y")
+Property Message strcpy($X,"$Y")  
+Property DisplayWindow $X=$Y ApplicationRoot()
+Property Icon $X=$Y AsteriskIcon
+Property UseYesButton $X=$Y False
+Property UseNoButton $X=$Y False
+Property UseOkButton $X=$Y True
+Property UseCancelButton $X=$Y False
+Property UseRetryButton $X=$Y False
+Property UseIgnoreButton $X=$Y False
+Property UseApplyButton $X=$Y False
+Property UseCloseButton $X=$Y False
+Property UseDismissButton $X=$Y False
+PropertySetting UseYesButton ReadOnly ComboBox True False
+PropertySetting UseNoButton ReadOnly ComboBox True False
+PropertySetting UseOkButton ReadOnly ComboBox True False
+PropertySetting UseCancelButton ReadOnly ComboBox True False
+PropertySetting UseRetryButton ReadOnly ComboBox True False
+PropertySetting UseIgnoreButton ReadOnly ComboBox True False
+PropertySetting UseApplyButton ReadOnly ComboBox True False
+PropertySetting UseCloseButton ReadOnly ComboBox True False
+PropertySetting UseDismissButton ReadOnly ComboBox True False
+PropertySetting DisplayWindow ReadWrite ComboBox ApplicationRoot()
+PropertySetting Icon ReadOnly ComboBox AsteriskIcon ExclamationIcon QuestionIcon StopIcon

@@ -1,0 +1,323 @@
+This is the version 0.4.1 of the OnyX development environment. It is
+basically the same 0.3.0, with the necessary changes to make it compile and
+run under xclass-0.9.1. Some bugs in the development environment and
+controls were fixed in the process. All controls were revised and/or remade,
+the code cleaned up. Also a few new controls were added to the repository.
+
+The additional changes I made to the code are summarized below.
+
+
+ChangeLog
+---------
+
+28/01/2000
+
+- Removed redundant delete statements in controls.
+
+- There is now a single OResourcePool object per application, instead of
+  one per widget instance.
+
+- OnyxTree now makes use of the standard OXListTree.
+
+
+27/09/2001
+
+- Started porting to xclass 0.5.7
+
+
+11/08/2004  (0.4.0)
+
+- Started porting to xclass 0.9.1
+
+- Updated OnyxMessage object. All object message passing switched to
+  OMessage style.
+
+
+12/08/2004
+
+- Updated most controls. Some of them still contain redundant redirected
+  OXFrames.
+
+- Got the main application running!
+
+- Enclosed the code of each control in each header inside #ifdef ... #endif
+  statements, to avoid any occasional recursive include problems.
+
+
+17/08/2004
+
+- Port almost complete, OnyX can now compile and run simple applications.
+
+- Added OnyxObject class: a base class for all OnyX objects.
+
+- Removed the 'Directory' property from all objects except from OnyxWindow.
+
+
+04/09/2004
+
+- Removed the brackets from focused checkboxes in the Custom Controls
+  window, these were necessary with early xclass versions which did not
+  have widget focus highlighting.
+
+- Removed the scrollbar from Project Explorer window, which dated from the
+  times when xclass' OXListTree was in development stages and didn't have
+  any scroll capabilities.
+
+- Removed unecessary code from OnyxTree that was intended to aid with
+  external scrolling.
+
+- Added OnyxTimer.oob and OnyxTimer.ooc to the Object Repository, so timer
+  objects could appear in the Toolbox.
+
+- Fixed OnyxWindow::Close(), there is no need to send a ClientMessage
+  to InternalWindow anymore. OnyX and generated applications seem to
+  close properly now. Related X errors dissappeared.
+
+
+05/09/2004
+
+- Some of the toolbar icons were redesigned.
+
+- OnyX and its generated applications are now working very stable
+  (virtually no crashes!).
+
+
+06/09/2004
+
+- OnyxDropBox now uses the standard OXComboBox.
+
+
+07/09/2004
+
+- CreateDevelopmentItems() now calls CreateDevelopmentItem(), duplicate
+  code was removed.
+
+- OnyxBase: added Font property. Modified OnyxLabel, OnyxButton,
+  OnyxCheckBox and OnyxRadioButton to make use of the user-specified font.
+
+- Automatically generated Makefiles now use xc-config.
+
+
+08/09/2004
+
+- Corrected OnyxFileDialog.oob, fixed a bug in OnyxFileDialog.cc
+  (superfluous OXFileDialog delete).
+
+- Added OnyxColorDialog and OXFontDialog to the ObjectRepository.
+
+- Replaced ColorWindow with OnyxColorDialog.
+
+- Added support for quoted strings when reading .oob files, so parameters
+  could contain embedded spaces (like font names do).
+
+- Renamed OnyxDropBox to OnyxComboBox.
+
+- PropertiesWindow.cc: use OnyxFontDialog as FontBrowser.
+
+- Removed InitialText property from OnyxTextBox, since the existing Text
+  does the job.
+
+
+09/09/2004
+
+- IntializeInternalMain_cc: escape quotes when expanding "$Y" strings.
+
+- OnyxLabel, OnyxIcon: removed the redundant composite frame.
+
+- OnyxIcon: added support for shaped icons.
+
+- Added BorderType property. Used in OnyxLabel and OnyxIcon.
+
+- Added VerticalAlignment and HorizontalAlignment properties. Used in
+  OnyxLabel.
+
+
+10/09/2004
+
+- Added a "Save Project" toolbar button.
+
+- Added WindowExposed event.
+
+- Added OnyxDraw, an object that supports drawing primitives.
+
+- Corrected a bug in OpenProject(): during the cleanup of the previous
+  project structures, only the first element in the various lists was
+  being deleted. Corrected also the loop for InternalMakefile cleanup.
+
+
+11/09/2004
+
+- Added ResetProject() function, which does a complete cleanup of the
+  old project structures.
+
+- OpenProject() and NewProjectOpenButton_ButtonClick() now call
+  ResetProject(). The development environment no longer crashes when
+  creating a new project while the old one was open.
+
+- OnyxMenuBar: force window position to be 0,0. Force Height property
+  to be GetDefaultHeight(). Also, the redundant composite frame was 
+  removed.
+
+- "New Project" now chdirs to the parent dir if ValidProject was True.
+
+- "Save Project As..." now supplies the default .oxp file extension.
+
+- Command line arguments are now passed to ApplicationInitialize() and
+  Initialize(), then forwarded to OXClient's constructor to allow
+  recognizing of -display xxx option.
+
+- Corrected a bug in InitializeInternal...() functions that caused the
+  InternalCodeFile list to become corrupted.
+
+- Add OnyxIconLocation and OnyxLocation/ObjectRepository to xclass pixmap
+  path (done by setting the OnyxWindow Directory property).
+
+- Prefixed all OnyX pixmap names in the icons directory with "onyx_".
+
+- Do not snap-to-grid top-level window movements. That is confusing for both
+  the user and the window manager.
+
+
+12/09/2004
+
+- Corrected a bug in InternalCodeFile::Check(): printf was being used
+  instead of sprintf.
+
+- Changed the char-by-char reads and writes to a whole block read and write
+  in InternalCodeFile::Open(), AppendToFile(), WriteForEdit() and Check().
+
+- Removed the unused InternalWindowccCode variable.
+
+- Added a check for HasBeenDeleted everywhere InternalOxcCode is used.
+  Deleting an object does not removes the code from InternalOxcCode, but
+  marks it as deleted for a future implementation undo operation. Since
+  there were no checks for HasBeenDeleted anywhere in the code, adding a new
+  object of the same type led to some conflicts, like duplicated code in
+  OnyxWindow1.cc and random crashes.
+
+- Had to force _focusMgr to NULL in OnyxWindow. Otherwise OnyX would crash
+  when the development window is closed while some widget on it had the
+  focus (xclass tries to set the focus to a non-existing window).
+
+
+17/09/2004  (0.4.1)
+
+- Corrected a minor error in OSaveButton_ButtonClick().
+
+- OnyxDraw: added StringWidth(), StringHeight() and StringAscent() methods.
+
+- Renamed BorderType to BorderStyle.
+
+- Renamed WindowExposed event to Paint. Makes more sense to the end user.
+
+- Added double-buffering capabilities to OnyxDraw.
+
+
+19/09/2004
+
+- Added OnyxSpinButton to the Object Repository.
+
+
+06/10/2004
+
+- Added OnyxProgressBar to the Object Repository.
+
+
+TODO
+----
+
+- Some bugs still need to be corrected, mostly regarding cleanup of
+  objects and resources.
+
+- Some cosmetic corrections needed. For example, the look and design of some
+  dialog boxes must be improved, the behaviour of the "snap to grid" feature
+  is not 100% correct, etc.
+
+- Add the frames to the parent. Hopefully that can be done without too much
+  rework if we use a NULL layout manager. Otherwise TAB focus cycling and
+  automatic frame cleanup will not work.
+
+- Add Focus in/out user events to objects.
+
+- Add some extra properties, like text alignment for labels and buttons.
+
+- Export Project, Create Application: add default .oep and .tgz extensions
+  if not supplied.
+
+- Add a "Close Project" option?
+
+- Automatically open the first window when a project is opened?
+
+- Do not require Enter pressing on text entries.
+
+- Add PreferredWidth and PreferredHeight properties to some controls?
+
+- Do not require "snap-to-grid" for the main application window (maybe
+  is OK for the size, but not for the position).
+
+- Attempting to delete an OnyxWindow object with controls on it should popup
+  a confirmation dialog.
+
+
+BUGS
+----
+
+- Sometimes changing properties (button name, for example) fail while the
+  Toolbox window is visible. (Noticed once, can't reproduce it). [Seems
+  to happen when placing a control on the main window while the property
+  dialog has the focus - no brackets appear, no visual updating of control]
+
+- Another sporadic one: place a OnyxTree on a form, 99% of the time it
+  can be moved/resized correctly. During the other 1% it likes to shrink
+  in big steps and even to jump to a negative size when the mouse enters
+  the OnyxTree window.
+
+- Properties window, "Browse" button (for pixmaps): must restore the old
+  directory after exiting the file dialog, otherwise the project is written
+  to the wrong directory when we (re)save it.
+
+- "Export Project" and "Create Application" do not set the default file
+  extensions for saved files.
+
+- Sometimes when opening a new project, a lot of X errors are reported
+  (due to no longer existing windows). Maybe related to incomplete cleanups?
+
+
+Notes
+-----
+
+OnyX is a Visual Basic-like application development environment: the user is
+presented a collection of "OnyX" objects (controls or building blocks) that
+can be added to a form (top-level window). Object properties, like color,
+name, size and position can be specified at design time, and modified during
+run time. The user typically needs only to write the code to execute in
+response to an action performed by the object.
+
+OnyX does not provides a direct way of creating new types of these building
+blocks. Instead, the user is limited to the standard set of objects supplied
+with the distribution, and controls supplied by third parties ("custom
+controls").
+
+OnyX objects are some sort of intermediate objects that control the behaviour
+of xclass widgets, presenting a standarized set of properties to the user
+and to the development environment.
+
+OnyX objects manipulate xclass objects in a quite non-standard way, the most
+significant characteristic is the fact that children widgets are not added
+to their parent's linked list of frames, making it impossible to use xclass'
+OLayoutManager objects to do the placement of widgets automatically. Also,
+automatic cleanup of children widgets does not take place on parent deletion
+in that case, and the tree of application widgets has to be maintained by
+hand. Keyboard shortcuts and focus cycling using the TAB key will not work
+either. This may change in the future.
+
+All the messages generated by xclass widgets arrive to a central "Message
+Center", from which they are dispatched to the appropiate handling function.
+The last ones look just like ordinary C functions, from which the user can
+access any object and modify or examine its properties. Because of that,
+objects (or more exactly, pointers to objects) have to be declared as global
+variables to the whole application.
+
+OnyX is written in OnyX. I don't know whether the author used earlier
+versions of the development environment to design the main window and dialog
+boxes, but in any case it uses exclusively only OnyX objects.

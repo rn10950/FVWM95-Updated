@@ -1,0 +1,129 @@
+<html>
+<head>
+<title>OnyX tutorial</title>
+</head>
+<body bgcolor="#FFFFF0">
+
+<H1>Onyx Tutorial</H1>
+
+Step by step instructions to your first OnyX application.<p>
+
+Let's make a simple "Hello world" application. Start OnyX. A splash screen
+flashes for a second and then the main OnyX window appears at the top
+of the screen.
+
+<center><img src="onyxmain.gif"></center>
+
+Select "New Project" from the File menu. In the dialog box that appears type
+a name for the application, for example <b>hello</b> and click the "Start
+New Project" button.<p>
+
+A window like the one below will appear:
+
+<center><img src="designform.gif"></center>
+
+That is the design form for the main window. The dotted pattern is a grid
+that facilitates control alignment. That grid will not appear in the
+generated application.<p>
+
+Now click on the Toolbox icon <img src="toolboxicon.gif"> in the toolbar or
+select "ToolBox" from the "View" Menu to bring the ToolBox window:
+
+<center><img src="toolbox.gif"></center>
+
+The ToolBox shows a set of basic controls that can be placed on your main
+window. That is not the complete set, and later we will show you how to add
+and remove controls from the ToolBox.<p>
+
+Let's place a label on the main window. Click on the first button on the
+third row from the top <img src="toolboxlabel.gif"> to select the label
+control. Then click somewhere on the design window to place the label:<p>
+
+<center><img src="designform1.gif"></center>
+
+Now you can click on the label and move it around. You will notice that
+four small brackets appears at the edges of the area occupied by the label.
+
+<center><img src="brackets.gif"></center>
+
+To resize the label, click and drag one of these brackets. To move the
+label, just click inside the label area and drag the label. You will notice
+that when you release the mouse button, the brackets will "stick" to the
+closest grid dots. That's the "snap-to-grid" feature that can be used to
+neately align controls.<p>
+
+Now click on the Properties <img src="propertiesicon.gif"> toolbar button or
+select "Properties" from the "View" menu. The Properties dialog for the
+current control (the label) appears, allowing you to modify its settings.<p>
+
+<center><img src="properties.gif"></center>
+
+Change the text displayed by the label by typing something in the the field
+labeled "Text". For example, <b>Hello, world!</b>. Press Enter, then
+close the window.<p>
+
+<i>Note: You <b>must</b> press Enter after modifying any of the fields in
+the Properties dialog box for the changes to take place. If you do not press
+Enter on some control and close the Properties window, the changes will be
+lost. That's the current way of cancelling changes. That behaviour may
+change in the future, either by automatically applying the changes as you
+type, or by including an "OK" and "Cancel" buttons. You can usually see the
+changes reflected immediately after pressing Enter without having to close
+the Properties window.</i><p>
+
+If the label does not display the full text that you typed and it appears
+cropped, that means that the label is too small and you should enlarge it.
+Finally, center the label so the main window looks like the one below:
+
+<center><img src="designform2.gif"></center>
+
+We are now ready to build the application.<p>
+
+Click on the "Make and Run" <img src="makerunicon.gif"> toolbar button.
+Oops... a warning message box appears, we haven't saved our project yet!
+Answer "Yes" to the save question, and a file dialog box will appear asking
+you to select a directory where the project should be saved. If you are
+happy with the current directory, just click "Open". Otherwise change to the
+appropiate directory first.<p>
+
+After the project is saved, a window appears where you can monitor the
+build process. When the compilation is done, your application is started.<p>
+
+<center><img src="helloapp.gif"></center>
+
+No... it is <i>not</i> that the grid suddenly dissappeared. That's your
+application running! <b><i>And you didn't have to type a single line of
+code!</i></b> Notice that it sits right in the same place the design window
+is. To convince yourself, just move it to a side to reveal the design window
+behind.<p>
+
+<i>Note: Some window managers might override the window's specified 
+starting position. I've used Fvwm95 for this example, and I would expect
+most other window managers to produce the same behaviour.</i><p>
+
+Close the application by clicking on the close button in the window title
+bar. You might want to exit OnyX at this point and to try running the
+application manually.<p>
+
+You would be probably asking yourself by now: "where is my program?". Let's
+have a look at the OnyX project structure.<p>
+
+In the directory where you saved your project you will find a file named
+<b>hello.oxp</b>. That's the project file, it is a text file, and it has
+executable permissions. If you execute it, the OnyX development environment
+is called and it will automatically open the project.<p>
+
+In the same directory you will find a hidden subdirectory named
+<b>.hello.oxd</b>. Inside it you will find your <b>hello</b> executable.
+There are also a bunch of other files: a Makefile, some source files (*.cc),
+header files (*.h), object files (*.o) and "object collection" files
+(*.oxc). All these files were automatically generated by OnyX and together
+they describe your application.<p>
+
+There is also a hidden <b>.onyx</b> subdirectory which contains the set of
+OnyX objects your that application uses (more exactly, the objects that
+currently appear in the ToolBox). These are just copies from the OnyX
+ObjectRepository directory.<p>
+
+</body>
+</html>

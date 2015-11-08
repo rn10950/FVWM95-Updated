@@ -1,0 +1,16 @@
+/* XPM */
+static char * tbg2_xpm[] = {
+/* width height num_colors chars_per_pixel */
+"8 8 2 1",
+/* colors */
+" 	c white",
+".	c #c0c0c0",
+/* pixels */
+" .   .  ",
+"  . .  .",
+".  .  ..",
+"  . .  .",
+" .   .  ",
+".  .  . ",
+"  ...  .",
+".  .  . "};

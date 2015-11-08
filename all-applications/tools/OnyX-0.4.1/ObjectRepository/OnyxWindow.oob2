@@ -1,0 +1,67 @@
+/* This is the potential future object description file for the Onyx Window */
+Toolbox
+{
+	IsToolboxItem = 0;
+}
+
+Properties
+{
+	Name	{
+			Assignment = strcpy($X,"$Y");
+			DefaultValue = Window;
+		}
+
+	Class	{
+			Assignment = strcpy($X,"$Y");
+			DefaultValue = Window;
+		}
+
+	Resource {
+			Assignment = strcpy($X,"$Y");
+			DefaultValue = Window;
+		}
+
+	X	{
+			Assignment = $X=$Y;
+			DefaultValue = 0;
+		}
+
+	Y	{
+			Assignment = $X=$Y;
+			DefaultValue = 0;
+		}
+
+	Width	{
+			Assignment = $X=$Y;
+			DefaultValue = 200;
+		}
+
+	Height	{
+			Assignment = $X=$Y;
+			DefaultValue =  100;
+		}
+
+	CloseDestroysWindow {
+			Assignment = $X=$Y;
+			DefaultValue = False;
+		}
+
+	CloseExitsApplication {
+			Assignment $X=$Y;
+			DefaultValue = False;
+
+		}
+}
+
+Events
+{
+	WindowClosed;
+	WindowCloseSignaled;
+	WindowLoad;
+	ButtonPressed, int Button, int x, int y;
+	ButtonReleased, int Button, int x, int y;
+	ButtonClicked, int Button, int x, int y;
+	PointerMoved, int x, int y, int x_root, int y_root;
+	WindowMoved, int OldX, int OldY, int NewX, int NewY;
+	WindowResized, usigned int OldWidth, unsigned int OldHeight, unsigned int NewWidth, unsigned int NewHeight;
+}

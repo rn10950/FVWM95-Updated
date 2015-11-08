@@ -1,0 +1,206 @@
+<html>
+<head>
+<title>Basic operation</title>                                                 
+</head>
+<body bgcolor="#ffffd0" text="#000000" link="#0000ee" vlink="#551a8b">      
+
+<H1>Basic operation</H1>
+
+The main program window is shown below. You can click on any control
+for help.<p>
+
+<a name="main_window"></a>
+<center>
+<img src="rx320.gif" border=0 usemap="#map1">
+</center>
+<p>
+
+<map name="map1">
+<area href="#AGC" shape=rect coords="12,136,67,205">
+<area href="#VFO" shape=rect coords="12,208,67,260">
+<area href="#mode" shape=rect coords="79,136,133,223">
+<area href="#mute" shape=rect coords="79,241,133,260">
+<area href="#tuning" shape=rect coords="146,136,201,260">
+<area href="#tuning" shape=circle coords="280,200,56">
+<area href="#tuning_buttons" shape=rect coords="356,152,378,248">
+<area href="#tuning_ruler" shape=rect coords="114,106,529,131">
+<area href="#volume" shape=rect coords="386,150,406,264">
+<area href="#volume" shape=rect coords="415,150,435,264">
+<area href="#filters" shape=rect coords="444,150,464,264">
+<area href="#pbt" shape=rect coords="473,150,493,264">
+<area href="#cwo" shape=rect coords="502,150,522,264">
+<area href="display.html" shape=rect coords="112,23,529,103">
+</map>
+
+<a name="tuning"></a>
+<H3>Tuning the receiver</H3>
+
+Tuning the receiver to a station can be performed in a variety of ways:<p>
+
+<b>Using the main tuning knob</b><p>
+
+The main tuning knob works like a real one, and not like the knob in
+Ten-Tec's Windows program. To use it, click on the small hole and
+<i>drag</i> the pointer around in circles.<p>
+
+<a name="tuning_ruler"></a>
+<b>Using the slide-ruler dial</b><p>
+
+The slide-ruler dial displays a section of the band. You can click and drag
+on the slider to tune to the desired frequency.<p>
+
+<a name="tuning_buttons"></a>
+<b>Using the tuning buttons</b><p>
+
+If you don't feel comfortable with the tuning knob or the slide-ruler dial,
+to the right of the main tuning knob you have four buttons that you can also
+use for tuning. The single-arrow buttons tune up and down by the current
+tuning step, the double-arrow ones tune by 10 times that value.<p>
+
+<b>Using a wheel mouse</b><p>
+
+If you have a wheel mouse supported by your X server, then you can use the
+wheel to tune up and down with the selected step, or ten times the step
+value if you hold the Shift key down <i>(note that for this to work you must
+keep the mouse pointer located anywhere over the main window)</i>.<p>
+
+<b>Using the keyboard</b><p>
+
+You can tune the receiver using the computer keyboard as well:<p>
+
+<ul> 
+<li>Use the Right and Left arrow keys to tune up and down in frequency by
+the currently selected tuning step.
+<li>Use PgUp and PgDn to tune by 10 times the current step.
+<li>Use the plus (+) and minus (-) keys to change the tuning step.
+<li>Use the number keys to directly enter a frequency in Hertz,
+finish with Enter to tune to the entered frequency, Escape aborts the
+operation.
+</ul>
+
+The full list of supported keyboard shortcuts is given
+<a href="keys.html">here</a>.<p>
+
+The tuning step is adjustable by selecting one of the <b>Step</b>
+buttons.<p>
+
+<a name="mode"></a>
+<H3>Selecting a detection mode</H3><p>
+
+Use the <b>Mode</b> buttons to select the receiver detection mode:<p>
+
+<ul>
+<li>Use AM for most Shortwave and AM Broadcast band listening.
+<li>Use USB and LSB for listening to sideband modes, and in some cases, AM.
+<li>Use CW mode for listening to Morse code and digital modes.
+</ul>
+
+<a name="AGC"></a>
+<H3>Changing AGC settings</H3>
+
+The AGC (Automatic Gain Control) determines how quickly the receiver gain is
+allowed to increase. The RX320 provides three different AGC settings that
+can be used to maximize receiver performance under different conditions:<p>
+
+<ul>
+<li>The Medium setting is good for general listening.
+<li>The Slow setting will help to reduce static during breaks in SSB
+transmissions.
+<li>The Fast setting may be needed when atmospheric conditions, such as
+lightning, make hearing a weak station difficult.
+</ul>
+
+Select the appropriate setting using the <b>AGC</b> buttons. The current
+setting is indicated in the <a href="display.html">main display</a>.<p>
+
+<a name="volume"></a>
+<H3>Volume control</H3>
+
+The <b>Vol</b> slider operates the main speaker output from the receiver.
+The <b>Line</b> slider operates the line output audio.<p>
+
+You can also change the volume using the keyboard:<p>
+
+<ul> 
+<li>Use the Up and Down arrow keys to increase and decrease the speaker volume.
+<li>Use &lt;Shift-Up arrow> and &lt;Shift-Down arrow> keys to increase and decrease
+the line output volume.
+</ul>
+
+<a href="keys.html">More keyboard shortcuts</a>.<p>
+
+<a name="mute"></a>
+
+Use the <b>Mute</b> button to mute the receiver. Both the main speaker and
+the line output are silenced. Press the button again to resume audio
+output.<p>
+
+<a name="filters"></a>
+<H3>Choosing a filter</H3>
+
+Use the <b>BW</b> (Bandwidth) slider to set the receiver filter width.
+The selected filter width is indicated in the <a href="display.html">main
+display</a>.<p>
+
+<ul>
+<li>Use wide filter widths (3.0-8.0 KHz) for AM listening.
+<li>Use medium widths (1.8-3.0 KHz) for sideband (USB and LSB)
+listening.
+<li>Use narrow widths (300 Hz-1.8 KHz) for CW and digital modes.
+</ul>
+
+<a name="pbt"></a>
+<H3>Passband tuning (IF shift)</H3>
+
+The <b>PBT</b> (Passband Tuning) slider shifts the center of the passband up
+or down, while the tuning frequency remains the same. This can be used to
+eliminate an interfering signal just above or below the one you are trying
+to listen to.<p>
+
+<a name="cwo"></a>
+<H3>CW offset</H3>
+
+The <b>CWO</b> (CW offset) slider works only in CW mode and its action is
+similar to the BFO control found commonly in communication receivers. When
+receiving a CW signal, you can tune to the exact frequency of the signal and
+use the CWO slider to change the output audio tone.<p>
+
+The control is also useful in digital modes, like RTTY or HF fax: as with CW
+signals, tune to the center frequency of the signal and then use the CW
+offset control to shift the signal up or down in frequency as required by the
+decoder software.<p>
+
+<a name="VFO"></a>
+<H3>VFO</H3>
+
+The program emulates a receiver with two separate VFO (Variable Frequency
+Oscillator). Each VFO saves not only the current frequency the receiver is
+tuned to, but also the tuning step, detection mode, filter, AGC, PBT 
+and CW offset settings.<p>
+
+You can switch at any time between the current and the alternate VFO with
+the <b>A/B</b> button. To save the current settings into the alternate
+VFO, use the <b>A->B</b> button.<p>
+
+<a name="menu"></a>
+<H3>Main Menu</H3>
+
+The application main menu is accessible by right clicking on the main window
+(in the current version you may right-click anywhere, except over a slider
+control).<p>
+
+The following options are available:<p>
+
+<ul>
+<li><a href="freqdb.html">Frequency Database</a>
+<li><a href="scan.html">Scan</a>
+<li><a href="setup.html">Configure</a>
+<li>About
+<li>Help
+<li>Exit
+</ul>
+
+Note that <a href="freqdb.html">Frequency Database</a> windows have
+their own separate menu system.<p>
+
+</html>

@@ -1,0 +1,17 @@
+--- placement.c.orig	Mon Jul  1 11:47:43 2002
++++ placement.c	Mon Jul  1 11:50:31 2002
+@@ -275,6 +275,14 @@
+       /* if the gravity is towards the top, move it by the title height */
+       tmp_win->attr.y -= gravy*(tmp_win->bw-tmp_win->old_bw);
+       tmp_win->attr.x -= gravx*(tmp_win->bw-tmp_win->old_bw);
++
++      /* 30/6/2002: if the gravity is Static, the client window must
++       * remain in the requested postition */
++      if (gravx == 0)
++        tmp_win->attr.x -= tmp_win->boundary_width;
++      if (gravy == 0)
++        tmp_win->attr.y -= tmp_win->boundary_width + tmp_win->title_height;
++                    
+       if(gravy > 0)
+         tmp_win->attr.y -= 2*tmp_win->boundary_width + tmp_win->title_height;
+       if(gravx > 0)

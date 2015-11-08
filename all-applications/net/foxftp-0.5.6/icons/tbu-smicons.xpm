@@ -1,0 +1,22 @@
+/* XPM */
+static char * tbu_smicons_xpm[] = {
+"16 16 3 1",
+" 	s None	c None",
+".	c #808080",
+"X	c white",
+"                ",
+" ..             ",
+" .X. ...        ",
+" ...X XXX       ",
+"  XXX           ",
+"                ",
+"        ..      ",
+"        .X. ... ",
+"        ...X XXX",
+"         XXX    ",
+"                ",
+"   ..           ",
+"   .X. ...      ",
+"   ...X XXX     ",
+"    XXX         ",
+"                "};

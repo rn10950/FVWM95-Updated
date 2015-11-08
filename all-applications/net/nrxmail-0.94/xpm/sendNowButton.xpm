@@ -1,0 +1,30 @@
+/* XPM */
+static char * sendNowButton_xpm[] = {
+/* width height num_colors chars_per_pixel */
+"16 16 8 1",
+/* colors */
+" 	s none	c none",
+".	c red",
+"X	c #000084",
+"o	c white",
+"O	c #ff8c39",
+"+	c black",
+"@	c green",
+"#	c #00b500",
+/* pixels */
+"                ",
+"        ..X     ",
+"      XXoOOX    ",
+"    ..oooOOO.   ",
+"  XXoo+oooooo.  ",
+"..ooo+o+oo+oooX ",
+"+Xo+oo+oo+o+o.+ ",
+" +Xoo+oo+o+o.+  ",
+"  +.oooooooX+   ",
+"   +.ooooo.+    ",
+"    +Xooo.+     ",
+"     +.oX+ @@@@ ",
+"      +.+  #@@@#",
+"       +   @@@@#",
+"          @@@#@#",
+"          #@# ##"};

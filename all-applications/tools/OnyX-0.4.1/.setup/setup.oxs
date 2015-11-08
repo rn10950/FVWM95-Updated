@@ -1,0 +1,775 @@
+#!/usr/local/bin/oxs
+variable setupinfo [open .setup/setup.info]
+variable LineIn
+variable Tag
+variable Value
+variable SetupInfo
+variable Command
+variable Description
+variable Estimation
+variable LinkDirSource
+variable LinkDirDest
+variable LinkFileSource
+variable LinkFileDest
+variable TotalCommands 0
+variable TotalDescriptions 0
+variable TotalEstimations 0
+variable CurrentCommand 0
+variable TotalLinkDirs 0
+variable TotalLinkFiles 0
+variable CurrentLinkDir -1
+variable CurrentLinkFile -1
+variable Location 1
+variable LinesToExpect 0
+variable DoLink 0
+
+gets $setupinfo LineIn
+while { ![eof $setupinfo] } {
+	varset Tag [ctoken LineIn ":"]
+	varset Value {[string trim [csubstr $LineIn 1 len]]}
+
+	if { ![string compare $Tag "Command"] } {
+		keylset Command $TotalCommands $Value
+		incr TotalCommands
+	} elseif { ![string compare $Tag "CommandDescription"] } {
+		keylset Description $TotalDescriptions $Value
+		incr TotalDescriptions
+	} elseif { ![string compare $Tag "EstimatedLines"] } {
+		keylset Estimation $TotalEstimations $Value
+		incr TotalEstimations
+	} elseif { ![string compare $Tag "LinkDirectory"] } {
+		scan $Value "%s %s" TmpSource TmpDest
+		keylset LinkDirSource $TotalLinkDirs $TmpSource
+		keylset LinkDirDest $TotalLinkDirs $TmpDest
+		incr TotalLinkDirs
+	} elseif { ![string compare $Tag "LinkFile"] } {
+		scan $Value "%s %s" TmpSource TmpDest
+		keylset LinkFileSource $TotalLinkFiles $TmpSource
+		keylset LinkFileDest $TotalLinkFiles $TmpDest
+		incr TotalLinkFiles
+	} else {
+		keylset SetupInfo $Tag $Value
+	}
+	gets $setupinfo LineIn
+}
+close $setupinfo
+
+NewObject Screen OnyxScreen
+varset Screen.Parent Application
+Screen.Create
+
+NewObject BackDrop OnyxWindow
+varset BackDrop.Parent Application
+varset BackDrop.Name [keylget SetupInfo "WindowName"]
+varset BackDrop.Class [keylget SetupInfo "WindowClass"]
+varset BackDrop.Resource [keylget SetupInfo "WindowResource"]
+varset BackDrop.Width 640
+varset BackDrop.Height 480
+varset BackDrop.X [expr (${Screen.Width} - ${BackDrop.Width}) / 2]
+varset BackDrop.Y [expr (${Screen.Height} - ${BackDrop.Height}) / 2]
+varset BackDrop.CloseExitsApplication True
+varset BackDrop.BackgroundColor #00aea3
+BackDrop.Create
+
+NewObject BigTitle OnyxLabel
+varset BigTitle.Parent BackDrop
+varset BigTitle.X 5
+varset BigTitle.Y 5
+varset BigTitle.Width ${BackDrop.Width}
+varset BigTitle.Height 40
+varset BigTitle.BackgroundColor Backdrop.BackgroundColor
+varset BigTitle.Text [keylget SetupInfo "Header"]
+varset BigTitle.Font "Lucida -34 Bold Italic"
+BigTitle.Create
+
+NewObject Base OnyxWindow
+varset Base.Parent BackDrop
+varset Base.Name [keylget SetupInfo "WindowName"]
+varset Base.Class [keylget SetupInfo "WindowClass"]
+varset Base.Resource [keylget SetupInfo "WindowResource"]
+varset Base.Width 400
+varset Base.Height 247
+varset Base.X [expr (${BackDrop.Width} - ${Base.Width}) / 2]
+varset Base.Y [expr (${BackDrop.Height} - ${Base.Height}) / 2]
+varset Base.CloseExitsApplication True
+varset Base.BackgroundColor #b0b0b0
+varset Base.HasBorder True
+varset Base.HasTitleBar False
+varset Base.HasMenu False
+varset Base.HasMaximizeButton False
+varset Base.HasMinimizeButton False
+varset Base.HasMinimizeOption False
+varset Base.HasMaximizeOption False
+varset Base.HasCloseOption False
+varset Base.HasResizeOption False
+varset Base.HasMoveOption False
+Base.Create
+
+NewObject RaisedPlatform OnyxIcon
+varset RaisedPlatform.Parent Base
+varset RaisedPlatform.X 0
+varset RaisedPlatform.Y 0
+varset RaisedPlatform.Width ${Base.Width}
+varset RaisedPlatform.Height ${Base.Height}
+varset RaisedPlatform.BorderStyle 48
+RaisedPlatform.Create
+
+variable bbottom [expr ${Base.Height} - 50]
+variable bright [expr ${Base.Width} - 100]
+
+NewObject Cancel OnyxButton
+varset Cancel.Parent Base
+varset Cancel.Text "Cancel"
+varset Cancel.X $bright
+varset Cancel.Y $bbottom
+varset Cancel.Width 60
+varset Cancel.Height 25
+Cancel.Create
+
+NewObject Next OnyxButton
+varset Next.Parent Base
+varset Next.Text "Next >>"
+varset Next.Width 60
+varset Next.Height 25
+varset Next.X [expr ${Cancel.X} - ${Next.Width} - 20]
+varset Next.Y $bbottom
+Next.Create
+
+NewObject Back OnyxButton
+varset Back.Parent Base
+varset Back.Text "<< Back"
+varset Back.Width 60
+varset Back.Height 25
+varset Back.X [expr ${Next.X} - ${Back.Width} - 5]
+varset Back.Y $bbottom
+varset Back.IsEnabled False
+Back.Create
+
+NewObject WizardPic OnyxIcon
+varset WizardPic.Parent Base
+varset WizardPic.X 10
+varset WizardPic.Y 10
+varset WizardPic.Width 122
+varset WizardPic.Height 230
+varset WizardPic.Picture wizard.xpm
+varset WizardPic.Directory .setup/
+varset WizardPic.BorderStyle 8
+WizardPic.Create
+
+NewObject Label1 OnyxLabel
+varset Label1.Parent Base
+varset Label1.X ${Back.X}
+varset Label1.Y 30
+varset Label1.Width 220
+varset Label1.Height 20
+Label1.Create
+
+NewObject Label2 OnyxLabel
+varset Label2.Parent Base
+varset Label2.X ${Label1.X}
+varset Label2.Y [expr ${Label1.Y} + ${Label1.Height}]
+varset Label2.Width 220
+varset Label2.Height 20
+Label2.Create
+
+NewObject Label3 OnyxLabel
+varset Label3.Parent Base
+varset Label3.X ${Label1.X}
+varset Label3.Y [expr ${Label2.Y} + ${Label2.Height}]
+varset Label3.Width 220
+varset Label3.Height 20
+Label3.Create
+
+NewObject Label4 OnyxLabel
+varset Label4.Parent Base
+varset Label4.X ${Label1.X}
+varset Label4.Y [expr ${Label3.Y} + ${Label3.Height}]
+varset Label4.Width 220
+varset Label4.Height 20
+Label4.Create
+
+NewObject Label5 OnyxLabel
+varset Label5.Parent Base
+varset Label5.X ${Label1.X}
+varset Label5.Y [expr ${Label4.Y} + ${Label4.Height}]
+varset Label5.Width 220
+varset Label5.Height 20
+Label5.Create
+
+proc Cancel_ButtonClicked {} { ApplicationClose }
+
+proc BackDrop_WindowResized { OldWidth OldHeight NewWidth NewHeight } {
+
+	Base.Move [expr (${::BackDrop.Width} - ${::Base.Width}) / 2] [expr (${::BackDrop.Height} - ${::Base.Height}) / 2]
+
+}
+
+NewObject BrowseButton OnyxButton
+varset BrowseButton.Parent Base
+varset BrowseButton.Text "Browse"
+varset BrowseButton.Width 60
+varset BrowseButton.Height 25
+varset BrowseButton.X -100
+varset BrowseButton.Y -100
+varset BrowseButton.IsEnabled True
+BrowseButton.Create
+
+NewObject ShowLogButton OnyxButton
+varset ShowLogButton.Parent Base
+varset ShowLogButton.Text "View Log"
+varset ShowLogButton.Width 60
+varset ShowLogButton.Height 25
+varset ShowLogButton.X -100
+varset ShowLogButton.Y -100
+varset ShowLogButton.IsEnabled True
+ShowLogButton.Create
+
+NewObject TenPercent OnyxIcon
+varset TenPercent.Parent Base
+varset TenPercent.X -100
+varset TenPercent.Y -100
+varset TenPercent.Width 16
+varset TenPercent.Height 16
+varset TenPercent.Picture Digit0.t.xpm
+varset TenPercent.Directory .setup/digits/
+TenPercent.Create
+
+NewObject OnePercent OnyxIcon
+varset OnePercent.Parent Base
+varset OnePercent.X [expr ${TenPercent.X} + ${TenPercent.Width}]
+varset OnePercent.Y ${TenPercent.Y}
+varset OnePercent.Width 16
+varset OnePercent.Height 16
+varset OnePercent.Picture Digit0.t.xpm
+varset OnePercent.Directory .setup/digits/
+OnePercent.Create
+
+NewObject HundredPercent OnyxIcon
+varset HundredPercent.Parent Base
+varset HundredPercent.X [expr ${TenPercent.X} - ${TenPercent.Width}]
+varset HundredPercent.Y ${TenPercent.Y}
+varset HundredPercent.Width 16
+varset HundredPercent.Height 16
+varset HundredPercent.Picture Digit1.t.xpm
+varset HundredPercent.Directory .setup/digits/
+HundredPercent.Create
+
+NewObject Percent OnyxIcon
+varset Percent.Parent Base
+varset Percent.X [expr ${OnePercent.X} - ${OnePercent.Width}]
+varset Percent.Y ${OnePercent.Y}
+varset Percent.Width 16
+varset Percent.Height 16
+varset Percent.Picture Percent.t.xpm
+varset Percent.Directory .setup/digits/
+Percent.Create
+
+NewObject MakeLink OnyxCheckBox
+varset MakeLink.Parent Base
+varset MakeLink.X -100
+varset MakeLink.Y -100
+varset MakeLink.Width 100
+varset MakeLink.Height 20
+varset MakeLink.Text "Create Link"
+varset MakeLink.IsChecked True
+MakeLink.Create
+
+variable commandpipe
+variable LinesReceived 0
+variable FullLog
+variable TempLog
+variable ViewCommand
+if { ![system which {"notepad"} > /dev/null]} {
+	varset ViewCommand {"notepad"}
+} elseif { ![system which {"less"} > /dev/null]} {
+	varset ViewCommand {"xterm -e less"}
+} else {
+	varset ViewCommand {"xterm -e more"}
+}
+variable StartClock
+
+proc bgerror { Message } {
+	puts "Warning, internal error"
+	puts "$Message"
+}
+
+proc MonitorCommand {} {
+	variable picname
+	variable pcnt
+	variable EstimatedTime
+
+	gets $::commandpipe testdata
+
+	puts $::FullLog $testdata
+	flush $::FullLog
+
+	puts $::TempLog $testdata
+	flush $::TempLog
+
+	if { ![eof $::commandpipe] } {
+		set ::LinesReceived [expr $::LinesReceived + 1]
+		set picname "Digit"
+		
+		set pcnt [expr ($::LinesReceived * 100 / $::LinesToExpect)]
+
+		if { [expr $pcnt > 100] } {
+			set pcnt 99
+			varset Label3.Text "Estimated Time: Unknown"
+		} elseif { [expr $pcnt > 0 ] } {
+			if { [expr [clock seconds] - $::StartClock > 10]} {
+				varset Label3.Text "Estimated Time: [clock format [expr int((100.0 / double($pcnt) - 1.0)  *  ([clock seconds] - $::StartClock))] -format %T -gmt True]"
+			}
+		}
+		Label3.Update
+
+		append picname [expr $pcnt / 10] ".t.xpm"
+		if { [string compare [TenPercent.Picture] $picname] } {
+			varset TenPercent.Picture $picname
+			TenPercent.Update
+		}
+
+		set picname "Digit"
+		append picname [expr $pcnt % 10] ".t.xpm"
+		if { [string compare [OnePercent.Picture] $picname] } {
+			varset OnePercent.Picture $picname
+			OnePercent.Update
+		}
+		OnePercent.Update
+
+		update idletasks
+	} else {
+		fileevent $::commandpipe readable ""
+		varset TenPercent.Picture Digit0.t.xpm
+		TenPercent.Update
+
+		varset OnePercent.Picture Digit0.t.xpm
+		OnePercent.Update
+
+		HundredPercent.Move [expr ${::TenPercent.X} - ${::TenPercent.Width}] ${::TenPercent.Y}
+
+		variable results [wait [pid $::commandpipe] ]
+		scan $results "%*s %*s %i" exitval
+
+		varset Label2.Text "Done."
+		Label2.Update
+
+		varset Label3.Text ""
+		Label3.Update
+
+		close $::FullLog
+		close $::TempLog
+
+		ShowLogButton.Move [expr ${::Percent.X} + ${::Percent.Width} * 2] ${::Percent.Y}
+
+		if { [expr $exitval == 0] } {
+			Next.Enable
+		} else {
+			StopBox Base [keylget ::SetupInfo "WindowName"] "A problem has arisen. Please check the log."
+			varset Cancel.Text "Exit"
+			Cancel.Update
+		}
+		Back.Enable
+	}
+}
+
+proc ShowScreen { ScreenNumber } {
+	switch $ScreenNumber {
+		1	{
+				Back.Disable
+				BrowseButton.Move -100 -100
+				ShowLogButton.Move -100 -100
+				HundredPercent.Move -100 -100
+				TenPercent.Move -100 -100
+				OnePercent.Move -100 -100
+				Percent.Move -100 -100
+				ShowLogButton.Move -100 -100
+				varset Label1.Text "Welcome,                                       "
+				varset Label2.Text "You are about to install"
+				varset Label3.Text [keylget ::SetupInfo "FullName"]
+				varset Label4.Text "on your $::tcl_platform(os) system."
+				varset Label5.Text ""
+				Label1.Update
+				Label2.Update
+				Label3.Update
+				Label4.Update
+				Label5.Update
+			}
+		2	{
+				Next.Disable
+				Back.Disable
+				BrowseButton.Move -100 -100
+				ShowLogButton.Move -100 -100
+
+				varset Label1.Text [keylget ::Description $::CurrentCommand]
+				varset Label2.Text "Please wait..."
+				varset Label3.Text ""
+				varset Label4.Text ""
+				varset Label5.Text ""
+
+				TenPercent.Move 240 ${::Label4.Y}
+				varset TenPercent.Picture Digit0.t.xpm
+
+				OnePercent.Move [expr ${::TenPercent.X} + ${::TenPercent.Width}] ${::TenPercent.Y}
+				varset OnePercent.Picture Digit0.t.xpm
+
+				Percent.Move [expr ${::OnePercent.X} + ${::OnePercent.Width}] ${::OnePercent.Y}
+
+				HundredPercent.Move -100 -100
+
+				varset ::LinesToExpect [keylget ::Estimation $::CurrentCommand]
+				varset $::LinesReceived 0
+
+				Label1.Update
+				Label2.Update
+				Label3.Update
+				Label4.Update
+				Label5.Update
+				TenPercent.Update
+				OnePercent.Update
+
+				varset ::FullLog [open setup.log a]
+				varset ::TempLog [open temp.log w]
+
+				puts $::FullLog "Section: [keylget ::Description $::CurrentCommand]"
+				puts $::FullLog "Command: [keylget ::Command $::CurrentCommand]"
+				puts $::FullLog "Output from command follows"
+				puts $::FullLog "---------------------------"
+				flush $::FullLog
+				puts $::TempLog "Section: [keylget ::Description $::CurrentCommand]"
+				puts $::TempLog "Command: [keylget ::Command $::CurrentCommand]"
+				puts $::TempLog "Output from command follows"
+				puts $::TempLog "---------------------------"
+				flush $::TempLog
+
+				varset ::StartClock [clock seconds]
+				variable ::commandpipe [open |[keylget ::Command $::CurrentCommand] {RDONLY NONBLOCK}]
+				fileevent $::commandpipe readable MonitorCommand
+			}
+		3	{
+				Back.Enable
+				ShowLogButton.Move -100 -100
+				HundredPercent.Move -100 -100
+				TenPercent.Move -100 -100
+				OnePercent.Move -100 -100
+				Percent.Move -100 -100
+				MakeLink.Move -100 -100
+				varset Label1.Text "[keylget ::SetupInfo "Name"] will be installed into"
+				varset Label2.Text "[keylget ::SetupInfo "InstallDirectory"]"
+				varset Label3.Text ""
+				varset Label4.Text ""
+				varset Label5.Text ""
+				Label1.Update
+				Label2.Update
+				Label3.Update
+				Label4.Update
+				Label5.Update
+				BrowseButton.Move ${::Cancel.X} [expr ${::Label3.Y} + ${::Label3.Height}]
+
+				varset ::DoLink 0
+			}
+		4	{
+				Next.Disable
+				Back.Disable
+				BrowseButton.Move -100 -100
+				ShowLogButton.Move -100 -100
+				MakeLink.Move -100 -100
+
+				varset Label1.Text "Installing"
+				varset Label2.Text "Please wait..."
+				varset Label3.Text ""
+				varset Label4.Text ""
+				varset Label5.Text ""
+
+				TenPercent.Move 240 ${::Label4.Y}
+				varset TenPercent.Picture Digit0.t.xpm
+
+				OnePercent.Move [expr ${::TenPercent.X} + ${::TenPercent.Width}] ${::TenPercent.Y}
+				varset OnePercent.Picture Digit0.t.xpm
+
+				Percent.Move [expr ${::OnePercent.X} + ${::OnePercent.Width}] ${::OnePercent.Y}
+
+				HundredPercent.Move -100 -100
+
+				varset ::LinesToExpect [keylget ::SetupInfo "ExpectedInstallLines"]
+				varset $::LinesReceived 0
+
+				Label1.Update
+				Label2.Update
+				Label3.Update
+				Label4.Update
+				Label5.Update
+				TenPercent.Update
+				OnePercent.Update
+
+				varset ::FullLog [open setup.log a]
+				varset ::TempLog [open temp.log w]
+
+				puts $::FullLog "Section: Install"
+				puts $::FullLog "Command: [keylget ::SetupInfo "InstallCommand"]"
+				puts $::FullLog "Output from command follows"
+				puts $::FullLog "---------------------------"
+				flush $::FullLog
+				puts $::TempLog "Section: Install"
+				puts $::TempLog "Command: [keylget ::SetupInfo "InstallCommand"]"
+				puts $::TempLog "Output from command follows"
+				puts $::TempLog "---------------------------"
+				flush $::TempLog
+
+				varset ::StartClock [clock seconds]
+				variable icom [keylget ::SetupInfo "InstallCommand"]
+				append icom " "
+				append icom [keylget ::SetupInfo "InstallDirectory"]
+				variable ::commandpipe [open |$icom {RDONLY NONBLOCK}]
+				fileevent $::commandpipe readable MonitorCommand
+			}
+		5	{
+				Next.Enable
+				ShowLogButton.Move -100 -100
+				HundredPercent.Move -100 -100
+				TenPercent.Move -100 -100
+				OnePercent.Move -100 -100
+				Percent.Move -100 -100
+				BrowseButton.Move ${::Cancel.X} [expr ${::Label5.Y} + ${::Label5.Height} * 2]
+				varset Label1.Text "To make access easier, a"
+				varset Label2.Text "symbolic link for the directory"
+				varset Label3.Text "[keylget ::SetupInfo "InstallDirectory"]"
+				varset Label4.Text "can be made at"
+				varset Label5.Text "[keylget ::SetupInfo "LinkInstallDirectory"]"
+				Label1.Update
+				Label2.Update
+				Label3.Update
+				Label4.Update
+				Label5.Update
+				MakeLink.Move ${::Back.X} ${::BrowseButton.Y}
+				varset ::DoLink 1
+			}
+		6	{
+				Next.Enable
+				ShowLogButton.Move -100 -100
+				HundredPercent.Move -100 -100
+				TenPercent.Move -100 -100
+				OnePercent.Move -100 -100
+				Percent.Move -100 -100
+				BrowseButton.Move ${::Cancel.X} [expr ${::Label5.Y} + ${::Label5.Height} * 2]
+				varset Label1.Text "To make access easier, a"
+				varset Label2.Text "symbolic link for the directory"
+				varset Label3.Text "[keylget ::LinkDirSource $::CurrentLinkDir]"
+				varset Label4.Text "can be made at"
+				varset Label5.Text "[keylget ::LinkDirDest $::CurrentLinkDir]"
+				Label1.Update
+				Label2.Update
+				Label3.Update
+				Label4.Update
+				Label5.Update
+				MakeLink.Move ${::Back.X} ${::BrowseButton.Y}
+				varset ::DoLink 2
+			}
+		7	{
+				Next.Enable
+				ShowLogButton.Move -100 -100
+				HundredPercent.Move -100 -100
+				TenPercent.Move -100 -100
+				OnePercent.Move -100 -100
+				Percent.Move -100 -100
+				BrowseButton.Move ${::Cancel.X} [expr ${::Label5.Y} + ${::Label5.Height} * 2]
+				varset Label1.Text "To make access easier, a"
+				varset Label2.Text "symbolic link for the file/program"
+				varset Label3.Text "[keylget ::LinkFileSource $::CurrentLinkFile]"
+				varset Label4.Text "can be made at"
+				varset Label5.Text "[keylget ::LinkFileDest $::CurrentLinkFile]"
+				Label1.Update
+				Label2.Update
+				Label3.Update
+				Label4.Update
+				Label5.Update
+				MakeLink.Move ${::Back.X} ${::BrowseButton.Y}
+				varset ::DoLink 3
+				varset Cancel.Text "Cancel"
+				Cancel.Update
+			}
+		8	{
+				Next.Disable
+				HundredPercent.Move -100 -100
+				TenPercent.Move -100 -100
+				OnePercent.Move -100 -100
+				Percent.Move -100 -100
+				MakeLink.Move -100 -100
+				BrowseButton.Move -100 -100
+				varset Label1.Text ""
+				varset Label2.Text "Setup Complete"
+				varset Label3.Text "The complete installation log"
+				varset Label4.Text "may be viewed in setup.log"
+				varset Label5.Text ""
+				varset Cancel.Text "Finish"
+				Label1.Update
+				Label2.Update
+				Label3.Update
+				Label4.Update
+				Label5.Update
+				Cancel.Update
+				ShowLogButton.Move ${::Cancel.X} [expr ${::Label4.Y} + ${::Label4.Height} * 2]
+				MakeLink.Move ${::Back.X} ${::BrowseButton.Y}
+				varset ::DoLink 0
+			}
+	}
+}
+
+
+proc Next_ButtonClicked {} {
+	if { $::DoLink && ${::MakeLink.IsChecked}  } {
+		switch $::DoLink {
+			1 {
+				varset ::FullLog [open setup.log a]
+				puts $::FullLog "Section: Linking Install Directory"
+				puts $::FullLog "Command: ln -s [keylget ::SetupInfo "InstallDirectory"] [keylget ::SetupInfo "LinkInstallDirectory"]"
+				puts $::FullLog "There is no output from this command."
+				puts $::FullLog ""
+				close $::FullLog
+				link -sym [keylget ::SetupInfo "InstallDirectory"] [keylget ::SetupInfo "LinkInstallDirectory"]
+			  }
+			2 {
+				varset ::FullLog [open setup.log a]
+				puts $::FullLog "Section: Linking Directory"
+				if { [keylget ::SetupInfo "LinkInstallDirectory" {}] } {
+					puts $::FullLog "ln -s [keylget ::SetupInfo "LinkInstallDirectory"]/[keylget ::LinkDirSource $::CurrentLinkDir] [keylget ::LinkDirDest $::CurrentLinkDir]"
+					link -sym [keylget ::SetupInfo "LinkInstallDirectory"]/[keylget ::LinkDirSource $::CurrentLinkDir] [keylget ::LinkDirDest $::CurrentLinkDir]
+				} else {
+					puts $::FullLog "ln -s [keylget ::SetupInfo "InstallDirectory"]/[keylget ::LinkDirSource $::CurrentLinkDir] [keylget ::LinkDirDest $::CurrentLinkDir]"
+					link -sym [keylget ::SetupInfo "InstallDirectory"]/[keylget ::LinkDirSource $::CurrentLinkDir] [keylget ::LinkDirDest $::CurrentLinkDir]
+				}
+				puts $::FullLog "There is no output from this command."
+				puts $::FullLog ""
+				close $::FullLog
+			  }
+			3 {
+				varset ::FullLog [open setup.log a]
+				puts $::FullLog ""
+				puts $::FullLog "Section: Linking File/Program"
+				if { [keylget ::SetupInfo "LinkInstallDirectory" {}] } {
+					puts $::FullLog "ln -s [keylget ::SetupInfo "LinkInstallDirectory"]/[keylget ::LinkFileSource $::CurrentLinkFile] [keylget ::LinkFileDest $::CurrentLinkFile]"
+					link -sym [keylget ::SetupInfo "LinkInstallDirectory"]/[keylget ::LinkFileSource $::CurrentLinkFile] [keylget ::LinkFileDest $::CurrentLinkFile]
+				} else {
+					puts $::FullLog "ln -s [keylget ::SetupInfo "InstallDirectory"]/[keylget ::LinkFileSource $::CurrentLinkFile] [keylget ::LinkFileDest $::CurrentLinkFile]"
+					link -sym [keylget ::SetupInfo "InstallDirectory"]/[keylget ::LinkFileSource $::CurrentLinkFile] [keylget ::LinkFileDest $::CurrentLinkFile]
+				}
+				puts $::FullLog "There is no output from this command."
+				puts $::FullLog ""
+				close $::FullLog
+			  }
+		}
+	}
+
+	if { [expr $::Location == 1] } {
+		file delete setup.log
+		file delete temp.log
+		incr ::Location
+	} elseif { [expr $::Location < 4] } {
+		incr ::Location
+	} elseif { [expr $::CurrentCommand >= $::TotalCommands - 1] } {
+
+		if { [expr $::Location < 6 || $::Location > 7] } {
+			incr ::Location
+		}
+
+
+		if { [expr $::Location == 5] && ![keylget ::SetupInfo "LinkInstallDirectory" {}] } {		
+			incr ::Location
+		}
+
+		if { [expr $::Location == 6] } {
+			if { [expr $::CurrentLinkDir < $::TotalLinkDirs - 1] } {
+				incr ::CurrentLinkDir
+			} else {
+				incr ::Location
+			}
+		}
+
+		if { [expr $::Location == 7] } {
+			if { [expr $::CurrentLinkFile < $::TotalLinkFiles - 1] } {
+				incr ::CurrentLinkFile
+			} else {
+				incr ::Location
+			}
+		}
+	} else {
+		incr ::CurrentCommand
+	}
+
+	ShowScreen $::Location
+}
+
+proc Back_ButtonClicked {} {
+	if { [expr $::Location < 6] } {
+		incr ::Location -1
+	}
+
+	if { [expr $::Location == 8] } {
+		incr ::CurrentLinkFile 1
+		incr ::Location -1
+	}
+
+	if { [expr $::Location == 7] } {
+		incr ::CurrentLinkFile -1
+		if { [expr $::CurrentLinkFile < 0] } {
+			incr ::CurrentLinkDir 1
+			incr ::Location -1
+		}
+	}
+
+	if { [expr $::Location == 6] } {
+		incr ::CurrentLinkDir -1
+		if { [expr $::CurrentLinkDir < 0] } {
+			incr ::Location -1
+		}
+	}
+
+	if { [expr $::Location == 5] && ![keylget ::SetupInfo "LinkInstallDirectory" {}] } {		
+		incr ::Location -1
+	}
+
+	ShowScreen $::Location
+}
+
+ShowScreen $Location
+
+NewObject Browser OnyxFileDialog
+varset Browser.Parent Base
+varset Browser.DisplayWindow Application
+Browser.Create
+
+Browser.ClearFileTypes
+Browser.AddFileType Directory ""
+
+proc BrowseButton_ButtonClicked {} {
+	Browser.Show
+	variable TempLoc
+	if { [expr !${::Browser.Cancelled}] } then {
+		if { [expr $::Location == 4] } then {
+			varset TempLoc [Browser.DirectorySelected]
+			if { [expr [string length [Browser.FileSelected]] > 2] } {
+				append TempLoc "/"
+				append TempLoc [Browser.FileSelected]
+			}
+			keylset ::SetupInfo "InstallDirectory" $TempLoc
+		} elseif { [expr $::Location == 5] } then {
+			varset TempLoc [Browser.DirectorySelected]
+			if { [expr [string length [Browser.FileSelected]] > 2] } {
+				append TempLoc "/"
+				append TempLoc [Browser.FileSelected]
+			}
+			keylset ::SetupInfo "LinkInstallDirectory" $TempLoc
+		}
+		ShowScreen $::Location
+	}
+}
+
+proc ShowLogButton_ButtonClicked {} {
+	if { [expr $::Location < 8] } {
+		system $::ViewCommand temp.log &
+	} else {
+		system $::ViewCommand setup.log &
+	}		
+}
+
+BackDrop.Show
+Base.Show

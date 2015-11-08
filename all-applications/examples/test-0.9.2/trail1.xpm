@@ -1,0 +1,21 @@
+/* XPM */
+static char * trail1_xpm[] = {
+/* width height num_colors chars_per_pixel */
+"10 10 5 1",
+/* colors */
+" 	s None	c None",
+".	c #3366cc",
+"X	c #9999ff",
+"o	c #ccccff",
+"O	c white",
+/* pixels */
+"          ",
+"    .     ",
+"    X     ",
+"    o     ",
+"   XOX    ",
+".XoOOOoX. ",
+"   XOX    ",
+"    o     ",
+"    X     ",
+"    .     "};

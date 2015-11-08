@@ -1,0 +1,23 @@
+/* XPM */
+static char * OnyxBase_xpm[] = {
+"16 16 4 1",
+" 	s None	c None",
+".	c black",
+"X	c yellow",
+"o	c red",
+"                ",
+"    ......      ",
+"   .XXXXXX.     ",
+"   .Xooooo.     ",
+"   .Xooooo.     ",
+"   .Xooooo.     ",
+"   .Xooooo.     ",
+"    ......      ",
+" ...... ......  ",
+".XXXXXX.XXXXXX. ",
+".Xooooo.Xooooo. ",
+".Xooooo.Xooooo. ",
+".Xooooo.Xooooo. ",
+".Xooooo.Xooooo. ",
+" ...... ......  ",
+"                "};

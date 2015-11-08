@@ -1,0 +1,28 @@
+/* XPM */
+static char * saveButton_xpm[] = {
+/* width height num_colors chars_per_pixel */
+"16 16 6 1",
+/* colors */
+" 	s none	c none",
+".	c blue",
+"X	c red",
+"o	c black",
+"O	c white",
+"+	c #c0c0c0",
+/* pixels */
+"                ",
+" ..XXXXXXXXX..  ",
+" .oOOOOOOOOO..o ",
+" ..OOOOOOOOO..o ",
+" ..O+++++++O..o ",
+" ..OOOOOOOOO..o ",
+" ..O+++++++O..o ",
+" ..OOOOOOOOO..o ",
+" .............o ",
+" .............o ",
+" ...+++++++...o ",
+" ...+++++o+...o ",
+" ...+++++o+...o ",
+" ...+++++++...o ",
+"  ooooooooooooo ",
+"                "};

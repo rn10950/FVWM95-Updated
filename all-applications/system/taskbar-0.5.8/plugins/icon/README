@@ -1,0 +1,55 @@
+Intro
+-----
+
+This is a very simple plugin for the taskbar, it displays a user specified
+icon in the tray window and executes the user specified action in response
+to a click and/or double-click.
+
+There can be many usages for this plugin, limited only to the imagination of
+the user. At the end of this file we show an example of how to configure it
+to display a speaker icon that starts a mixer application when double-clicked.
+
+Of course, you are not limited to running a singe icon plugin, there may
+be any arbitraty number of icon plugins loaded at a given moment, each
+one displaying a different icon and associated to different actions.
+
+
+Configuration options
+---------------------
+
+The plugin is loaded by the taskbar at startup time by specifying a
+"[plugin]" command in your .taskbarrc file (see the taskbar's README file
+for more details), for example:
+
+[plugin]
+file = icon.so
+
+In addition, the following optional commands can be specified:
+
+icon - specifies the icon to be displayed and defaults to a question mark.
+    The icon must be a valid xpm file, preferably 16x16 in size, and must
+    be located either in the xclass pixmap path, if the "icon_dir" option
+    was not specified in the "[default]" section of the .taskbarrc file,
+    or somewhere in the path specified by the "icon_dir" otherwise.
+
+tip - specifies the string to be displayed in the tooltip window when the
+    mouse cursor stops over the icon for more than a second. If this
+    option is not specifed, no tooltip will be displayed.
+
+fvwm_action_click - specifies the fvwm95 command to execute when the
+    icon is clicked. Defaults to Nop.
+
+fvwm_action_doubleclick - specifies the fvwm95 command to execute when
+    icon is double-clicked. Defaults to none.
+
+
+Example:
+
+This shows an speaker icon and starts the xmix application in response to a
+double-click:
+
+[plugin]
+file = icon.so
+icon = mini-sound.xpm
+tip = Mixer
+fvwm_action_doubleclick = Exec xmix

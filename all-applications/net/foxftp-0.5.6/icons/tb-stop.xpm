@@ -1,0 +1,26 @@
+/* XPM */
+static char * tb_stop_xpm[] = {
+/* width height num_colors chars_per_pixel */
+"16 16 4 1",
+/* colors */
+" 	s None	c None",
+".	c black",
+"X	c red",
+"o	c white",
+/* pixels */
+"     .....      ",
+"   ..XXXXX..    ",
+"  .XXXXXXXXX.   ",
+" .XXoXXXXXoXX.  ",
+" .XoooXXXoooX.  ",
+".XXXoooXoooXXX. ",
+".XXXXoooooXXXX. ",
+".XXXXXoooXXXXX. ",
+".XXXXoooooXXXX. ",
+".XXXoooXoooXXX. ",
+" .XoooXXXoooX.  ",
+" .XXoXXXXXoXX.  ",
+"  .XXXXXXXXX.   ",
+"   ..XXXXX..    ",
+"     .....      ",
+"                "};

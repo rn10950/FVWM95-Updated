@@ -1,0 +1,115 @@
+Intro
+-----
+
+This is the alpha version 0.3.4 of desktop, a desktop manager for X11 with
+the windows-95 look and feel. It is intended to be used together with
+xclass explorer (available separatedly).
+
+There are a *lot* of unfinished features, see below for a list of what the
+program does and does not.
+
+
+Implemented features
+--------------------
+
+- Desktops icons (wow!!!), you can move these around using the mouse,
+  double-click on them to execute the associated action. Click on the
+  label to rename them.
+
+- File Properties dialog (right-click on an icon, then select "Properties"
+  from the popup menu). The file name can be edited, or settings can be
+  changed.  The file attributes and/or the new file name are written back to
+  the disk when "OK" or "Apply" is selected.  When renaming a file, if a
+  file with the same name already exists in the current directory, the
+  program will ask for confirmation about overwriting.
+
+- The icons are automatically updated everytime a change is detected in the
+  desktop directory, the checking is made every 5 secs aprox.
+
+- Settings are saved on a $HOME/.xclass/etc/desktoprc file.
+
+- Drag and drop is partially implemented. Currently files can be moved (or
+  copied if you press ctrl during dnd) between desktop and different
+  explorer instances. Right-dragging shows a dnd menu. Dropping on an
+  executable file starts the application with the corresponding argument.
+  Experiment with it and use with care!
+
+  NOTE
+  ----
+  Xclass currently implements XDND protocol revision 4 (explained in detail
+  in http://www.newplanetsoftware.com/xdnd). It is a clean and efficient
+  protocol, is becoming the standard, and so is being adopted by many
+  programming libraries and toolkits. However, not all applications and/or
+  libraries implement the protocol as specified, and as a result you'll
+  suffer from incompatibility problems.
+
+  I've had a variable range of success with different applications:
+
+  - StarOffice: their XDND implementation is the most complete I've seen so
+    far. Bugs: when dragging a file, the data dropped is not a full URL as
+    the protocol requires, but rather a full local path. The URL class
+    included with the explorer handles that case correctly.
+
+  - Gnome applications and filemanagers: they fail to negotiate the
+    protocol version to be used in dnd operations. Apparently gtk implements
+    protocol revision 3 and they just ignore any windows using a different
+    version. As a result, you won't be able to dnd anything from a gnome
+    filemanager to the xclass explorer, but it works the other way around.
+    Well... almost. They also suffer from the full URL problem, in this
+    case they specify the scheme and a full path (like file:/mydir/doc.txt),
+    but the hostname is not included. Explorer's URL class parses those
+    partial specifications correctly, but gtk apps fail to parse a full URL.
+
+  - KDE: this one uses only Motif dnd.
+
+  - KDE2: despite what they claim (http://www.kde.org/announcements/
+    announce-2.0.html), KDE2 (including Konqueror) does *not* support
+    XDND. They mainly use Motif dnd, which gnome apps also support. There
+    seems to be XDND support in Qt, and a very few apps (like konsole)
+    support XDND for text strings, but not for file objects.
+
+
+
+Unimplemented features (or TODO list)
+-------------------------------------
+
+- Right-click context menus are not finished yet.
+
+- Missing dialogs:
+  * Change Icon
+  * Properties dialog for multiple files
+  * Properties dialog for special folders
+
+
+Compilation and install
+-----------------------
+
+In order to compile and run this version of desktop, you need at least
+xclass version 0.8.2, available from ftp://mitac11.uia.ac.be/pub/xclass and
+http://sourceforge.net/projects/xclass. Once you have xclass installed, all
+you need to do is to cd to the desktop's source directory and type 'make'.
+
+After the compilation, copy the 'desktop' executable to somewhere in your
+$PATH (or use 'make install' as superuser).
+
+If you are using fvwm95, make sure you add the following line to your
+.fvwm95rc file:
+
+  Style "Desktop" Sticky,WindowListSkip
+
+Also, it would be a good idea to start the desktop manager at fvwm95
+startup:
+
+  AddToFunc "InitFunction" "I" Exec desktop > /dev/null &
+
+When started the very first time, the desktop directory will be created
+(usually $HOME/.xclass/desktop), and a couple of icons (a shortcut to your
+home directory and a "Recycle Bin" object) will appear on the left-top
+corner of the desktop. I'm planning to add some more useful default icons,
+but right now you'll have to do it manually: start the xclass explorer and
+drag some files to the desktop. If you want to create a shortcut, just
+right-drag the file and select "Create symbolic link" from the popup menu.
+
+
+Have fun!
+Hector.

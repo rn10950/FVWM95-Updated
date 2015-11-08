@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>OnyxFontDialog</title>
+</head>
+<body bgcolor="#FFFFF0">
+
+<H1>OnyxFontDialog</H1>
+
+<img src="OnyxFontDialog.gif">
+
+<p>
+
+OnyxFontDialog objects are used to invoke the standard Font selection
+dialog box.<p>
+
+<hr>
+<b>Methods:</b><p>
+<ul>
+<li><tt>virtual int Create()</tt><br>
+<blockquote>
+Creates the dialog object.
+</blockquote>
+<li><tt>virtual void Show()</tt><br>
+<blockquote>
+Shows the dialog box, the initial font selection is set to the Font property.
+The function does not return until the user closes the dialog.
+</blockquote>
+</ul>
+<hr>
+<b>Properties:</b><p>
+<ul>
+<li><tt>const OXWindow *DisplayWindow</tt>
+<li><tt>int Cancelled</tt>
+<blockquote>
+Upon return from Show(), this variable is set to True if the user clicked on
+the Cancel button to close the dialog box. Otherwise it is set to False.
+<i><b>Note:</b> Currently not supported and always set to False.</i>
+</blockquote>
+</ul>
+
+<hr>
+<b>Events:</b><p>
+<blockquote>
+None.
+</blockquote>
+
+</body>
+</html>

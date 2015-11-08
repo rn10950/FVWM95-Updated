@@ -1,0 +1,16 @@
+Here is the first alpha version of the CDPlayer.
+
+To eject a disk, push the eject button ON THE CDPLAYER WINDOW. Please
+don't try to change cd without doin that.
+
+A hundred features missing and a few bugs I'm currently fixing.
+
+The icons must be moved into the xclass icons directory.
+
+BUGS :
+- Display during skip forward/backward. Kinda fixed today ( 970701 ) but
+  I must test the beast.
+
+TODO :
+- The random playing feature.
+- Lots of things including xmcd database things.

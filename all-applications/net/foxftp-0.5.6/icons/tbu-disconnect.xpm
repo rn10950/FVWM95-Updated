@@ -1,0 +1,26 @@
+/* XPM */
+static char * tbu_disconnect_xpm[] = {
+/* width height num_colors chars_per_pixel */
+"16 16 4 1",
+/* colors */
+" 	c None",
+".	c #808080",
+"X	c #c0c0c0",
+"o	c white",
+/* pixels */
+"       ........X",
+"...   .ooooo.o..",
+".... .oooo..X...",
+" .....oXX..oo...",
+"  o...oX..o.....",
+"    .....ooXo...",
+"     ...ooXXX...",
+"    .....XXXX...",
+"   ...o...XXX...",
+"  .........XX...",
+" ....o.oo...X...",
+"....oo.oX.......",
+"....oX.oX.......",
+" oo.oX.oX.ooo..o",
+"    .....X....oo",
+"     ooooo oooo "};

@@ -1,0 +1,79 @@
+Intro
+-----
+
+This is a very simple plugin for the taskbar, it displays a user specified
+icon in the tray window if some user specified file exists, and a different
+icon (or no icon at all) otherwise. Or viceversa. Or, different icons can be
+displayed depending whether the specified file exists or not. The plugin can
+also execute an arbitrary fvwm95 command in response to a click and/or
+double-click.
+
+There can be many usages for this plugin, limited only to the imagination of
+the user. It can be used, for example, to show a modem icon if the modem
+lock file exists (i.e. the modem is active), and to hide the icon otherwise.
+With a double-click a modem control program can be executed to allow the
+user to stop the connection.
+
+Similarly to the icon plugin, there may be any arbitraty number of lockfile
+plugins loaded at a given moment, each one displaying a different icon and
+associated to a different lock files.
+
+
+Configuration options
+---------------------
+
+The plugin is loaded by the taskbar at startup time by specifying a
+"[plugin]" command in your .taskbarrc file (see the taskbar's README file
+for more details), for example:
+
+[plugin]
+file = lockfile.so
+
+In addition, the following optional commands can be specified:
+
+lockfile - specifies the path to the file to monitor for existence. The
+    path may contain shell environment variable references (such as $HOME),
+    which will be expanded to the appropiate values. 
+
+icon_on - specifies the icon to be displayed if the lockfile file exists
+    and defaults to none (no icon displayed).
+
+icon_off - specifies the icon to be displayed if the lockfile file does not
+    exist and defaults to none (no icon displayed).
+
+icon - this an alias to the "icon_on" command.
+
+tip_on - specifies the tooltip string to be displayed if the lockfile
+    exists. If this option is not specifed, no tooltip will be displayed
+    in that case.
+
+tip_off - specifies the tooltip string to be displayed if the lockfile does
+    not exist. If this option is not specifed, no tooltip will be displayed
+    in that case.
+
+tip - this is an alias to the "tip_on" option.
+
+fvwm_action_click - specifies the fvwm95 command to execute when the
+    icon is clicked. Defaults to Nop.
+
+fvwm_action_doubleclick - specifies the fvwm95 command to execute when
+    icon is double-clicked. Defaults to none.
+
+All the specified icons must be valid xpm files, preferably 16x16 in size,
+and must be located either in the xclass pixmap path, if the "icon_dir"
+option was not specified in the "[default]" section of the .taskbarrc file,
+or somewhere in the path specified by the "icon_dir" otherwise.
+
+
+Example:
+
+This shows an "connected" icon when the modem is in use. When clicked, a
+"Network" popup menu will be displayed. You should have defined such menu
+in your .fvwm95rc file.
+
+[plugin]
+file = lockfile.so
+icon = mini-connect.xpm
+tip = Modem is in use
+fvwm_action_click = Popup Network
+lockfile = /var/lock/LCK..modem

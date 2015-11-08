@@ -1,0 +1,29 @@
+/* XPM */
+static char * df_openl_xpm[] = {
+/* width height num_colors chars_per_pixel */
+"16 16 7 1",
+/* colors */
+" 	s None	c None",
+".	c black",
+"X	c yellow",
+"o	c white",
+"O	c #808000",
+"+	c #38E34514FFFF",
+"@	c #596579E7FFFF",
+/* pixels */
+"                ",
+"         ...    ",
+"        .   . . ",
+"             .. ",
+" ...        ... ",
+".XoX.......     ",
+".oXoXoXoXo.     ",
+".XoXoXoXoX.     ",
+".oXoX...........",
+".XoX.OOOOOOOOO. ",
+".oX.OOOOO+@OO.  ",
+".X.OOOOOO+@O.   ",
+"..OOOOOOO+@.    ",
+".........+@     ",
+"         +@@@@  ",
+"         +++++  "};

@@ -1,0 +1,26 @@
+/* XPM */
+static char * tb_newst_xpm[] = {
+/* width height num_colors chars_per_pixel */
+"16 16 4 1",
+/* colors */
+" 	s None	c None",
+".	c #800000",
+"X	c black",
+"o	c #808080",
+/* pixels */
+"    .           ",
+" .     .        ",
+"  . . .         ",
+"   . .XXXXXXXXX ",
+". .   XoooXoooXo",
+"   . . X  Xo X o",
+"  . . . X XoX o ",
+" .     . XXX o  ",
+"    .     Xoo   ",
+"          Xo    ",
+"    .     Xo    ",
+"          Xo    ",
+"          Xo    ",
+"          Xo    ",
+"          Xo    ",
+"           o    "};

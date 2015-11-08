@@ -1,0 +1,27 @@
+/* XPM */
+static char * replyButton_xpm[] = {
+/* width height num_colors chars_per_pixel */
+"16 16 5 1",
+/* colors */
+" 	s none	c none",
+".	c #808080",
+"X	c white",
+"o	c black",
+"O	c red",
+/* pixels */
+"                ",
+"    ........    ",
+"    .XXXXXX.o   ",
+"    .X....X.Xo  ",
+"    .XXXXXX.ooo ",
+"    .X....XXXXo ",
+"    .XXXXXXXXXo ",
+"    .X.......Xo ",
+"    .XXXXXXXXXo ",
+"    .X.......Xo ",
+"    .XXOOXXXXXo ",
+"  O .X.OO....Xo ",
+" OO .XXOOXXXXXo ",
+"OOOOOOOOOXXXXXo ",
+" OO ooooooooooo ",
+"  O             "};

@@ -1,0 +1,12 @@
+Toolbox 1
+ToolTip Text Box
+Property X $X=$Y 0
+Property Y $X=$Y 0
+Property Width $X=$Y 80
+Property Height $X=$Y 18
+Property Size $X=$Y 255
+Property Text strcpy($X,"$Y") Text
+Property QuickFocusRelease $X=$Y False
+PropertySetting QuickFocusRelease ReadOnly ComboBox True False
+Event TextChanged
+Event EnterPressed

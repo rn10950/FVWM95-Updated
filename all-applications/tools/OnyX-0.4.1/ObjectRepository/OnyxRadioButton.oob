@@ -1,0 +1,14 @@
+Toolbox 1
+ToolTip Radio Button
+Property X $X=$Y 0
+Property Y $X=$Y 0
+Property Width $X=$Y 80
+Property Height $X=$Y 18
+Property Text strcpy($X,"$Y") Select
+Property Font strcpy($X,"$Y") "Helvetica -12"
+Property IsChecked $X=$Y True
+Property IsEnabled $X=$Y True
+PropertySetting Font ReadWrite FontBrowser
+PropertySetting IsChecked ReadOnly ComboBox True False
+PropertySetting IsEnabled ReadOnly ComboBox True False
+Event ButtonClicked

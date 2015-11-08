@@ -1,0 +1,28 @@
+/* XPM */
+static char *xcd_trackremain[] = {
+/* width height num_colors chars_per_pixel */
+"    16    16        5            1",
+/* colors */
+". c #000000",
+"# c #800000",
+"a c None s None",
+"b c #ffff00",
+"c c #ffffff",
+/* pixels */
+"aaaaa......aaaaa",
+"aaa..ccc.cb..aaa",
+"aa.ccccc.bcbc.aa",
+"a.cccccc.cbcbc.a",
+"a.cccccc.bcbcb.a",
+".ccccccc.cbcbcb.",
+".ccc#ccc.bcbcbc.",
+".cc###cc.cbcbcb.",
+".c#c#c#c.bcbcbc.",
+".ccc#cccc.bcbcb.",
+".ccc#ccccc.bcbc.",
+"a.ccc#ccccc.bc.a",
+"a.cccc#ccccc.b.a",
+"aa.cccccccccc.aa",
+"aaa..cccccc..aaa",
+"aaaaa......aaaaa"
+};

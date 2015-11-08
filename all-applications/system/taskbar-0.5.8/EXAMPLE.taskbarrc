@@ -1,0 +1,87 @@
+[defaults]
+geometry = +0-0
+font = -adobe-helvetica-medium-r-*-*-*-120-*-*-*-*-*-*
+selfont = -adobe-helvetica-bold-r-*-*-*-120-*-*-*-*-*-*
+tipfont = fixed
+fvwm_action_click1 = Iconify -1,Raise,Focus
+fvwm_action_click2 = Iconify
+fvwm_action_click3 = PopUp Window-Ops2
+use_skip_list = true
+show_transients = true
+auto_hide = false
+auto_stick = true
+desk_only = true
+start_button_name = Start
+start_button_icon = mini-exp.xpm
+start_fvwm_menu = StartMenu
+showtips = true
+highlight_focus = false
+icon_dir = /usr/include/X11/pixmaps/:/usr/local/icons:/usr/local/mini-icons/
+;plugins_dir = $HOME/.xclass/apps/taskbar
+plugins_dir = /usr/local/xclass/apps/taskbar
+
+
+[swallow]
+command = Exec xload -nolabel -bg grey60 -bw 0 -update 5 -geometry -1500-1500
+aspect = 2x1
+;window_name = xload
+
+
+[swallow]
+command = Exec xclock -padding 1 -bg \#c0c0c0 -bw 0 -geometry -1500-1500
+aspect = 1x1
+window_name = xclock
+
+
+;[swallow]
+;command = Module FvwmPager 0 0
+;aspect = 2x1
+;window_name = Desktop
+
+
+[plugin]
+file = clock.so
+time_format = %I:%M %p
+date_format = %A, %B %d, %Y
+fvwm_action_doubleclick = Exec xmessage `date`
+
+
+[plugin]
+file = mailcheck.so
+mailbox = /var/spool/mail/$USER
+fvwm_action_click = Nop
+fvwm_action_doubleclick = Exec xterm -name Mail -T mail -ls -fn 8x13 -e pine -i 
+fvwm_action_new_mail = Beep
+
+no_mail_icon = None
+has_mail_icon = mini-mail.xpm
+new_mail_icon = mini-newmail.xpm
+unread_mail_icon = mini-unreadmail.xpm
+
+no_mail_tip = No mail
+has_mail_tip = You have mail
+new_mail_tip = You have new mail
+unread_mail_tip = You have unread mail
+
+
+[plugin]
+file = lockfile.so
+icon = mini-connect.xpm
+tip = Modem is in use
+fvwm_action_click = Popup Network
+lockfile = /var/lock/LCK..modem
+
+
+[plugin]
+file = lockfile.so
+icon = mini-connect.xpm
+tip = Test 
+fvwm_action_click = Popup Network
+lockfile = $HOME/tb-test
+
+
+[plugin]
+file = icon.so
+icon = mini-sound.xpm
+tip = Mixer
+fvwm_action_doubleclick = Exec xmix

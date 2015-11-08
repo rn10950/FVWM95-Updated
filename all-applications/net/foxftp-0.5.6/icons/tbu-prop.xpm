@@ -1,0 +1,23 @@
+/* XPM */
+static char * tbu_prop_xpm[] = {
+"16 16 4 1",
+" 	s None	c None",
+".	c #808080",
+"X	c #c0c0c0",
+"o	c white",
+"                ",
+"       ...... ..",
+"      .XXXXXX...",
+"     .X.XXXXXX..",
+".....X.X.XXXXX..",
+".oo.X.X.X.XXX...",
+".o.X.o.X.X...o..",
+".o..ooo.X.o.oo o",
+".ooooooo.oo.o   ",
+".oooooooooo.o   ",
+".o..o.....o.o   ",
+".oooooooooo.o   ",
+".o..o.....o.o   ",
+".oooooooooo.o   ",
+"............o   ",
+" oooooooooooo   "};

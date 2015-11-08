@@ -1,0 +1,29 @@
+/* XPM */
+static char * OnyxColorDialog_xpm[] = {
+/* width height num_colors chars_per_pixel */
+"21 15 8 1",
+/* colors */
+" 	c #808080",
+".	s None	m none	c None",
+"X	c red",
+"o	s iconColor6	m white	c yellow",
+"O	c blue",
+"+	s iconColor1	m black	c black",
+"@	c white",
+"#	c #008080",
+/* pixels */
+"                    .",
+" XXXXXXooooooOOOOOO +",
+" XXXXXXooooooOOOOOO +",
+" XXXXXXooooooOOOOOO +",
+" XXXXXXooooooOOOOOO +",
+" XXXXXXooooooOOOOOO +",
+" XXXXXXooooooOOOOOO +",
+" @@@@@@######++++++ +",
+" @@@@@@######++++++ +",
+" @@@@@@######++++++ +",
+" @@@@@@######++++++ +",
+" @@@@@@######++++++ +",
+" @@@@@@######++++++ +",
+"                    +",
+".++++++++++++++++++++"};

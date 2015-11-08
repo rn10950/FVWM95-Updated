@@ -1,0 +1,19 @@
+This is the version 0.7.5 of xcpaint, a paint program for xclass. The code
+is based on the Xt Pixmap program.
+
+Current bugs and features:
+
+- Handles only XPM files, with support for transparent pixels.
+
+- Color palettes cannot be loaded/edited/saved yet, so if you want to have
+  colors, you'll have first to load a file containing many colors ;-).
+
+- Color selection is very primitive at this stage.
+
+- Edit/Undo is not working properly yet.
+
+You need to have xclass (version 0.8.3 or higher) installed in order to
+build it. The compilation is simple, just a 'make'.
+
+Enjoy!
+Hector.

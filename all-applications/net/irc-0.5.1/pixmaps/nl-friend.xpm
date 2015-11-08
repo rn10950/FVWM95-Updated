@@ -1,0 +1,21 @@
+/* XPM */
+static char * nl_friend_xpm[] = {
+"14 14 4 1",
+" 	s None	m none	c None",
+".	s iconColor1	m black	c black",
+"X	s iconColor6	m white	c yellow",
+"o	c #808000",
+"    .....     ",
+"  ..XXXXX..   ",
+" .oXXXXXXXo.  ",
+" .XX..X..XX.  ",
+".XXX..X..XXX. ",
+".XXX..X..XXX. ",
+".XXXXXXXXXXX. ",
+".XXXXXXXXXXX. ",
+".XX.oXXXo.XX. ",
+" .XX.....XX.  ",
+" .oXX...XXo.  ",
+"  ..XXXXX..   ",
+"    .....     ",
+"              "};

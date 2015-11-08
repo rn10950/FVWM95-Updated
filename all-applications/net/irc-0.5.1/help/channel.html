@@ -1,0 +1,125 @@
+<html>
+<head>
+<title>fOXIrc: Channel Windows</title>
+<head>
+<body bgcolor="#ffffd0" text="#000000" link="#0000ee" vlink="#551a8b">
+
+<H1>Channel Windows</H1>
+
+Channel windows have a set of buttons with the nick names of the people
+present in the channel. Channel operators and voiced users are marked by an
+icon. Clicking on the buttons pops up a menu with which you can start a
+private chat, change the user's mode (if you are a channel operator), start
+a DCC chat or file send, send a CTCP command, etc.<p>
+
+The topic for the channel is displayed in the text box at the top of the
+window. If you are a channel operator you can change the topic by typing
+there something else and pressing Enter.<p>
+
+All standard IRC text attributes (bold, underline and reverse video) are
+supported, as well as mIRC color extensions and ANSI escape color codes.<p>
+
+A history of the most recent entered lines is maintained, they can be
+recalled using the up and down arrow keys for editing and/or resending.<p>
+
+Channel windows recognize the following ircII-style commands:<p>
+
+<a name="commands">
+<table border=1 cols=2 cellspacing=0 width="100%" bgcolor="#ffffe0">
+
+<tr>
+<td width="40%"><tt>/me <i>action</i></tt></td>
+<td width="60%">Sends an action text to the channel. Used to tell the channel
+about what you are doing.</td>
+<tr>
+
+<tr>
+<td><tt>/notice <i>message</i></tt></td>
+<td>Sends a notice to the channel.</td>
+</tr>
+
+<tr>
+<td><tt>/names</tt></td>
+<td>Refreshes the name list for the current channel (i.e. updates the buttons
+to the right of the channel window).</td>
+</tr>
+
+<tr>
+<td><tt>/leave</tt></td>
+<td>Leaves the current channel.</td>
+</tr>
+
+<tr>
+<td><tt>/msg <i>nick</i></tt></td>
+<td>Open a new window for private chat with <i>nick</i>.</td>
+</tr>
+
+<tr>
+<td><tt>/nick <i>newnick</i></tt></td>
+<td>Change your current nick to <i>newnick</i>.</td>
+</tr>
+
+<tr>
+<td><tt>/raw <i>command</i></tt></td>
+<td>Send the specified command to the server as-is.</td>
+</tr>
+
+<tr>
+<td><tt>/quote <i>command</i></tt></td>
+<td>Same as <tt>/raw</tt>.</td>
+</tr>
+
+<tr>
+<td><tt>/wallops <i>message</i></tt></td>
+<td>Send a wallops message (works only if you are an IRC operator).</td>
+</tr>
+
+<tr>
+<td><tt>/mode <i>mode [arguments]</i></tt></td>
+<td>Set or change channel mode (note that the channel name must <b>not</b> be
+specified, the command works only for the current channel).</td>
+</tr>
+
+<tr>
+<td><tt>/umode <i>usermode</i></tt></td>
+<td>Change user mode.</td>
+</tr>
+
+<tr>
+<td><tt>/whois <i>nick</i></tt></td>
+<td>Shows information about the specified nick.</td>
+</tr>
+
+<tr>
+<td><tt>/whowas <i>nick</i></tt></td>
+<td>Shows information about who used the given nick last.</td>
+</tr>
+
+<tr>
+<td><tt>/invite <i>nick</i></tt></td>
+<td>Invite a person to join the current channel (like in <tt>/mode</tt> above,
+you do not have to specify the channel name).</td>
+</tr>
+
+<tr>
+<td><tt>/kick <i>nick</i></tt></td>
+<td>Kick <i>nick</i> out of the channel.</td>
+</tr>
+
+<tr>
+<td><tt>/<i>command</i></tt></td>
+<td>Sends the specified command in raw mode. This allows you
+to enter such commands as <tt>/who</tt>, <tt>/away</tt>, <tt>/silence</tt>,
+etc.</td>
+</tr>
+
+<tr>
+<td><tt>/ctcp <i>nick command args</i></tt><br>
+<tt>/ctcp <i>channel command args</i></tt></td>
+<td>Send a CTCP command to the specified nick or channel.</td>
+</tr>
+
+</table>
+
+</body>
+</html>

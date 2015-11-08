@@ -1,0 +1,21 @@
+/* XPM */
+static char * nl_voice_xpm[] = {
+"14 14 4 1",
+" 	s None	m none	c None",
+".	s iconColor1	m black	c black",
+"X	s iconColor6	m white	c yellow",
+"o	c #808080",
+"    .....     ",
+"  ..XXXXX..   ",
+" .oXXXXXXXo.  ",
+" .XXX..XXXX.o ",
+".XXXX..XXXXX. ",
+".XXXX..XXXX.  ",
+".XXXXXXXX..   ",
+".XXXXXX.o     ",
+".XXXXX.....o  ",
+" .XXXXXXXXX.o ",
+" .oXXXXXXXo.  ",
+"  ..XXXXX..   ",
+"    .....     ",
+"              "};

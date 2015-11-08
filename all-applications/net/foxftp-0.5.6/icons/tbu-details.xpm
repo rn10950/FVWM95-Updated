@@ -1,0 +1,22 @@
+/* XPM */
+static char * tbu_details_xpm[] = {
+"16 16 3 1",
+" 	s None	c None",
+".	c #808080",
+"X	c white",
+"                ",
+"   .... ... ... ",
+"    XXXX XXX XXX",
+"................",
+" XXXXXXXXXXXXXXX",
+".  .... ... ... ",
+" X  XXXX XXX XXX",
+".  .... ... ... ",
+" X  XXXX XXX XXX",
+".  .... ... ... ",
+" X  XXXX XXX XXX",
+".  .... ... ... ",
+" X  XXXX XXX XXX",
+".  .... ... ... ",
+" X  XXXX XXX XXX",
+"                "};

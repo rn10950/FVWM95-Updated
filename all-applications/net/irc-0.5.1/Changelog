@@ -1,0 +1,213 @@
+25/07/02
+
+- Started working on the latest code I could find (v0.03)
+
+
+28/07/02
+
+- Added an OXListView-based window to display channel lists.
+
+
+07/08/02  (0.1)
+
+- Handle channel mode changes properly: update menus and show the current
+  mode in the status bar.
+
+
+08/08/02
+
+- OXPreferences: reworked the color setting code, changed the ini file
+  structure a bit - all colors are now grouped together and there is no
+  need for a color id.
+
+- Removed OGC, using now xclass' OXGC instead.
+
+- Added a font selection dialog, added the corresponding code to OLineDoc
+  in order to handle font changes.
+
+- Removed unused arguments from OTcpMessage.
+
+
+09/08/02  (0.2)
+
+- Rearranged nick menus, now they are created and maintained by the
+  corresponding channel window.
+
+- Corrected a problem with nick buttons pixmaps.
+
+- Setting/removing user modes from the nick menu now works.
+
+- OXConfirmDlg made more generic.
+
+- Added accelerated scroll mode to OXViewDoc (I recall I've done that
+  *long* ago, but the code had dissappeared?!?) and to the nick button
+  list.
+
+
+10/08/02
+
+- OXIrc: menu code cleanup, use #defined names instead of a mess of fixed
+  numbers.
+
+- Removed OXTextFrame, as it had become practically nothing, all the needed
+  functionality was on OXViewDocFrame (note: still I need to remove a couple
+  of classes, since much of the functionality is implemented in xclass'
+  OXView).
+
+- Implemented more server menu actions.
+
+- Added wheel-mouse support to OXViewDoc.
+
+
+11/08/02
+
+- Errors can now be displayed on message boxes.
+
+- Channel notices are now displayed properly.
+
+- Added preliminary support for SILENCE and ISON notifications.
+
+- More code cleanups.
+
+- Nick buttons can now display several pixmaps. Added preliminary support
+  for friend and ignores.
+
+- Process RPL_CHANNELMODEIS.
+
+
+12/08/02
+
+- Heavily changed the irc message processing. OIrcMessage now parses the
+  incoming message into a set of fields, according to the IRC specification.
+  That makes the message processing a *lot* easier and less error-prone.
+  The previous sscanf-based method was way too cumbersome.
+
+- Added support for more commands.
+
+
+13/08/02
+
+- Added OXViewLogFile, a log file viewer. Useful for browsing through the
+  old saved files.
+
+- Kick is now handled properly, auto-rejoin implemented.
+
+- After issuing a JOIN command, delay showing the channel window and sending
+  the MODE command until we get the JOIN confirmation.
+
+- Away replies handled.
+
+
+14/08/02  (0.3)
+
+- Added a ping timer, and lag time calculation.
+
+- Corrected a bug that caused accented characters (code > 127) to dissapear.
+
+
+15/08/02
+
+- Added server pattern dialog for the server commands.
+
+- Added support for ANSI color escape sequences.
+
+- Fixed DCC file receive.
+
+
+16/08/02  (0.4.1)
+
+- Added menus to OXMsgChannel and OXDCCChannel.
+
+
+18/08/02
+
+- Fixed OXChannel's text entry history.
+
+- OXChatChannel: implemented Invite menu option.
+
+- Added more toolbar buttons.
+
+- Added login/password dialog for the OPER command.
+
+- Implemented Ban and Ban+Kick from the name list menu.
+
+
+19/08/02
+
+- Dropped TDDList in favour of STL's vector.
+
+- Added a tree view window for the LINKS command.
+
+
+20/08/02
+
+- Added KILL command processing.
+
+- Corrected a bug in OTcp.cc: the input buffer index should be reset to zero
+  after a (re)connect. Also, check for closed connection on Receive()
+  (reentrancy case -- we should really implement an OXClient message queue!)
+
+
+21/08/02
+
+- Added description group frame and connect/close buttons to OXServerTree.
+
+- Added join/filter/close buttons to OXChannelList.
+
+- Calculate lag only from the PONG commands we requested, any other should
+  go to info.
+
+
+22/08/02  (0.4.2)
+
+- CTCP and DCC code moved to OXIrc. Added CTCP TIME, ERRMSG and CLIENTINFO
+  command help.
+
+- Added a command dialog. Used to get CTCP/Other... command and arguments.
+
+- Added /ctcp command to OXChatChannel.
+
+
+23/08/02
+
+- OXMsgChannel.cc: menu is now (partially) processed.
+
+- Fixed a bug in OTcp::Connect(): now returns -1 if the connection failed.
+
+- Moved logfile handling from OXChatChannel to OXChannel, that way
+  OXMsgChannel and OXDCCChannel can save the chat to a log too.
+
+
+24/08/02
+
+- Implemented DCC SEND.
+
+- OXDCCFile transfer windows are now in a list handled by OXIrc, much like
+  OXChannel, so they can all be closed at exit.
+
+- Added support for channel key handling.
+
+
+25/08/02
+
+- Channel dialogs can now use a different font, but only the info window
+  font is saved and used as default.
+
+
+16/09/04  (0.4.4)
+
+- Removed an endless loop problem in OXDCCFile (happened in client mode when
+  the server prematurely closed the connection).
+
+
+22/09/04  (0.5.1)
+
+- Corrected the DCC File transfer protocol.
+
+- Added a help window and a few preliminary help files.
+
+
+26/09/04
+
+- Avoid rentrancy problems in OTcp::Receive() during WaitFor() loops 
+  (OXMsgBox). That sometimes screwed up the input buffer.

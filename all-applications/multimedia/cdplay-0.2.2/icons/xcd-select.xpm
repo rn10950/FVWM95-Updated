@@ -1,0 +1,30 @@
+/* XPM */
+static char *xcd_select[] = {
+/* width height num_colors chars_per_pixel */
+"    16    16        7            1",
+/* colors */
+". c #000000",
+"# c #000080",
+"a c #800000",
+"b c None s None",
+"c c #ff0000",
+"d c #ffff00",
+"e c #ffffff",
+/* pixels */
+"bbbbbbbbbbbbb..b",
+"b............ac.",
+"b.eeeeeeeeee..c.",
+"b.eeeeeeeee.ed.b",
+"b.e#e#####..de.b",
+"b.eeeeeeee.de.bb",
+"b.e#e####..ed.bb",
+"b.eeeeeee.ed..bb",
+"b.e#e####.....bb",
+"b.eeeeeee...e.bb",
+"b.e#e####..ee.bb",
+"b.eeeeeee.eee.bb",
+"b.e#e######ee.bb",
+"b.eeeeeeeeeee.bb",
+"b.............bb",
+"bbbbbbbbbbbbbbbb"
+};

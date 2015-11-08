@@ -1,0 +1,85 @@
+Intro
+-----
+
+This is a mail check plugin for the taskbar. It displays an status icon in
+the tray window showing the current mailbox status. The plugin can also
+execute an arbitrary fvwm95 command upon arrival of new mail, or in response
+to a click and/or double-click actions.
+
+If you have access to several mail boxes on the same machine, you may run
+several copies of the mailcheck plugin to check each one of them.
+
+
+Configuration options
+---------------------
+
+The plugin is loaded by the taskbar at startup time by specifying a
+"[plugin]" command in your .taskbarrc file (see the taskbar's README file
+for more details), for example:
+
+[plugin]
+file = mailcheck.so
+
+In addition, the following optional commands can be specified:
+
+mailbox - specifies the mailbox file to monitor. The path may contain shell
+    environment variable references (such as $HOME or $USER), which will be
+    expanded to the appropiate values. Defaults to /var/spool/mail/$USER.
+
+update_interval - specifies how often (in seconds) the mailbox should be
+    checked for changes. Defaults to 30 seconds.
+
+no_mail_icon - specifies the icon to be displayed if the mailbox is empty.
+    Defaults to none (no icon displayed).
+
+has_mail_icon - specifies the icon to be displayed if the mailbox is not
+    empty, and contains no new and no unread messages. Defaults to a while
+    envelope.
+
+new_mail_icon - specifies the icon to be displayed if new mail has arrived.
+    Defaults to a yellow envelope.
+
+unread_mail_icon - specifies the icon to be displayed if the mailbox
+    contains unread, but not new, messages. Defaults to a green envelope.
+
+no_mail_tip - specifies the tooltip string to be displayed if the mailbox
+    is empty. Defaults to "No mail".
+
+has_mail_tip - specifies the tooltip string to be displayed if the mailbox
+    is not empty and contains no new and no unread messages. Defaults to
+    "You have mail".
+
+new_mail_tip - specifies the tooltip string to be displayed if new mail
+    has arrived. Defaults to "You have new mail".
+
+unread_mail_tip - specifies the tooltip string to be displayed if the
+    mailbox contains unread, but not new, messages. Defaults to "You have
+    unread mail".
+
+fvwm_action_click - specifies the fvwm95 command to execute when the
+    mail icon is clicked. Defaults to none.
+
+fvwm_action_doubleclick - specifies the fvwm95 command to execute when the
+    mail icon is double-clicked. Defaults to none.
+
+fvwm_action_new_mail - specifies the fvwm95 command to execute when
+    new mail arrives. Defaults to none.
+
+All the specified icons must be valid xpm files, preferably 16x16 in size,
+and must be located either in the xclass pixmap path, if the "icon_dir"
+option was not specified in the "[default]" section of the .taskbarrc file,
+or somewhere in the path specified by the "icon_dir" otherwise.
+
+
+Example:
+
+With the following configuration the computer will beep on arrival of new
+mail, and a pine session in a xterm window will be started when the mail
+icon is double-clicked:
+
+[plugin]
+file = mailcheck.so
+mailbox = /var/spool/mail/$USER
+fvwm_action_click = Nop
+fvwm_action_doubleclick = Exec xterm -name Mail -T mail -e pine -i 
+fvwm_action_new_mail = Beep

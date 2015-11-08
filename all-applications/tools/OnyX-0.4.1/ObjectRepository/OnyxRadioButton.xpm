@@ -1,0 +1,27 @@
+/* XPM */
+static char * OnyxRadioButton_xpm[] = {
+/* width height num_colors chars_per_pixel */
+"16 16 5 1",
+/* colors */
+" 	s None	c None",
+".	c #828282",
+"X	c black",
+"o	c white",
+"O	c #c0c0c0",
+/* pixels */
+"                ",
+"                ",
+"      ....      ",
+"    ..XXXX..    ",
+"   .XXooooXXo   ",
+"   .XooooooOo   ",
+"  .XoooXXoooOo  ",
+"  .XooXXXXooOo  ",
+"  .XooXXXXooOo  ",
+"  .XoooXXoooOo  ",
+"   .XooooooOo   ",
+"   .OOooooOOo   ",
+"    ooOOOOoo    ",
+"      oooo      ",
+"                ",
+"                "};

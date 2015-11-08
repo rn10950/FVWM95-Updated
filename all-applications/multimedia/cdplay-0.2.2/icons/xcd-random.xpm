@@ -1,0 +1,25 @@
+/* XPM */
+static char *xcd_random[] = {
+/* width height num_colors chars_per_pixel */
+"    16    16        2            1",
+/* colors */
+". c #800000",
+"a c None s None",
+/* pixels */
+"aaaaaaaaaaaaaaaa",
+"aaaaaaaaaaaaaaaa",
+"aaaaaa.aaaaaaaaa",
+"aaaaa..aaaaaaaaa",
+"aaaa.......aaaaa",
+"aaaaa..aaaaaaaaa",
+"aaaaaa.aaaaaaaaa",
+"aaa.aaaaaaaaaaaa",
+"aa...aaaaaaaaaaa",
+"a.....aaaaaaaaaa",
+"aaa.aaaa.aaaaaaa",
+"aaa.aaa..aaaaaaa",
+"aaa.aa.......aaa",
+"aaa.aaa..aaaaaaa",
+"aaaaaaaa.aaaaaaa",
+"aaaaaaaaaaaaaaaa"
+};

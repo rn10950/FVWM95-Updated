@@ -1,0 +1,29 @@
+/* XPM */
+static char * deleteButton_xpm[] = {
+/* width height num_colors chars_per_pixel */
+"16 16 7 1",
+/* colors */
+" 	s none	c none",
+".	c cyan",
+"X	c red",
+"o	c blue",
+"O	c white",
+"+	c black",
+"@	c #808080",
+/* pixels */
+"                ",
+"                ",
+"..XX..   .oo..X ",
+"oOOOO+  OOOOOOX+",
+"oO@@O@+  OXXXO.+",
+".OOOO+  OOXXXO.+",
+".O@O@@+  OXXXOo+",
+"XOOOO+  OOOOOOo+",
+"XOOOOO+  @O@OO.+",
+".OOOO+  OOOOOO.+",
+".OOOOO+  OOOOOX+",
+"oo..X+  ..oo..X+",
+" ++++++  +++++++",
+"                ",
+"                ",
+"                "};

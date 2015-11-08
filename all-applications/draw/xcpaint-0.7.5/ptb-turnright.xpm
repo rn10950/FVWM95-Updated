@@ -1,0 +1,22 @@
+/* XPM */
+static char * ptb_turnright_xpm[] = {
+"16 16 3 1",
+" 	s None	c None",
+".	c #808080",
+"X	c black",
+"                ",
+"                ",
+"                ",
+"     .XXX..     ",
+"    XXXXXXX.    ",
+"   XX.   .XX.   ",
+"  .X.     .XX   ",
+"  X.       XXX  ",
+" .X      XXXXXXX",
+" ..       XXXXX ",
+"           XXX  ",
+"            X   ",
+"                ",
+"                ",
+"                ",
+"                "};

@@ -1,0 +1,31 @@
+Fixed the display on the explorer.
+It no longer starts with all of the explorer items opend up.
+
+Scrollbar in project explorer now maps more appropriately to
+  the viewable/unviewable part of the project.
+
+Added the item selected event to the OnyxTree object.
+Added DisplayWidth and DisplayHeight to the OnyxTree object.
+  This allows a determination of just how big the tree object will
+   need to be to display the entire tree.
+Added SizeToFit method to OnyxTree. This will automatically
+  resize the tree object to display the entire tree.
+
+Added a bell notification to the OnyxButton object. It will
+  signal a bell on the appropriate xdisplay if both the
+  button is disabled and if the event is disabled.
+
+View grid on/off added. If you dont want to see the grid just turn it
+ off. This also allows the backcolor or picture to show.
+
+Fixed small problem with custom controls menu. In certain situations
+ it could list controls twice. It will now auto update itself every time
+ it is loaded.
+
+Fixed problem with OnyxButton. Disabling it during a button click
+ event would cause it to pop down later when reenabled if the mouse
+ passed over it.
+
+Creating a new project now also automatically selects certain OnyxObjects
+ from the Custom Controls menu. Right now this is a static list of selections.
+ Eventually it will be user definable.

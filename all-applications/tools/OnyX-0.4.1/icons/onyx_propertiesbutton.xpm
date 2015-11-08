@@ -1,0 +1,27 @@
+/* XPM */
+static char * propertiesbutton_xpm[] = {
+/* width height num_colors chars_per_pixel */
+"16 16 5 1",
+/* colors */
+" 	s None	c None",
+".	c black",
+"X	c #000080",
+"o	c #c0c0c0",
+"O	c white",
+/* pixels */
+"                ",
+"       ...... XX",
+"      .oooooo.XX",
+"     .o.ooooooXX",
+".....o.o.oooooXX",
+".OO.o.o.o.ooo.XX",
+".O.o.O.o.o... XX",
+".O..OOO.o.O.    ",
+".OOOOOOO.OO.    ",
+".OOOOOOOOOO.    ",
+".O..O.....O.    ",
+".OOOOOOOOOO.    ",
+".O..O.....O.    ",
+".OOOOOOOOOO.    ",
+"............    ",
+"                "};

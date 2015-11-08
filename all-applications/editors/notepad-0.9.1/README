@@ -1,0 +1,65 @@
+Notepad is simple text editor that uses the OXTextEdit widget. It was
+first started by H. Radke, I just sort of finished it.
+
+Still to be done
+----------------
+
+- all help stuff
+
+
+Changes to the last release
+---------------------------
+
+- OXTextEdit was rewritten and moved to the xclass library.
+- TABs are now handled properly (the default tab width of 8 can be changed
+  too).
+- Added some shortcuts:
+
+	Ctrl + x                     : cut
+	Ctrl + c  or  Ctrl + Insert  : copy
+	CTRL + v  or  Shift + Insert : paste
+	F3                           : search again Dialog
+
+- Added Help files. F1 now opens the Help window.
+
+
+Install
+-------
+
+You will need xclass 0.9.1 or higher to compile this version of notepad.
+To compile and install notepad enter the following commands:
+
+  make
+  make install
+
+The last command must be run as superuser. If you do not have root access,
+you can install the application locally in your home directory, by typing
+
+  make install_user
+
+instead of 'make install'. That will put the executable in $HOME/.xclass/bin
+and the help files in $HOME/.xclass/docs/notepad. You should then to either
+add $HOME/.xclass/bin to your $PATH environment variable, or to copy the
+notepad executable to a suitable directory.
+
+A pixmap is provided for using with xclass explorer. Copy it to the
+directory where the xclass icons reside and append the following lines to
+your ~/.xclass/etc/mime.types file:
+
+	[text/plain]
+	pattern = *.te?xt 
+	icon = mini.text.xpm
+	action = notepad %s
+
+For fvwm95, add the following line to the .fvwm95rc file:
+
+	Style "Notepad" TitleIcon mini.text.xpm
+
+There are two more pixmaps: notepad.s.xpm and notepad.t.xpm. Copy them to
+your xclass icons directory as well (where OX_POOL points to). After that,
+every file box (including explorer) will show those icons for the "notepad"
+executable.
+
+Have fun,
+Harald Radke.
+Hector Peraza.

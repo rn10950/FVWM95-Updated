@@ -1,0 +1,48 @@
+04/10/12 (HP)	-	OXMailList: highlight full line when selected.
+
+00/08/28 (HP)	-	Adapted for xclass-0.5.3
+
+98/10/04	-	Popup window four button3 in the header
+			window had wrong coord by OXMyListView...fixed
+			renaming a folder didn't rename the file itself..done
+
+98/10/03 (CVS)	-	Hm...fixed new bug inside OXView
+
+98/10/02	-	Fixed the annoying OXTextView/Ecit scrolling bug...
+			This caused the view/edit to be cleared when scrolling 
+			the hidden part 
+			Hector fixed some segfault bugs, thx !
+
+98/09/29	-	Fixed impropper scroller diplsay of the mail header window
+			Adjusted code to new xclass changes
+
+98/09/25	-	Ok, now 7bit attachment decoding saves really in 7bit (clearing last bit)
+			and 8bit in 8bit chars 
+
+98/09/24	-	deleted the CVS dir...(:
+			Adjusted classes to the new OXCompositeFrame behaviour
+			on deletion time (and this way the SegFault after
+			multiple OXComposer calls disappeared)
+			fixed a small bug in OXSearchDialog
+
+98/09/18	-	Now the header list doesn't scroll up to the first
+			mail after deleting the selecte mail...
+
+98/09/16	-	incorrect display of header  window when 1st scrolling and
+			then resizing till it doens't need any scroller...fixed 
+
+98/09/11(*)	-	fixed a bug in OXTextView which causes SegFaults on some systems
+			fixed SegFault when no subject line (mail viewer)
+			now reply to all checkbox works correct
+			relying on mails with empty subject has now subject
+ 			 "Re: Your Mail"
+                	Message header window no should display correctly even
+			 when resizing (:
+			Status bar now uses OXTextButtons for labels...
+			 target will be to sort headers..
+
+98/09/10	-	1st develpment snapshot released
+
+
+(*) : last ftp release
+(CVS) : last CVS release

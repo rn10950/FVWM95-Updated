@@ -1,0 +1,32 @@
+Here is the version 0.7.2 (beta) of XCDiff.
+
+INTRO
+-----
+
+XCDiff is a frontend to the "diff" command. Differences of two ASCII files
+are shown in different colors. All differences can be accessed through the
+Next/Center/Prev buttons or a ListBox.
+
+Changes are highlited in green and marked as "C" ('C'hanged). Lines that 
+are present in the right file but not in the left are highlited in blue and
+marked as "A" ('A'dded). Lines not present in the right file are drawn in
+red and marked with a "D" ('D'eleted).
+
+Binary files are not handled!!!
+
+
+BUGS
+----
+
+- Sometimes the differences are not correctly shown
+- And some unknown
+
+
+TODO
+----
+
+- Smart update of the both Diff-Viewers
+- Horizontal scroll of the view panes
+- CVS revision diff
+- Code cleanup
+- Capture diff stderr

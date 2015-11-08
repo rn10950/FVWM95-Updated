@@ -1,0 +1,17 @@
+Toolbox 1
+ToolTip Progress Bar
+Property X $X=$Y 0
+Property Y $X=$Y 0
+Property Width $X=$Y 80
+Property Height $X=$Y 18
+Property Size $X=$Y 255
+Property Min $X=$Y 0
+Property Max $X=$Y 100
+Property Level $X=$Y 25
+Property ShowPercent $X=$Y True
+Property BorderStyle $X=$Y SunkenSingle
+PropertySetting ShowPercent ReadOnly ComboBox True False
+PropertySetting BorderStyle ReadOnly ComboBox NoBorder SunkenSingle SunkenDouble RaisedSingle RaisedDouble
+Event ButtonPressed button x y
+Event ButtonReleased button x y
+Event PointerMoved x y x_root y_root

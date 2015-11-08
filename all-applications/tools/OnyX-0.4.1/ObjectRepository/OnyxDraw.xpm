@@ -1,0 +1,32 @@
+/* XPM */
+static char * OnyxDraw_xpm[] = {
+/* width height ncolors cpp [x_hot y_hot] */
+"18 18 8 1 0 0",
+/* colors */
+" 	s None	c None",
+".	s iconColor1	m black	c black",
+"X	s iconColor6	m white	c yellow",
+"o	c magenta",
+"O	s iconColor4	m white	c green",
+"+	c #808080",
+"@	c red",
+"#	c blue",
+/* pixels */
+"                  ",
+"     ...          ",
+"    .XXX..        ",
+"   .XXXXXX.       ",
+"  .XXXoooXX.    . ",
+" .XXXXooo.X..  .. ",
+" .XXOO+..XXX. ..  ",
+" .XOOO+XXXXXX..   ",
+" .X+++XXXX.+..X.  ",
+" .XXXXXXXX....XX. ",
+"  .X@@@.XXX..XXX. ",
+"  .X@@@.XXXXXXXX. ",
+"   .X..X#####XXX. ",
+"    .XXX####XXX.  ",
+"     ...XXXXX..   ",
+"    +.. .....     ",
+"  ++..            ",
+"                  "};

@@ -1,0 +1,23 @@
+This is yet another xclass example program. It displays an earth globe
+using 3D vector graphics. The globle can be turned around and zoomed
+in/out. 
+
+In order to compile it, copy the files to the xclass/clients tree, edit
+the Makefile if necessary, then do a 'make'.
+
+The program uses these keyboard shortcuts:
+
+arrows - rotate globe
+i - zoom in
+o - zoom out
+g - toggle grid
+q - quit
+
+The data for continents, as well as code ideas, was taken and converted to
+a C format from a public domain OPL program for Psion-3a series of
+hand-held computers written by Andras Cserhati <cserhati@tea.npp.hu>. 
+
+I just wanted to see how it looked with xclass ;-) 
+
+Hope you enjoy it,
+Hector.

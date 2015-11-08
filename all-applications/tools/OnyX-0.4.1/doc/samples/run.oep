@@ -1,0 +1,1362 @@
+OnyX Exported Project
+Start Oxp
+#!/usr/local/xclass/clients/OnyX/OnyX
+OnyXVersion 0 4 0
+ApplicationName run
+ToolboxItem OnyxBase
+ToolboxItem OnyxButton
+ToolboxItem OnyxCheckBox
+ToolboxItem OnyxIcon
+ToolboxItem OnyxFileDialog
+ToolboxItem OnyxMsgBox
+ToolboxItem OnyxLabel
+ToolboxItem OnyxScreen
+ToolboxItem OnyxTextBox
+ToolboxItem OnyxRadioButton
+ToolboxItem OnyxWindow
+ToolboxItem OnyxComboBox
+StartObject
+ObjectName RunWindow
+ObjectType OnyxWindow
+ObjectParent Application
+Name Run...
+Class Run
+Resource Run
+X 12
+Y 388
+Width 299
+Height 125
+BackgroundColor #c0c0c0
+CloseDestroysWindow False
+CloseExitsApplication True
+EndObject
+StartObject
+ObjectName RunOKButton
+ObjectType OnyxButton
+ObjectParent RunWindow
+X 98
+Y 89
+Width 55
+Height 22
+Text OK
+Picture 
+IsEnabled 0
+IsSticky 0
+EndObject
+StartObject
+ObjectName RunCancelButton
+ObjectType OnyxButton
+ObjectParent RunWindow
+X 164
+Y 89
+Width 56
+Height 22
+Text Cancel
+Picture 
+IsEnabled 1
+IsSticky 0
+EndObject
+StartObject
+ObjectName RunBrowseButton
+ObjectType OnyxButton
+ObjectParent RunWindow
+X 232
+Y 89
+Width 56
+Height 22
+Text Browse
+Picture 
+IsEnabled 1
+IsSticky 0
+EndObject
+StartObject
+ObjectName XtermCheckBox
+ObjectType OnyxCheckBox
+ObjectParent RunWindow
+X 7
+Y 92
+Width 84
+Height 19
+Text Use XTerm
+IsChecked False
+IsEnabled False
+EndObject
+StartObject
+ObjectName OpenLabel
+ObjectType OnyxLabel
+ObjectParent RunWindow
+X 6
+Y 54
+Width 47
+Height 20
+Text Open:
+EndObject
+StartObject
+ObjectName RunIcon
+ObjectType OnyxIcon
+ObjectParent RunWindow
+X 9
+Y 11
+Width 32
+Height 32
+Picture run3232.xpm
+EndObject
+StartObject
+ObjectName InstructionLabel
+ObjectType OnyxLabel
+ObjectParent RunWindow
+X 53
+Y 14
+Width 206
+Height 21
+Text Please enter the program to be run.
+EndObject
+StartObject
+ObjectName Browser
+ObjectType OnyxFileDialog
+ObjectParent RunWindow
+DisplayWindow ApplicationRoot()
+DialogType OnyxOpenFileDialog
+EndObject
+StartObject
+ObjectName CurrentScreen
+ObjectType OnyxScreen
+ObjectParent RunWindow
+EndObject
+StartObject
+ObjectName RunConfiguration
+ObjectType OnyxWindow
+ObjectParent Application
+Name Run Configuration
+Class Run
+Resource Run
+X 65
+Y 125
+Width 355
+Height 275
+BackgroundColor #c0c0c0
+CloseDestroysWindow False
+CloseExitsApplication False
+EndObject
+StartObject
+ObjectName TrackHistory
+ObjectType OnyxCheckBox
+ObjectParent RunConfiguration
+X 20
+Y 15
+Width 95
+Height 15
+Text TrackHistory
+IsChecked True
+IsEnabled True
+EndObject
+StartObject
+ObjectName SizeLabel
+ObjectType OnyxLabel
+ObjectParent RunConfiguration
+X 185
+Y 15
+Width 80
+Height 15
+Text History Size:
+EndObject
+StartObject
+ObjectName RemoveDuplicates
+ObjectType OnyxCheckBox
+ObjectParent RunConfiguration
+X 190
+Y 40
+Width 130
+Height 15
+Text Remove Duplicates
+IsChecked True
+IsEnabled True
+EndObject
+StartObject
+ObjectName CommandLabel
+ObjectType OnyxLabel
+ObjectParent RunConfiguration
+X 20
+Y 135
+Width 100
+Height 15
+Text Xterm Command:
+EndObject
+StartObject
+ObjectName XtermDefault
+ObjectType OnyxCheckBox
+ObjectParent RunConfiguration
+X 20
+Y 160
+Width 140
+Height 15
+Text Use Xterm By Default
+IsChecked True
+IsEnabled True
+EndObject
+StartObject
+ObjectName ClearHistory
+ObjectType OnyxButton
+ObjectParent RunConfiguration
+X 130
+Y 95
+Width 85
+Height 25
+Text Clear History
+Picture 
+IsEnabled 1
+IsSticky 0
+EndObject
+StartObject
+ObjectName AlwaysStartAt
+ObjectType OnyxCheckBox
+ObjectParent RunConfiguration
+X 20
+Y 190
+Width 180
+Height 20
+Text Always Start At Location X
+IsChecked True
+IsEnabled True
+EndObject
+StartObject
+ObjectName AndLabel
+ObjectType OnyxLabel
+ObjectParent RunConfiguration
+X 250
+Y 190
+Width 40
+Height 15
+Text And Y
+EndObject
+StartObject
+ObjectName ConfigOK
+ObjectType OnyxButton
+ObjectParent RunConfiguration
+X 40
+Y 230
+Width 75
+Height 25
+Text OK
+Picture 
+IsEnabled 1
+IsSticky 0
+EndObject
+StartObject
+ObjectName ConfigDefaults
+ObjectType OnyxButton
+ObjectParent RunConfiguration
+X 140
+Y 230
+Width 75
+Height 25
+Text Defaults
+Picture 
+IsEnabled 1
+IsSticky 0
+EndObject
+StartObject
+ObjectName ConfigCancel
+ObjectType OnyxButton
+ObjectParent RunConfiguration
+X 240
+Y 230
+Width 75
+Height 25
+Text Cancel
+Picture 
+IsEnabled 1
+IsSticky 0
+EndObject
+StartObject
+ObjectName HistorySize
+ObjectType OnyxTextBox
+ObjectParent RunConfiguration
+X 265
+Y 10
+Width 55
+Height 20
+Size 255
+QuickFocusRelease False
+EndObject
+StartObject
+ObjectName XtermCommand
+ObjectType OnyxTextBox
+ObjectParent RunConfiguration
+X 125
+Y 130
+Width 205
+Height 20
+Size 255
+QuickFocusRelease False
+EndObject
+StartObject
+ObjectName XLocation
+ObjectType OnyxTextBox
+ObjectParent RunConfiguration
+X 205
+Y 185
+Width 35
+Height 20
+Size 255
+QuickFocusRelease False
+EndObject
+StartObject
+ObjectName YLocation
+ObjectType OnyxTextBox
+ObjectParent RunConfiguration
+X 295
+Y 185
+Width 35
+Height 20
+Size 255
+QuickFocusRelease False
+EndObject
+StartObject
+ObjectName RemoveErrors
+ObjectType OnyxCheckBox
+ObjectParent RunConfiguration
+X 190
+Y 65
+Width 125
+Height 15
+Text Don't Store Errors
+IsChecked True
+IsEnabled True
+EndObject
+StartObject
+ObjectName SortStyle2
+ObjectType OnyxRadioButton
+ObjectParent RunConfiguration
+X 20
+Y 40
+Width 135
+Height 15
+Text Sort By Date
+IsChecked True
+IsEnabled True
+EndObject
+StartObject
+ObjectName SortStyle1
+ObjectType OnyxRadioButton
+ObjectParent RunConfiguration
+X 20
+Y 65
+Width 130
+Height 15
+Text Sort Alphabetically
+IsChecked True
+IsEnabled True
+EndObject
+StartObject
+ObjectName ConfigureIcon
+ObjectType OnyxIcon
+ObjectParent RunWindow
+X -100
+Y -100
+Width 32
+Height 32
+Picture settings3232.xpm
+EndObject
+StartObject
+ObjectName ProgramToRun
+ObjectType OnyxComboBox
+ObjectParent RunWindow
+X 62
+Y 54
+Width 225
+Height 23
+QuickFocusRelease False
+EndObject
+End Oxp
+Start Oxc Application
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define MaxHistorySize 32
+
+int PreserveHistory;
+int SizeOfHistory;
+int KeepDuplicates;
+int SortByDate;
+int SortAlphabetically;
+int DontKeepErrors;
+char XTermCommand[255];
+int UseXtermByDefault;
+int FixedStartingLocation;
+int StartXLocation;
+int StartYLocation;
+
+int WeNeedToSetDefaults;
+char LastCommand[MaxHistorySize + 1][255]; /* One greater than max to allow for insertion. (This will be in order of usage). */
+char DisplayedLastCommand[MaxHistorySize + 1][255]; /* Last commands after sorting and such. */
+int CurrentHistorySize;
+
+int AlphaSort(const void *s1, const void *s2)
+{
+        return(strcmp((char *) s1, (char *) s2));
+}
+
+void ApplicationPreload(int argc, char *argv[])
+{
+	FILE *RunRC;
+	char FileName[255];
+	char InLine[255];
+	char *Marker;
+	int CommandRead;
+
+	/* Set defaults. */
+	PreserveHistory = True;
+	SizeOfHistory = 10;
+	KeepDuplicates = True;
+	SortByDate = True;
+	SortAlphabetically = False;
+	DontKeepErrors = False;
+	sprintf(XTermCommand,"xterm -e");
+	UseXtermByDefault = False;
+	FixedStartingLocation = False;
+	StartXLocation = 100;
+	StartYLocation = 100;
+
+	/* Create the location of the .runrc file */
+	sprintf(FileName,"%s/.runrc",getenv("HOME"));
+
+	RunRC = fopen(FileName,"r");	/* Open it. */
+	if(!RunRC)	/* If it didn't open then assume this is a first time run. */
+	{
+		WeNeedToSetDefaults = True;
+	}
+	else
+	{
+		WeNeedToSetDefaults = False;
+		CommandRead = False;
+		CurrentHistorySize = 0;
+		while(fgets(InLine,255,RunRC))
+		{
+			if(!CommandRead)	/* If we aren't reading the history yet.... */
+			{
+				if(!strncmp(InLine,"Hist ",5))
+				{
+					Marker = InLine + 5;
+					sscanf(Marker,"%i",&PreserveHistory);
+				}
+				else if(!strncmp(InLine,"Size ",5))
+				{
+					Marker = InLine + 5;
+					sscanf(Marker,"%i",&SizeOfHistory);
+				}
+				else if(!strncmp(InLine,"Salp ",5))
+				{
+					Marker = InLine + 5;
+					sscanf(Marker,"%i",&SortAlphabetically);
+				}
+				else if(!strncmp(InLine,"Sdat ",5))
+				{
+					Marker = InLine + 5;
+					sscanf(Marker,"%i",&SortByDate);
+				}
+				else if(!strncmp(InLine,"Noer ",5))
+				{
+					Marker = InLine + 5;
+					sscanf(Marker,"%i",&DontKeepErrors);
+				}
+				else if(!strncmp(InLine,"Dups ",5))
+				{
+					Marker = InLine + 5;
+					sscanf(Marker,"%i",&KeepDuplicates);
+				}
+				else if(!strncmp(InLine,"Xcom ",5))
+				{
+					Marker = InLine + 5;
+					strcpy(XTermCommand,Marker);
+					/* Remove NewLine. */
+					Marker = strchr(XTermCommand,'\n');
+					if(Marker)
+					{
+						*Marker = '\0';
+					}
+				}
+				else if(!strncmp(InLine,"Xdef ",5))
+				{
+					Marker = InLine + 5;
+					sscanf(Marker,"%i",&UseXtermByDefault);
+				}
+				else if(!strncmp(InLine,"Fixs ",5))
+				{
+					Marker = InLine + 5;
+					sscanf(Marker,"%i",&FixedStartingLocation);
+				}
+				else if(!strncmp(InLine,"Fixx ",5))
+				{
+					Marker = InLine + 5;
+					sscanf(Marker,"%i",&StartXLocation);
+				}
+				else if(!strncmp(InLine,"Fixy ",5))
+				{
+					Marker = InLine + 5;
+					sscanf(Marker,"%i",&StartYLocation);
+				}
+				else if(!strncmp(InLine,"---- ",5))	/* End of settings. Start history. */
+				{
+					CommandRead = True;
+				}
+			}
+			else if(CurrentHistorySize < MaxHistorySize)	/* Don't want to over run our array now do we? */
+			{
+				/* Remove NewLine. */
+				Marker = strchr(InLine,'\n');
+				if(Marker)
+				{
+					*Marker = '\0';
+				}
+
+				/* Copy the command into memory. */
+				strcpy(LastCommand[CurrentHistorySize++],InLine);
+			} /* end if not CommandRead */
+		} /* end while gets */
+		fclose(RunRC);
+	}
+}
+
+void ApplicationLoad(int argc, char *argv[])
+{
+	int i;
+
+	/* Set location of run window. */
+	if(FixedStartingLocation)
+	{
+		RunWindow->X = StartXLocation;
+		RunWindow->Y = StartYLocation;
+	}
+	else
+	{
+		RunWindow->Y = CurrentScreen->Height - 77 - RunWindow->Height;
+	}
+
+	for(i = 0; i < CurrentHistorySize; i++)	/* Copy from the internal last used order to the unknown displayed order. */
+	{
+		strcpy(DisplayedLastCommand[i],LastCommand[i]);
+	}
+
+	if(SortAlphabetically)	/* Displayed order is to be alphabetically. Sort it so. */
+	{
+		qsort(DisplayedLastCommand,CurrentHistorySize,sizeof(DisplayedLastCommand[0]),(*AlphaSort));
+	}
+
+	/* Add the history to the combo box. */
+	for(i = 0; i < CurrentHistorySize; i++)
+	{
+		ProgramToRun->AddEntry(DisplayedLastCommand[i]);
+	}
+
+	OpenStartingForm();
+	/* Set check box to represent default. */
+	if(UseXtermByDefault)
+	{
+		XtermCheckBox->Check();
+	}
+	else
+	{
+		XtermCheckBox->UnCheck();
+	}
+
+
+	if(WeNeedToSetDefaults)
+	{
+		RunConfiguration->Show();
+	}
+}
+
+void GeneralEvent(OnyxMessage *event)
+{
+}
+End Oxc
+Start Oxc ProgramToRun
+void ProgramToRun_ButtonPressed(long button, long x, long y)
+{
+}
+
+void ProgramToRun_ButtonReleased(long button, long x, long y)
+{
+}
+
+void ProgramToRun_PointerMoved(long x, long y, long x_root, long y_root)
+{
+}
+
+void ProgramToRun_ItemSelected(long item_number)
+{
+        if(strlen(ProgramToRun->Text) > 0)
+        {
+                RunOKButton->Enable();
+        }
+}
+
+void ProgramToRun_TextChanged()
+{
+        if(strlen(ProgramToRun->Text) > 0)
+        {
+                RunOKButton->Enable();
+        }
+        else
+        {
+                RunOKButton->Disable();
+        }
+}
+ 
+void ProgramToRun_EnterPressed()
+{
+        RunOKButton_ButtonClicked();  
+}
+End Oxc
+Start Oxc ConfigureIcon
+void ConfigureIcon_ButtonPressed(long button, long x, long y)
+{
+}
+
+void ConfigureIcon_ButtonReleased(long button, long x, long y)
+{
+}
+
+void ConfigureIcon_ButtonClicked(long button, long x, long y)
+{
+}
+
+void ConfigureIcon_PointerMoved(long x, long y, long x_root, long y_root)
+{
+}
+
+End Oxc
+Start Oxc SortStyle1
+void SortStyle1_ButtonClicked()
+{
+	SortStyle2->UnCheck();
+}
+
+End Oxc
+Start Oxc SortStyle2
+void SortStyle2_ButtonClicked()
+{
+	SortStyle1->UnCheck();
+}
+
+End Oxc
+Start Oxc RemoveErrors
+void RemoveErrors_ButtonClicked()
+{
+}
+
+End Oxc
+Start Oxc YLocation
+void YLocation_TextChanged()
+{
+}
+
+void YLocation_EnterPressed()
+{
+}
+
+End Oxc
+Start Oxc XLocation
+void XLocation_TextChanged()
+{
+}
+
+void XLocation_EnterPressed()
+{
+}
+
+End Oxc
+Start Oxc XtermCommand
+void XtermCommand_TextChanged()
+{
+}
+
+void XtermCommand_EnterPressed()
+{
+}
+
+End Oxc
+Start Oxc HistorySize
+void HistorySize_TextChanged()
+{
+}
+
+void HistorySize_EnterPressed()
+{
+}
+
+End Oxc
+Start Oxc ConfigCancel
+void ConfigCancel_ButtonClicked()
+{
+	/* Reset to original state. */
+	if(UseXtermByDefault)
+	{
+		XtermCheckBox->Check();
+	}
+	else
+	{
+		XtermCheckBox->UnCheck();
+	}
+
+        RunConfiguration->Close();
+}
+
+End Oxc
+Start Oxc ConfigDefaults
+void ConfigDefaults_ButtonClicked()
+{
+        TrackHistory->Check();
+        RemoveDuplicates->Enable();
+        RemoveDuplicates->UnCheck();
+        RemoveErrors->Enable();
+        RemoveErrors->UnCheck();
+	SortStyle1->UnCheck();
+	SortStyle2->Check();
+	XtermDefault->UnCheck();
+	XtermCheckBox->UnCheck();
+        AlwaysStartAt->UnCheck();
+	HistorySize->ClearText();
+	HistorySize->AddText("10");
+	HistorySize->Update();
+
+	XtermCommand->ClearText();
+	XtermCommand->AddText("xterm -e");
+	XtermCommand->Update();
+
+	XLocation->ClearText();
+	XLocation->AddText("100");
+	XLocation->Update();
+
+	YLocation->ClearText();
+	YLocation->AddText("100");
+	YLocation->Update();
+}
+
+End Oxc
+Start Oxc ConfigOK
+void ConfigOK_ButtonClicked()
+{
+	/* Save settings internally. */
+        PreserveHistory = TrackHistory->IsChecked;
+        sscanf(HistorySize->Text,"%i",&SizeOfHistory);
+        KeepDuplicates = !RemoveDuplicates->IsChecked;
+	DontKeepErrors = RemoveErrors->IsChecked;
+	SortAlphabetically = SortStyle1->IsChecked;
+	SortByDate = SortStyle2->IsChecked;
+        strcpy(XTermCommand,XtermCommand->Text);
+        UseXtermByDefault = XtermDefault->IsChecked;
+        FixedStartingLocation = AlwaysStartAt->IsChecked;
+        sscanf(XLocation->Text,"%i",&StartXLocation);
+        sscanf(YLocation->Text,"%i",&StartYLocation);
+
+
+	/* Save settings in the .runrc */
+	SaveResources();
+
+	/* And close the configuration window. */
+	RunConfiguration->Close();
+}
+
+End Oxc
+Start Oxc AndLabel
+void AndLabel_ButtonPressed(long button, long x, long y)
+{
+}
+
+void AndLabel_ButtonReleased(long button, long x, long y)
+{
+}
+
+void AndLabel_PointerMoved(long x, long y, long x_root, long y_root)
+{
+}
+
+End Oxc
+Start Oxc AlwaysStartAt
+void AlwaysStartAt_ButtonClicked()
+{
+}
+
+End Oxc
+Start Oxc ClearHistory
+void ClearHistory_ButtonClicked()
+{
+	SizeOfHistory = 0;
+	ProgramToRun->ClearAllEntries();
+	SaveResources();
+	ClearHistory->Disable();
+}
+End Oxc
+Start Oxc XtermDefault
+void XtermDefault_ButtonClicked()
+{
+	/* Change the main windows check box to match. */
+	if(XtermDefault->IsChecked)
+	{
+		XtermCheckBox->Check();
+	}
+	else
+	{
+		XtermCheckBox->UnCheck();
+	}
+}
+
+End Oxc
+Start Oxc CommandLabel
+void CommandLabel_ButtonPressed(long button, long x, long y)
+{
+}
+
+void CommandLabel_ButtonReleased(long button, long x, long y)
+{
+}
+
+void CommandLabel_PointerMoved(long x, long y, long x_root, long y_root)
+{
+}
+
+End Oxc
+Start Oxc RemoveDuplicates
+void RemoveDuplicates_ButtonClicked()
+{
+}
+
+End Oxc
+Start Oxc SizeLabel
+void SizeLabel_ButtonPressed(long button, long x, long y)
+{
+}
+
+void SizeLabel_ButtonReleased(long button, long x, long y)
+{
+}
+
+void SizeLabel_PointerMoved(long x, long y, long x_root, long y_root)
+{
+}
+
+End Oxc
+Start Oxc TrackHistory
+void TrackHistory_ButtonClicked()
+{
+	if(TrackHistory->IsChecked)
+	{
+		RemoveDuplicates->Enable();
+		RemoveErrors->Enable();
+		SortStyle1->Enable();
+		SortStyle2->Enable();
+	}
+	else
+	{
+		RemoveDuplicates->Disable();
+		RemoveErrors->Disable();
+		SortStyle1->Disable();
+		SortStyle2->Disable();
+	}
+}
+
+End Oxc
+Start Oxc RunConfiguration
+#include <stdio.h>
+#include <stdlib.h>
+
+extern int PreserveHistory;
+extern int SizeOfHistory;
+extern int KeepDuplicates;
+extern char XTermCommand[255];
+extern int UseXtermByDefault;
+extern int FixedStartingLocation;
+extern int StartXLocation;
+extern int StartYLocation;
+extern int SortByDate;
+extern int SortAlphabetically;
+extern int DontKeepErrors;
+
+extern char LastCommand[33][255];
+extern char DisplayedLastCommand[33][255];
+extern int CurrentHistorySize;
+extern void SaveResources();
+
+extern int AlphaSort(const void *s1, const void *s2);
+
+void RunConfiguration_WindowClosed()
+{
+}
+
+void RunConfiguration_WindowCloseSignaled()
+{
+	int i;
+
+	/* Change the combo box listing to suit current preferences. */
+	ProgramToRun->ClearAllEntries();
+
+        for(i = 0; i < CurrentHistorySize; i++) /* Copy from the internal last used order to the unknown displayed order. */
+        {
+                strcpy(DisplayedLastCommand[i],LastCommand[i]);
+        }
+                
+        if(SortAlphabetically)  /* Displayed order is to be alphabetically. Sort it so. */
+        {
+                qsort(DisplayedLastCommand,CurrentHistorySize,sizeof(DisplayedLastCommand[0]),(*AlphaSort));
+        }
+
+	for(i = 0; i < CurrentHistorySize; i++)
+	{
+		ProgramToRun->AddEntry(DisplayedLastCommand[i]);
+	}
+
+	/* Swap pictures back in the main window. */
+        RunIcon->Move(9,11);
+        ConfigureIcon->Move(-100,-100);
+}
+
+void RunConfiguration_WindowLoad()
+{
+	char temp[255];
+
+	/* Swap pictures in the main window. */
+        ConfigureIcon->Move(9,11);
+        RunIcon->Move(-100,-100);
+
+	/* Set controls to represet the current settings. */
+
+	if(DontKeepErrors)
+	{
+		RemoveErrors->Check();
+	}
+	else
+	{
+		RemoveErrors->UnCheck();
+	}
+
+	if(KeepDuplicates)
+	{
+		RemoveDuplicates->UnCheck();
+	}
+	else
+	{
+		RemoveDuplicates->Check();
+	}
+
+	if(SortAlphabetically)
+	{
+		SortStyle1->Check();
+		SortStyle2->UnCheck();
+	}
+	else
+	{
+		SortStyle1->UnCheck();
+		SortStyle2->Check();
+	}
+
+	if(PreserveHistory)
+	{
+		TrackHistory->Check();
+		RemoveDuplicates->Enable();
+		RemoveErrors->Enable();
+		SortStyle1->Enable();
+		SortStyle2->Enable();
+	}
+	else
+	{
+		TrackHistory->UnCheck();
+		RemoveDuplicates->Disable();
+		RemoveErrors->Disable();
+		SortStyle1->Disable();
+		SortStyle2->Disable();
+	}
+
+	if(SizeOfHistory > 32)	/* Ensure that we aren't going to overflow our array. */
+	{
+		ExclamationBox(RunConfiguration->Self(),"Maximum history size is 32.");
+		SizeOfHistory = 32;
+	}
+	sprintf(temp,"%i",SizeOfHistory);
+        HistorySize->ClearText();
+        HistorySize->AddText(temp); 
+        HistorySize->Update();
+
+	if(UseXtermByDefault)
+	{
+		XtermDefault->Check();
+	}
+	else
+	{
+		XtermDefault->UnCheck();
+	}
+
+        XtermCommand->ClearText();
+        XtermCommand->AddText(XTermCommand); 
+        XtermCommand->Update();
+
+	if(FixedStartingLocation)
+	{
+		AlwaysStartAt->Check();
+	}
+	else
+	{
+		AlwaysStartAt->UnCheck();
+	}
+
+	sprintf(temp,"%i",StartXLocation);
+        XLocation->ClearText();
+        XLocation->AddText(temp); 
+        XLocation->Update();
+
+	sprintf(temp,"%i",StartYLocation);
+        YLocation->ClearText();
+        YLocation->AddText(temp); 
+        YLocation->Update();
+
+	if(SizeOfHistory > 0)	/* We can only clear if we have a history. */
+	{
+		ClearHistory->Enable();
+	}
+	else
+	{
+		ClearHistory->Disable();
+	}
+}
+
+void RunConfiguration_ButtonPressed(long button, long x, long y)
+{
+}
+
+void RunConfiguration_ButtonReleased(long button, long x, long y)
+{
+}
+
+void RunConfiguration_ButtonClicked(long button, long x, long y)
+{
+}
+
+void RunConfiguration_PointerMoved(long x, long y, long x_root, long y_root)
+{
+}
+
+void RunConfiguration_WindowMoved(long old_x, long old_y, long new_x, long new_y)
+{
+}
+
+void RunConfiguration_WindowResized(long old_width, long old_height, long new_width, long new_height)
+{
+}
+
+End Oxc
+Start Oxc CurrentScreen
+End Oxc
+Start Oxc Browser
+End Oxc
+Start Oxc InstructionLabel
+void InstructionLabel_ButtonPressed(long button, long x, long y)
+{
+}
+
+void InstructionLabel_ButtonReleased(long button, long x, long y)
+{
+}
+
+void InstructionLabel_PointerMoved(long x, long y, long x_root, long y_root)
+{
+}
+
+End Oxc
+Start Oxc RunIcon
+void RunIcon_ButtonPressed(long button, long x, long y)
+{
+}
+
+void RunIcon_ButtonReleased(long button, long x, long y)
+{
+	RunConfiguration->Show();
+}
+
+void RunIcon_ButtonClicked(long button, long x, long y)
+{
+}
+
+void RunIcon_PointerMoved(long x, long y, long x_root, long y_root)
+{
+}
+
+End Oxc
+Start Oxc OpenLabel
+void OpenLabel_ButtonPressed(long button, long x, long y)
+{
+}
+
+void OpenLabel_ButtonReleased(long button, long x, long y)
+{
+}
+
+void OpenLabel_PointerMoved(long x, long y, long x_root, long y_root)
+{
+}
+
+End Oxc
+Start Oxc XtermCheckBox
+void XtermCheckBox_ButtonClicked()
+{
+}
+
+End Oxc
+Start Oxc RunBrowseButton
+void RunBrowseButton_ButtonClicked()
+{
+	char Temp[255];
+
+	Browser->Show();
+	if(!Browser->Cancelled)
+	{
+		strcpy(Temp,Browser->DirectorySelected);
+		/* If something other than root was selected then add the slash. */
+		if(strcmp(Browser->DirectorySelected,"/"))	
+		{
+			strcat(Temp,"/");
+		}
+		strcat(Temp,Browser->FileSelected);
+		ProgramToRun->AddText(Temp);
+		ProgramToRun->Update();
+		RunOKButton->Enable();
+	}
+}
+
+End Oxc
+Start Oxc RunCancelButton
+void RunCancelButton_ButtonClicked()
+{
+	ApplicationClose();
+}
+
+End Oxc
+Start Oxc RunOKButton
+#include <unistd.h>
+
+#define MaxArgs 10
+
+void RunOKButton_ButtonClicked()
+{
+	char P2Run[255];
+	char errmsg[255];
+	char *Parg[MaxArgs];
+	int Strlen;
+	int i, j, k;
+
+	Strlen = strlen(ProgramToRun->Text);
+
+	if(Strlen > 0)
+	{
+		if(PreserveHistory)
+		{
+		        /* Save history. */
+			strcpy(LastCommand[CurrentHistorySize++],ProgramToRun->Text);
+
+			SaveResources();	/* Write info to the .rc file. */
+		}
+
+		if(XtermCheckBox->IsChecked)
+		{
+			sprintf(P2Run,"%s %s",XTermCommand,ProgramToRun->Text);
+		}
+		else
+		{
+			strcpy(P2Run,ProgramToRun->Text);
+		}
+
+		Strlen = strlen(P2Run);
+		for(i = 0, j = 0, k = 0; (i < Strlen) && (j < MaxArgs); i++)
+		{
+			if(P2Run[i] == ' ')
+			{
+				P2Run[i] = '\0';
+				Parg[j++] = &P2Run[k];
+				k = i + 1;
+			}
+		}
+		Parg[j++] = &P2Run[k];
+		for(;j < MaxArgs;j++)
+		{
+			Parg[j] = NULL;
+		}
+
+		j = execlp(Parg[0],Parg[0],Parg[1],Parg[2],Parg[3],Parg[4],Parg[5],Parg[6],Parg[7],Parg[8],Parg[9],0);
+
+		if (j == -1)
+		{
+			sprintf(errmsg,"Could not open %s.",ProgramToRun->Text);
+			StopBox(RunWindow->Self(),errmsg);
+			if(PreserveHistory)	/* If we are preserving history then we might have some work to do. */
+			{
+				if(DontKeepErrors)	/* If we are suppposed to pitch errors */
+				{
+					/* The last command was at the tail end of the history. Shorten the history - remove the command. */
+					CurrentHistorySize--;
+					SaveResources();	/* Undo our .runrc changes. */
+				}
+				else	/* We are still active. Update the combo box to be current. */
+				{
+				        /* Change the combo box listing to suit current preferences. */
+				        for(i = 0; i < CurrentHistorySize; i++) /* Copy from the internal last used order to the unknown displayed order. */
+				        {
+				                strcpy(DisplayedLastCommand[i],LastCommand[i]);
+				        }
+	
+				        if(SortAlphabetically)  /* Displayed order is to be alphabetically. Sort it so. */
+				        {
+				                qsort(DisplayedLastCommand,CurrentHistorySize,sizeof(DisplayedLastCommand[0]),(*AlphaSort));
+				        }
+	
+				        ProgramToRun->ClearAllEntries();
+				        for(i = 0; i < CurrentHistorySize; i++)
+				        {
+				                ProgramToRun->AddEntry(DisplayedLastCommand[i]);
+				        }
+				}
+			}
+		}	
+	}
+}
+End Oxc
+Start Oxc RunWindow
+#include <stdio.h>
+#include <stdlib.h>
+
+extern int PreserveHistory;
+extern int SizeOfHistory;
+extern int KeepDuplicates;
+extern char XTermCommand[255];
+extern int UseXtermByDefault;
+extern int FixedStartingLocation;
+extern int StartXLocation;
+extern int StartYLocation;
+extern int SortByDate;
+extern int SortAlphabetically;
+extern int DontKeepErrors;
+
+extern char LastCommand[33][255];
+extern char DisplayedLastCommand[33][255];
+extern int CurrentHistorySize;
+
+extern int AlphaSort(const void *s1, const void *s2);
+
+void RunWindow_WindowClosed()
+{
+}
+
+void RunWindow_WindowCloseSignaled()
+{
+}
+
+void RunWindow_WindowLoad()
+{
+}
+
+void RunWindow_ButtonPressed(long button, long x, long y)
+{
+}
+
+void RunWindow_ButtonReleased(long button, long x, long y)
+{
+}
+
+void RunWindow_ButtonClicked(long button, long x, long y)
+{
+}
+
+void RunWindow_PointerMoved(long x, long y, long x_root, long y_root)
+{
+}
+
+void RunWindow_WindowMoved(long old_x, long old_y, long new_x, long new_y)
+{
+}
+
+void RunWindow_WindowResized(long old_width, long old_height, long new_width, long new_height)
+{
+}
+
+void RemoveDuplication()
+{
+	int i, j, k;
+
+	for(i = 0; i < CurrentHistorySize; i++)	/* For each command. */
+	{
+		for(j = i + 1; j < CurrentHistorySize; j++)	/* Compare to the rest of the commands. */
+		{
+			if(!strcmp(LastCommand[i],LastCommand[j]))	/* if the two commands are equal */
+			{
+				for(k = j + 1; k < CurrentHistorySize; k++)	/* Shift the entire list up by one. */
+				{
+					strcpy(LastCommand[j],LastCommand[k]);
+				}
+				CurrentHistorySize--;	/* History is now one entry smaller. */
+				j--;	/* Entry j+1 is now j, so we need to check entry j again. */
+			}
+		}
+	}
+}
+
+void SaveResources()
+{
+	FILE *RunRC;
+	char FileName[255];
+	char temp[255];
+        int i;
+
+	sprintf(FileName,"%s/.runrc",getenv("HOME"));
+	RunRC = fopen(FileName,"w");
+	if(RunRC)
+	{
+		fprintf(RunRC,"Hist %i\n",PreserveHistory);
+		fprintf(RunRC,"Size %i\n",SizeOfHistory);
+		fprintf(RunRC,"Dups %i\n",KeepDuplicates);
+		fprintf(RunRC,"Noer %i\n",DontKeepErrors);
+		fprintf(RunRC,"Salp %i\n",SortAlphabetically);
+		fprintf(RunRC,"Sdat %i\n",SortByDate);
+		fprintf(RunRC,"Xcom %s\n",XTermCommand);
+		fprintf(RunRC,"Xdef %i\n",UseXtermByDefault);
+		fprintf(RunRC,"Fixs %i\n",FixedStartingLocation);
+		fprintf(RunRC,"Fixx %i\n",StartXLocation);
+		fprintf(RunRC,"Fixy %i\n",StartYLocation);
+		fprintf(RunRC,"---- Command History\n");
+
+		if(CurrentHistorySize > 1)
+		{
+			/* Yes I should really just run the array backwards but I really am */
+			/* to tired to change all of the code to match. ie: easier said than done. */
+			/* If you wish to spend the time complaining about this small infraction, then */
+			/* do me a favor. Shutup, and spend your extra energy and fix the problem instead of */
+			/* just complaining about it. That I wouldn't mind a bit. :) */
+			strcpy(temp,LastCommand[CurrentHistorySize - 1]);
+			for(i = CurrentHistorySize - 1; i > 0; i--)
+			{
+				strcpy(LastCommand[i],LastCommand[i - 1]);
+			}
+			strcpy(LastCommand[0],temp);
+
+			if(!KeepDuplicates)	/* Remove duplicate commands if required. */
+			{
+				RemoveDuplication();
+			}
+		}
+
+		if(CurrentHistorySize > SizeOfHistory)	/* Cut off any extra commands. */
+		{
+			CurrentHistorySize = SizeOfHistory;
+		}
+
+		for(i = 0; i < CurrentHistorySize; i++)
+		{
+			fprintf(RunRC,"%s\n",LastCommand[i]);
+		}
+		fclose(RunRC);
+	}   
+	else
+	{
+	        sprintf(temp,"Error saveing configuration to %s\n",FileName);
+	}
+}
+End Oxc

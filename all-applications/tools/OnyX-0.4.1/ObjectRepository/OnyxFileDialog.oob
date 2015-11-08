@@ -1,0 +1,6 @@
+Toolbox 1
+ToolTip Open/Save File Dialog
+Property DisplayWindow $X=$Y ApplicationRoot()
+Property DialogType $X=$Y OnyxOpenFileDialog
+PropertySetting DisplayWindow ReadWrite ComboBox ApplicationRoot()
+PropertySetting DialogType ReadOnly ComboBox OnyxOpenFileDialog OnyxSaveFileDialog

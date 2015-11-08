@@ -1,0 +1,28 @@
+/* XPM */
+static char *xcd_trackelapsed[] = {
+/* width height num_colors chars_per_pixel */
+"    16    16        5            1",
+/* colors */
+". c #000000",
+"# c #800000",
+"a c None s None",
+"b c #ffff00",
+"c c #ffffff",
+/* pixels */
+"aaaaa......aaaaa",
+"aaa..cc.bcb..aaa",
+"aa.cccc.cbcbc.aa",
+"a.ccccc.b#bcbc.a",
+"a.ccccc.cb#bcb.a",
+".cccccc.bcb#bcb.",
+".cccccc.cbc#cbc.",
+".cccccc.b#b#b#b.",
+".cccccc.cb###bc.",
+".ccccccc.cb#bcb.",
+".cccccccc.cbcbc.",
+"a.cccccccc.cbc.a",
+"a.ccccccccc.cb.a",
+"aa.ccccccccc..aa",
+"aaa..cccccc..aaa",
+"aaaaa......aaaaa"
+};

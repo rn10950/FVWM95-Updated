@@ -1,0 +1,25 @@
+/* XPM */
+static char * tbu_paste_xpm[] = {
+/* width height num_colors chars_per_pixel */
+"16 16 3 1",
+/* colors */
+" 	c None",
+".	c #808080",
+"X	c white",
+/* pixels */
+"                ",
+"     ....       ",
+" ............   ",
+"..............  ",
+"....XXXXXX....X ",
+"..............X ",
+"..............X ",
+"..............X ",
+".......XXXXX..X ",
+".......XXXXX.X. ",
+".......X...X...X",
+".......XXXXXXX.X",
+".......X.....X.X",
+" ......XXXXXXX.X",
+"  XXXX.........X",
+"       XXXXXXXXX"};

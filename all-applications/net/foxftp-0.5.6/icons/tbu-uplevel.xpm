@@ -1,0 +1,23 @@
+/* XPM */
+static char * tbu_uplevel_xpm[] = {
+"16 16 4 1",
+" 	s None	c None",
+".	c #808080",
+"X	c white",
+"o	c #c0c0c0",
+"                ",
+"  .....         ",
+" .XXXXX.        ",
+"..............  ",
+".XXXXXXXXXXXXX. ",
+".Xooo.oooooooo.X",
+".Xoo...ooooooo.X",
+".Xo.....oooooo.X",
+".XooX.XXXooooo.X",
+".Xooo.Xooooooo.X",
+".Xooo......ooo.X",
+".XooooXXXXXXoo.X",
+".Xoooooooooooo.X",
+"...............X",
+" XXXXXXXXXXXXXXX",
+"                "};

@@ -1,0 +1,23 @@
+/* XPM */
+static char * tb_bigicons_xpm[] = {
+"16 16 4 1",
+" 	s None	c None",
+".	c navy",
+"X	c white",
+"o	c black",
+"                ",
+"  ...           ",
+"  .X..          ",
+"  .XX.          ",
+"  .XX.          ",
+"  ....          ",
+"                ",
+" oooooo   ...   ",
+"          .X..  ",
+"          .XX.  ",
+"          .XX.  ",
+"          ....  ",
+"                ",
+"         oooooo ",
+"                ",
+"                "};

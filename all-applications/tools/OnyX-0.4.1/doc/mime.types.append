@@ -1,0 +1,4 @@
+[application/onyx]
+pattern = *.oxp
+icon = OnyX.s.xpm
+action = OnyX %s

@@ -1,0 +1,9 @@
+This is the version 1.1 of the run program. It is intended to be called
+from fvwm95 taskbar's Start Menu, just copy it somewhere in your path and
+modify accordingly you .fvwm95rc, for example:
+
+AddToMenu "StartMenu@fvwm-menu.xpm@^#808080^" \
+  ....
+
++ "&Run...%run.xpm%"            Exec  run &
+  ....

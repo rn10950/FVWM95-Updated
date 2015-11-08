@@ -1,0 +1,21 @@
+/* XPM */
+static char * OnyxSpinButton_xpm[] = {
+"20 14 4 1",
+" 	c #808080",
+".	c white",
+"X	c black",
+"o	c #C0C0C0",
+"                   .",
+" XXXXXXXXXXXXXXXXXo.",
+" X........o......Xo.",
+" X........o.ooXooXo.",
+" X....X...o.oXXXoXo.",
+" X...XX...o.oooooXo.",
+" X....X...oXXXXXXXo.",
+" X....X...o......Xo.",
+" X....X...o.oXXXoXo.",
+" X...XXX..o.ooXooXo.",
+" X........o.oooooXo.",
+" X........oXXXXXXXo.",
+" oooooooooooooooooo.",
+"...................."};

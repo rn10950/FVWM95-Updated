@@ -1,0 +1,216 @@
+OnyX Exported Project
+Start Oxp
+#!/usr/local/xclass/clients/OnyX/OnyX
+OnyXVersion 0 4 0
+ApplicationName buttonfun
+ToolboxItem OnyxBase
+ToolboxItem OnyxWindow
+ToolboxItem OnyxButton
+StartObject
+ObjectName OnyxWindow1
+ObjectType OnyxWindow
+ObjectParent Application
+Name Window
+Class Window
+Resource Window
+X 63
+Y 186
+Width 124
+Height 166
+BackgroundColor #c0c0c0
+CloseDestroysWindow False
+CloseExitsApplication False
+EndObject
+StartObject
+ObjectName OnyxButton1
+ObjectType OnyxButton
+ObjectParent OnyxWindow1
+X 14
+Y 21
+Width 97
+Height 36
+Text 4 Window 2
+Picture 
+IsEnabled 0
+IsSticky 0
+EndObject
+StartObject
+ObjectName OnyxWindow2
+ObjectType OnyxWindow
+ObjectParent Application
+Name Window
+Class Window
+Resource Window
+X 214
+Y 195
+Width 154
+Height 135
+BackgroundColor #c0c0c0
+CloseDestroysWindow False
+CloseExitsApplication False
+EndObject
+StartObject
+ObjectName OnyxButton2
+ObjectType OnyxButton
+ObjectParent OnyxWindow2
+X 32
+Y 47
+Width 87
+Height 45
+Text 4 Window 1
+Picture 
+IsEnabled 1
+IsSticky 0
+EndObject
+StartObject
+ObjectName OnyxButton3
+ObjectType OnyxButton
+ObjectParent OnyxWindow1
+X 14
+Y 67
+Width 96
+Height 39
+Text Enable
+Picture 
+IsEnabled 1
+IsSticky 0
+EndObject
+StartObject
+ObjectName OnyxButton4
+ObjectType OnyxButton
+ObjectParent OnyxWindow1
+X 14
+Y 114
+Width 96
+Height 40
+Text Disable
+Picture 
+IsEnabled 1
+IsSticky 0
+EndObject
+End Oxp
+Start Oxc Application
+void ApplicationPreload(int argc, char *argv[])
+{}
+
+void ApplicationLoad(int argc, char *argv[])
+{
+	OpenStartingForm();
+}
+
+void GeneralEvent(OnyxMessage *event)
+{
+}
+End Oxc
+Start Oxc OnyxButton4
+void OnyxButton4_ButtonClicked()
+{
+	OnyxButton1->Disable();
+}
+
+End Oxc
+Start Oxc OnyxButton3
+void OnyxButton3_ButtonClicked()
+{
+	OnyxButton1->Enable();
+}
+
+End Oxc
+Start Oxc OnyxButton2
+void OnyxButton2_ButtonClicked()
+{
+	OnyxWindow1->Show();
+}
+
+End Oxc
+Start Oxc OnyxWindow2
+void OnyxWindow2_WindowClosed()
+{
+	if(!OnyxWindow1->IsVisible)
+	{
+		ApplicationClose();
+	}
+}
+
+void OnyxWindow2_WindowCloseSignaled()
+{
+}
+
+void OnyxWindow2_WindowLoad()
+{
+}
+
+void OnyxWindow2_ButtonPressed(long button, long x, long y)
+{
+}
+
+void OnyxWindow2_ButtonReleased(long button, long x, long y)
+{
+}
+
+void OnyxWindow2_ButtonClicked(long button, long x, long y)
+{
+}
+
+void OnyxWindow2_PointerMoved(long x, long y, long x_root, long y_root)
+{
+}
+
+void OnyxWindow2_WindowMoved(long old_x, long old_y, long new_x, long new_y)
+{
+}
+
+void OnyxWindow2_WindowResized(long old_width, long old_height, long new_width, long new_height)
+{
+}
+
+End Oxc
+Start Oxc OnyxButton1
+void OnyxButton1_ButtonClicked()
+{
+	OnyxWindow2->Show();
+}
+
+End Oxc
+Start Oxc OnyxWindow1
+void OnyxWindow1_WindowClosed()
+{
+	if(!OnyxWindow2->IsVisible)
+	{
+		ApplicationClose();
+	}
+}
+
+void OnyxWindow1_WindowCloseSignaled()
+{
+}
+
+void OnyxWindow1_WindowLoad()
+{
+}
+
+void OnyxWindow1_ButtonPressed(long button, long x, long y)
+{
+}
+
+void OnyxWindow1_ButtonReleased(long button, long x, long y)
+{
+}
+
+void OnyxWindow1_ButtonClicked(long button, long x, long y)
+{
+}
+
+void OnyxWindow1_PointerMoved(long x, long y, long x_root, long y_root)
+{
+}
+
+void OnyxWindow1_WindowMoved(long old_x, long old_y, long new_x, long new_y)
+{
+}
+
+void OnyxWindow1_WindowResized(long old_width, long old_height, long new_width, long new_height)
+{
+}
+
+End Oxc

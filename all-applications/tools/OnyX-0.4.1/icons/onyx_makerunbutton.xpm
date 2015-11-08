@@ -1,0 +1,30 @@
+/* XPM */
+static char * makerunbutton_xpm[] = {
+/* width height num_colors chars_per_pixel */
+"16 16 8 1",
+/* colors */
+" 	s None	c None",
+".	c #808080",
+"X	c #404040",
+"o	c white",
+"O	c #c0c0c0",
+"+	c Black",
+"@	c Yellow",
+"#	c #808000",
+/* pixels */
+"     .          ",
+"  . XoX X       ",
+" .OXo.XXo++     ",
+" XooXoXo+++     ",
+".X.XXoXX.+X     ",
+"XOooX+++++X     ",
+"X.Xo+oo++++  +  ",
+" XO..oX+++o++@X ",
+"Xo.+X.+++.oX@#X ",
+" X+++++++XoXXoXX",
+"    +++@++XXo@#X",
+"     X#X++@o@X#X",
+"      X@++oX#@X ",
+"     X@#X++XX##X",
+"      XX X#X XX ",
+"         XXX    "};

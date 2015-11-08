@@ -1,0 +1,31 @@
+/* XPM */
+static char * OnyxComboBox_xpm[] = {
+/* width height num_colors chars_per_pixel */
+"21 20 5 1",
+/* colors */
+" 	c #808080",
+".	c white",
+"X	c black",
+"o	c #c0c0c0",
+"O	s None	c None",
+/* pixels */
+"                    .",
+" XXXXXXXXXXXXXXXXXXo.",
+" X..........X.....Xo.",
+" X..........X.XXX Xo.",
+" X..........X.oXo Xo.",
+" X..........X.    Xo.",
+" X..........XXXXXXXo.",
+".ooooooooooooooooooo.",
+"XXXXXXXXXXXXXXXXXXXXO",
+"X..................XO",
+"X.XXXXXXXXX.XXX.XX.XO",
+"X..................XO",
+"X.XXX..XXXXXXXXXXX.XO",
+"X..................XO",
+"X.XXXXXX..XXXXXXXX.XO",
+"X..................XO",
+"X.XXXX.XXXXXX.XXXX.XO",
+"X..................XO",
+"XXXXXXXXXXXXXXXXXXXXO",
+"OOOOOOOOOOOOOOOOOOOOO"};

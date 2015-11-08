@@ -1,0 +1,27 @@
+/* XPM */
+static char * composerButton_xpm[] = {
+/* width height num_colors chars_per_pixel */
+"16 16 5 1",
+/* colors */
+" 	s None	c None",
+".	c #808080",
+"X	c white",
+"o	c black",
+"O	c blue",
+/* pixels */
+"                ",
+" ........       ",
+" .XXXXXX.o      ",
+" .X....X.Xo    O",
+" .XXXXXX.ooo  OO",
+" .X....XXXXo OOo",
+" .XXXXXXXXXoOOo ",
+" .X.......XOOo  ",
+" .XXXXXXXXOOo   ",
+" .X......oOo    ",
+" .XXXXXXoooo    ",
+" .X....oooXo    ",
+" .XXXXoXXXXo    ",
+" .XXXXXXXXXo    ",
+" ooooooooooo    ",
+"                "};

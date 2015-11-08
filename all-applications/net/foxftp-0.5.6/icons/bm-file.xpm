@@ -1,0 +1,30 @@
+/* XPM */
+static char * bm_file_xpm[] = {
+/* width height num_colors chars_per_pixel */
+"16 16 8 1",
+/* colors */
+" 	c None",
+".	c black",
+"X	c #c0c0c0",
+"o	c #808080",
+"O	c white",
+"+	c #008000",
+"@	c yellow",
+"#	c blue",
+/* pixels */
+"                ",
+"        ......  ",
+"       .XXXXXo. ",
+"      .OOOOOoo. ",
+"      .XXX++oo. ",
+"      .XXXXXoo. ",
+"      .XXXXXoo. ",
+"   oooo..XXXoo. ",
+"  oOOO.OO.XXoo. ",
+" oOX@.OO#O.Xoo. ",
+" oO@.OO#O#O.oo. ",
+"oooooooooo#O.o. ",
+"oOOOOOOOOOo#O.. ",
+"oO@X@X@X@X@o..  ",
+" oO@X@X@X@Xo.   ",
+"  oooooooooo    "};

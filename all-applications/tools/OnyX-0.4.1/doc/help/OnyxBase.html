@@ -1,0 +1,60 @@
+<html>
+<head>
+<title>OnyxBase</title>
+</head>
+<body bgcolor="#FFFFF0">
+
+<H1>OnyxBase</H1>
+
+Not really an object, but a collection of global functions and variables
+that are used by OnyX applications.<p>
+
+<hr>
+<b>Functions:</b><p>
+<ul>
+<li><tt>void Initialize(char *ApplicationName, int argc, char *argv[])</tt>
+<blockquote>This method performs basic application initializations.
+Among other things, it opens the connection to the X display and creates the
+CentralMessageCenter object. Command line arguments are passed through
+<tt>argc</tt> and <tt>argv</tt>. Currently only the <tt>-display
+<i>display_name</i></tt> option is recognized.
+</blockquote>
+<li><tt>const OXWindow *ApplicationRoot()</tt>
+<blockquote>Returns the application's root window.
+</blockquote>
+<li><tt>const OXWindow *Application()</tt>
+<blockquote>Same as <tt>ApplicationRoot()</tt>.
+</blockquote>
+<li><tt>OXClient *ApplicationClient()</tt>
+<blockquote>Returns the application's OXClient. OXClient is an xclass object
+that establishes the connection to the X display, manages resources and
+dispatches events.
+</blockquote>
+<li><tt>OPicturePool *ApplicationPicturePool()</tt>
+<blockquote>Returns the application's "Picture Pool". Xclass has a sharing
+mechanism that allows efficient usage of X resources. ...
+</blockquote>
+<li><tt>void ApplicationRun()</tt>
+<blockquote>This function calls the main message loop.
+</blockquote>
+<li><tt>void ApplicationClose()</tt>
+<blockquote>Causes the application to close all open windows and exit.
+</blockquote>
+</ul>
+
+<hr>
+<b>Variables:</b><p>
+<ul>
+<li><tt>MessageCenter CentralMessageCenter</tt><br>
+<blockquote>The CentralMessageCenter object receives messages from all OnyX
+objects and dispatches them to the appropiate handling functions.
+Application programs usually do not have to deal with this object.
+</blockquote>
+</ul>
+
+<hr>
+<b>See also:</b><p>
+<a href="OnyxMessage.html">OnyxMessage</a><br>
+
+</body>
+</html>

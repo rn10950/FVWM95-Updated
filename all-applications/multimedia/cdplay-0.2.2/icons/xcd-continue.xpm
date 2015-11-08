@@ -1,0 +1,25 @@
+/* XPM */
+static char *xcd_continue[] = {
+/* width height num_colors chars_per_pixel */
+"    16    16        2            1",
+/* colors */
+". c #800000",
+"a c None s None",
+/* pixels */
+"aaaaaaaaaaaaaaaa",
+"aaaaaaaa.aaaaaaa",
+"aaaaaaaa..aaaaaa",
+"aaa........a.aaa",
+"aa.aaaaa..aaa.aa",
+"a.aaaaaa.aaaaa.a",
+"a.aaaaaaaaaaaa.a",
+"a.aaaaaaaaaaaa.a",
+"a.aaaaaaaaaaaa.a",
+"a.aaaaaaaaaaaa.a",
+"a.aaaa.aaa.aaa.a",
+"aa.aa..aa..aa.aa",
+"aaa..........aaa",
+"aaaaa..aa..aaaaa",
+"aaaaaa.aaa.aaaaa",
+"aaaaaaaaaaaaaaaa"
+};

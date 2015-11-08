@@ -1,0 +1,8 @@
+Toolbox 1
+ToolTip Spin Button
+Property X $X=$Y 0
+Property Y $X=$Y 0
+Property Width $X=$Y 80
+Property Height $X=$Y 18
+Property Size $X=$Y 255
+Event ValueChanged

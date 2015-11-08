@@ -1,0 +1,578 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (X11; I; Linux 2.0.33 i486) [Netscape]">
+   <TITLE>Onyx alpha testers</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFF0">
+<A NAME="TableOfContents"></A>Table Of Contents
+<OL>
+<LI>
+<A HREF="#CurrentRelease">Current release</A></LI>
+
+<LI>
+<A HREF="#Changes">Changes in the latest release</A></LI>
+
+<LI>
+<A HREF="#Bugs">Known bugs</A></LI>
+</OL>
+&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+
+<P><A NAME="CurrentRelease"></A>The current release is version <B>0.3.0</B>
+<BR>It can be retrieved <A HREF="OnyX.0.3.0.tar.gz">here.</A>
+
+<P><A HREF="#TableOfContents">Back to the top</A>
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+
+<P><A NAME="Changes"></A><B>July 30, 1997 (v0.1.0)</B>
+<UL>
+<LI>
+Added Initial Text Property to OnyxTextBox. Allows it to first be displayed
+with desired text.</LI>
+
+<LI>
+Added ApplicationPreload for any events that must take place before any
+windows are created.</LI>
+</UL>
+<B>July 31, 1997 (v.0.1.1)</B>
+<UL>
+<LI>
+Changed the new project window to go to file selection if enter is pressed
+in the text box.</LI>
+
+<LI>
+Entered in the message box tool for general programing.</LI>
+
+<LI>
+Fixed a problem in saving that would cause an incredible amount of blank
+lines to be written to the .cc file. All blank lines are now removed.</LI>
+
+<LI>
+Added the Class and Resource properties to the window tool.</LI>
+
+<LI>
+Now onyx uses .onyxrc in the home directory. If nonexistent it will be
+created.</LI>
+
+<LI>
+Added options window. OnyxLocation and EditorCommand now user configurable.</LI>
+
+<LI>
+Modified OnyxTextButton control. It will now load a blank text button if
+it is unable to load the picture for a picture button. Before it would
+just segv. This failure can be detected with the Button->PictureFound variable.
+It is set to False if this occurs. Although set to true if a text button
+was desired, thus checking it wont hurt, it doesn't really make since and
+so will always read true.</LI>
+
+<LI>
+Included onyxrun.oxp as first sample onyx project. (See README)</LI>
+</UL>
+<B>August 31, 1997 (v.0.1.2)</B>
+<UL>
+<LI>
+Onyx now locates its own ObjectRepository.</LI>
+
+<LI>
+Fixed a segmentation fault when adding new tools. The problem was located
+in OnyxButton.cc</LI>
+
+<LI>
+The OnyxTextBox cursor is back!!! :) I had forgotten to add FocusChange
+to the wanted events.</LI>
+
+<LI>
+The crazy multi-selections seen in the properties box are gone.</LI>
+
+<LI>
+Makefiles should now work with Bash 2.0+</LI>
+
+<LI>
+Window moves and resizes now detected during development. It no longer
+needs to be done by hand in the properties window.</LI>
+
+<LI>
+OnyxMsgBox Create() function is now a dummy function. Show() will implicitly
+create and then show the message box.</LI>
+</UL>
+<B>September 5, 1997 (v.0.1.3)</B>
+<UL>
+<LI>
+Project Explorer now uses a tree view to display the project. This is from
+a new control OnyxTree which comes directly from the OXListTree class found
+with the explorer.</LI>
+
+<LI>
+Selecting an item in object explorer now selects the correct property list
+in the properties window and the correct object if the window is being
+display. Likewise, selecting the object on the window will select the appropriate
+object in the project explorer and properties window.</LI>
+
+<LI>
+The toolbox will now dynamically realign the buttons to fit when resized.</LI>
+
+<LI>
+Update method now added to OnyxWindow. This basically informs the x-server
+that the window needs to be redrawn. Other objects will soon have this
+method added as well.</LI>
+
+<LI>
+When custom controls are added it is no longer necessary to explicitly
+use the recompile button. The new controls will be compiled during the
+next make.</LI>
+</UL>
+<B>October 15, 1997(v.0.1.4)</B>
+<UL>
+<LI>
+Minor bug fix release. The project explorer in version 0.1.3 could cause
+a segmentation fault. Problem fixed. Nothing major added.</LI>
+</UL>
+<B>October 19, 1997(v.0.1.5)</B>
+<UL>
+<LI>
+The Make window should work better. The button release event wasn't propagating
+to the scroll bar. New properties for the OnyxWindow fixed this. It also
+responds to resizeing the window.</LI>
+
+<LI>
+The Properties window now responds to resizes (finally!).</LI>
+
+<LI>
+New objects are no longer named "new_ObjectType". They are now continuously
+numbered with a new unique number in the format of "ObjectType#". This
+will make all new objects uniquely named.</LI>
+
+<LI>
+OnyxButton now supports disabled and enabled states.</LI>
+
+<LI>
+Make will now prompt to save the project if the Makefile does not exist.
+Choose "yes" to save and compile, "no" to compile without saving, and "cancel"
+to abort the make.</LI>
+
+<LI>
+onyxrun sample program updated to use the button disabling.</LI>
+
+<LI>
+New sample, buttonfun. demonstrates enabling and disabling buttons as well
+as using more than one form.</LI>
+
+<LI>
+Samples are now contained in directories under onyx/doc/samples instead
+of just a tar file.</LI>
+
+<LI>
+Update method added to OnyxLabel, OnyxButton and OnyxCheckBox objects.</LI>
+
+<LI>
+OnyxCheckBox now generates ButtonClick events as well as ButtonPressed
+and ButtonReleased.</LI>
+
+<LI>
+OnyxCheckBox now supports enabled and disabled states.</LI>
+
+<LI>
+Most toolbar buttons and menus are disabled if a project is not currently
+opened.</LI>
+
+<LI>
+Stop button no longer kills onyx if the developing program has not been
+run yet.</LI>
+
+<LI>
+Toolbox, Properties, and Explorer buttons now toggle the respective windows
+on and off.</LI>
+
+<LI>
+Lock controls button created. Toggleing it will prevent accidently adding,
+deleteing, or moving objects.</LI>
+</UL>
+<B>October 21, 1997(v.0.1.6)</B>
+<UL>
+<LI>
+Minor bug fix release. The buttons/menus were not enabled when starting
+a new project in v.0.1.5. Problem fixed. Nothing major added.</LI>
+</UL>
+<B>March 6, 1998(v.0.3.0)</B>
+<UL>
+<LI>
+Projects can now be started in any directory and there is no longer a need
+to place each project in a seperate directory. OnyX will perform its own
+file/directory handling to prevent collisions.</LI>
+
+<LI>
+"Save File" menu item changed to "Save Object".</LI>
+
+<LI>
+"Save File As" menu item removed. This may evenually be replaced with "Export
+Object" to allow a fast exchange of like code between projects.</LI>
+
+<LI>
+File handling majorly overhauled.&nbsp; The Save Object, Project, Project
+As, now make sence and work more intuitively. The project should now be
+more in sync with the programmers desires. Since all files are handled
+internally changes will not affect the original files until an explicate
+save is issued (regardless of any saves with an editor.).</LI>
+
+<LI>
+Files are no longer automatically created.&nbsp; With a newly created project,
+a project save is necessary to write the initial files. Thus, no more surprise
+files if you decide not to save the new project and want to trash it.</LI>
+
+<LI>
+Deletes and renames of object no longer take effect permanantly untill
+you save the object or their parent respectively.</LI>
+
+<LI>
+Shell starter line now included in project file. File set with execution
+status. So now you can start on a project just by "running" the project
+file. :) It will automatically start OnyX and open the desired project.</LI>
+
+<LI>
+Update method added to the OnyxTextBox control.</LI>
+
+<LI>
+Added OnyxRadioButton to core control set.</LI>
+
+<LI>
+Onyx windows can now set the background color.</LI>
+
+<LI>
+Windows being developed will now display a grid for aligning objects.</LI>
+
+<LI>
+Snap to grid behavior now available during the design process. It is enabled
+by default. Current spaceing is every five pixels.</LI>
+
+<LI>
+All object properties are checked against the properties listed in the
+onyx object file (.oob) in the ObjectRepository. Any missing properties
+are added with default values and all extra properties are removed. Thus,
+as new properties are added to the core objects, your old objects will
+be able to start useing them.</LI>
+
+<LI>
+OnyxIcon default size changed to 32 x 32. OnyX now overrides the default
+directory causing an initial picture to appear. Thus, no more "Now where
+did I just put that icon?"</LI>
+
+<LI>
+OnyxButton updated to reflect changes in the Xclass. The old IsSticky effect
+is now entitled IsToggle. The new IsSticky effect will push the button
+in and it won't let it pop up with out a Pop() command.</LI>
+
+<LI>
+Rearranged the buttons a little. Tried to put them in logical groups.</LI>
+
+<LI>
+Fixed a rather severe bug that would cause OnyX to exit when a key was
+pressed in a text box during design time. (Error did not occur in applications
+during run time.)</LI>
+
+<LI>
+Properties window only updates the lines that represent changed properties
+instead of updateing the entire window.</LI>
+
+<LI>
+Make and Run combo is now implemented.</LI>
+
+<LI>
+Makefiles now "make all" by default.</LI>
+
+<LI>
+Import and exporting of individual objects between projects now available.</LI>
+
+<LI>
+Importing and exporting of entire projects is now possible. This allows
+for easy sharing of projects between friends.</LI>
+
+<LI>
+Creat Application now available. Selecting this will cause OnyX to extract
+only the necessary files from a project and place them in a .tgz file.
+When unpacked the .tgz will expand into a directory the same name as the
+application. It contains your application ready for a make and to be run!
+(Note: Currently does not add in icons. This will have to be done by hand
+untill version 0.3.1 or so.)</LI>
+
+<LI>
+Ahem, did I happen to mention that the menu editor is now available?!?
+*the crowd cheers* You can now create your own menu bars with cascadeing
+menus. No limit on the depth. Just place a menubar on your application,
+select it, and then start up the menu editor from the tools menu.</LI>
+
+<LI>
+Drop boxes implemented.</LI>
+
+<LI>
+Horizontal and vertical scroll bars now available.</LI>
+
+<LI>
+List boxes are here.</LI>
+
+<LI>
+Toolbox now autosizes itself to the minimum size required. No extra spaces
+on the sides.</LI>
+
+<LI>
+A warning will be displayed if you have compiled OnyX with a different
+XClass version than it was originally designed with.</LI>
+
+<LI>
+Toolbar added to the Custom Controls window to allow easier viewing.</LI>
+
+<LI>
+Toolbar added to the Project Explorer for the exact same reason.</LI>
+
+<LI>
+Onyx Tree widget added. (Note: it is still in experimental/development
+stage).</LI>
+
+<LI>
+Version control and conversion implemented.</LI>
+
+<LI>
+XClass version control active. You get a nice warning message if you compile
+with a version of XClass thet OnyX isn't prepared for.</LI>
+
+<LI>
+The onyx executable and directory have been renamed to OnyX.</LI>
+
+<LI>
+Overwrite warning now given if you try to save over a pre-existing file.</LI>
+
+<LI>
+Name of main window now reflects the name of the project being worked on.</LI>
+
+<LI>
+Some object properties now have read-only or read-write drop boxes to aid
+in choosing acceptable values.</LI>
+
+<LI>
+For any color property, a color selector window can be used. It is activated
+by pressing the button that will appear&nbsp; next to the property text
+entry.</LI>
+
+<LI>
+A file browser is now available for any ithem that requires a file name,
+a directory name, or both. If both are available the updateing one will
+automatically update the other as well.</LI>
+
+<LI>
+Typing new values for most properties will now be reflected in the visible
+object. For example, changing x or y corrdinates will move the item. Note:
+You must hit return before the change will be taken. :)</LI>
+
+<LI>
+Deleting an object no longer forces an expensive (and not to mention annoying)
+window flash. The deleted object now just dissapears quietly all by itself.</LI>
+
+<LI>
+Update method added to OnyxButton. Useing it you can now jump back an forth
+between text and picture buttons without destroying and recreating it.
+Pictures can also be changed this way.</LI>
+
+<LI>
+Update method added to OnyxIcon.</LI>
+
+<LI>
+Properties controling window decorations and available functionality now
+accessable in OnyxWindow.</LI>
+
+<LI>
+Tool tips added to OnyxButton.</LI>
+
+<LI>
+View window and next window buttons added to the main window.</LI>
+
+<LI>
+(*whew* Is that enough changes for a single release?)</LI>
+</UL>
+
+<HR WIDTH="100%"><A HREF="#TableOfContents">Back to the top</A>
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+
+<P><A NAME="Bugs"></A>
+<H2>
+Known Bugs (unfixed)</H2>
+<B>Bug:</B> Under some window managers the snap to grid on the window causes
+it to migrate across the screen.
+<BR><B>Comments:</B> This seems to be due to the window manager making
+its own adjustment ot the window position and not notifying the client.
+This is most noticable under fvwm. Enlightenment also tends to place the
+window in odd positions but at least it doesn't migrate. Fvwm95 doesn't
+seem to have this problem ;) This will be remedied hopefully in 0.3.1
+<BR><B>First noticed:</B> 0.3.0
+
+<P><B>Bug:</B> The color selector likes to take off when the slidebars
+are used.
+<BR><B>Comments:</B> Beleive it or not this is related to the above problem.
+Hope to fix it about 0.3.1 as well.
+<BR><B>First noticed:</B> 0.3.0
+
+<P><B>Bug:</B> Moving things quickly can cause objects to jump sporadically.
+<BR><B>Comments:</B> Fast movements can cause a loss of an XCrossing event.
+Im digging into it to see what can be done. This will be fixed.
+<BR><B>First noticed:</B> 0.1.0
+
+<P><B>Bug:</B> The file dialog can appear half off the screen.
+<BR><B>Comments:</B> This is due to Xclass positioning. It'll be a bit
+before I know how to override that.
+<BR><B>First noticed:</B> 0.1.0
+
+<P><A HREF="#TableOfContents">Back to the top</A>
+<H2>
+Known Bugs (fixed)</H2>
+<B>Bug:</B> New Project window doesn't respond to pressing enter in the
+text box.
+<BR><B>First noticed:</B> 0.1.0
+<BR><B>Comments:</B> This occurred only because I didn't stop put that
+in.
+<BR><B>Fixed:</B> 0.1.1
+
+<P><B>Bug:</B> Save includes a lot of blank lines in .cc file.
+<BR><B>First noticed:</B> 0.1.0
+<BR><B>Comments:</B> Eeew, glad I found that one.
+<BR><B>Fixed:</B> 0.1.1
+
+<P><B>Bug:</B> A picture button that cant find its picture will cause an
+application to crash.
+<BR><B>Comments:</B> OnyxButton has been modified to catch this, a blank
+text button is created instead.
+<BR><B>First noticed:</B> 0.1.0
+<BR><B>Fixed:</B> 0.1.1
+
+<P><B>Bug:</B> OnyxTextBox cursor not visible.
+<BR><B>First noticed:</B> 0.1.0
+<BR><B>Comments:</B> OnyxTextBox wasn't requesting a FocusChange event.
+<BR><B>Fixed:</B> 0.1.2
+
+<P><B>Bug:</B> Text boxes in properties window tend to autoselect.
+<BR><B>First noticed:</B> 0.1.0
+<BR><B>Comments:</B> Same as above.
+<BR><B>Fixed:</B> 0.1.2
+
+<P><B>Bug:</B> .onyx has bad file permissions. Cant access it.
+<BR><B>First noticed:</B> 0.1.0
+<BR><B>Comments:</B> This has been corrected to default to 700 permissions.
+Later it will be customizable.
+<BR><B>Fixed:</B> 0.1.2
+
+<P><B>Bug:</B> Bash 2.0+ needs semi colons in the Makefiles.
+<BR><B>First noticed:</B> 0.1.0
+<BR><B>Comments:</B> Fixed. I hope to eventually get things like this in
+GNU autoconf.
+<BR><B>Fixed:</B> 0.1.2
+
+<P><B>Bug:</B> Resizeing a window doesn't work.
+<BR><B>First noticed:</B> 0.1.0
+<BR><B>Comments:</B> Fixed by monitoring ConfigureNotify events.
+<BR><B>Fixed:</B> 0.1.2
+
+<P><B>Bug:</B> Make window sometimes doesn't display properly.
+<BR><B>First noticed:</B> 0.1.0
+<BR><B>Comments:</B> Fixed by modifying OnyxWindow properties.
+<BR><B>Fixed: </B>0.1.5
+
+<P><B>Bug:</B> Make window scroll bar likes to stick when scrolled.
+<BR><B>First noticed:</B> 0.1.0
+<BR><B>Comments:</B> Fixed by modifying OnyxWindow properties.
+<BR><B>Fixed:</B> 0.1.5
+<BR>&nbsp;
+<BR><B>Bug:</B> Using Menus in a project doesn't work.
+<BR><B>First noticed:</B> 0.1.0
+<BR><B>Comments:</B> Starting version 0.3.0 OnyX now sports a menu editor.
+
+<P><A HREF="#TableOfContents">Back to the top</A>
+</BODY>
+</HTML>

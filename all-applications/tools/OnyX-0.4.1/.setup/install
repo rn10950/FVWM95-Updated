@@ -1,0 +1,9 @@
+#!/bin/bash
+mkdir -p $1
+cp -va OnyX $1
+cp -va ObjectRepository $1
+cp -va doc $1
+cp -va html $1
+cp -va icons $1
+mv -vf $1/doc/samples $1
+exit 0

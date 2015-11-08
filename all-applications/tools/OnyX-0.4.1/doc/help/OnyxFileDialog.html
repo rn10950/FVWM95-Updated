@@ -1,0 +1,62 @@
+<html>
+<head>
+<title>OnyxFileDialog</title>
+</head>
+<body bgcolor="#FFFFF0">
+
+<H1>OnyxFileDialog</H1>
+
+<img src="OnyxFileDialog.gif">
+
+<p>
+
+OnyxFileDialog objects are used to invoke the standard File Opend/Save
+dialog box.<p>
+
+<hr>
+<b>Methods:</b><p>
+<ul>
+<li><tt>virtual int Create()</tt><br>
+<blockquote>
+Creates the dialog object. Sets the file type description to
+<tt>"All Files"</tt> and the pattern to <tt>"*"</tt>.
+</blockquote>
+<li><tt>virtual void Show()</tt><br>
+<blockquote>
+Shows the dialog box. The function does not return until the user closes the
+dialog.
+</blockquote>
+<li><tt>virtual int AddFileType(char *Description, char *Pattern)</tt><br>
+<blockquote>
+Adds the specified description and pattern strings to the existing file
+type list.
+</blockquote>
+<li><tt>virtual void ClearFileTypes()</tt><br>
+<blockquote>
+Clears the file type description and pattern array.
+</blockquote>
+</ul>
+<hr>
+<b>Properties:</b><p>
+<ul>
+<li><tt>const OXWindow *DisplayWindow</tt>
+<li><tt>int DialogType</tt>
+<blockquote>
+Either <tt>OnyxOpenFileDialog</tt> or <tt>OnyxSaveFileDialog</tt>.
+</blockquote>
+<li><tt>char DirectorySelected[255]</tt>
+<li><tt>char FileSelected[255]</tt>
+<li><tt>int Cancelled</tt>
+Upon return from Show(), this variable is set to True if the user clicked on
+the Cancel button to close the dialog box. Otherwise it is set to False.
+</blockquote>
+</ul>
+
+<hr>
+<b>Events:</b><p>
+<blockquote>
+None.
+</blockquote>
+
+</body>
+</html>

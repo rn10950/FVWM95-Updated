@@ -1,0 +1,71 @@
+[defaults]
+window name = Launcher
+window size = 60 x 500
+window pos = 862, 99
+
+[Xterm]
+name = Xterm
+group = Shells
+icon = app.s.xpm
+command = xterm -ls -sb
+
+[Emacs]
+name = Emacs
+group = Editors
+icon = emacs.xpm
+command = xemacs
+
+[Notepad]
+name = Notepad
+group = Editors
+icon = notepad.xpm
+command = notepad
+
+[Ghostview]
+name = Ghostview
+group = Viewers
+icon = Ghostview.s.xpm
+command = xcgview
+
+[XView]
+name = XView
+group = Viewers
+icon = xv.xpm
+command = xv
+
+[Netscape]
+name = Netscape
+group = Internet
+icon = Netscape.s.xpm
+command = netscape
+
+[Lock screen]
+name = Lock screen
+group = Misc
+icon = Lock screen.s.xpm
+command = xlock
+
+[Explorer]
+name = Explorer
+group = Misc
+icon = folder.s.xpm
+command = explorer
+
+[Help]
+name = Help
+group = Misc
+icon = help.xpm
+command = xman
+
+[Find files]
+name = Find files
+group = Misc
+icon = find1.xpm
+command = xcfind
+
+[Control Panel]
+name = Control Panel
+group = Misc
+icon = run-config.xpm
+command = display
+

@@ -1,0 +1,61 @@
+Intro
+-----
+
+This is a clock plugin for the taskbar, it displays the current time in the
+tray window and the current date as a tooltip text.
+
+
+Configuration options
+---------------------
+
+The plugin is loaded by the taskbar at startup time by specifying a
+"[plugin]" command in your .taskbarrc file (see the taskbar's README file
+for more details), for example:
+
+[plugin]
+file = clock.so
+
+To make the clock appear as the rightmost item in the tray, this should be
+the first "[plugin]" command to appear in the .taskbarrc file, before any
+other similar "[plugin]" or "[swallow]" command.
+
+In addition, the following optional commands can be specified:
+
+time_format - specifies the time format string in a format adequate for the
+    strftime function (for details consult the manual pages for the strftime
+    function). The default value is "%H:%M", which displays the time in a
+    24-hour format.
+
+date_format - specifies the date format string in a format adequate for the
+    strftime function (for details consult the manual pages for the strftime
+    function). The default value is "%A, %B %d, %Y", which produces a date
+    string like this: "Sunday, July 21, 2002".
+
+fvwm_action_click - specifies the fvwm95 command to execute when the
+    clock is clicked. Defaults to none.
+
+fvwm_action_doubleclick - specifies the fvwm95 command to execute when
+    clock is double-clicked. Defaults to none.
+
+
+Examples:
+
+The following sets the clock to 12-hour AM/PM format and displays a message
+window showing the current date and time when the clock is clicked.
+
+[plugin]
+file = clock.so
+time_format = %I:%M %p
+fvwm_action_doubleclick = Exec xmessage `date`
+
+
+As a note we should mention that the date and time format strings can be
+interchanged, i.e, you can specify a date string for the "time_format"
+option and viceversa. In that case the plugin will show the current date in
+the tray window and the time will appear in a toopltip window when the mouse
+cursor stops for a second or more over the displayed date. Alternatively,
+you can have both the date and time displayed in the tray window with the
+appropiate specification, for example:
+
+time_format = %B %d, %Y - %I:%M %p
+

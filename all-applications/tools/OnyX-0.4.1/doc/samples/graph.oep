@@ -1,0 +1,405 @@
+OnyX Exported Project
+Start Oxp
+#!/home/peraza/xclass/applications/tools/OnyX/OnyX
+OnyXVersion 0.4.1
+ApplicationName graph
+ToolboxItem OnyxBase
+ToolboxItem OnyxButton
+ToolboxItem OnyxFileDialog
+ToolboxItem OnyxLabel
+ToolboxItem OnyxWindow
+ToolboxItem OnyxDraw
+ToolboxItem OnyxMenuBar
+ToolboxItem OnyxMenu
+ToolboxItem OnyxMenuItem
+ToolboxItem OnyxIcon
+ToolboxItem OnyxMsgBox
+StartObject
+ObjectName OnyxWindow1
+ObjectType OnyxWindow
+ObjectParent Application
+Name Graph
+Class Window
+Resource Window
+X 313
+Y 200
+Width 370
+Height 240
+Directory .
+BackgroundColor #c0c0c0
+HasBorder True
+HasTitleBar True
+HasMenu True
+HasMinimizeButton True
+HasMaximizeButton True
+HasMinimizeOption True
+HasMaximizeOption True
+HasResizeOption True
+HasMoveOption True
+HasCloseOption True
+CloseDestroysWindow False
+CloseExitsApplication True
+EndObject
+StartObject
+ObjectName OnyxFileDialog1
+ObjectType OnyxFileDialog
+ObjectParent OnyxWindow1
+DisplayWindow ApplicationRoot()
+DialogType OnyxOpenFileDialog
+EndObject
+StartObject
+ObjectName OnyxButton1
+ObjectType OnyxButton
+ObjectParent OnyxWindow1
+X 10
+Y 30
+Width 70
+Height 30
+Text Bars
+Font Helvetica -12
+Picture 
+IsEnabled True
+IsSticky False
+ToolTip 
+EnableToolTip False
+EndObject
+StartObject
+ObjectName OnyxDraw1
+ObjectType OnyxDraw
+ObjectParent OnyxWindow1
+X 90
+Y 30
+Width 270
+Height 200
+BorderType SunkenSingle
+EndObject
+StartObject
+ObjectName OnyxMenuBar1
+ObjectType OnyxMenuBar
+ObjectParent OnyxWindow1
+Width 300
+EndObject
+StartObject
+ObjectName File
+ObjectType OnyxMenu
+ObjectParent OnyxWindow1
+MenuBarParent OnyxMenuBar1
+MenuParent NULL
+Text &File
+EndObject
+StartObject
+ObjectName Open
+ObjectType OnyxMenuItem
+ObjectParent OnyxWindow1
+MenuParent File
+Text &Open...
+EndObject
+StartObject
+ObjectName Separator1
+ObjectType OnyxMenuItem
+ObjectParent OnyxWindow1
+MenuParent File
+Text 
+EndObject
+StartObject
+ObjectName Exit
+ObjectType OnyxMenuItem
+ObjectParent OnyxWindow1
+MenuParent File
+Text E&xit
+EndObject
+StartObject
+ObjectName OnyxIcon1
+ObjectType OnyxIcon
+ObjectParent OnyxWindow1
+X 0
+Y 24
+Width 370
+Height 2
+Picture 
+IsShaped False
+BorderType SunkenSingle
+EndObject
+StartObject
+ObjectName OnyxButton2
+ObjectType OnyxButton
+ObjectParent OnyxWindow1
+X 10
+Y 70
+Width 70
+Height 30
+Text Pie
+Font Helvetica -12
+Picture 
+IsEnabled True
+IsSticky False
+ToolTip 
+EnableToolTip False
+EndObject
+End Oxp
+Start Oxc Application
+void ApplicationPreload(int argc, char *argv[])
+{
+}
+
+void ApplicationLoad(int argc, char *argv[])
+{
+	OpenStartingForm();
+}
+
+void GeneralEvent(OnyxMessage *event)
+{
+}
+End Oxc
+Start Oxc OnyxButton2
+void OnyxButton2_ButtonClicked()
+{
+	graph_type = 2;
+	OnyxDraw1->Update();
+}
+
+End Oxc
+Start Oxc OnyxIcon1
+void OnyxIcon1_ButtonPressed(long button, long x, long y)
+{
+}
+
+void OnyxIcon1_ButtonReleased(long button, long x, long y)
+{
+}
+
+void OnyxIcon1_PointerMoved(long x, long y, long x_root, long y_root)
+{
+}
+
+End Oxc
+Start Oxc Exit
+void Exit_MenuItemSelected()
+{
+	ApplicationClose();
+}
+
+void Exit_MenuItemHighlighted()
+{
+}
+
+End Oxc
+Start Oxc Separator1
+void Separator1_MenuItemSelected()
+{
+}
+
+void Separator1_MenuItemHighlighted()
+{
+}
+
+End Oxc
+Start Oxc Open
+#include <ctype.h>
+
+void Open_MenuItemSelected()
+{
+	OnyxFileDialog1->Show();
+
+	if (!OnyxFileDialog1->Cancelled) {
+		FILE *f = fopen(OnyxFileDialog1->FileSelected, "r");
+		if (!f) {
+			MsgBox(OnyxWindow1->Self(), "Could not open file");
+		} else {
+			int c;
+
+			spaces = 0;
+			chars = 0;
+			for (;;) {
+				c = fgetc(f);
+				if (c == EOF) break;
+				if (isspace(c))
+					++spaces;
+				else
+					++chars;
+			}
+			fclose(f);
+			OnyxDraw1->Update();
+		}
+	}
+}
+
+void Open_MenuItemHighlighted()
+{
+}
+
+End Oxc
+Start Oxc File
+End Oxc
+Start Oxc OnyxMenuBar1
+End Oxc
+Start Oxc OnyxDraw1
+void OnyxDraw1_ButtonPressed(long button, long x, long y)
+{
+}
+
+void OnyxDraw1_ButtonReleased(long button, long x, long y)
+{
+}
+
+void OnyxDraw1_KeyPressed(long keysym)
+{
+}
+
+void OnyxDraw1_KeyReleased(long keysym)
+{
+}
+
+void OnyxDraw1_PointerMoved(long x, long y, long x_root, long y_root)
+{
+}
+
+void OnyxDraw1_WindowExposed()
+{
+	int x = OnyxDraw1->X;
+	int y = OnyxDraw1->Y;
+	int w = OnyxDraw1->Width;
+	int h = OnyxDraw1->Height;
+
+	OnyxDraw1->SetColor("white");
+	OnyxDraw1->FillRectangle(2, 2, w-4, h-4);
+
+	if (graph_type == 1) {
+
+		OnyxDraw1->SetColor("black");
+		OnyxDraw1->DrawLine(20, h-20, w-20, h-20);
+
+		int max_width = w - 40;
+		int max_height = h - 40;
+
+		int bar_width = max_width / 5;
+
+		int max_y = (spaces > chars) ? spaces : chars;
+		if (max_y == 0) max_y = 1;
+
+		x = 20 + bar_width;
+		y = spaces * max_height / max_y;
+
+		OnyxDraw1->SetColor("#4040ff");
+		OnyxDraw1->FillRectangle(x, h-20-y, bar_width, y);
+		OnyxDraw1->SetColor("black");
+		OnyxDraw1->DrawRectangle(x, h-20-y, bar_width, y);
+		if (y > 4) {
+			OnyxDraw1->SetColor("#808080");
+			OnyxDraw1->FillRectangle(x+bar_width+1, h-20-y+4, 4, y-4);
+		}
+		char *label = "Spaces";
+		int sw = OnyxDraw1->StringWidth(label);
+		int sa = OnyxDraw1->StringAscent(label);
+		OnyxDraw1->SetColor("black");
+		OnyxDraw1->DrawString(x + bar_width / 2 - sw / 2, h - 20 + sa + 2, label);
+
+		x = 20 + 3 * bar_width;
+		y = chars * max_height / max_y;
+
+		OnyxDraw1->SetColor("#4040ff");
+		OnyxDraw1->FillRectangle(x, h-20-y, bar_width, y);
+		OnyxDraw1->SetColor("black");
+		OnyxDraw1->DrawRectangle(x, h-20-y, bar_width, y);
+		if (y > 4) {
+			OnyxDraw1->SetColor("#808080");
+			OnyxDraw1->FillRectangle(x+bar_width+1, h-20-y+4, 4, y-4);
+		}
+		label = "Chars";
+		sw = OnyxDraw1->StringWidth(label);
+		sa = OnyxDraw1->StringAscent(label);
+		OnyxDraw1->SetColor("black");
+		OnyxDraw1->DrawString(x + bar_width / 2 - sw / 2, h - 20 + sa + 2, label);
+
+	} else {
+
+		int xc = w / 2;
+		int yc = (h - 20) / 2;
+		int r = ((xc < yc) ? xc : yc) - 20;
+
+		int t = spaces + chars;
+		if (t == 0) t = 1;
+
+		int a1 = 360 * 64 * spaces / t;
+
+		int sh = OnyxDraw1->StringHeight("");
+		int sa = OnyxDraw1->StringAscent("");
+		int sw = OnyxDraw1->StringWidth("Spaces");
+
+		OnyxDraw1->SetColor("blue");
+		OnyxDraw1->FillArc(xc - r, yc - r, 2 * r, 2 * r, 0, a1);
+		OnyxDraw1->FillRectangle(10, h - sh - 5, sa, sa);
+		OnyxDraw1->SetColor("black");
+		OnyxDraw1->DrawArc(xc - r, yc - r, 2 * r, 2 * r, 0, a1);
+		OnyxDraw1->DrawRectangle(10, h - sh - 5, sa, sa);
+		OnyxDraw1->DrawString(10 + sa + 5, h - sh - 5 + sa, "Spaces");
+
+		int a2 = 360 * 64 * chars / t;
+
+		OnyxDraw1->SetColor("red");
+		//OnyxDraw1->FillArc(xc - r, yc - r, 2 * r, 2 * r, a1, a2);
+		OnyxDraw1->FillArc(xc - r, yc - r, 2 * r, 2 * r, a1, (360 * 64 - a1));
+		OnyxDraw1->FillRectangle(40 + sa + sw, h - sh - 5, sa, sa);
+		OnyxDraw1->SetColor("black");
+		//OnyxDraw1->DrawArc(xc - r, yc - r, 2 * r, 2 * r, a1/2, a2);
+		OnyxDraw1->DrawArc(xc - r, yc - r, 2 * r, 2 * r, a1, (360 * 64 - a1));
+		OnyxDraw1->DrawRectangle(40 + sa + sw, h - sh - 5, sa, sa);
+		OnyxDraw1->DrawString(40 + 2 * sa + sw + 5, h - sh - 5 + sa, "Chars");
+
+	}
+}
+
+End Oxc
+Start Oxc OnyxButton1
+void OnyxButton1_ButtonClicked()
+{
+	graph_type = 1;
+	OnyxDraw1->Update();
+}
+
+End Oxc
+Start Oxc OnyxFileDialog1
+End Oxc
+Start Oxc OnyxWindow1
+int spaces, chars, graph_type;
+
+void OnyxWindow1_WindowClosed()
+{
+}
+
+void OnyxWindow1_WindowCloseSignaled()
+{
+}
+
+void OnyxWindow1_WindowLoad()
+{
+	spaces = 0;
+	chars = 0;
+	graph_type = 1;
+}
+
+void OnyxWindow1_ButtonPressed(long button, long x, long y)
+{
+}
+
+void OnyxWindow1_ButtonReleased(long button, long x, long y)
+{
+}
+
+void OnyxWindow1_ButtonClicked(long button, long x, long y)
+{
+}
+
+void OnyxWindow1_PointerMoved(long x, long y, long x_root, long y_root)
+{
+}
+
+void OnyxWindow1_WindowMoved(long old_x, long old_y, long x, long y)
+{
+}
+
+void OnyxWindow1_WindowResized(long old_width, long old_height, long width, long height)
+{
+}
+
+End Oxc

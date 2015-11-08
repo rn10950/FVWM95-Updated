@@ -1,0 +1,115 @@
+<html>
+<head>
+<title>Scanning</title>                                                 
+</head>
+<body bgcolor="#ffffd0" text="#000000" link="#0000ee" vlink="#551a8b">      
+
+<H1>Scanning</H1>
+
+The scan window provides the operator with the ability to quickly scan
+the radio bands and produce a visual representation of station activity.
+Click on any control in the image below for detailed help:<p>
+
+<center>
+<img src="scan.gif" border=0 usemap="#map1">
+</center>
+<p>
+
+<map name="map1">
+<area href="#startstop" shape=rect coords="12,28,67,78">
+<area href="#scale" shape=rect coords="12,82,67,128">
+<area href="#style" shape=rect coords="12,134,67,182">
+<area href="#range" shape=rect coords="410,28,466,170">
+<area href="#close" shape=rect coords="410,194,466,215">
+<area href="#cursors" shape=rect coords="98,26,154,38">
+<area href="#cursors" shape=rect coords="122,39,130,190">
+<area href="#cursors" shape=rect coords="220,39,263,190">
+</map>
+
+<a name="startstop"></a>
+<b>Scan start and stop</b><p>
+
+Use the <b>Start</b> button to begin the scan. During scan, the receiver is
+tuned sequentially to each frequency in the selected range and the signal
+strength is recorded. The band scope is updated as each data point is
+acquired. When the scan is complete, the old tuning frequency is restored
+and the receiver will return to normal operation.<p>
+
+The scan is performed with the current <a href="controls.html#AGC">AGC</a>
+and <a href="controls.html#filters">filter</a> settings. The frequency the
+receiver is tuned to is used as the center frequency for the sweep.<p>
+
+To stop a scan in progress at any time, use the <b>Stop</b> button.<p>
+
+To mute the receiver during the scan operation, use the <b><a
+href="controls.html#mute">Mute</a></b> button in the main window.<p>
+
+<a name="range"></a>
+<b>Scan range</b><p>
+
+Use the <b>Range</b> buttons to select the desired sweep width. The
+current selection is displayed at the bottom right corner of the band
+scope display.<p>
+
+If the range is changed while a scan is in progress, the scan will be
+restarted.<p>
+
+<a name="scale"></a>
+<b>Scale mode</b><p>
+
+Use the <b>Scale</b> buttons to select between linear (Lin) or logarithmic
+(Log) scales.<p>
+
+<ul> 
+<li>When using the <i>linear</i> scale, the vertical axis is numbered from 0
+to 1. A signal that reaches 0.5 on the vertical scale is twice as strong as
+a signal that reaches 0.25.<p>
+<li>The <i>logarithmic</i> scale allows a greater range of signal levels to
+be represented. In this mode the vertcal scale is marked in decibels (dB). 
+A signal that is twice as strong as another will appear as 6 dB <i>higher</i>.
+</ul>
+
+The selection between Lin and Log can be done at any moment, without having
+to stop or restart the scan.<p>
+
+<a name="style"></a>
+<b>Display style</b><p>
+
+Sample points in the band scope window may be displayed either as a
+continuous single line or as bar histogram. To choose between these, use the
+<b>Style</b> buttons.<p>
+
+The selection between Line and Bars can be done at any moment, without
+having to stop or restart the scan.<p>
+
+<a name="cursors"></a>
+<b>Cursor lines</b><p>
+
+Two cursors can appear in the graphic spectrum area: a <b><font
+color="#ff0000">red</font></b> one and a <b><font
+color="#0000ff">blue</font></b> one.<p>
+
+The <b><font color="#0000ff">blue</font></b> cursor line is displayed at the
+mouse pointer position when the last is located inside the graphic area. It
+can be used to determine which frequency corresponds to a given point of the
+spectrum. The frequency value is displayed above the cursor line, in the
+upper part of the display.<p>
+
+The <b><font color="#ff0000">red</font></b> cursor shows the current
+tuning frequency of the receiver. The shaded area at both sides
+of this cursor represents the current receiver bandwidth, according to
+the selected <a href="controls.html#filters">filter</a>.<p>
+
+You can click on any point of the spectrum to reposition the <b><font
+color="#ff0000">red</font></b> cursor, and to consequently tune the receiver
+to that frequency. You can also drag the red cursor around to listen to the
+different stations on the band.<p>
+
+<a name="close"></a>
+<b>Closing the window</b><p>
+
+Use the <b>Close</b> button to close the scan window. Any scan in progress
+will be stopped and the receiver returned to normal operation.<p>
+
+
+</html>

@@ -1,0 +1,23 @@
+/* XPM */
+static char * gtb_next_xpm[] = {
+"16 16 4 1",
+" 	s None	c None",
+".	c black",
+"X	c white",
+"o	c #000080",
+"  .........     ",
+"  .XXXXXXX..    ",
+"  .XXXXXXX.X.   ",
+"  .XXXXXXX....  ",
+"  .XXXoXXXXXX.  ",
+"  .XXXooXXXXX.  ",
+"  .XXXoooXXXX.  ",
+"  .XXXooooXXX.  ",
+"  .XXXooooXXX.  ",
+"  .XXXoooXXXX.  ",
+"  .XXXooXXXXX.  ",
+"  .XXXoXXXXXX.  ",
+"  .XXXXXXXXXX.  ",
+"  .XXXXXXXXXX.  ",
+"  ............  ",
+"                "};

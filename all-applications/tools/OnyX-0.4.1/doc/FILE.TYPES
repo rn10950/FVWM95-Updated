@@ -1,0 +1,12 @@
+This is a listing of all of the special file types that OnyX uses and their
+associated meaning/purpose.
+
+  Extension   Meaning
+  ---------   -----------------------
+     oeb      OnyX Exported Object
+     oep      OnyX Exported Project
+     oob      OnyX Object Description
+     ooc      OnyX Object Collection
+     oxp      OnyX Project
+     oxt      OnyX Temporary File
+

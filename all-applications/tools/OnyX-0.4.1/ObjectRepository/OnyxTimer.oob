@@ -1,0 +1,4 @@
+Toolbox 1
+ToolTip Interval Timer
+Property Interval $X=$Y 1000
+Event TimerElapsed

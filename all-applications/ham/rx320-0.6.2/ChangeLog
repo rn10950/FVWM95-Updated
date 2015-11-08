@@ -1,0 +1,183 @@
+30/08/01
+
+- Preliminary version. Got the communication working.
+
+
+31/08/01
+
+- Added main panel, S meter.
+
+
+01/09/01
+
+- Changed the frequency calculations: use long integers instead of floating
+  point values in order to avoid rounding problems.
+
+
+02/09/01
+
+- Implemented tuning knob.
+
+- Added a few keyboard shortcuts.
+
+
+11/11/01 (0.1)
+
+- The serial port is no longer fixed to /dev/ttyS1, although the settings
+  have to be changed manually by editing the rx320rc file.
+
+- Released first alpha version.
+
+
+12/11/01 (0.2)
+
+- Added passband tuning (thanks to Tom Lackamp).
+
+- Added OFreqRecord class to handle frequency records in Clifton Turner's
+  *.320 Frequency File Format.
+
+
+25/11/01
+
+- Added Frequency Database viewer.
+
+- Added Station edit dialog.
+
+- Added support (experimental) for reading *.cdf files.
+
+
+28/11/01 (0.3)
+
+- Added toolbar buttons for add, edit and delete stations.
+
+
+3/06/02 (0.4)
+
+- Added (preliminary) setup dialog, the serial port now can be changed by
+  this dialog.
+
+- Serial port connection error messages are now shown in message boxes.
+
+
+7/06/02 (0.4.1)
+
+- Corrected a bug in the frequency database viewer that caused the
+  application to crash when enter was presed in order to tune to the
+  selected station.
+
+
+28/07/02 (0.4.2)
+
+- Avoid displaying multiple message boxes if the user keeps pressing the
+  close button and the file is not saved.
+
+- Each database window now keeps the full path to loaded filename.
+  Previously other database instances could change the current dir, and
+  the file would get saved in a different directory.
+
+- Added wheel mouse support.
+
+- Up/Down keys can be used now to control the volume.
+
+
+16/05/03 (0.4.3)
+
+- std namespace explicitely used when referencing C++ vector objects
+  (required by latest STL/g++ versions).
+
+
+7/07/03 (0.4.4)
+
+- Fixed the frequency database menu item problem.
+
+
+15/07/03 (0.4.5)
+
+- Reversed the action of the PBT slider: moving it up now shifts the
+  passband up, the range was also expanded to +/-2000 Hz.
+
+- Corrected PBT problem: the offset value was not being saved in vfo
+  structure.
+
+
+17/07/03
+
+- Corrected an obscure bug in DoOpen().
+
+
+27/06/04 (0.5.1)
+
+- Added keyboard shortcuts for selecting AM/LSB/USB/CW modes, and for
+  toggling mute.
+
+- Added help support and help files (requires xclass 0.8.4)
+
+
+29/06/04
+
+- Added preliminary scan window.
+
+
+30/06/04
+
+- Added BFO slider. PBT offset no longer doubles as CW offset in CW mode.
+
+- Corrected a problem in tuning routine in CW mode: the selected filter was
+  not centered on the signal. CW reception is much better now.
+
+- OXSMeter: use buffer pixmap.
+
+- The application now sets the WM size hints.
+
+
+01/07/04
+
+- Added more functionality to OXBandScope and OXScanWindow. Scan already
+  works, although is not fully functional yet.
+
+
+03/07/04  (0.6.1)
+
+- Added a queueing and redundant-command discard mechanism to ORX320 that
+  very effectively reduces the characteristic "rubber-band" delay effect
+  produced by the limited RX320 serial transfer speed capabilities. The
+  effect was very noticeable while quickly tuning over a band, or by quickly
+  operating the sliders.
+
+- When entering a frequency manually from the keyboard, check that the
+  entered value is in range.
+
+- Allow zero as the lowest frequency.
+
+- Added a slide-ruler dial.
+
+- Added band info.
+
+
+04/07/04
+
+- Re-arranged scan window controls, added the grid labels and status info.
+
+- Added line/bars styles to the band scope display.
+
+- Scan settings are now saved into the ini file.
+
+- Moved the About dialog box to OXMain.
+
+- Added keyboard shortcuts for the <+> and <-> keys. These now change the
+  current tuning step.
+
+- Updated the help files.
+
+- Added installing of help files to Makefile. Also added a 'install_user'
+  target for local home-directory installation.
+
+
+12/10/04  (0.6.2)
+
+- OXFreqDB: highlight the full selected line.
+
+
+25/05/06
+
+- OXFreqDB: show grid lines.

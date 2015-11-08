@@ -1,0 +1,27 @@
+/* XPM */
+static char * showtoolboxbutton_xpm[] = {
+/* width height num_colors chars_per_pixel */
+"16 16 5 1",
+/* colors */
+" 	s None	m none	c None",
+".	s iconColor1	m black	c black",
+"X	c #808000",
+"o	c #800000",
+"O	c #c3c3c3",
+/* pixels */
+"                ",
+"       ....     ",
+"      ..XX...   ",
+"  ...   ..XXX.  ",
+"   ..    .XXX.  ",
+".  ..    ..XX.. ",
+".....   .o...XX.",
+"....O. .o.  .X. ",
+"    .O.o.    .  ",
+"     .O.        ",
+"    .o.O.       ",
+"   .o. .O.      ",
+"  .o.   .O.     ",
+" .o.     .O.    ",
+" ..       ..    ",
+"                "};

@@ -1,0 +1,16 @@
+/* XPM */
+static char * pbg_xpm[] = {
+/* width height num_colors chars_per_pixel */
+"8 8 2 1",
+/* colors */
+" 	c white",
+".	c black",
+/* pixels */
+" . . . .",
+". . . . ",
+" . . . .",
+". . . . ",
+" . . . .",
+". . . . ",
+" . . . .",
+". . . . "};

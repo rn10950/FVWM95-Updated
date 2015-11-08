@@ -1,0 +1,569 @@
+#!/bin/bash
+
+trimmed=""
+Location=1
+CurrentCommand=0
+Commands=""
+CommandDescriptions=""
+OldCommands=""
+OldCommandDescriptions=""
+LinkDirSource=""
+LinkDirDest=""
+OldLinkDirSource=""
+OldLinkDirDest=""
+LinkFileSource=""
+LinkFileDest=""
+OldLinkFileSource=""
+OldLinkFileDest=""
+
+function trim()
+{
+	Source="$1 "
+	Result=`echo "$Source" | cut -f1 -d " "`
+	Source=`echo "$Source" | cut -f2-400 -d " "`
+	while test "$Source"
+	do
+		ResultN=`echo "$Source" | cut -f1 -d " "`
+		if test "$Result"
+		then
+			Result="$Result $ResultN"
+		else
+			Result=$ResultN
+		fi
+		Source=`echo "$Source" | cut -f2-400 -d " "`
+	done
+	trimmed="$Result"
+}
+
+function ShowScreen()
+{
+	clear
+	if test $Location -eq 1
+	then
+		echo "Welcome,"
+		echo "You are about to install"
+		echo "$FullName"
+		OS=`uname -s`
+		echo "on your $OS system."
+		valid=""
+		while test -z $valid
+		do
+			echo ""
+			echo -n "[N]ext [C]ancel > "
+			read Direction
+			if [ "$Direction" = "n" ] || [ "$Direction" = "N" ] || [ "$Direction" = "" ]
+			then
+				Location=`expr $Location + 1`
+				> setup.log
+				> temp.log
+				valid="yep"
+			elif [ "$Direction" = "c" ] || [ "$Direction" = "C" ]
+			then
+				valid="yep"
+				Location=1000
+			else
+				echo -e "\aInvalid choice.\nPlease enter the apropriate letter matching your selection."
+			fi
+		done
+	elif test $Location -eq 2
+	then
+		CommandDescription=`echo "$CommandDescriptions" | cut -f1 -d "#"`
+		Command=`echo "$Commands" | cut -f1 -d "#"`
+
+		if [ "$CommandDescription" ]
+		then
+			echo "$CommandDescription"
+			echo "Please wait..."
+			echo ""
+			echo "Section: $CommandDescription" >> setup.log
+			echo "Command: $Command" >> setup.log
+			echo "Output From Command Follows" >> setup.log
+			echo "---------------------------" >> setup.log
+			$Command | tee -a setup.log
+			echo ""
+			echo "" >> setup.log
+			echo "Done."
+			valid=""
+		else
+			Location=`expr $Location + 2`
+			valid="yep"
+		fi
+		while test -z $valid
+		do
+			echo ""
+			echo -n "[N]ext [P]revious [C]ancel > "
+			read Direction
+			if [ "$Direction" = "n" ] || [ "$Direction" = "N" ] || [ "$Direction" = "" ]
+			then
+				CommandDescriptions=`echo "$CommandDescriptions" | cut -f2-400 -d "#"`
+				Commands=`echo "$Commands" | cut -f2-400 -d "#"`
+				OldCommandDescriptions="$CommandDescription#$OldCommandDescriptions"
+				OldCommands="$Command#$OldCommands"
+				Location=`expr $Location + 1`
+				valid="yep"
+			elif [ "$Direction" = "c" ] || [ "$Direction" = "C" ]
+			then
+				valid="yep"
+				Location=1000
+			elif [ "$Direction" = "p" ] || [ "$Direction" = "P" ]
+			then
+				if [ "$OldCommandDescriptions" ]
+				then
+					CommandDescription=`echo "$OldCommandDescriptions" | cut -f1 -d "#"`
+					Command=`echo "$OldCommands" | cut -f1 -d "#"`
+					OldCommandDescriptions=`echo "$OldCommandDescriptions" | cut -f2-400 -d "#"`
+					OldCommands=`echo "$OldCommands" | cut -f2-400 -d "#"`
+					CommandDescriptions="$CommandDescription#$CommandDescriptions"
+					Commands="$Command#$Commands"
+					Location=`expr $Location + 1`
+				fi
+				valid="yep"
+			else
+				echo -e "\aInvalid choice.\nPlease enter the apropriate letter matching your selection."
+			fi
+		done
+		if [ "$CommandDescriptions" ]
+		then
+			Location=`expr $Location - 1`
+		fi
+	elif test $Location -eq 3
+	then
+		echo "$Name will be installed into"
+		echo "$InstallDirectory"
+
+		valid=""
+		while test -z $valid
+		do
+			echo ""
+			echo -n "[N]ext [P]revious [M]odify [C]ancel > "
+			read Direction
+			if [ "$Direction" = "n" ] || [ "$Direction" = "N" ] || [ "$Direction" = "" ]
+			then
+				Location=`expr $Location + 1`
+				valid="yep"
+			elif [ "$Direction" = "c" ] || [ "$Direction" = "C" ]
+			then
+				valid="yep"
+				Location=1000
+			elif [ "$Direction" = "p" ] || [ "$Direction" = "P" ]
+			then
+				if [ "$OldCommandDescriptions" ]
+				then
+					CommandDescription=`echo "$OldCommandDescriptions" | cut -f1 -d "#"`
+					Command=`echo "$OldCommands" | cut -f1 -d "#"`
+					OldCommandDescriptions=`echo "$OldCommandDescriptions" | cut -f2-400 -d "#"`
+					OldCommands=`echo "$OldCommands" | cut -f2-400 -d "#"`
+					CommandDescriptions="$CommandDescription#$CommandDescriptions"
+					Commands="$Command#$Commands"
+					Location=`expr $Location - 1`
+				else
+					Location=`expr $Location - 2`
+				fi
+				valid="yep"
+			elif [ "$Direction" = "m" ] || [ "$Direction" = "M" ]
+			then
+				echo -n "Enter new installation directory > "
+				read InstallDirectory
+				valid="yep"
+			else
+				echo -e "\aInvalid choice.\nPlease enter the apropriate letter matching your selection."
+			fi
+		done
+	elif test $Location -eq 4
+	then
+		echo "Installing"
+		echo "Please wait..."
+		echo ""
+		echo "Section: Install" >> setup.log
+		echo "Command: $InstallCommand" >> setup.log
+		echo "Output From Command Follows" >> setup.log
+		echo "---------------------------" >> setup.log
+		$InstallCommand $InstallDirectory
+		echo ""
+		echo "" >> setup.log
+		echo "Done."
+
+		valid=""
+		while test -z $valid
+		do
+			echo ""
+			echo -n "[N]ext [P]revious [C]ancel > "
+			read Direction
+			if [ "$Direction" = "n" ] || [ "$Direction" = "N" ] || [ "$Direction" = "" ]
+			then
+				Location=`expr $Location + 1`
+				valid="yep"
+			elif [ "$Direction" = "c" ] || [ "$Direction" = "C" ]
+			then
+				valid="yep"
+				Location=1000
+			elif [ "$Direction" = "p" ] || [ "$Direction" = "P" ]
+			then
+				Location=`expr $Location - 1`
+				valid="yep"
+			else
+				echo -e "\aInvalid choice.\nPlease enter the apropriate letter matching your selection."
+			fi
+		done
+	elif test $Location -eq 5
+	then
+		if [ "$LinkInstallDirectory" ]
+		then
+			echo "To make access easier, a"
+			echo "symbolic link to the directory"
+			echo "$InstallDirectory"
+			echo "can be made at"
+			echo "$LinkInstallDirectory"
+			valid=""
+		else
+			Location=`expr $Location + 1`
+			valid="yes"
+		fi
+		while test -z $valid
+		do
+			echo ""
+			echo -n "[N]ext [P]revious [M]odify [C]ancel [D]on't Link > "
+			read Direction
+			if [ "$Direction" = "n" ] || [ "$Direction" = "N" ] || [ "$Direction" = "" ]
+			then
+				Location=`expr $Location + 1`
+				echo "Section: Linking Install Directory" >> setup.log
+				echo "Command: ln -s $InstallDirectory $LinkInstallDirectory" >> setup.log
+				echo "There is no output from this command." >> setup.log
+				echo ""	>> setup.log
+				valid="yep"
+				ln -s $InstallDirectory $LinkInstallDirectory
+			elif [ "$Direction" = "c" ] || [ "$Direction" = "C" ]
+			then
+				valid="yep"
+				Location=1000
+			elif [ "$Direction" = "p" ] || [ "$Direction" = "P" ]
+			then
+				Location=`expr $Location - 1`
+				valid="yep"
+			elif [ "$Direction" = "m" ] || [ "$Direction" = "M" ]
+			then
+				echo -n "Enter new link location > "
+				read LinkInstallDirectory
+				valid="yep"
+			elif [ "$Direction" = "d" ] || [ "$Direction" = "D" ]
+			then
+				Location=`expr $Location + 1`
+				valid="yep"
+			else
+				echo -e "\aInvalid choice.\nPlease enter the apropriate letter matching your selection."
+			fi
+		done
+	elif test $Location -eq 6
+	then
+		Source=`echo "$LinkDirSource" | cut -f1 -d "#"`
+		Dest=`echo "$LinkDirDest" | cut -f1 -d "#"`
+
+		if [ "$Source" ]
+		then
+			echo "To make access easier, a"
+			echo "symbolic link to the directory"
+			echo "$Source"
+			echo "can be made at"
+			echo "$Dest"
+			valid=""
+		else
+			Location=`expr $Location + 2`
+			valid="yep"
+		fi
+		while test -z $valid
+		do
+			echo ""
+			echo -n "[N]ext [P]revious [M]odify [C]ancel [D]on't Link > "
+			read Direction
+			if [ "$Direction" = "n" ] || [ "$Direction" = "N" ] || [ "$Direction" = "" ]
+			then
+				echo "Section: Linking Directory" >> setup.log
+				if [ "$LinkInstallDirectory" ]
+				then
+					echo "Command: ln -s $LinkInstallDirectory/$Source $Dest" >> setup.log
+					ln -s $LinkInstallDirectory/$Source $Dest
+				else
+					echo "Command: ln -s $InstallDirectory/$Source $Dest" >> setup.log
+					ln -s $InstallDirectory/$Source $Dest
+				fi
+				echo "There is no output from this command." >> setup.log
+				echo ""	>> setup.log
+
+				LinkDirDest=`echo "$LinkDirDest" | cut -f2-400 -d "#"`
+				LinkDirSource=`echo "$LinkDirSource" | cut -f2-400 -d "#"`
+				OldLinkDirDest="$Dest#$OldLinkDirDest"
+				OldLinkDirSource="$Source#$OldLinkDirSource"
+				Location=`expr $Location + 1`
+				valid="yep"
+			elif [ "$Direction" = "c" ] || [ "$Direction" = "C" ]
+			then
+				valid="yep"
+				Location=1000
+			elif [ "$Direction" = "p" ] || [ "$Direction" = "P" ]
+			then
+				if [ "$OldLinkDirSource" ]
+				then
+					Dest=`echo "$OldLinkDirDest" | cut -f1 -d "#"`
+					Source=`echo "$OldLinkDirSource" | cut -f1 -d "#"`
+					OldLinkDirDest=`echo "$OldLinkDirDest" | cut -f2-400 -d "#"`
+					OldLinkDirSource=`echo "$OldLinkDirSource" | cut -f2-400 -d "#"`
+					LinkDirDest="$Dest#$LinkDirDest"
+					LinkDirSource="$Source#$LinkDirSource"
+					Location=`expr $Location + 1`
+				elif [ -z "$LinkInstallDirectory" ]
+				then
+					Location=`expr $Location - 1`
+				fi
+				valid="yep"
+			elif [ "$Direction" = "m" ] || [ "$Direction" = "M" ]
+			then
+				echo -n "Enter new link location > "
+				read Dest
+				LinkDirDest=`echo "$LinkDirDest" | cut -f2-400 -d "#"`
+				LinkDirDest="$Dest#$LinkDirDest"
+				Location=`expr $Location + 1`
+				valid="yep"
+			elif [ "$Direction" = "d" ] || [ "$Direction" = "D" ]
+			then
+				LinkDirDest=`echo "$LinkDirDest" | cut -f2-400 -d "#"`
+				LinkDirSource=`echo "$LinkDirSource" | cut -f2-400 -d "#"`
+				OldLinkDirDest="$Dest#$OldLinkDirDest"
+				OldLinkDirSource="$Source#$OldLinkDirSource"
+				Location=`expr $Location + 1`
+				valid="yep"
+			else
+				echo -e "\aInvalid choice.\nPlease enter the apropriate letter matching your selection."
+			fi
+		done
+		if [ "$LinkDirSource" ]
+		then
+			Location=`expr $Location - 1`
+		fi
+	elif test $Location -eq 7
+	then
+		Source=`echo "$LinkFileSource" | cut -f1 -d "#"`
+		Dest=`echo "$LinkFileDest" | cut -f1 -d "#"`
+
+		if [ "$Source" ]
+		then
+			echo "To make access easier, a"
+			echo "symbolic link to the file/program"
+			echo "$Source"
+			echo "can be made at"
+			echo "$Dest"
+			valid=""
+		else
+			Location=`expr $Location + 2`
+			valid="yep"
+		fi
+		while test -z $valid
+		do
+			echo ""
+			echo -n "[N]ext [P]revious [M]odify [C]ancel [D]on't Link > "
+			read Direction
+			if [ "$Direction" = "n" ] || [ "$Direction" = "N" ] || [ "$Direction" = "" ]
+			then
+				echo "Section: Linking File/Program" >> setup.log
+				if [ "$LinkInstallDirectory" ]
+				then
+					echo "Command: ln -s $LinkInstallDirectory/$Source $Dest" >> setup.log
+					ln -s $LinkInstallDirectory/$Source $Dest
+				else
+					echo "Command: ln -s $InstallDirectory/$Source $Dest" >> setup.log
+					ln -s $InstallDirectory/$Source $Dest
+				fi
+				echo "There is no output from this command." >> setup.log
+				echo ""	>> setup.log
+
+				CommandDesc=`echo "$CommandDesc" | cut -f2-400 -d "#"`
+				LinkFileDest=`echo "$LinkFileDest" | cut -f2-400 -d "#"`
+				LinkFileSource=`echo "$LinkFileSource" | cut -f2-400 -d "#"`
+				OldLinkFileDest="$Dest#$OldLinkFileDest"
+				OldLinkFileSource="$Source#$OldLinkFileSource"
+				Location=`expr $Location + 1`
+				valid="yep"
+			elif [ "$Direction" = "c" ] || [ "$Direction" = "C" ]
+			then
+				valid="yep"
+				Location=1000
+			elif [ "$Direction" = "p" ] || [ "$Direction" = "P" ]
+			then
+				if [ "$OldLinkFileSource" ]
+				then
+					Dest=`echo "$OldLinkFileDest" | cut -f1 -d "#"`
+					Source=`echo "$OldLinkFileSource" | cut -f1 -d "#"`
+					OldLinkFileDest=`echo "$OldLinkFileDest" | cut -f2-400 -d "#"`
+					OldLinkFileSource=`echo "$OldLinkFileSource" | cut -f2-400 -d "#"`
+					LinkFileDest="$Dest#$LinkFileDest"
+					LinkFileSource="$Source#$LinkFileSource"
+					Location=`expr $Location + 1`
+				elif [ "$OldLinkDirSource" ]
+				then
+					Dest=`echo "$OldLinkDirDest" | cut -f1 -d "#"`
+					Source=`echo "$OldLinkDirSource" | cut -f1 -d "#"`
+					OldLinkDirDest=`echo "$OldLinkDirDest" | cut -f2-400 -d "#"`
+					OldLinkDirSource=`echo "$OldLinkDirSource" | cut -f2-400 -d "#"`
+					LinkDirDest="$Dest#$LinkDirDest"
+					LinkDirSource="$Source#$LinkDirSource"
+				elif [ "$LinkInstallDirectory" ]
+				then
+					Location=`expr $Location - 1`
+				else
+					Location=`expr $Location - 2`
+				fi
+				valid="yep"
+			elif [ "$Direction" = "m" ] || [ "$Direction" = "M" ]
+			then
+				echo -n "Enter new link location > "
+				read Dest
+				LinkFileDest=`echo "$LinkFileDest" | cut -f2-400 -d "#"`
+				LinkFileDest="$Dest#$LinkFileDest"
+				Location=`expr $Location + 1`
+				valid="yep"
+			elif [ "$Direction" = "d" ] || [ "$Direction" = "D" ]
+			then
+				LinkFileDest=`echo "$LinkFileDest" | cut -f2-400 -d "#"`
+				LinkFileSource=`echo "$LinkFileSource" | cut -f2-400 -d "#"`
+				OldLinkFileDest="$Dest#$OldLinkFileDest"
+				OldLinkFileSource="$Source#$OldLinkFileSource"
+				Location=`expr $Location + 1`
+				valid="yep"
+			else
+				echo -e "\aInvalid choice.\nPlease enter the apropriate letter matching your selection."
+			fi
+		done
+		if [ "$LinkFileSource" ]
+		then
+			Location=`expr $Location - 1`
+		fi
+	elif test $Location -eq 8
+	then
+		echo "Setup Complete"
+		echo "The complete installation log"
+		echo "may be viewed in setup.log"
+		valid=""
+		while test -z $valid
+		do
+			echo ""
+			echo -n "[P]revious [F]inish > "
+			read Direction
+			if [ "$Direction" = "f" ] || [ "$Direction" = "F" ] || [ "$Direction" = "" ]
+			then
+				valid="yep"
+				Location=1000
+			elif [ "$Direction" = "p" ] || [ "$Direction" = "P" ]
+			then
+				if [ "$OldLinkFileSource" ]
+				then
+					Dest=`echo "$OldLinkFileDest" | cut -f1 -d "#"`
+					Source=`echo "$OldLinkFileSource" | cut -f1 -d "#"`
+					OldLinkFileDest=`echo "$OldLinkFileDest" | cut -f2-400 -d "#"`
+					OldLinkFileSource=`echo "$OldLinkFileSource" | cut -f2-400 -d "#"`
+					LinkFileDest="$Dest#$LinkFileDest"
+					LinkFileSource="$Source#$LinkFileSource"
+				elif [ "$OldLinkDirSource" ]
+				then
+					Dest=`echo "$OldLinkDirDest" | cut -f1 -d "#"`
+					Source=`echo "$OldLinkDirSource" | cut -f1 -d "#"`
+					OldLinkDirDest=`echo "$OldLinkDirDest" | cut -f2-400 -d "#"`
+					OldLinkDirSource=`echo "$OldLinkDirSource" | cut -f2-400 -d "#"`
+					LinkDirDest="$Dest#$LinkDirDest"
+					LinkDirSource="$Source#$LinkDirSource"
+					Location=`expr $Location - 1`
+				elif [ "$LinkInstallDirectory" ]
+				then
+					Location=`expr $Location - 2`
+				else
+					Location=`expr $Location - 3`
+				fi
+				Location=`expr $Location - 1`
+				valid="yep"
+			else
+				echo -e "\aInvalid choice.\nPlease enter the apropriate letter matching your selection."
+			fi
+		done
+	fi
+}
+
+while read LineIn
+do
+	Tag=`echo $LineIn | cut -f1 -d ":"`
+	Value=`echo $LineIn | cut -f2 -d ":"`
+	trim "$Value"
+	Value="$trimmed"
+	if [ "$Tag" = "Name" ]
+	then
+		Name="$Value"
+	elif [ "$Tag" = "FullName" ]
+	then
+		FullName="$Value"
+	elif [ "$Tag" = "InstallDirectory" ]
+	then
+		InstallDirectory="$Value"
+	elif [ "$Tag" = "LinkInstallDirectory" ]
+	then
+		LinkInstallDirectory="$Value"
+	elif [ "$Tag" = "InstallCommand" ]
+	then
+		InstallCommand="$Value"
+	elif [ "$Tag" = "Command" ]
+	then
+		if [ "$Commands" ]
+		then
+			Commands="$Commands#$Value"
+		else
+			Commands="$Value"
+		fi
+	elif [ "$Tag" = "CommandDescription" ]
+	then
+		if [ "$CommandDescriptions" ]
+		then
+			CommandDescriptions="$CommandDescriptions#$Value"
+		else
+			CommandDescriptions="$Value"
+		fi
+	elif [ "$Tag" = "LinkDirectory" ]
+	then
+		Source=`echo "$Value" | cut -f1 -d " "`
+		Dest=`echo "$Value" | cut -f2 -d " "`
+		if [ "$LinkDirSource" ]
+		then
+			LinkDirSource="$LinkDirSource#$Source"
+			LinkDirDest="$LinkDirDest#$Dest"
+		else
+			LinkDirSource="$Source"
+			LinkDirDest="$Dest"
+		fi
+	elif [ "$Tag" = "LinkFile" ]
+	then
+		Source=`echo "$Value" | cut -f1 -d " "`
+		Dest=`echo "$Value" | cut -f2 -d " "`
+		if [ "$LinkFileSource" ]
+		then
+			LinkFileSource="$LinkFileSource#$Source"
+			LinkFileDest="$LinkFileDest#$Dest"
+		else
+			LinkFileSource="$Source"
+			LinkFileDest="$Dest"
+		fi
+	fi
+done < .setup/setup.info
+
+Commands="$Commands#"
+CommandDescriptions="$CommandDescriptions#"
+LinkDirSource="$LinkDirSource#"
+LinkDirDest="$LinkDirDest#"
+LinkFileSource="$LinkFileSource#"
+LinkFileDest="$LinkFileDest#"
+
+while test $Location -lt 30
+do
+	ShowScreen $Location
+done
+echo ""
+#i=1
+#echo $i
+#i=`expr $i + 1`
+#echo $i
+

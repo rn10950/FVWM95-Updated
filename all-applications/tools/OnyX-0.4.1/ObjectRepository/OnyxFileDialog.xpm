@@ -1,0 +1,26 @@
+/* XPM */
+static char * OnyxFileDialog_xpm[] = {
+/* width height num_colors chars_per_pixel */
+"17 14 6 1",
+/* colors */
+" 	s None	m none	c None",
+".	c #808080",
+"X	c #c0c0c0",
+"o	s iconColor6	m white	c yellow",
+"O	c white",
+"+	s iconColor1	m black	c black",
+/* pixels */
+"  .....          ",
+" .XoXoX.         ",
+".XoXoXoX........ ",
+".OOOOOOOOOOOOOO.+",
+".OoXoXoXoXoXoXo.+",
+".OXoXoXoXoXoXoX.+",
+".OoXoXoXoXoXoXo.+",
+".OXoXoXoXoXoXoX.+",
+".OoXoXoXoXoXoXo.+",
+".OXoXoXoXoXoXoX.+",
+".OoXoXoXoXoXoXo.+",
+".OXoXoXoXoXoXoX.+",
+"................+",
+" +++++++++++++++ "};

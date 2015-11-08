@@ -1,0 +1,15 @@
+Toolbox 1
+ToolTip Icon (XPM)
+Property X $X=$Y 0
+Property Y $X=$Y 0
+Property Width $X=$Y 32
+Property Height $X=$Y 32
+Property Picture strcpy($X,"$Y") onyx_blank.xpm
+Property IsShaped $X=$Y False
+Property BorderStyle $X=$Y NoBorder
+PropertySetting Picture ReadWrite FileBrowser File Directory X-Pixmap *.xpm All-Files *.*
+PropertySetting IsShaped ReadOnly ComboBox True False
+PropertySetting BorderStyle ReadOnly ComboBox NoBorder SunkenSingle SunkenDouble RaisedSingle RaisedDouble
+Event ButtonPressed button x y
+Event ButtonReleased button x y
+Event PointerMoved x y x_root y_root

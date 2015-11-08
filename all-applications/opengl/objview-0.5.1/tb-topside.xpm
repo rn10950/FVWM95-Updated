@@ -1,0 +1,23 @@
+/* XPM */
+static char * tb_topside_xpm[] = {
+"16 16 4 1",
+" 	s None	c None",
+".	c black",
+"X	c red",
+"o	c #808080",
+"    ............",
+"   .XXXXXXXXXX.o",
+"  .XXXXXXXXXX. o",
+" .XXXXXXXXXX.  o",
+"............   o",
+"o   o      o   o",
+"o   o      o   o",
+"o   o      o   o",
+"o   o      o   o",
+"o   o      o   o",
+"o   oooooooooooo",
+"o  o       o  o ",
+"o o        o o  ",
+"oo         oo   ",
+"oooooooooooo    ",
+"                "};

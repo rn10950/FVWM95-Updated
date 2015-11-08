@@ -1,0 +1,191 @@
+INTRO
+-----
+
+This is the xclass version of FvwmTaskBar, and is intended to be used
+together with the fvwm95 window manager replacing the old FvwmTaskBar
+module. The functionality and appareance were kept the same, and as the
+previous taskbar this version features:
+
+- The classic start button linked to a user-defined fvwm95 popup menu.
+
+- An array of buttons representing the active application windows: a
+  depresed, highlited button shows the current focused window.
+
+- Support for loadable plug-in objects. Plug-in modules for the digital
+  clock and mail indicator are supplied. See the README files in the
+  corresponding directories for the syntax of rc commands and additional
+  notes. The plugin interface was greately simplified in comparison with
+  the old taskbar, plugins are now true loadable xclass OXFrames and they
+  can benefit from useful xclass features like menus, timers, message
+  passing, etc. Animated plugins are now possible, and easy to write.
+
+Additionally it can:
+
+- Swallow application windows and/or other fvwm modules. You can find how
+  to put, for example, a tiny xclock or xload window in the taskbar's tray
+  in the supplied EXAMPLE.taskbarrc file.
+
+The taskbar will run only on elf platforms. It uses libdl, which is usually
+available from your linux distribution. Alternatively it can be loaded from
+sunsite.unc.edu.
+
+
+INSTALLATION
+------------
+
+Before attempting to compile the taskbar, make sure you have compiled and
+installed properly the xclass library. The current version of the taskbar
+needs at least xclass-0.7.4.
+
+To compile and install the taskbar, just cd to the directory where you
+unpacked it and do:
+
+   make
+   make install
+
+The last step usually should be done by the superuser. Then, take the
+EXAMPLE.taskbarrc file supplied with this distribution and copy it as
+.taskbarrc into your home directory (you'll want to customize first some
+of the options, however. See the section below).
+
+
+CONFIG
+------
+
+This version of the taskbar reads its configuration information from a
+separate .taskbarrc file, and not from the common .fvwm95rc file as it used
+to be before. This offers a series of advantages, like better modularity,
+and the possibility of using the standard xclass OIniFile format. It also
+helps to keep the .fvwm95rc file from becoming a bigger mess than it already
+is with so many taskbar-specific stuff.
+
+The .taskbarrc file contains several sections:
+
+The "[default]" section contain global commands for the taskbar itself:
+
+geometry - specifies the starting location of the taskbar, in the standard X
+    way: {+-}<X>{+-}<Y>. Specifying a starting size is not supported in the
+    current version, the taskbar will resize itself to fill the full witdh
+    of the screen. If the auto_stick option is set to true, then the taskbar
+    will automatically "stick" to the top or the bottom of the screen,
+    whichever is closest to the specifed position.
+
+font - Specifies the default font to be used for labeling the buttons, when
+    they are not depressed. If not specified, fixed font is assumed.
+
+selfont - Specifies the font to be used for the depressed buttons. The Start
+    button will use always this font even if is not pressed. If this option
+    is not specified, the default font is used instead.
+
+fvwm_action_click1 - specifies the fvwm command to execute when clicking an
+    application button with the left mouse button, defaults to "Iconify -1,
+    Raise, Focus".
+
+fvwm_action_click2 - specifies the fvwm command to execute when clicking an
+    application button with the middle mouse button, defaults to "Iconify +1,
+    Lower".
+
+fvwm_action_click3 - specifies the fvwm command to execute when clicking an
+    application button with the right mouse button, defaults to "Nop".
+
+use_skip_list - tells the taskbar whether to show or not the windows that
+    are listed on a WindowListSkip line in the fvwm95 configuration file.
+
+show_transients - tells the taskbar whether to show or not application
+    transient windows. Defaults to false if omitted.
+
+auto_hide - if set to true, causes the taskbar to disappear leaving only a
+    narrow strip, and to reappear only when the mouse enters the strip. This
+    option automatically enables auto_stick (currently not implemented).
+
+auto_stick - if set to true, causes the taskbar to "stick" either to the top
+    or bottom of the screen, whichever is closest.
+
+desk_only - if true, the taskbar will show only the windows that are on the
+    current desktop. When desktops are switched, the list of windows changes
+    accordingly. Defaults to false.
+
+use_icon_names - if true, the taskbar will use the icon name of the window
+    for the button, instead of the full window name. Defaults to false.
+
+start_button_name - specifies the string to be displayed in the Start
+    button. Defaults to "Start".
+
+start_button_icon - specifies the name of the icon to display at the left of
+    the Start button.
+
+start_fvwm_menu - specifies the fvwm95 popup menu to invoke when the start
+    button is pressed ("StartMenu" by default). The taskbar sends a "Popup
+    StartMenu" command to the fvwm window manager when the Start button is
+    pressed.
+
+show_tips
+
+highlight_focus
+
+icon_dir - specifies a colon-separated list of directories where icons can
+    be found. The list can contain references to environment variables.
+
+plugins_dir - specifies the directory where loadable plug-in modules reside.
+    Can contain references to environment variables.
+
+
+The "[swallow]" section contain the information necessary for the taskbar to
+swallow applications and/or fvwm modules. There can be several "[swallow]"
+sections in the .taskbarrc file, each one specifying a single application to
+swallow.
+
+command - specifies the fvwm95 command to start the application or module.
+
+aspect - the desired aspect ratio of the swallowed window. Note that the
+    height of the window is restricted to be slightly smaller than the
+    height of the taskbar's tray.
+
+window_name - the window name of the application. If not specified, the
+    taskbar will try to guess it from the command option.
+
+
+The "[plugin]" section contain the information necessary for the taskbar to
+load plug-in modules into the tray window. There can be several "[plugin]"
+sections in the .taskbarrc file, each one specifying a single plugin to
+load. Any plugin can be loaded several times with the same or different
+startup options (for example, you can have several mail indicator plugins
+for different mailboxes). The taskbar itself recognizes a single command:
+
+file - specifies the name of the loadable plug-in module, including the
+    extension (usually .so).
+
+More commands can be added to each "[plugin]" section, these will be parsed
+then by the particular plugin module once it is loaded. For details about
+particular plugin commands, see the README file supplied with the
+corresponding plugin.
+
+Plugins appear in the tray window in the same order they are specified, from
+right to left. For example, if you want the clock to be the rightmost item,
+you have to specify it as the first one. Swallowed items, in the other hand,
+are not guaranteed to appear in the same order, since they are added when
+the associated application starts and popups the window. Different
+applications take different times to start, and the current system load also
+affects result. It may happen that one day the swallowed items are arranged
+in one certain way and the next time the X session (or the taskbar) is
+restarted they appear in different order.
+
+For an example of command syntax, see the EXAMPLE.taskbarrc file supplied
+with this distribution.
+
+
+TODO
+----
+
+- Write a better layout manager for the tray window.
+
+- Implement the autohide feature.
+
+- Save the rc file on exit or user command.
+
+- Add a menu option for launching/removing plugins at runtime.
+
+- Switch to our own Start menu, instead of using the fvwm95 one, build
+  application submenu based on existing applications.
+
+- Add an about dialog box, run dialog?

@@ -1,0 +1,30 @@
+/* XPM */
+static char *xcd_diskremain[] = {
+/* width height num_colors chars_per_pixel */
+"    16    16        7            1",
+/* colors */
+". c #000000",
+"# c #00ff00",
+"a c #00ffff",
+"b c #808080",
+"c c None s None",
+"d c #ffff00",
+"e c #ffffff",
+/* pixels */
+"cccc....cccccccc",
+"cc..dccc..cccccc",
+"c.dddcccce.ccccc",
+"c.adddccec.ccccc",
+".##ad..eccc.cccc",
+".cc#.bb.cc...ccc",
+".ccc.cb.ccc.cccc",
+".ccce..da.....cc",
+"c.cecc#d.ee.de.c",
+"c.eccc#.eee.ede.",
+"cc..cc#.eee.ded.",
+"cccc.....ee.....",
+"ccccccc.eeeeeee.",
+"ccccccc.eeeeeee.",
+"cccccccc.ee.ee.c",
+"ccccccccc.....cc"
+};

@@ -1,0 +1,23 @@
+/* XPM */
+static char * tb_copy_xpm[] = {
+"16 16 4 1",
+" 	s None	c None",
+".	c black",
+"X	c white",
+"o	c navy",
+"                ",
+"......          ",
+".XXXX..         ",
+".XXXX.X.        ",
+".X..X.oooooo    ",
+".XXXXXoXXXXoo   ",
+".X....oXXXXoXo  ",
+".XXXXXoX..Xoooo ",
+".X....oXXXXXXXo ",
+".XXXXXoX.....Xo ",
+"......oXXXXXXXo ",
+"      oX.....Xo ",
+"      oXXXXXXXo ",
+"      ooooooooo ",
+"                ",
+"                "};

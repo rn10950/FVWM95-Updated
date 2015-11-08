@@ -1,0 +1,30 @@
+/* XPM */
+static char * forwardButton_xpm[] = {
+/* width height num_colors chars_per_pixel */
+"16 16 8 1",
+/* colors */
+" 	s none	c none",
+".	c #00009c",
+"X	c cyan",
+"o	c red",
+"O	c white",
+"+	c black",
+"@	c #808080",
+"#	c #c0c0c0",
+/* pixels */
+" ..XXooXX..XXo  ",
+" oOOOOOOOOOOOo+ ",
+" oO@#@#OOoooOX+ ",
+" XO#@#@OOoooOX+ ",
+" XOOOOOOOoooO.+ ",
+" oOOOOOOOOOOO.+ ",
+" oOOOOO@#@#@OX+ ",
+" XOOOOO#@#@#OX+ ",
+" XOOOOOOOOOOOo+ ",
+" ..XXooXX..XXo+ ",
+"  +++++++++++++ ",
+"         +      ",
+"         ++     ",
+"    ++++++++    ",
+"         ++     ",
+"         +      "};

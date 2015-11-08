@@ -1,0 +1,27 @@
+/* XPM */
+static char * showcodebutton_xpm[] = {
+/* width height ncolors cpp [x_hot y_hot] */
+"16 16 5 1 14 0",
+/* colors */
+" 	s none	m none	c none",
+".	c #808080",
+"X	s iconColor2	m white	c white",
+"o	s iconColor5	m black	c blue",
+"O	s iconColor1	m black	c black",
+/* pixels */
+"  .........     ",
+"  .XXXXXXX..    ",
+"  .XXXXXXX.X.   ",
+"  .XoooXXXOOOO  ",
+"  .XXXXXXXXXXO. ",
+"  .XooooooooXO. ",
+"  .XXXXXXXXXXO. ",
+"  .XXoooXXXXXO. ",
+"  .XXXXXXXXXXO. ",
+"  .XooooooXXXO. ",
+"  .XXXXXXXXXXO. ",
+"  .XoooooXXXXO. ",
+"  .XXXXXXXXXXO. ",
+"  .XXXXXXXXXXO. ",
+"  OOOOOOOOOOOO. ",
+"   ............ "};

@@ -1,0 +1,29 @@
+/* XPM */
+static char * makebutton_xpm[] = {
+/* width height num_colors chars_per_pixel */
+"16 16 7 1",
+/* colors */
+" 	s None	c None",
+".	c #808080",
+"X	c Black",
+"o	c white",
+"O	c #c0c0c0",
+"+	c #808000",
+"@	c Yellow",
+/* pixels */
+"     .          ",
+"  . XoX X       ",
+" .OXo.XXoX      ",
+" XooXoXoOX      ",
+".X.XXoXX.XX     ",
+"XOooXXXoooX     ",
+"X.Xo.ooXoO.  X  ",
+" XO..oX+XXoXX@X ",
+"Xo.XX.X@+.oX@+X ",
+" XX XXX+XXoXXoXX",
+"     X+@oXXXo@+X",
+"     X+X@o@o@X+X",
+"      X@++oX+@X ",
+"     X@+XX@XX++X",
+"      XX X+X XX ",
+"         XXX    "};

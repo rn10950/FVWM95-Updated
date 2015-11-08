@@ -1,0 +1,4 @@
+Toolbox 1
+ToolTip Font Selection Dialog
+Property DisplayWindow $X=$Y ApplicationRoot()
+PropertySetting DisplayWindow ReadWrite ComboBox ApplicationRoot()

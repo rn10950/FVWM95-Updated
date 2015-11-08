@@ -1,0 +1,151 @@
+Intro
+-----
+
+This is the alpha version 0.6.8 of the xclass explorer, a file manager for X
+with the windows-95 look and feel. I started writing it some years ago after
+hacking fvwm into fvwm95, together with the xclass library, but haven't got
+the time to finish it.
+
+There are a lot of unfinished features, see below for a list of what the
+program does and does not.
+
+
+Implemented features
+--------------------
+
+- Directory Tree and File List views. When started without any command line
+  arguments, the program runs in "explorer" mode, showing the tree view and
+  the directory contents in two separate windows. If a command line argument
+  is specified, the program runs instead in "file manager" mode, showing
+  only the contents of the directory specified.
+
+- Navigation through directories. Double-clicking on directories will 
+  transport you to these. To go one level back, use the first button from the 
+  toolbar.
+
+- Directories can be selected from the drop-down listbox in the toolbar. The
+  following items are shown (if the corresponding related directories exist):
+
+     Root         /
+     CD-ROM       /cdrom
+     Floppy       /floppy
+     Home         $HOME
+     Desktop      $HOME/.xclass/desktop
+     Recycle Bin  $HOME/.xclass/recycle
+
+- The File List view allows single and multiple selection (ctrl-clicks are
+  not fully implemented). The four view modes (large icons, small icons,
+  list and details) are implemented.
+
+- Files can be sorted by name, type, size and modification date.
+
+- File types can be associated to a certain action (View/Options dialog,
+  select "File Types" tab). Double-clicking an executable icon starts the
+  corresponding program, double-clicking any other file executes the
+  associated action. The file $HOME/.xclass/etc/mime.types keeps the
+  current action settings (see the MimeTypes.README that comes with the
+  xclass distribution).
+
+- File Properties dialog (right-click on a file, then selecting "Properties"
+  from the popup menu, or select a single file, then click on the properties
+  button in the toolbar). The file name can be edited, or settings can be
+  changed.  The file attributes and/or the new file name are written back to
+  the disk when "OK" or "Apply" is selected.  When renaming a file, if a
+  file with the same name already exists in the current directory, the
+  program will ask for confirmation about overwriting.
+
+- The option "Browse folders using a separate window..." (Options dialog)
+  works only if the explorer is accessible via $PATH.
+
+- Files can be deleted, either by using the corresponding toolbar button
+  or by choosing "Delete" from the context menu. "Deleted" files and /or
+  directories are moved into $HOME/.xclass/recycle, a log of the files
+  and their original names and locations is kept also there.
+
+- The file view window automatically refreshes it contents everytime a change
+  is detected in the directory, the checking is made every 5 secs aprox.
+
+- Settings are saved on a $HOME/.xclass/etc/explorerrc file.
+
+- The "Open With..." dialog is there, but it is not finished.
+
+- Drag and drop is partially implemented. Currently files can be moved (or
+  copied if you press ctrl during dnd) between different dirs or explorer
+  instances. Right-dragging shows a dnd menu. Dropping on an executable
+  file starts the application with the corresponding argument. Experiment
+  with it and use with care!
+
+  NOTE
+  ----
+  Xclass currently implements XDND protocol revision 4 (explained in detail
+  in http://www.newplanetsoftware.com/xdnd). It is a clean and efficient
+  protocol, is becoming the standard, and so is being adopted by many
+  programming libraries and toolkits. However, not all applications and/or
+  libraries implement the protocol as specified, and as a result you'll
+  suffer from incompatibility problems.
+
+  I've had a variable range of success with different applications:
+
+  - StarOffice: their XDND implementation is the most complete I've seen so
+    far. Bugs: when dragging a file, the drop data is not a full URL as the
+    protocol requires, but rather a full local path. The URL class included
+    with the explorer handles that case correctly.
+
+  - Gnome applications and filemanagers: they fail to negotiate the
+    protocol version to be used in dnd operations. Apparently gtk implements
+    protocol revision 3 and they just ignore any windows using a different
+    version. As a result, you won't be able to dnd anything from a gnome
+    filemanager to the xclass explorer, but it works the other way around.
+    Well... almost. They also suffer from the full URL problem, in this
+    case they specify the scheme and a full path (like file:/mydir/doc.txt),
+    but the hostname is not included. Explorer's URL class parses those
+    partial specifications correctly, but gtk apps fail to parse a full URL.
+
+  - KDE: this one uses only Motif dnd.
+
+  - KDE2: despite what they claim (http://www.kde.org/announcements/
+    announce-2.0.html), KDE2 (including Konqueror) does *not* support
+    XDND. They mainly use Motif dnd, which gnome apps also support. There
+    seems to be XDND support in Qt, and a very few apps (like konsole)
+    support XDND for text strings, but not for file objects.
+
+
+
+Unimplemented features (or TODO list)
+-------------------------------------
+
+- The Tree View is not kept in sync with the File List.
+
+- Drag and drop is not implemented for the directory tree view.
+
+- Right-click context menus are not finished yet.
+
+- Files cannot be renamed, except with the Properties dialog (edit the name
+  there!).
+
+- Missing dialogs:
+  * Change Icon for MIME types.
+  * Properties dialog for multiple files
+  * Properties dialog for special folders
+
+
+Compilation and install
+-----------------------
+
+In order to compile and run this version of the explorer, you need at least 
+xclass version 0.8.2, available at ftp://mitac11.uia.ac.be/pub/xclass and
+http://sourceforge.net/projects/xclass. Once you have xclass installed, all
+you need to do is to cd to the explorer's source directory and type 'make'.
+
+After the compilation, copy the 'explorer' executable to somewhere in your
+$PATH. Since the explorer currently loads the toolbar pixmaps and some other
+icons at run time, you must make sure that these are present in a directory
+accesible to xclass (see the xclass documentation for more details). Usually
+the required pixmaps come with the xclass distribution, so if you installed
+xclass properly you don't have to worry further. Otherwise just copy all the
+files in the explorer/icons directory to a directory which is in xclass'
+pixmap path.
+
+
+Have fun!
+Hector.

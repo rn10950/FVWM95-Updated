@@ -1,0 +1,14 @@
+Name: OnyX
+FullName: OnyX version 0.4.1
+InstallDirectory: /usr/local/OnyX-0.4.1
+LinkInstallDirectory: /usr/local/OnyX
+LinkFile: OnyX /usr/local/bin/OnyX
+WindowName: OnyX Install
+WindowClass: fOX Install
+WindowResource: fOX Install
+Header: OnyX Setup
+InstallCommand: .setup/install
+ExpectedInstallLines: 169
+CommandDescription: Compiling OnyX
+Command: make
+EstimatedLines: 46

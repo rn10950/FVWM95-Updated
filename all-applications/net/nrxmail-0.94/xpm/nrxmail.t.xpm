@@ -1,0 +1,31 @@
+/* XPM */
+static char * nrxmail_t_xpm[] = {
+/* width height num_colors chars_per_pixel */
+"16 16 9 1",
+/* colors */
+" 	s none	c none",
+".	c #585858",
+"X	c #808480",
+"o	c black",
+"O	c #0030c8",
+"+	c #909490",
+"@	c #f80000",
+"#	c #f0f4f0",
+"$	c red",
+/* pixels */
+"                ",
+"    . .         ",
+"    XXXXX. o    ",
+"   XXXX...      ",
+"   XX..         ",
+"  XX..          ",
+" X.O+@+O+@+O+@  ",
+" X.########$$#o ",
+" X.#X#XX###$$#o ",
+" X.########$$#o ",
+" X.###########o ",
+" X.###XX#XXX##o ",
+"X. ###########o ",
+".. O+@+O+@+O+@o ",
+" ...ooooooooooo ",
+"   ...          "};

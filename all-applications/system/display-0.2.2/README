@@ -1,0 +1,52 @@
+Description
+-----------
+
+This application enables you to change the visual settings of the desktop
+and xclass applications such as color, fonts, etc. It is intended to be used
+as a companion to the desktop and explorer applications.
+
+
+Usage
+-----
+
+This application is intended to be used as a fvwm95 module (for best results
+use fvwm95-2.0.43d), and as a such it should be started by an appropiate
+command in the .fvwm95rc file, for example:
+
+ AddToMenu "Module-Popup" "Xclass settings" Module /usr/local/bin/display
+
+The application can be started also directly from the command line in
+"standalone" mode. In that case, no communication with the window manager
+is possible, and settings like window decoration colors cannot be changed.
+
+When started, a "Display properties" dialog will appear. Currently, only the
+"Appearance" tab is implemented (and only partially). Select the desired
+item from the corresponding drop-down box, use the color select controls to
+change colors, then click "Apply".
+
+
+Limitations
+-----------
+
+- Changes in font settings are not dynamically processed by xclass
+  applications at this stage (xclass 0.7.4). Likewise, not all widgets are
+  capable of changing their visual attributes on the fly yet.
+
+- The color of window decorations (window borders, buttons, etc) is not
+  changed, unless you're running fvwm95 and the application is started as a
+  fvwm95 module.
+
+- Due to current fvwm95 limitations, a Recapture command has to be issued
+  after applying color changes that causes a lot of flashing.
+
+
+Compilation
+-----------
+
+You must have xclass version 0.7.4 or higher installed. To complie the
+application just do a "make". To install it, do a 'make install' as
+superuser.
+
+
+Enjoy!
+Hector.

@@ -1,0 +1,82 @@
+This is the version 0.8.2 of xcgview, a xclass port of ghostview 1.5
+
+Status Of The Port  or  Currently Implemented Features:
+
+- It can read a file using the File/Open dialog box.
+
+- It can also print the whole document or a range of pages. To select a
+  range of pages, just drag the mouse pointer over the page index listbox,
+  then select "Page/Mark" from the menu. Ctrl/click and Shift/click can
+  also be used. The behaviour should be similar to Windows-95 multiple-
+  selection listboxes.
+
+- Selected pages can be saved to a PS file.
+
+- Page size and orientation is now correct for EPS files. The default
+  value can be changed with the "View/Orientation" menu.
+
+- If the file contains information about page numbers (as it should be),
+  a "Page Index" listbox is displayed and can be used to go to specific
+  page numbers. Also, you can navigate through the document by using
+  the toolbar buttons "Next Page" and "Previous Page", and/or the
+  PgUp/PgDn keys.
+
+- If the file does not contain information about page numbers, then only
+  the "Next Page" option can be used. If the end of the document is reached,
+  it will wrap around to the beginning.
+
+- It supports zooming and unzooming of the whole page, but not of
+  a region of the document.
+
+- The page media menu is dynamically constructed. It consists of two parts:
+  the document defined page medias and the standard page media from Adobe's
+  PDD. When a document is first opened, the program will use the page
+  sizes defined in the document (if any). But once the user selects a
+  different media, it will override any document settings for all pages.
+
+- Ghostscript output and error messages are automatically displayed.
+
+- The filename can be specified in the command line, so now you can have
+  the following in your ~/.xclass/etc/mime.types file:
+
+    [application/postscript]
+    description = Postscript files
+    pattern = *.e?ps
+    icon = ps.xpm
+    action = xcgview %s
+
+
+This version of xcgview requires xclass 0.7.3 or later. In order to compile
+the program, cd to the directory where you unpacked the sources and type
+'make'. Copy the resulting 'xcgview' executable to a directory in your
+$PATH (or use 'make install' as superuser).
+
+Have fun,
+Hector.
+
+
+ChangeLog
+---------
+
+05/09/00 (0.6.1)
+
+- Added keyboard shortcuts
+
+
+04/10/01 (0.7.5)
+
+- Improved keyboard support, accelerator keys are now grabbed and the key
+  works regardless where the mouse pointer is inside the document window
+  or not.
+
+
+02/07/02 (0.7.6)
+
+- Modified to OXMain::CloseWindow() according to latest xclass release.
+
+
+25/07/02 (0.8.1)
+
+- Added recent file list to the File menu.
+
+- The PgUp/PgDn behaviour is now more comfortable.

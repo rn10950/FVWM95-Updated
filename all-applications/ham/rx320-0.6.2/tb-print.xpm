@@ -1,0 +1,28 @@
+/* XPM */
+static char * tb_print_xpm[] = {
+/* width height num_colors chars_per_pixel */
+"16 16 6 1",
+/* colors */
+" 	s None	c None",
+".	c black",
+"X	c white",
+"o	c #808080",
+"O	c #c0c0c0",
+"+	c yellow",
+/* pixels */
+"                ",
+"     .........  ",
+"    .XXXXXXXX.o ",
+"    .X.....X.oo ",
+"   .XXXXXXXX.o  ",
+"   .X.....X.... ",
+"  .XXXXXXXX.O.O.",
+" ..........O.O..",
+".OOOOOOOOOO.O.O.",
+".............OO.",
+".OOOOOOoooOO.O.o",
+".OOOOOO+++OO...o",
+".............O.o",
+" .OOOOOOOOO.O.oo",
+"  ...........oo ",
+"   ooooooooooo  "};

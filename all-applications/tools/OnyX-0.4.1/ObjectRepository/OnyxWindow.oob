@@ -1,0 +1,45 @@
+Toolbox 0
+Property Name strcpy($X,"$Y") Window
+Property Class strcpy($X,"$Y") Window
+Property Resource strcpy($X,"$Y") Window
+Property X $X=$Y 0
+Property Y $X=$Y 0
+Property Width $X=$Y 330
+Property Height $X=$Y 220
+Property Directory strcpy($X,"$Y") .
+Property BackgroundColor strcpy($X,"$Y") #c0c0c0
+Property HasBorder $X=$Y True
+Property HasTitleBar $X=$Y True
+Property HasMenu $X=$Y True
+Property HasMinimizeButton $X=$Y True
+Property HasMaximizeButton $X=$Y True
+Property HasMinimizeOption $X=$Y True
+Property HasMaximizeOption $X=$Y True
+Property HasResizeOption $X=$Y True
+Property HasMoveOption $X=$Y True
+Property HasCloseOption $X=$Y True
+Property CloseDestroysWindow $X=$Y False
+Property CloseExitsApplication $X=$Y False
+PropertySetting BackgroundColor ReadWrite ColorBrowser
+PropertySetting Directory ReadWrite FileBrowser Directory Picture "X Pixmap" *.xpm "All Files" *.*
+PropertySetting CloseDestroysWindow ReadOnly ComboBox True False
+PropertySetting CloseExitsApplication ReadOnly ComboBox True False
+PropertySetting HasBorder ReadOnly ComboBox True False
+PropertySetting HasTitleBar ReadOnly ComboBox True False
+PropertySetting HasMenu ReadOnly ComboBox True False
+PropertySetting HasMinimizeButton ReadOnly ComboBox True False
+PropertySetting HasMaximizeButton ReadOnly ComboBox True False
+PropertySetting HasMinimizeOption ReadOnly ComboBox True False
+PropertySetting HasMaximizeOption ReadOnly ComboBox True False
+PropertySetting HasResizeOption ReadOnly ComboBox True False
+PropertySetting HasMoveOption ReadOnly ComboBox True False
+PropertySetting HasCloseOption ReadOnly ComboBox True False
+Event WindowClosed
+Event WindowCloseSignaled
+Event WindowLoad
+Event ButtonPressed button x y
+Event ButtonReleased button x y
+Event ButtonClicked button x y
+Event PointerMoved x y x_root y_root
+Event WindowMoved old_x old_y x y
+Event WindowResized old_width old_height width height

@@ -1,0 +1,21 @@
+/* XPM */
+static char * OnyxProgressBar_xpm[] = {
+"20 14 4 1",
+" 	c #808080",
+".	c white",
+"X	c #C0C0C0",
+"o	c #000080",
+"                   .",
+" XXXXXXXXXXXXXXXXXX.",
+" XoooXoooXoooXXXXXX.",
+" XoooXoooXoooXXXXXX.",
+" XoooXoooXoooXXXXXX.",
+" XoooXoooXoooXXXXXX.",
+" XoooXoooXoooXXXXXX.",
+" XoooXoooXoooXXXXXX.",
+" XoooXoooXoooXXXXXX.",
+" XoooXoooXoooXXXXXX.",
+" XoooXoooXoooXXXXXX.",
+" XoooXoooXoooXXXXXX.",
+" XXXXXXXXXXXXXXXXXX.",
+"...................."};

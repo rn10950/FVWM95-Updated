@@ -1,0 +1,21 @@
+  printf("Default font:       \"%s\"\n", currentScheme->default_font);
+  printf("Menu font:          \"%s\"\n", currentScheme->menu_font);
+  printf("Mehu hilite font:   \"%s\"\n", currentScheme->menu_hi_font);
+  printf("Doc fixed font:     \"%s\"\n", currentScheme->doc_fixed_font);
+  printf("Doc prop font:      \"%s\"\n", currentScheme->doc_prop_font);
+  printf("Icon font:          \"%s\"\n", currentScheme->icon_font);
+  printf("Status font:        \"%s\"\n", currentScheme->status_font);
+  printf("\n");
+  printf("Frame bgnd color:   \"%s\"\n", currentScheme->frameBgColor);
+  printf("Frame fgnd color:   \"%s\"\n", currentScheme->frameFgColor());
+  printf("Doc bgnd color:     \"%s\"\n", currentScheme->docBgColor);
+  printf("Doc fgnd color:     \"%s\"\n", currentScheme->docFgColor());
+  printf("Sel bgnd color:     \"%s\"\n", currentScheme->selBgColor);
+  printf("Sel fgnd color:     \"%s\"\n", currentScheme->selFgColor());
+  printf("Tip bgnd color:     \"%s\"\n", currentScheme->tipBgColor);
+  printf("Tip fgnd color:     \"%s\"\n", currentScheme->tipFgColor());
+  printf("Desktop bgnd color: \"%s\"\n", currentScheme->desktopBgColor);
+  printf("\n");
+  printf("Frame bgnd pixmap:  \"%s\"\n", currentScheme->frame_bg_pixmap);
+  printf("Doc bgnd pixmap:    \"%s\"\n", currentScheme->doc_bg_pixmap);
+

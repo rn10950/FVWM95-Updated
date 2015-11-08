@@ -1,0 +1,658 @@
+OnyX Exported Project
+Start Oxp
+#!/home/peraza/xclass/applications/other/onyx/OnyX-0.4.0/OnyX
+OnyXVersion 0.4.0
+ApplicationName test1
+ToolboxItem OnyxTimer
+ToolboxItem OnyxColorDialog
+ToolboxItem OnyxFontDialog
+ToolboxItem OnyxMenuBar
+ToolboxItem OnyxMenu
+ToolboxItem OnyxMenuItem
+ToolboxItem OnyxButton
+ToolboxItem OnyxCheckBox
+ToolboxItem OnyxIcon
+ToolboxItem OnyxLabel
+ToolboxItem OnyxWindow
+ToolboxItem OnyxBase
+ToolboxItem OnyxRadioButton
+ToolboxItem OnyxComboBox
+ToolboxItem OnyxTextBox
+ToolboxItem OnyxFileDialog
+ToolboxItem OnyxScreen
+ToolboxItem OnyxMsgBox
+ToolboxItem OnyxHScrollBar
+ToolboxItem OnyxVScrollBar
+ToolboxItem OnyxListBox
+ToolboxItem OnyxTree
+ToolboxItem OnyxDraw
+StartObject
+ObjectName OnyxWindow1
+ObjectType OnyxWindow
+ObjectParent Application
+Name Window
+Class Window
+Resource Window
+X 195
+Y 230
+Width 470
+Height 300
+Directory .
+BackgroundColor #c0c0c0
+HasBorder True
+HasTitleBar True
+HasMenu True
+HasMinimizeButton True
+HasMaximizeButton True
+HasMinimizeOption True
+HasMaximizeOption True
+HasResizeOption True
+HasMoveOption True
+HasCloseOption True
+CloseDestroysWindow False
+CloseExitsApplication True
+EndObject
+StartObject
+ObjectName OnyxButton1
+ObjectType OnyxButton
+ObjectParent OnyxWindow1
+X 20
+Y 50
+Width 110
+Height 30
+Text Push Button
+Font Lucida -12
+Picture 
+IsEnabled True
+IsSticky False
+ToolTip Click me!
+EnableToolTip True
+EndObject
+StartObject
+ObjectName OnyxLabel1
+ObjectType OnyxLabel
+ObjectParent OnyxWindow1
+X 10
+Y 90
+Width 130
+Height 20
+BorderType NoBorder
+Text This is a Label
+Font "New Century Schoolbook" -12p Bold Italic
+VerticalAlignment AlignCenter
+HorizontalAlignment AlignCenter
+EndObject
+StartObject
+ObjectName OnyxCheckBox1
+ObjectType OnyxCheckBox
+ObjectParent OnyxWindow1
+X 150
+Y 90
+Width 120
+Height 20
+Text Check Button
+Font Helvetica -12
+IsChecked True
+IsEnabled True
+EndObject
+StartObject
+ObjectName OnyxRadioButton1
+ObjectType OnyxRadioButton
+ObjectParent OnyxWindow1
+X 150
+Y 40
+Width 120
+Height 20
+Text Radio Button 1
+Font Helvetica -12
+IsChecked True
+IsEnabled True
+EndObject
+StartObject
+ObjectName OnyxRadioButton2
+ObjectType OnyxRadioButton
+ObjectParent OnyxWindow1
+X 150
+Y 60
+Width 120
+Height 20
+Text Radio Button 2
+Font Helvetica -12
+IsChecked True
+IsEnabled True
+EndObject
+StartObject
+ObjectName OnyxMenuBar1
+ObjectType OnyxMenuBar
+ObjectParent OnyxWindow1
+Width 100
+EndObject
+StartObject
+ObjectName File
+ObjectType OnyxMenu
+ObjectParent OnyxWindow1
+MenuBarParent OnyxMenuBar1
+MenuParent NULL
+Text &File
+EndObject
+StartObject
+ObjectName Exit
+ObjectType OnyxMenuItem
+ObjectParent OnyxWindow1
+MenuParent File
+Text E&xit
+EndObject
+StartObject
+ObjectName Help
+ObjectType OnyxMenu
+ObjectParent OnyxWindow1
+MenuBarParent OnyxMenuBar1
+MenuParent NULL
+Text &Help
+EndObject
+StartObject
+ObjectName About
+ObjectType OnyxMenuItem
+ObjectParent OnyxWindow1
+MenuParent Help
+Text &About
+EndObject
+StartObject
+ObjectName OnyxTimer1
+ObjectType OnyxTimer
+ObjectParent OnyxWindow1
+Interval 5000
+EndObject
+StartObject
+ObjectName OnyxComboBox1
+ObjectType OnyxComboBox
+ObjectParent OnyxWindow1
+X 150
+Y 150
+Width 120
+Height 22
+QuickFocusRelease False
+EndObject
+StartObject
+ObjectName OnyxColorDialog1
+ObjectType OnyxColorDialog
+ObjectParent OnyxWindow1
+DisplayWindow ApplicationRoot()
+EndObject
+StartObject
+ObjectName OnyxButton2
+ObjectType OnyxButton
+ObjectParent OnyxWindow1
+X 20
+Y 180
+Width 110
+Height 30
+Text Color Dialog
+Font Helvetica -12
+Picture 
+IsEnabled True
+IsSticky False
+ToolTip 
+EnableToolTip False
+EndObject
+StartObject
+ObjectName OnyxButton3
+ObjectType OnyxButton
+ObjectParent OnyxWindow1
+X 20
+Y 220
+Width 110
+Height 30
+Text Font Dialog
+Font Helvetica -12
+Picture 
+IsEnabled True
+IsSticky False
+ToolTip 
+EnableToolTip False
+EndObject
+StartObject
+ObjectName OnyxFontDialog1
+ObjectType OnyxFontDialog
+ObjectParent OnyxWindow1
+DisplayWindow ApplicationRoot()
+EndObject
+StartObject
+ObjectName OnyxColorLabel
+ObjectType OnyxLabel
+ObjectParent OnyxWindow1
+X 140
+Y 180
+Width 320
+Height 30
+BorderType SunkenSingle
+Text Color
+Font "Courier" -12p Normal
+VerticalAlignment AlignCenter
+HorizontalAlignment AlignCenter
+EndObject
+StartObject
+ObjectName OnyxFontLabel
+ObjectType OnyxLabel
+ObjectParent OnyxWindow1
+X 140
+Y 220
+Width 320
+Height 30
+BorderType SunkenSingle
+Text Font
+Font Courier -12
+VerticalAlignment AlignCenter
+HorizontalAlignment AlignCenter
+EndObject
+StartObject
+ObjectName OnyxIcon1
+ObjectType OnyxIcon
+ObjectParent OnyxWindow1
+X 10
+Y 120
+Width 30
+Height 40
+Picture onyx_blank.xpm
+IsShaped True
+BorderType NoBorder
+EndObject
+StartObject
+ObjectName OnyxTextBox1
+ObjectType OnyxTextBox
+ObjectParent OnyxWindow1
+X 150
+Y 120
+Width 120
+Height 23
+Size 255
+Text Text
+QuickFocusRelease False
+EndObject
+StartObject
+ObjectName OnyxTree1
+ObjectType OnyxTree
+ObjectParent OnyxWindow1
+X 290
+Y 50
+Width 170
+Height 120
+EndObject
+StartObject
+ObjectName OnyxDraw1
+ObjectType OnyxDraw
+ObjectParent OnyxWindow1
+X 50
+Y 120
+Width 80
+Height 50
+BorderType SunkenSingle
+EndObject
+StartObject
+ObjectName OnyxButton4
+ObjectType OnyxButton
+ObjectParent OnyxWindow1
+X 20
+Y 260
+Width 110
+Height 30
+Text File Dialog
+Font Helvetica -12
+Picture 
+IsEnabled True
+IsSticky False
+ToolTip 
+EnableToolTip False
+EndObject
+StartObject
+ObjectName OnyxFileLabel
+ObjectType OnyxLabel
+ObjectParent OnyxWindow1
+X 140
+Y 260
+Width 320
+Height 30
+BorderType SunkenSingle
+Text File
+Font "Courier" -12p Normal
+VerticalAlignment AlignCenter
+HorizontalAlignment AlignCenter
+EndObject
+StartObject
+ObjectName OnyxFileDialog1
+ObjectType OnyxFileDialog
+ObjectParent OnyxWindow1
+DisplayWindow ApplicationRoot()
+DialogType OnyxOpenFileDialog
+EndObject
+End Oxp
+Start Oxc Application
+void ApplicationPreload(int argc, char *argv[])
+{
+}
+
+void ApplicationLoad(int argc, char *argv[])
+{
+	OpenStartingForm();
+}
+
+void GeneralEvent(OnyxMessage *event)
+{
+}
+End Oxc
+Start Oxc OnyxFileDialog1
+End Oxc
+Start Oxc OnyxFileLabel
+void OnyxFileLabel_ButtonPressed(long button, long x, long y)
+{
+}
+
+void OnyxFileLabel_ButtonReleased(long button, long x, long y)
+{
+}
+
+void OnyxFileLabel_PointerMoved(long x, long y, long x_root, long y_root)
+{
+}
+
+End Oxc
+Start Oxc OnyxButton4
+void OnyxButton4_ButtonClicked()
+{
+	OnyxFileDialog1->Show();
+	//snprintf(OnyxFileLabel->Text, 255, "%s\n%s", OnyxFileDialog1->DirectorySelected,
+	//					     OnyxFileDialog1->FileSelected);
+	snprintf(OnyxFileLabel->Text, 255, "%s", OnyxFileDialog1->FileSelected);
+	OnyxFileLabel->Update();
+}
+
+End Oxc
+Start Oxc OnyxDraw1
+void OnyxDraw1_ButtonPressed(long button, long x, long y)
+{
+}
+
+void OnyxDraw1_ButtonReleased(long button, long x, long y)
+{
+}
+
+void OnyxDraw1_KeyPressed(long keysym)
+{
+}
+
+void OnyxDraw1_KeyReleased(long keysym)
+{
+}
+
+void OnyxDraw1_PointerMoved(long x, long y, long x_root, long y_root)
+{
+}
+
+void OnyxDraw1_WindowExposed()
+{
+	OnyxDraw1->SetColor("yellow");
+	OnyxDraw1->FillArc(12, 12, 25, 25, 0, 360 * 64);
+	OnyxDraw1->SetColor("black");
+	OnyxDraw1->DrawArc(12, 12, 25, 25, 0, 360 * 64);
+	OnyxDraw1->SetColor("blue");
+	OnyxDraw1->FillRectangle(22, 22, 40, 22);
+	OnyxDraw1->SetColor("black");
+	OnyxDraw1->DrawRectangle(22, 22, 40, 22);
+}
+
+End Oxc
+Start Oxc OnyxTree1
+void OnyxTree1_ButtonPressed(long button, long x, long y)
+{
+}
+
+void OnyxTree1_ButtonReleased(long button, long x, long y)
+{
+}
+
+void OnyxTree1_ButtonClicked(long button, long x, long y)
+{
+}
+
+void OnyxTree1_ButtonDoubleClicked(long button, long x, long y)
+{
+}
+
+End Oxc
+Start Oxc OnyxTextBox1
+void OnyxTextBox1_TextChanged()
+{
+	strcpy(OnyxLabel1->Text, OnyxTextBox1->Text);
+	OnyxLabel1->Update();
+}
+
+void OnyxTextBox1_EnterPressed()
+{
+}
+
+End Oxc
+Start Oxc OnyxIcon1
+void OnyxIcon1_ButtonPressed(long button, long x, long y)
+{
+}
+
+void OnyxIcon1_ButtonReleased(long button, long x, long y)
+{
+}
+
+void OnyxIcon1_ButtonClicked(long button, long x, long y)
+{
+}
+
+void OnyxIcon1_PointerMoved(long x, long y, long x_root, long y_root)
+{
+}
+
+End Oxc
+Start Oxc OnyxFontLabel
+void OnyxFontLabel_ButtonPressed(long button, long x, long y)
+{
+}
+
+void OnyxFontLabel_ButtonReleased(long button, long x, long y)
+{
+}
+
+void OnyxFontLabel_PointerMoved(long x, long y, long x_root, long y_root)
+{
+}
+
+End Oxc
+Start Oxc OnyxColorLabel
+void OnyxColorLabel_ButtonPressed(long button, long x, long y)
+{
+}
+
+void OnyxColorLabel_ButtonReleased(long button, long x, long y)
+{
+}
+
+void OnyxColorLabel_PointerMoved(long x, long y, long x_root, long y_root)
+{
+}
+
+End Oxc
+Start Oxc OnyxFontDialog1
+End Oxc
+Start Oxc OnyxButton3
+void OnyxButton3_ButtonClicked()
+{
+	OnyxFontDialog1->Show();
+	strcpy(OnyxFontLabel->Text, OnyxFontDialog1->Font);
+	OnyxFontLabel->Update();
+}
+
+End Oxc
+Start Oxc OnyxButton2
+void OnyxButton2_ButtonClicked()
+{
+	OnyxColorDialog1->Show();
+	strcpy(OnyxColorLabel->Text, OnyxColorDialog1->CurrentColor);
+	OnyxColorLabel->Update();
+}
+
+End Oxc
+Start Oxc OnyxColorDialog1
+End Oxc
+Start Oxc OnyxComboBox1
+void OnyxComboBox1_ButtonPressed(long button, long x, long y)
+{
+}
+
+void OnyxComboBox1_ButtonReleased(long button, long x, long y)
+{
+}
+
+void OnyxComboBox1_PointerMoved(long x, long y, long x_root, long y_root)
+{
+}
+
+void OnyxComboBox1_ItemSelected(long item_number)
+{
+}
+
+void OnyxComboBox1_TextChanged()
+{
+}
+
+void OnyxComboBox1_EnterPressed()
+{
+}
+
+End Oxc
+Start Oxc OnyxTimer1
+void OnyxTimer1_TimerElapsed()
+{
+	strcpy(OnyxLabel1->Text, "Timer expired");
+	OnyxLabel1->Update();
+}
+
+End Oxc
+Start Oxc About
+void About_MenuItemSelected()
+{
+}
+
+void About_MenuItemHighlighted()
+{
+}
+
+End Oxc
+Start Oxc Help
+End Oxc
+Start Oxc Exit
+void Exit_MenuItemSelected()
+{
+	ApplicationClose();
+}
+
+void Exit_MenuItemHighlighted()
+{
+}
+
+End Oxc
+Start Oxc File
+End Oxc
+Start Oxc OnyxMenuBar1
+End Oxc
+Start Oxc OnyxRadioButton2
+void OnyxRadioButton2_ButtonClicked()
+{
+	OnyxRadioButton1->UnCheck();
+}
+
+End Oxc
+Start Oxc OnyxRadioButton1
+void OnyxRadioButton1_ButtonClicked()
+{
+	OnyxRadioButton2->UnCheck();
+}
+
+End Oxc
+Start Oxc OnyxCheckBox1
+void OnyxCheckBox1_ButtonClicked()
+{
+	strcpy(OnyxLabel1->Text, "Check box");
+	OnyxLabel1->Update();
+}
+
+End Oxc
+Start Oxc OnyxLabel1
+void OnyxLabel1_ButtonPressed(long button, long x, long y)
+{
+}
+
+void OnyxLabel1_ButtonReleased(long button, long x, long y)
+{
+}
+
+void OnyxLabel1_PointerMoved(long x, long y, long x_root, long y_root)
+{
+}
+
+End Oxc
+Start Oxc OnyxButton1
+void OnyxButton1_ButtonClicked()
+{
+	strcpy(OnyxLabel1->Text, "Button clicked!");
+	OnyxLabel1->Update();
+}
+
+End Oxc
+Start Oxc OnyxWindow1
+void OnyxWindow1_WindowClosed()
+{
+}
+
+void OnyxWindow1_WindowCloseSignaled()
+{
+}
+
+void OnyxWindow1_WindowLoad()
+{
+	OnyxRadioButton1->Check();
+	OnyxRadioButton2->UnCheck();
+	OnyxTimer1->Start();
+	strcpy(OnyxColorLabel->Text, "");
+	OnyxColorLabel->Update();
+	strcpy(OnyxFontLabel->Text, "");
+	OnyxFontLabel->Update();
+	strcpy(OnyxFileLabel->Text, "");
+	OnyxFileLabel->Update();
+
+	OnyxTree1->AddItem("Root");
+	OnyxTree1->AddItem("Folder1");
+	OnyxTree1->MoveUp();
+	OnyxTree1->AddItem("Folder2");
+}
+
+void OnyxWindow1_ButtonPressed(long button, long x, long y)
+{
+}
+
+void OnyxWindow1_ButtonReleased(long button, long x, long y)
+{
+}
+
+void OnyxWindow1_ButtonClicked(long button, long x, long y)
+{
+}
+
+void OnyxWindow1_PointerMoved(long x, long y, long x_root, long y_root)
+{
+}
+
+void OnyxWindow1_WindowMoved(long old_x, long old_y, long x, long y)
+{
+}
+
+void OnyxWindow1_WindowResized(long old_width, long old_height, long width, long height)
+{
+}
+
+End Oxc

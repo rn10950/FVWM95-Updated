@@ -1,0 +1,25 @@
+/* XPM */
+static char * attachment_xpm[] = {
+/* width height num_colors chars_per_pixel */
+"16 16 3 1",
+/* colors */
+" 	s none	c none",
+".	c white",
+"X	c black",
+/* pixels */
+"     ...        ",
+"    . XX.       ",
+"    .X  .X      ",
+"    .X  .X      ",
+"    .X. .X.     ",
+"    .X.X.X.X    ",
+"    .X.X.X.X    ",
+"    .X.X.X.X    ",
+"    .X.X.X.X    ",
+"    .X.X.X.X    ",
+"    .X.X.X.X    ",
+"    .X . X.X    ",
+"    .X  X .X    ",
+"     .   . X    ",
+"      ... X     ",
+"       XXX      "};

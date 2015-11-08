@@ -1,0 +1,9 @@
+- Multiple file copies
+- DnD
+- Options dialog: refresh file view after modifying mime.types file (maybe
+  OXFileList in xclass should monitor mime.types file changes?).
+- Object menus/actions
+- Recycle bin: must save recycledrc file after each modification to the
+  recycle (file must be locked during write access), so any other explorer
+  instance that opened the recycle bin could re-sync its contents [perhaps
+  this should be an xclass-core object?]

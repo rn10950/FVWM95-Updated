@@ -1,0 +1,27 @@
+This program requires the Xclass toolkit. I personally suggest that u have
+installed version 0.9.2 or newer.
+
+- Untar the package whereever you want. 
+  The result will be a subdir containing the source and icons of NRX Mail.
+
+- Switch into this directory and simply type "make".
+  After that u will (hopefully) find the binary inside this dir.
+  Copy it into a directory which is inside the PATH variable (containing all
+  dirs where executables are located).
+
+- Copy "xpm/nrxmail.s.xpm" and "xpm/nrxmail.t.xpm" into the xclass icon
+  directory (e.g. to /usr/local/xclass/icons)
+  
+- If you use fvwm95 and the pixmap path of it points to the xclass icon dir
+  add following line to your ~/.fvwm95rc file:
+
+  Style "NRX Mail"     TitleIcon nrxmail.t.xpm
+
+  (if the xclass icon dir isn't in the pixmap path, change that or copy
+  nrxmail.t.xpm into one of the pixmaps dir)
+
+- To start NRX Mail, type "nrxmail".
+  If it's your first time (first love (:) the preferences dialog will pop
+  up with some guessed values for you and your system.   
+  Adjust them as necessary and click "ok".
+  Now you are ready to read and compose mails !

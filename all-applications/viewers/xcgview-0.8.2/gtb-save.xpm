@@ -1,0 +1,26 @@
+/* XPM */
+static char *gtb_save_xpm[] = {
+/* width height num_colors chars_per_pixel */
+"16 16 4 1",
+/* colors */
+" 	s None	c None",
+".	c black",
+"X	c #808000",
+"o	c #c0c0c0",
+/* pixels */
+"                ",
+" .............. ",
+" .X.oooooooo.o. ",
+" .X.oooooooo... ",
+" .X.oooooooo.X. ",
+" .X.oooooooo.X. ",
+" .X.oooooooo.X. ",
+" .X.oooooooo.X. ",
+" .XX........XX. ",
+" .XXXXXXXXXXXX. ",
+" .XX.........X. ",
+" .XX......oo.X. ",
+" .XX......oo.X. ",
+" .XX......oo.X. ",
+"  ............. ",
+"                "};

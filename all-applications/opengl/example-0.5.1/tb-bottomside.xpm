@@ -1,0 +1,23 @@
+/* XPM */
+static char * tb_bottomside_xpm[] = {
+"16 16 4 1",
+" 	s None	c None",
+".	c #808080",
+"X	c black",
+"o	c red",
+"    ............",
+"   ..         ..",
+"  . .        . .",
+" .  .       .  .",
+"............   .",
+".   .      .   .",
+".   .      .   .",
+".   .      .   .",
+".   .      .   .",
+".   .      .   .",
+".   XXXXXXX.XXXX",
+".  Xooooooo.ooX ",
+". Xoooooooo.oX  ",
+".Xooooooooo.X   ",
+"XXXXXXXXXXXX    ",
+"                "};

@@ -1,0 +1,29 @@
+/* XPM */
+static char * tb_connect_xpm[] = {
+/* width height num_colors chars_per_pixel */
+"16 16 7 1",
+/* colors */
+" 	s None	c None",
+".	c #808080",
+"X	c black",
+"o	c white",
+"O	c #c0c0c0",
+"+	c yellow",
+"@	c green",
+/* pixels */
+"       .XXXXXXX ",
+"   .o .oOOOOOO.X",
+"+  .+.o.+oooo..X",
+".+ .o..+OOOOO..X",
+" .+.+.+OOOO@@..X",
+" +.+o....OOOO..X",
+"...o++OOOOOOO..X",
+"  o.oo.OOOOOO..X",
+".  .+OoOOOOOO..X",
+"   .oXXXXOOOO..X",
+"   XOoXooXOOO..X",
+"XXXXooXOOXXXXXXX",
+"XXXXoOXOOXXXXXXX",
+"   XOOXOOXOOO.X ",
+"    XXXXX XXXX  ",
+"                "};

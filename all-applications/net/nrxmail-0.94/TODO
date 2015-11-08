@@ -1,0 +1,45 @@
+Hu....lotsa things:
+
+Attachments:
+------------
+- handling "quoted printable" attachments
+- handling 8bit encoded attachments (right now they are treated as 7bit encoded attachs)
+- handling binary attachments
+- more attention to attachment header information
+
+
+Mails:
+------
+- being really rf822 compilant
+- being not that picky about form of header fields
+- dealing font information of a mail
+- attaching files autoamtically when forwarding mail
+
+Adressbook:
+-----------
+- start writing it (:
+
+General:
+--------
+- bugfixing (:
+- speed improvement
+- source clean up
+- modifying look'n'feel to be fOX styleguide compilant
+- using index files for every folder for proper mail state and maybe faster parsing
+- automatic mail checking
+- more features for customizing th app
+- pop3/imap support (well, guess just an interface to an existing mail fetcher)
+
+more, more, more...
+
+
+Known Bugs:
+-----------
+
+- When saving/printing composed mails, the adresses of a particular field are written to a
+  single line (should be one adress per line)
+- the app is kinda picky about mail headers, may crash sometimes due to exotic
+  representation of header fields (why does every mail client on earth differ in creating
+  mail headers ?????)
+- ...
+

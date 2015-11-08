@@ -1,0 +1,19 @@
+/* XPM */
+static char * OnyxButton_xpm[] = {
+"18 12 4 1",
+" 	c white",
+".	c black",
+"X	c #c0c0c0",
+"o	c #808080",
+"                 .",
+" XXXXXXXXXXXXXXXo.",
+" XXXXXXXXXXXXXXXo.",
+" XXXXXXXXXXXXXXXo.",
+" XXXXXXXXXXXXXXXo.",
+" XXXXXXXXXXXXXXXo.",
+" XXXXXXXXXXXXXXXo.",
+" XXXXXXXXXXXXXXXo.",
+" XXXXXXXXXXXXXXXo.",
+" XXXXXXXXXXXXXXXo.",
+" oooooooooooooooo.",
+".................."};

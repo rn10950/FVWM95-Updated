@@ -1,0 +1,244 @@
+<html>
+<head>
+<title>OnyX installation</title>
+</head>
+<body bgcolor="#FFFFF0">
+
+<H1>Installing Onyx</H1>
+
+OnyX requires the Xclass library, which can be downloaded from
+<a href="http://xclass.sourceforge.net">sourceforge</a>.<p>
+
+Chances are that Xclass is already installed on your machine, as some
+Linux distributions install it by default.
+
+One way to check which version of Xclass is installed on your machine is
+through the <tt><b>xc-config</b></tt> utility. That is a small shell script that
+comes with the library and that can be used, among other things, to check
+the Xclass version installed on your machine. Just type the command:<p>
+
+<blockquote>
+<tt>xc-config --version</tt>
+</blockquote>
+
+If you get a "<tt>command not found</tt>" message from the shell, then
+Xclass has not been installed yet on your machine. Otherwise the
+<tt>xc-config</tt> will respond with the Xclass version number. You should
+get <tt><b>0.9.2</b></tt> or a higher number. If you have an earlier
+version, I would strongly recommend you to upgrade to the latest one, since
+the current version of OnyX uses features only found in Xclass 0.9.2 and
+up.<p>
+
+If necessary, download the latest <a href="http://xclass.sourceforge.net">Xclass
+library</a> and install it following the instructions supplied with the package.<p>
+
+Once you have checked that you have the correct version of Xclass installed,
+you can proceed with the OnyX installation. This is done with an interactive
+setup program which will guide you step-by-step through the installation
+process in a simple and intuitive way.<p>
+
+First, unpack the OnyX source tarball:<p>
+
+<blockquote>
+<tt>tar zxf OnyX-0.9.2.tar.gz</tt> <i>(if you have GNU tar)</i><br>
+<tt>gunzip -c file.tar.gz | tar xvf -</tt> <i>(otherwise)</i>
+</blockquote>
+
+Then cd to the OnyX directory and run the setup program:<p>
+
+<blockquote>
+<tt>cd OnyX-0.4.2</tt><br>
+<tt>./setup</tt>
+</blockquote>
+
+<blockquote>
+
+<tt>
+'oxs' command not found. Using text based setup.<br>
+<br>
+Welcome,<br>
+You are about to install<br>
+OnyX version 0.4.0<br>
+on your Linux system.<br>
+<br>
+[N]ext [C]ancel > n<br>
+<br>
+Compiling OnyX<br>
+Please wait...<br>
+<br>
+make[1]: Entering directory<br>
+/home/peraza/xclass/applications/tools/OnyX/.onyx'<br>
+Compiling base object OnyxBase.cc<br>
+Compiling base object OnyxWindow.cc<br>
+Compiling base object OnyxLabel.cc<br>
+Compiling base object OnyxIcon.cc<br>
+Compiling base object OnyxButton.cc<br>
+Compiling base object OnyxCheckBox.cc<br>
+Compiling base object OnyxRadioButton.cc<br>
+Compiling base object OnyxSpinButton.cc<br>
+Compiling base object OnyxComboBox.cc<br>
+Compiling base object OnyxListBox.cc<br>
+Compiling base object OnyxTextBox.cc<br>
+Compiling base object OnyxTextCanvas.cc<br>
+Compiling base object OnyxTree.cc<br>
+Compiling base object OnyxVScrollBar.cc<br>
+Compiling base object OnyxHScrollBar.cc<br>
+Compiling base object OnyxDraw.cc<br>
+Compiling base object OnyxMsgBox.cc<br>
+Compiling base object OnyxFileDialog.cc<br>
+Compiling base object OnyxColorDialog.cc<br>
+Compiling base object OnyxFontDialog.cc<br>
+Compiling base object OnyxMenuBar.cc<br>
+Compiling base object OnyxMenu.cc<br>
+Compiling base object OnyxMenuItem.cc<br>
+Compiling base object OnyxTimer.cc<br>
+Compiling base object OnyxScreen.cc<br>
+ar cr libOnyX.a OnyxBase.o OnyxWindow.o OnyxLabel.o OnyxIcon.o OnyxButton.o OnyxCheckBox.o OnyxRadioButton.o OnyxSpinButton.o OnyxComboBox.o OnyxListBox.o OnyxTextBox.o OnyxTextCanvas.o OnyxTree.o OnyxVScrollBar.o OnyxHScrollBar.o OnyxDraw.o OnyxMsgBox.o OnyxFileDialog.o OnyxColorDialog.o OnyxFontDialog.o OnyxMenuBar.o OnyxMenu.o OnyxMenuItem.o OnyxTimer.o OnyxScreen.o<br>
+ranlib libOnyX.a<br>
+make[1]: Leaving directory<br>
+/home/peraza/xclass/applications/tools/OnyX/.onyx'<br>
+Compiling main.cc<br>
+Compiling AboutWindow.cc<br>
+Compiling Application.cc<br>
+Compiling CCHelpWindow.cc<br>
+Compiling CustomControlsWindow.cc<br>
+Compiling MainWindow.cc<br>
+Compiling MakeWindow.cc<br>
+Compiling MenuEditor.cc<br>
+Compiling MenuEditor2.cc<br>
+Compiling NewProjectWindow.cc<br>
+Compiling OptionsWindow.cc<br>
+Compiling ProjectExplorer.cc<br>
+Compiling PropertiesWindow.cc<br>
+Compiling SplashScreen.cc<br>
+Compiling Toolbox.cc<br>
+Linking all objects<br>
+MainWindow.o(.text+0x3637): In function `CreateApplicationMenuItem_MenuItemSelected()': /home/peraza/xclass/applications/tools/OnyX/MainWindow.cc:1701: the use of `tmpnam' is dangerous, better use `mkstemp'<br>
+Stripping OnyX<br>
+OnyX is ready.<br>
+<br>
+Done.<br>
+<br>
+[N]ext [P]revious [C]ancel > n<br>
+</tt>
+</blockquote>
+
+You can safely ignore the last warning. Yes, the use of <tt>tmpnam</tt> is
+deprecated, but the newer <tt>mkdtemp</tt> is not available in older systems.
+And in addition, OnyX will not compromise the security of your system at all
+by using it.<p>
+
+Next, the setup program proceeds to copy the executable file and the bunch
+of OnyX objects to the appropiate directory. By default, a directory is
+created in <tt>/usr/local</tt>, but you can change that to something else if
+you prefer. Many Linux systems nowadays no longer install third-party
+applications under <tt>/usr/local</tt>, but instead under <tt>/usr/opt</tt>,
+<tt>/usr/share</tt> or something like that. In this example, we install
+OnyX under <tt>/usr/share</tt> (note that you should specify the full
+directory name where OnyX files will reside, and not just the parent):
+
+<blockquote>
+<tt>
+<br>
+[N]ext [P]revious [C]ancel > n<br>
+<br>
+OnyX will be installed into<br>
+/usr/local/OnyX-0.4.1<br>
+<br>
+[N]ext [P]revious [M]odify [C]ancel > m<br>
+Enter new installation directory > /usr/share/OnyX-0.4.1<br>
+<br>
+OnyX will be installed into<br>
+/usr/share/OnyX-0.4.1<br>
+<br>
+[N]ext [P]revious [M]odify [C]ancel > n<br>
+Installing<br>
+Please wait...<br>
+<br>
+`OnyX' -> `/usr/share/OnyX-0.4.1/OnyX'<br>
+...<br>
+</tt>
+</blockquote>
+
+Here you get a rather long listing, showing what file gets installed where.
+
+<blockquote>
+<tt>
+...<br>
+<br>
+Done.<br>
+<br>
+[N]ext [P]revious [C]ancel > n<br>
+<br>
+To make access easier, a<br>
+symbolic link to the directory<br>
+/usr/share/OnyX-0.4.1<br>
+can be made at<br>
+/usr/local/OnyX<br>
+<br>
+[N]ext [P]revious [M]odify [C]ancel [D]on't Link > m<br>
+Enter new link location > /usr/share<br>
+<br>
+To make access easier, a<br>
+symbolic link to the directory<br>
+/usr/share/OnyX-0.4.1<br>
+can be made at<br>
+/usr/share<br>
+<br>
+[N]ext [P]revious [M]odify [C]ancel [D]on't Link > n<br>
+<br>
+To make access easier, a<br>
+symbolic link to the file/program<br>
+OnyX<br>
+can be made at<br>
+/usr/local/bin/OnyX<br>
+<br>
+[N]ext [P]revious [M]odify [C]ancel [D]on't Link > m<br>
+Enter new link location > /usr/share/bin/OnyX<br>
+<br>
+To make access easier, a<br>
+symbolic link to the file/program<br>
+OnyX<br>
+can be made at<br>
+/usr/share/bin/OnyX<br>
+<br>
+[N]ext [P]revious [M]odify [C]ancel [D]on't Link > <br>
+<br>
+Setup Complete<br>
+The complete installation log<br>
+may be viewed in setup.log<br>
+<br>
+[P]revious [F]inish > f<br>
+<br>
+(this will bring you back to the shell prompt)<br>
+</tt>
+
+</blockquote>
+
+At this point OnyX should be ready for use. You can try it right now, by
+entering the command:
+
+<blockquote>
+<tt>OnyX</tt>
+</blockquote>
+
+You should see the splash screen appearing, followed by the main window
+sticking to the top part of your display.<p>
+
+One extra touch: go to the <b>Tools</b> menu and select <b>Options...</b>,
+in the dialog window that appears set your favorite editor by changing the
+<b>Editor Command</b> field. The default is to run pico under an xterm,
+which definitively does not give a very professional look. You can use, for
+example, the notepad application that comes with xclass for a more uniform
+look and feel. Or perhaps you prefer gnome's gnotepad. Or emacs... is up to
+you. Just don't forget to specify an xterm if your favorite editor is a
+text-mode console application. Finish by clicking the <b>Save</b> button,
+and you're done with the OnyX installation.<p>
+
+<hr>
+<a href="tutorial.html">Index</a>
+<a href="intro.html">Back</a>
+<a href="helloworld.html">Next</a>
+
+</body>
+</html>

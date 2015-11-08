@@ -1,0 +1,129 @@
+Intro
+-----
+
+This the version 0.5.1 of fOXIrc, an irc client with a nice graphical 
+(point-and-click) user interface.
+
+
+Installation
+------------
+
+This version of fOXIrc requires xclass 0.9.2 or newer. To build and install
+the irc client, cd to the directory where you unpacked the sources and enter
+the following commands:
+
+  make
+  make install
+
+The last command must be run as superuser. If you do not have root access,
+you can install the application locally in your home directory, by typing
+
+  make install_user
+
+instead of 'make install'. That will put the executable in $HOME/.xclass/bin
+and the help files in $HOME/.xclass/docs/foxirc. You should then either to
+add $HOME/.xclass/bin to your $PATH environment variable, or to copy the
+foxirc executable to a suitable directory.
+
+
+Quick usage guide
+-----------------
+
+The fOXIrc user interface is very intuitive (I hope!). When you first start
+the program, the "info" window will appear. Connection messages, server
+notices, the MOTD and some other miscellaneous information are shown in that
+window.
+
+To connect to a server use the "IRC/Connect to..." menu option (or click on
+the "connect" toolbar icon). In the dialog box that appears fill in the
+hostname, port, set the nick and/or irc name, then click "Connect".
+
+You can also setup a list of your prefered servers. Use the preferences
+dialog ("Edit/Preferences..." from the menu or the little hammer toolbar
+button), click on the "Servers" tab and add your servers. Next time you can
+use the combo box at the top of the Connect dialog to select your favorite
+server.
+
+To join a channel, just type its name in the "Join" entry box below the
+toolbar (do not forget the "#" symbol), and press Enter. If the channel
+requires a key, just type the key after the channel name, separated by an
+space (e.g. "#vipchannel secretkey").
+
+Channel windows have a set of buttons with the nick names of the people
+present in the channel. Channel operators and voiced users are marked by an
+icon. Clicking on the buttons pops up a menu with which you can start a
+private chat, change the user's mode (if you are a channel operator), start
+a DCC chat or file send, send a CTCP command, etc.
+
+Private messages appear on a separate window, which can be used to have a
+separate, private chat.
+
+All standard IRC text attributes (bold, underline and reverse video) are
+supported, as well as mIRC color extensions and ANSI color codes.
+
+The output of any window (info, channel, private or DCC chat) can be sent
+to a log file, each window can have its own separate log file. Since text
+attributes and color codes are also sent to the log, I have included a
+"Log/View..." option to view the saved log files (there is also a simple
+C program included with this distribution, named mirc2ansi, which
+translates color and text attributes into their approximate ANSI
+equivalents, so that the file could be viewed by simply 'cat'-ing it
+through mirc2ansi).
+
+The program also recognizes a few of ircII-style commands, the following can
+be typed on the channel window:
+
+/me <action>                 - sends an action text to the channel
+/notice <message>            - sends a notice to the channel
+/names                       - works only for the current channel,
+                               refreshes the name list (you won't see
+                               any output).
+/leave                       - leaves the channel
+/msg <nick>                  - open a new window for a private chat with
+                               the specified user
+/nick <newnick>              - change nicks
+/raw <command>               - send the specified command to the server
+/quote <command>             - same as /raw
+/wallops <message>           - send a wallops message (works only if you
+                               are an irc operator)
+/mode <mode> [<arguments>]   - set or change channel mode (note that the
+                               channel must not be specified, the command
+                               works only for the current channel)
+/umode <usermode>            - change user mode
+/whois <nick>                - shows information about the specified nick
+/whowas <nick>               - shows information about who used the given
+                               nick last
+/invite <nick>               - invite a person to join the current channel
+                               (like in /mode above, you do not have to
+                               specify the channel name)
+/kick <nick>                 - kick nick out of the channel
+/<command>                   - send 'command' as raw (this lets you enter
+                               such commands as /who, /silence, etc.)
+/ctcp <nick or channel> <command> <args> - send a CTCP command to the
+                               specified nick or channel.
+
+Private chat (message) windows also recognize a few of these commands:
+
+/me <action>                 - sends an action text to the ohter party
+/notice <message>            - sends a notice to the user
+/msg <nick>                  - open a new window for private chat with nick
+/raw <command>               - send the specified command to the server
+/quote <command>             - same as /raw
+/whois <nick>                - shows information about the specified nick
+/whowas <nick>               - shows information about who used the given
+                               nick last
+
+DCC chat windows only recognize the /me command.
+
+The following features are not yet implemented:
+
+- Ignores
+- Channel monitoring
+- Channel encryption (CTCP SED)
+- Auto-log
+- DCC resume
+- Scripts
+
+
+Enjoy it!
+Hector <hperaza@sourceforge.net>

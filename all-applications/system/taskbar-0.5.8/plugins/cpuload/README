@@ -1,0 +1,20 @@
+Intro
+-----
+
+This is a "cpu load" plugin for the taskbar, it displays the cpu usage graph 
+in the tray window.
+
+
+Configuration options
+---------------------
+
+The plugin is loaded by the taskbar at startup time by specifying a
+"[plugin]" command in your .taskbarrc file (see the taskbar's README file
+for more details), for example:
+
+[plugin]
+file = cpuload.so
+
+At this time no additional configuration options are supported. There is a
+context menu which appears by clicking the right mouse button over the graph
+window, but the only working options are "Clear", "SMP mode", and "Exit".

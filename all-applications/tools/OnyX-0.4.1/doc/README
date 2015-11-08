@@ -1,0 +1,62 @@
+This is an Alpha verion. Thus, I don't even guarantee it will compile. To
+aid in getting started, here are a few things I have set up on my machine.
+
+Onyx resides in my xclass/clients directory. Place the tar file there and
+unpack it. It should create the right directory "OnyX".
+
+To compile, try a ./setup (or, alternatively a make) in the OnyX directory.
+
+Before starting OnyX, add the icons and ObjectRepository directories to your
+OX_POOL environment variable, for example:
+
+  export OX_POOL=/usr/local/xclass-icons:/usr/local/src/xclass-new/
+    clients/OnyX-0.3.0.1/icons:/usr/local/src/xclass-new/clients/OnyX-0.3.0.1/
+    ObjectRepository
+
+If you can get it going, use NewProject from the file menu to get started.
+
+Save file only saves the code you change. Save project saves all objects and
+code.
+
+There are now two sample applications included. You will find them in the
+onyx/doc/samples directory.
+
+To use them, select "Import Project" from the "File" menu. Select one of the
+.oep files. Then select a name and location for the new project. Once the
+project has been created you can now open it as usual. Changing the project
+will not harm the .oep (OnyX Exported Project) file.
+
+Here are some things to watch out for:
+
+The Makefiles are from my machine and OnyX generates similar makefiles.
+(This is why I requested Linux or FreeBSD users). If these make files don't
+allow you to compile your new project then you will have to change the
+coding. Search for InitializeInternalMakefile and
+InitializeInternalBaseMakefile in MainWindow.cc. If you make changes let me
+know so I can know how to ensure compatability.
+
+All of the objects are usable, although some have not had their full
+functionality coded yet. Nothing should change in the future as for as the
+current interfaces. Only new things are planned to be added.
+
+The exception to the above is the OnyXTree. Though it will most likely hold
+as true, I won't guarantee it yet since it is declared experimental.
+
+OnyX.t.xpm (16x16) and OnyX.s.xpm (32x32) icons are now included. I remade
+these. What do you think? Check fvwm95rc.append and mime.types.append for
+the lines to include in their appropriate files.
+
+onyx stuff has now been renamed OnyX. So watch out for that name of the
+executable. ;)
+
+The menu editor will only start if you have an OnyX Menu Bar Selected.
+
+Take a peek at the known bugs on the official site. If its not there and you
+find one, let me know.
+
+If you have any questions, which you will, contact me... :)
+
+Have fun. Good Coding. Avoid Microsoft. Sincerely,
+
+Frank Hall
+c705751@showme.missouri.edu

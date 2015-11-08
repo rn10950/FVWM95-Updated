@@ -1,0 +1,84 @@
+Intro
+-----
+
+This the version 0.5.6 of foxftp, a cool ftp client. The program was 
+originally started by M. Gerald, I just took the latest version I could 
+find on the net (0.3), corrected a few bugs and made it compile under
+the latest xclass.
+
+
+Installation
+------------
+
+This version of foxftp requires xclass 0.8.3 or higher. To build the
+executable, cd to the directory where you unpacked the sources and type
+'make'. Copy the resulting 'foxftp' executable to a directory somewhere in
+your $PATH (or use 'make install' as superuser).
+
+
+Usage
+-----
+
+The foxftp user interface is very intuitive: when you start the program
+you'll see a window with two panes showing the current directory contents
+of the local machine and a directory tree view, much like the explorer.
+
+You can then start one or more ftp connections, by choosing either
+"Connect" or "Quick Connect" from the "File" menu or the corresponding
+toolbar buttons.
+
+"Quick connect" opens a dialog window that lets you enter the remote host
+name, login name and password (if you select "use anonymous ftp" the login
+and password fields will be disabled). When you click OK you will be
+connected to the remote site and a new window will appear showing the files
+in the remote machine, much like the window for the local machine, but with
+one extra pane at the bottom where you can monitor the ftp commands and
+responses.
+
+The "Connect" option, in the other hand, opens a Bookmark manager dialog
+window. Originally there will be no bookmarks, so you can start first by
+creating a folder (and maybe subfolders), and then adding some bookmarks
+to them. Bookmarks are organized in a tree fashion, quite like Netscape's
+bookmark manager: you can have an arbitrary number of folders (each one
+representing an internet domain, organization, or whatever you like) with an
+arbitrary number of bookmarks (each one representing a single host machine).
+When you're done adding and organizing your bookmarks, click "Save",
+otherwise the lastest changes will be lost if you accidentally exit foxftp
+(the application does not warn you about unsaved bookmark changes). The
+"Connect" button in the dialog does what it says - it will connect you to
+the selected site.
+
+Since there are not Cut/Paste or Drag-and-Drop operations implemented
+at this moment, file transfers are done in the following way:
+
+Local to remote:
+
+1. Select in the local window the files you want to transfer to the
+   remote machine.
+2. Click on the window of the desired remote machine.
+3. Select "Upload" from the "File" menu.
+
+Remote to local:
+
+1. Select in the remote machine window the files you want to transfer
+   to the local machine.
+2. Select "Download" from the file menu.
+
+But there is still a much easier way that works for any kind of transfer,
+including remote-to-remote: just select the files you want to transfer
+from the desired source window (local or remote), then right-click and
+select "Transfer >" and then the name of the destination machine from
+the context menu.
+
+While the files are being transferred, a popup window appears showing
+a couple of progress bars and a "Cancel" button that you can use if
+you want to stop the transfer.
+
+The program includes some other niceties such as automatic sending of
+NOOP commands to the remote host in order to keep the connection alive,
+automatic retries (I haven't tried that yet), and more. Just check out
+the "Options" menu.
+
+
+Enjoy it!
+Hector.

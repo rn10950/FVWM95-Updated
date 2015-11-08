@@ -1,0 +1,30 @@
+/* XPM */
+static char * apm_alert_xpm[] = {
+/* width height num_colors chars_per_pixel */
+"16 16 8 1",
+/* colors */
+" 	s None	c None",
+".	c #808080",
+"X	c black",
+"o	c white",
+"O	c #c0c0c0",
+"+	c red",
+"@	c #000080",
+"#	c blue",
+/* pixels */
+"     ...X       ",
+"  ...oO.XXX     ",
+" ...O...X..X    ",
+" .oO.....O.X  ++",
+" .oOOOOOOO.X  ++",
+" .oOOO+OOO.X  ++",
+" .oOO+++OO.X  ++",
+" .oOOO+OOO.X  ++",
+" .oOOOOOOO.X  ++",
+" .oOOOOOOO.X  ++",
+" .oOOOOOOO.X    ",
+" .oOOOOOOO.X  ++",
+" .oOO+++OO@X  ++",
+" .#.OOOOO#@X    ",
+"  .######@X     ",
+"   .XXXXX.      "};

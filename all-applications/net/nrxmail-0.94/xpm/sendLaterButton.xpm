@@ -1,0 +1,30 @@
+/* XPM */
+static char * sendLaterButton_xpm[] = {
+/* width height num_colors chars_per_pixel */
+"16 16 8 1",
+/* colors */
+" 	s none	c none",
+".	c black",
+"X	c #ffffce",
+"o	c red",
+"O	c #000084",
+"+	c white",
+"@	c #ff8c39",
+"#	c blue",
+/* pixels */
+"     .....      ",
+"    .XX.XX.     ",
+"   ..XX.XX..    ",
+"  .XXXX.XXXX.   ",
+"  .XXXX.XXXX.   ",
+"oo..XXX......oO ",
+"O+.XXXXXXXXX.+o.",
+"O+.XXXXXXXXX.@o.",
+"O++..XXXXX..@@#.",
+"o++..XX.XX.@@@#.",
+"o++++.....++++o.",
+"O+++++++++++++o.",
+"o+++++++..+.++#.",
+"o+++++++++++++#.",
+"OOooOOooOOooOOo.",
+" ..............."};

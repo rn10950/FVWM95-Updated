@@ -1,0 +1,33 @@
+/* XPM */
+static char * OnyxMenuBar_xpm[] = {
+/* width height num_colors chars_per_pixel */
+"16 21 6 1",
+/* colors */
+" 	c #c3c3c3",
+".	s iconColor1	m black	c black",
+"X	c white",
+"o	c #838383",
+"O	c #000080",
+"+	s iconColor5	m black	c blue",
+/* pixels */
+"               .",
+" XXXXXXXXXXXXXo.",
+" X            o.",
+" X .o .oo. o  o.",
+" X ..o.o.oo.  o.",
+" X            o.",
+" XOOOOOOOOOOOOo.",
+" XOXX+X+OXX+OOo.",
+" XOX++XX++X+OOo.",
+" XOOOOOOOOOOOOo.",
+" X            o.",
+" X            o.",
+" X o. ..o.o.  o.",
+" X ..o.oo.o.  o.",
+" X            o.",
+" X            o.",
+" X .oo. o ..  o.",
+" X .o..o.oo.  o.",
+" X            o.",
+" oooooooooooooo.",
+"................"};

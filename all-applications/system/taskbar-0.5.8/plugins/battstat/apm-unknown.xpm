@@ -1,0 +1,30 @@
+/* XPM */
+static char * apm_unknown_xpm[] = {
+/* width height num_colors chars_per_pixel */
+"16 16 8 1",
+/* colors */
+" 	s None	c None",
+".	c #808080",
+"X	c black",
+"o	c white",
+"O	c #c0c0c0",
+"+	c #808000",
+"@	c yellow",
+"#	c red",
+/* pixels */
+"     ...X       ",
+"  ...oO.XXX     ",
+" ...O...XO+X    ",
+" .o@.....@+X    ",
+" .o@@@@@@@+X    ",
+" .o@@###@@+X    ",
+" .o@#@@@#@+X    ",
+" .o@#@@@#@+X    ",
+" .o@@@@#@@+X    ",
+" .o@@@#@@@+X    ",
+" .o@@@#@@@+X    ",
+" .o@@@@@@@+X    ",
+" .o@@@#@@@+X    ",
+" .o@@@@@@@+X    ",
+"  .+@@@@@XX     ",
+"   .XXXXX.      "};

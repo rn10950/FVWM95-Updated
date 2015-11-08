@@ -1,0 +1,46 @@
+
+- lock Site's if transfer in progress : partially OK
+
+- global configuration : OK
+  use global config
+
+- cancel download : OK
+
+- kill whitespaces in hostname of site : OK
+
+- update dir after download : OK
+
+- show busy cursor : partially OK
+
+- set timeout in main and clean statusbar after timeout : OK
+
+- use info in general_config -close on disconnect/disconnect on close : OK
+
+- open file with ....
+- or open file with default one of mimetypes
+
+- ListTree - Popup(Open/Transfer/Copy/Paste/Delete/Rename/Properties)
+
+- upload mode : Case sensitive/Lowercase/Uppercase : OK
+
+- rename from File->Rename
+
+- rename of ListTree item
+
+- copy/paste for all entries
+
+- implement stop button -- 
+
+- busy cursor when creating file list
+
+- Transfer info - scroll file name ....
+
+- if a file is a link update size of file (get correct size of file)!!!!
+
+- Implement all other missing features
+
+- Drag'n drop would be very nice
+
+- handle "broken pipe" cases.
+
+- Lots of things...
