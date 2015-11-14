@@ -27,11 +27,11 @@ style "standard-default"
   fg[PRELIGHT]      = { 0.0, 0.0, 0.0 }
   fg[SELECTED]      = { 1.0, 1.0, 1.0 }
 
-  bg[ACTIVE]        = { 0.83, 0.81, 0.78 } 
-  bg[INSENSITIVE]   = { 0.83, 0.81, 0.78 } 
-  bg[NORMAL]        = { 0.83, 0.81, 0.78 } 
-  bg[PRELIGHT]      = { 0.83, 0.81, 0.78 } 
-  bg[SELECTED]      = { 0.04, 0.14, 0.41 }
+  bg[ACTIVE]        = "#FFFFFF" # scroll bar and button background (checkerboard in ms-win)
+  bg[INSENSITIVE]   = "#c0c0c0" # disabled buttons background
+  bg[NORMAL]        = "#c0c0c0" # equiv. of 3d objects
+  bg[PRELIGHT]      = "#c0c0c0" # should be same as [NORMAL]
+  bg[SELECTED]      = { 0.04, 0.14, 0.41 } #same as base[ACTIVE]
 
   base[ACTIVE]      = { 0.04, 0.14, 0.41 }
   base[INSENSITIVE] = { 0.83, 0.81, 0.78 }

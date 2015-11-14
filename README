@@ -18,7 +18,20 @@ as close to the Windows 95 "classic" theme as possible. My goal is to
 have something to fall back on once program developers finally pull the
 plug on Windows XP/2003 compatibility.
 
+
+GTK+ THEMES
+===========
+
 In the future, I wish to create a GTK2 and GTK3 theme to include by default,
 it would do wonders for OS integration. Possibly a modification of "Redmond"
 mapped closer to the Windows 95 style. Maybe even have the system colors
 match up to the colors of the GTK themes.
+
+I have a sample gtkrc for GTK+ 2.0 in gtk-themes/gtk-2/. This is pretty
+close to what Windows would look like, except for some font and scrollbar
+issues. Our main issue is GTK3, as many applications, most notably
+Mozilla-based applications, are switching to GTK3. For GTK3, we may have
+to include a full-fledged theme. 
+
+I am considering working on a python-based system that can change the
+GTK colors as well as the FVWM colors to create an integrated OS.
