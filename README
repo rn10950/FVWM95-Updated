@@ -1,9 +1,9 @@
 FVWM95 Updated README
 =====================
 
-This is the FVWM95 sources and xclass applications and library updated
-to work and compile on modern Linux distributions. I have included 
-three root level directories:
+This is the FVWM95 sources and xclass applications and library forked
+to work and compile on modern Linux distributions, along with added
+features. I have included three root level directories:
 
   - fvwm95/             - the FVWM95 window manager source
   - xclass/             - the source for the xclass library
