@@ -1,0 +1,6029 @@
+# Irish translations for nautilus package.
+# Copyright (C) 2000, 2004, 2007 Free Software Foundation, Inc.
+# Alastair McKinstry <mckinstry@computer.org>, 2000.
+# Paul Duffy <dubhthach@frink.nuigalway.ie>, 2003.
+# Seán de Búrca <leftmostcat@gmail.com>, 2007.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: nautilus HEAD\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-12-26 12:53-0700\n"
+"PO-Revision-Date: 2007-12-26 12:53-0700\n"
+"Last-Translator: Seán de Búrca <leftmostcat@gmail.com>\n"
+"Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=5; plural=n==1 ? 0 : (n%10==1 || n%10==2) ? 1 : (n%"
+"10>=3 && n%10<= 6) ? 2 : ((n%10>=7 && n%10<=9) || n==10) ? 3 : 4;\n"
+
+#: ../data/browser.xml.h:1
+msgid "Apparition"
+msgstr "Taibhse"
+
+#: ../data/browser.xml.h:2
+msgid "Azul"
+msgstr ""
+
+#: ../data/browser.xml.h:3
+msgid "Black"
+msgstr "Dubh"
+
+#: ../data/browser.xml.h:4
+msgid "Blue Ridge"
+msgstr ""
+
+#: ../data/browser.xml.h:5
+msgid "Blue Rough"
+msgstr ""
+
+#: ../data/browser.xml.h:6
+msgid "Blue Type"
+msgstr "Saghas Gorm"
+
+#: ../data/browser.xml.h:7
+msgid "Brushed Metal"
+msgstr ""
+
+#: ../data/browser.xml.h:8
+msgid "Bubble Gum"
+msgstr ""
+
+#: ../data/browser.xml.h:9
+msgid "Burlap"
+msgstr ""
+
+#: ../data/browser.xml.h:10
+msgid "C_olors"
+msgstr "_Dathanna"
+
+#: ../data/browser.xml.h:11
+msgid "Camouflage"
+msgstr "Duaithníocht"
+
+#: ../data/browser.xml.h:12
+msgid "Chalk"
+msgstr "Cailc"
+
+#: ../data/browser.xml.h:13
+msgid "Charcoal"
+msgstr "Fioghual"
+
+#: ../data/browser.xml.h:14
+msgid "Concrete"
+msgstr "Coincréit"
+
+#: ../data/browser.xml.h:15
+msgid "Cork"
+msgstr "Corc"
+
+#: ../data/browser.xml.h:16
+msgid "Countertop"
+msgstr "Barr an Cuntar"
+
+#: ../data/browser.xml.h:17
+msgid "Danube"
+msgstr ""
+
+#: ../data/browser.xml.h:18
+msgid "Dark Cork"
+msgstr "Corc Dorcha"
+
+#: ../data/browser.xml.h:19
+msgid "Dark GNOME"
+msgstr "GNOME Dorcha"
+
+#: ../data/browser.xml.h:20
+msgid "Deep Teal"
+msgstr ""
+
+#: ../data/browser.xml.h:21
+msgid "Dots"
+msgstr "Ponca"
+
+#: ../data/browser.xml.h:22
+msgid "Drag a color to an object to change it to that color"
+msgstr ""
+
+#: ../data/browser.xml.h:23
+msgid "Drag a pattern tile to an object to change it"
+msgstr ""
+
+#: ../data/browser.xml.h:24
+msgid "Drag an emblem to an object to add it to the object"
+msgstr ""
+
+#: ../data/browser.xml.h:25
+msgid "Eclipse"
+msgstr "Urú"
+
+#: ../data/browser.xml.h:26
+msgid "Envy"
+msgstr "Éad"
+
+#. translators: this is the name of an emblem
+#: ../data/browser.xml.h:28 ../src/nautilus-emblem-sidebar.c:943
+#: ../src/nautilus-property-browser.c:1826
+msgid "Erase"
+msgstr "Léirscrios"
+
+#: ../data/browser.xml.h:29
+msgid "Fibers"
+msgstr "Snáithín"
+
+#: ../data/browser.xml.h:30
+msgid "Fire Engine"
+msgstr "Inneall Dóiteán"
+
+#: ../data/browser.xml.h:31
+msgid "Fleur De Lis"
+msgstr "Fleur De Lis"
+
+#: ../data/browser.xml.h:32
+msgid "Floral"
+msgstr "Bláthach"
+
+#: ../data/browser.xml.h:33
+msgid "Fossil"
+msgstr "Iontaise"
+
+#: ../data/browser.xml.h:34
+msgid "GNOME"
+msgstr "GNOME"
+
+#: ../data/browser.xml.h:35
+msgid "Granite"
+msgstr "Eibhear"
+
+#: ../data/browser.xml.h:36
+msgid "Grapefruit"
+msgstr "Seadóg"
+
+#: ../data/browser.xml.h:37
+msgid "Green Weave"
+msgstr ""
+
+#: ../data/browser.xml.h:38
+msgid "Ice"
+msgstr "Leac Oighir"
+
+#: ../data/browser.xml.h:39
+msgid "Indigo"
+msgstr ""
+
+#: ../data/browser.xml.h:40
+msgid "Leaf"
+msgstr "Duilleog"
+
+#: ../data/browser.xml.h:41
+msgid "Lemon"
+msgstr "Líomóid"
+
+#: ../data/browser.xml.h:42
+msgid "Mango"
+msgstr ""
+
+#: ../data/browser.xml.h:43
+msgid "Manila Paper"
+msgstr ""
+
+#: ../data/browser.xml.h:44
+msgid "Moss Ridge"
+msgstr ""
+
+#: ../data/browser.xml.h:45
+msgid "Mud"
+msgstr "Clábar"
+
+#: ../data/browser.xml.h:46
+msgid "Numbers"
+msgstr "Uimhreacha"
+
+#: ../data/browser.xml.h:47
+msgid "Ocean Strips"
+msgstr ""
+
+#: ../data/browser.xml.h:48
+msgid "Onyx"
+msgstr ""
+
+#: ../data/browser.xml.h:49
+msgid "Orange"
+msgstr "Oráiste"
+
+#: ../data/browser.xml.h:50
+msgid "Pale Blue"
+msgstr "Gorm Míitheach"
+
+#: ../data/browser.xml.h:51
+msgid "Purple Marble"
+msgstr "Marmar Corcra"
+
+#: ../data/browser.xml.h:52
+msgid "Ridged Paper"
+msgstr "Páipéir Droimach"
+
+#: ../data/browser.xml.h:53
+msgid "Rough Paper"
+msgstr "Páipéir Garbh"
+
+#: ../data/browser.xml.h:54
+msgid "Ruby"
+msgstr "Ruibí"
+
+#: ../data/browser.xml.h:55
+msgid "Sea Foam"
+msgstr ""
+
+#: ../data/browser.xml.h:56
+msgid "Shale"
+msgstr ""
+
+#: ../data/browser.xml.h:57
+msgid "Silver"
+msgstr "Airgid"
+
+#: ../data/browser.xml.h:58
+msgid "Sky"
+msgstr "Spéir"
+
+#: ../data/browser.xml.h:59
+msgid "Sky Ridge"
+msgstr "Droim an Spéir"
+
+#: ../data/browser.xml.h:60
+msgid "Snow Ridge"
+msgstr "Droim an Sneachta"
+
+#: ../data/browser.xml.h:61
+msgid "Stucco"
+msgstr ""
+
+#: ../data/browser.xml.h:62
+msgid "Tangerine"
+msgstr "Tainséirí"
+
+#: ../data/browser.xml.h:63
+msgid "Terracotta"
+msgstr ""
+
+#: ../data/browser.xml.h:64
+msgid "Violet"
+msgstr "Corcairghorm"
+
+#: ../data/browser.xml.h:65
+msgid "Wavy White"
+msgstr ""
+
+#: ../data/browser.xml.h:66
+msgid "White"
+msgstr "Bán"
+
+#: ../data/browser.xml.h:67
+msgid "White Ribs"
+msgstr ""
+
+#: ../data/browser.xml.h:68
+msgid "_Emblems"
+msgstr "_Suaitheantais"
+
+#: ../data/browser.xml.h:69
+msgid "_Patterns"
+msgstr "_Patrúin"
+
+#: ../data/nautilus.xml.in.h:1
+msgid "Saved search"
+msgstr ""
+
+#. Translators: date_modified - mtime, the last time file contents were changed
+#. date_changed  - ctime, the last time file meta-information changed
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:3
+msgid ""
+"A list of captions below an icon in the icon view and the desktop. The "
+"actual number of captions shown depends on the zoom level. Possible values "
+"are: \"size\", \"type\", \"date_modified\", \"date_changed\", \"date_accessed"
+"\", \"owner\", \"group\", \"permissions\", \"octal_permissions\" and "
+"\"mime_type\"."
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:4
+msgid "Always use the location entry, instead of the pathbar"
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:5
+msgid ""
+"Color for the default folder background. Only used if background_set is true."
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:6
+msgid "Computer icon visible on desktop"
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:7
+msgid "Criteria for search bar searching"
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:8
+msgid ""
+"Criteria when matching files searched for in the search bar. If set to "
+"\"search_by_text\", then Nautilus will Search for files by file name only. "
+"If set to \"search_by_text_and_properties\", then Nautilus will search for "
+"files by file name and file properties."
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:9
+msgid "Current Nautilus theme (deprecated)"
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:10
+msgid "Custom Background Set"
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:11
+msgid "Custom Side Pane Background Set"
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:12
+msgid "Date Format"
+msgstr "Formáid Dáta"
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:13
+msgid "Default Background Color"
+msgstr "Dath Cúlra de gnáth"
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:14
+msgid "Default Background Filename"
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:15
+msgid "Default Side Pane Background Color"
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:16
+msgid "Default Side Pane Background Filename"
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:17
+msgid "Default Thumbnail Icon Size"
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:18
+msgid "Default column order in the list view"
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:19
+msgid "Default column order in the list view."
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:20
+msgid "Default folder viewer"
+msgstr "Amharcóir loicead sa fhillteain"
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:21
+msgid "Default icon zoom level"
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:22
+msgid "Default list of columns visible in the list view"
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:23
+msgid "Default list of columns visible in the list view."
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:24
+msgid "Default list zoom level"
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:25
+msgid "Default sort order"
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:26
+msgid "Default zoom level used by the icon view."
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:27
+msgid "Default zoom level used by the list view."
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:28
+msgid "Desktop computer icon name"
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:29
+msgid "Desktop font"
+msgstr "Cló deisce"
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:30
+msgid "Desktop home icon name"
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:31
+msgid "Desktop trash icon name"
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:32
+msgid "Enables the classic Nautilus behavior, where all windows are browsers"
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:33
+msgid ""
+"Filename for the default folder background. Only used if background_set is "
+"true."
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:34
+msgid ""
+"Filename for the default side pane background. Only used if "
+"side_pane_background_set is true."
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:35
+msgid ""
+"Folders over this size will be truncated to around this size. The purpose of "
+"this is to avoid unintentionally blowing the heap and killing Nautilus on "
+"massive folders. A negative value denotes no limit. The limit is approximate "
+"due to the reading of folders chunk-wise."
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:36
+msgid "Home icon visible on desktop"
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:37
+msgid ""
+"If set to true, Nautilus will only show folders in the tree side pane. "
+"Otherwise it will show both folders and files."
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:38
+msgid ""
+"If set to true, newly opened windows will have the location bar visible."
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:39
+msgid "If set to true, newly opened windows will have the side pane visible."
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:40
+msgid "If set to true, newly opened windows will have the status bar visible."
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:41
+msgid "If set to true, newly opened windows will have toolbars visible."
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:42
+msgid ""
+"If set to true, then Nautilus browser windows will always use a textual "
+"input entry for the location toolbar, instead of the pathbar."
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:43
+msgid ""
+"If set to true, then Nautilus lets you edit and display file permissions in "
+"a more unix-like way, accessing some more esoteric options."
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:44
+msgid ""
+"If set to true, then Nautilus shows folders prior to showing files in the "
+"icon and list views."
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:45
+msgid ""
+"If set to true, then Nautilus will ask for confirmation when you attempt to "
+"delete files, or empty the Trash."
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:46
+msgid "If set to true, then Nautilus will draw the icons on the desktop."
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:47
+msgid ""
+"If set to true, then Nautilus will have a feature allowing you to delete a "
+"file immediately and in-place, instead of moving it to the trash. This "
+"feature can be dangerous, so use caution."
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:48
+msgid ""
+"If set to true, then Nautilus will use the user's home folder as the "
+"desktop. If it is false, then it will use ~/Desktop as the desktop."
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:49
+msgid ""
+"If set to true, then all Nautilus windows will be browser windows. This is "
+"how Nautilus used to behave before version 2.6, and some people prefer this "
+"behavior."
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:50
+msgid ""
+"If set to true, then backup files such as those created by Emacs are "
+"displayed. Currently, only files ending in a tilde (~) are considered backup "
+"files."
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:51
+msgid ""
+"If set to true, then hidden files are shown in the file manager. Hidden "
+"files are either dotfiles or are listed in the folder's .hidden file."
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:52
+msgid ""
+"If this is set to true, an icon linking to the Network Servers view will be "
+"put on the desktop."
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:53
+msgid ""
+"If this is set to true, an icon linking to the computer location will be put "
+"on the desktop."
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:54
+msgid ""
+"If this is set to true, an icon linking to the home folder will be put on "
+"the desktop."
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:55
+msgid ""
+"If this is set to true, an icon linking to the trash will be put on the "
+"desktop."
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:56
+msgid ""
+"If this is set to true, icons linking to mounted volumes will be put on the "
+"desktop."
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:57
+msgid ""
+"If true, files in new windows will be sorted in reverse order. ie, if sorted "
+"by name, then instead of sorting the files from \"a\" to \"z\", they will be "
+"sorted from \"z\" to \"a\"."
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:58
+msgid ""
+"If true, files in new windows will be sorted in reverse order. ie, if sorted "
+"by name, then instead of sorting the files from \"a\" to \"z\", they will be "
+"sorted from \"z\" to \"a\"; if sorted by size, instead of being "
+"incrementally they will be sorted decrementally."
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:59
+msgid "If true, icons will be laid out tighter by default in new windows."
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:60
+msgid ""
+"If true, labels will be placed beside icons rather than underneath them."
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:61
+msgid "If true, new windows will use manual layout by default."
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:62
+msgid ""
+"Images over this size (in bytes) won't be thumbnailed. The purpose of this "
+"setting is to avoid thumbnailing large images that may take a long time to "
+"load or use lots of memory."
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:63
+msgid "List of possible captions on icons"
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:64
+msgid "Maximum handled files in a folder"
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:65
+msgid "Maximum image size for thumbnailing"
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:66
+msgid ""
+"Name of the Nautilus theme to use. This has been deprecated as of Nautilus "
+"2.2. Please use the icon theme instead."
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:67
+msgid "Nautilus handles drawing the desktop"
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:68
+msgid "Nautilus uses the users home folder as the desktop"
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:69
+msgid "Network Servers icon visible on the desktop"
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:70
+#, fuzzy
+msgid "Network servers icon name"
+msgstr "Freastalaí Líonra"
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:71
+msgid "Only show folders in the tree side pane"
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:72
+msgid ""
+"Possible values are \"single\" to launch files on a single click, or \"double"
+"\" to launch them on a double click."
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:73
+msgid "Put labels beside icons"
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:74
+msgid "Reverse sort order in new windows"
+msgstr ""
+
+#. Translators: please note this can choose the size. e.g.
+#. "Sans 15". Please do not change "Sans", only change the size if you need to. In
+#. most cases, this should be left alone.
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:78
+msgid "Sans 10"
+msgstr "Sans 10"
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:79
+msgid "Show advanced permissions in in the file property dialog"
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:80
+msgid "Show folders first in windows"
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:81
+msgid "Show location bar in new windows"
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:82
+msgid "Show mounted volumes on the desktop"
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:83
+msgid "Show side pane in new windows"
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:84
+msgid "Show status bar in new windows"
+msgstr "Taispéan barra stadás san fhuinneogaí nua"
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:85
+msgid "Show toolbar in new windows"
+msgstr "Taispeán barra uirlís san fhuinneogaí nua"
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:86
+msgid "Side pane view"
+msgstr "Amharc an \"Pána ar an Thaobh\""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:87
+msgid ""
+"Speed tradeoff for when to preview a sound file when mousing over a files "
+"icon. If set to \"always\" then always plays the sound, even if the file is "
+"on a remote server. If set to \"local_only\" then only plays previews on "
+"local file systems. If set to \"never\" then it never previews sound."
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:88
+msgid ""
+"Speed tradeoff for when to show a preview of text file contents in the "
+"file's icon. If set to \"always\" then always show previews, even if the "
+"folder is on a remote server. If set to \"local_only\" then only show "
+"previews for local file systems. If set to \"never\" then never bother to "
+"read preview data."
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:89
+msgid ""
+"Speed tradeoff for when to show an image file as a thumbnail. If set to "
+"\"always\" then always thumbnail, even if the folder is on a remote server. "
+"If set to \"local_only\" then only show thumbnails for local file systems. "
+"If set to \"never\" then never bother to thumbnail images, just use a "
+"generic icon."
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:90
+msgid ""
+"Speed tradeoff for when to show the number of items in a folder. If set to "
+"\"always\" then always show item counts, even if the folder is on a remote "
+"server. If set to \"local_only\" then only show counts for local file "
+"systems. If set to \"never\" then never bother to compute item counts."
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:91
+msgid "The default size of an icon for a thumbnail in the icon view."
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:92
+msgid ""
+"The default sort-order for items in the icon view. Possible values are \"name"
+"\", \"size\", \"type\", \"modification_date\", and \"emblems\"."
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:93
+msgid ""
+"The default sort-order for the items in the list view. Possible values are "
+"\"name\", \"size\", \"type\", and \"modification_date\"."
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:94
+msgid "The default width of the side pane in new windows."
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:95
+msgid "The font description used for the icons on the desktop."
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:96
+msgid ""
+"The format of file dates. Possible values are \"locale\", \"iso\", and "
+"\"informal\"."
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:97
+msgid "The side pane view to show in newly opened windows."
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:98
+msgid ""
+"This name can be set if you want a custom name for the computer icon on the "
+"desktop."
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:99
+msgid ""
+"This name can be set if you want a custom name for the home icon on the "
+"desktop."
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:100
+msgid ""
+"This name can be set if you want a custom name for the network servers icon "
+"on the desktop."
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:101
+msgid ""
+"This name can be set if you want a custom name for the trash icon on the "
+"desktop."
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:102
+msgid "Trash icon visible on desktop"
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:103
+msgid "Type of click used to launch/open files"
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:104
+msgid "Use manual layout in new windows"
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:105
+msgid "Use tighter layout in new windows"
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:106
+msgid "What to do with executable text files when activated"
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:107
+msgid ""
+"What to do with executable text files when they are activated (single or "
+"double clicked). Possible values are \"launch\" to launch them as programs, "
+"\"ask\" to ask what to do via a dialog, and \"display\" to display them as "
+"text files."
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:108
+msgid ""
+"When a folder is visited this viewer is used unless you have selected "
+"another view for that particular folder. Possible values are \"list_view\" "
+"and \"icon_view\"."
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:109
+msgid "When to show number of items in a folder"
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:110
+msgid "When to show preview text in icons"
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:111
+msgid "When to show thumbnails of image files"
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:112
+msgid "Whether a custom default folder background has been set."
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:113
+msgid "Whether a custom default side pane background has been set."
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:114
+msgid "Whether to ask for confirmation when deleting files, or emptying Trash"
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:115
+msgid "Whether to enable immediate deletion"
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:116
+msgid "Whether to preview sounds when mousing over an icon"
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:117
+msgid "Whether to show backup files"
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:118
+msgid "Whether to show hidden files"
+msgstr ""
+
+#: ../libnautilus-private/apps_nautilus_preferences.schemas.in.h:119
+msgid "Width of the side pane"
+msgstr "Leithead atá ag an pána ar an thaobh"
+
+#. name, stock id
+#. label, accelerator
+#: ../libnautilus-private/nautilus-clipboard.c:442
+msgid "Cut the selected text to the clipboard"
+msgstr "Gearr an téasc go dtí an ghearrthaisce"
+
+#. name, stock id
+#. label, accelerator
+#: ../libnautilus-private/nautilus-clipboard.c:446
+msgid "Copy the selected text to the clipboard"
+msgstr ""
+
+#. name, stock id
+#. label, accelerator
+#: ../libnautilus-private/nautilus-clipboard.c:450
+msgid "Paste the text stored on the clipboard"
+msgstr "Greamaigh an téasc go dtí an ghearrthaisce"
+
+#. name, stock id
+#: ../libnautilus-private/nautilus-clipboard.c:453
+#: ../src/file-manager/fm-directory-view.c:6222
+msgid "Select _All"
+msgstr "Roghnaigh _Uile"
+
+#. label, accelerator
+#: ../libnautilus-private/nautilus-clipboard.c:454
+msgid "Select all the text in a text field"
+msgstr ""
+
+#: ../libnautilus-private/nautilus-column-chooser.c:385
+msgid "Move _Up"
+msgstr "Bog S_uas"
+
+#: ../libnautilus-private/nautilus-column-chooser.c:395
+msgid "Move Dow_n"
+msgstr "Bog _Síos"
+
+#: ../libnautilus-private/nautilus-column-chooser.c:404
+msgid "_Show"
+msgstr "_Taispeáin"
+
+#: ../libnautilus-private/nautilus-column-chooser.c:414
+msgid "Hi_de"
+msgstr "_Folaigh"
+
+#: ../libnautilus-private/nautilus-column-chooser.c:427
+msgid "Use De_fault"
+msgstr "Úsáid Réa_mhshocrú"
+
+#: ../libnautilus-private/nautilus-column-utilities.c:43
+#: ../libnautilus-private/nautilus-mime-application-chooser.c:279
+#: ../src/file-manager/fm-list-view.c:1400
+msgid "Name"
+msgstr "Ainm"
+
+#: ../libnautilus-private/nautilus-column-utilities.c:44
+msgid "The name and icon of the file."
+msgstr "Ainm agus deilbhín an chomhaid."
+
+#: ../libnautilus-private/nautilus-column-utilities.c:50
+msgid "Size"
+msgstr "Méid"
+
+#: ../libnautilus-private/nautilus-column-utilities.c:51
+msgid "The size of the file."
+msgstr "Méid an chomhaid."
+
+#: ../libnautilus-private/nautilus-column-utilities.c:58
+msgid "Type"
+msgstr "Cineál"
+
+#: ../libnautilus-private/nautilus-column-utilities.c:59
+msgid "The type of the file."
+msgstr "Cineál an chomhaid."
+
+#: ../libnautilus-private/nautilus-column-utilities.c:65
+#: ../src/nautilus-image-properties-page.c:240
+msgid "Date Modified"
+msgstr "Dáta Athraithe"
+
+#: ../libnautilus-private/nautilus-column-utilities.c:66
+msgid "The date the file was modified."
+msgstr ""
+
+#: ../libnautilus-private/nautilus-column-utilities.c:73
+msgid "Date Accessed"
+msgstr "Dáta Rochtana"
+
+#: ../libnautilus-private/nautilus-column-utilities.c:74
+msgid "The date the file was accessed."
+msgstr ""
+
+#: ../libnautilus-private/nautilus-column-utilities.c:81
+msgid "Owner"
+msgstr "Úinéir"
+
+#: ../libnautilus-private/nautilus-column-utilities.c:82
+msgid "The owner of the file."
+msgstr "Úinéir an chomhaid."
+
+#: ../libnautilus-private/nautilus-column-utilities.c:89
+msgid "Group"
+msgstr "Grúpa"
+
+#: ../libnautilus-private/nautilus-column-utilities.c:90
+msgid "The group of the file."
+msgstr "Grúpa an chomhaid."
+
+#: ../libnautilus-private/nautilus-column-utilities.c:97
+#: ../src/file-manager/fm-properties-window.c:4453
+msgid "Permissions"
+msgstr "Ceadanna"
+
+#: ../libnautilus-private/nautilus-column-utilities.c:98
+msgid "The permissions of the file."
+msgstr ""
+
+#: ../libnautilus-private/nautilus-column-utilities.c:105
+msgid "Octal Permissions"
+msgstr "Ceadanna Ochtnártha"
+
+#: ../libnautilus-private/nautilus-column-utilities.c:106
+msgid "The permissions of the file, in octal notation."
+msgstr ""
+
+#: ../libnautilus-private/nautilus-column-utilities.c:113
+msgid "MIME Type"
+msgstr "Cinéal MIME"
+
+#: ../libnautilus-private/nautilus-column-utilities.c:114
+msgid "The mime type of the file."
+msgstr ""
+
+#: ../libnautilus-private/nautilus-column-utilities.c:120
+msgid "SELinux Context"
+msgstr "Comhthéacs SELinux"
+
+#: ../libnautilus-private/nautilus-column-utilities.c:121
+msgid "The SELinux security context of the file."
+msgstr "Comhthéacs SELinux an chomhaid."
+
+#: ../libnautilus-private/nautilus-customization-data.c:410
+#: ../src/nautilus-property-browser.c:1870
+msgid "Reset"
+msgstr ""
+
+#: ../libnautilus-private/nautilus-desktop-directory-file.c:437
+#: ../libnautilus-private/nautilus-desktop-icon-file.c:148
+msgid "on the desktop"
+msgstr "ar an deasc"
+
+#: ../libnautilus-private/nautilus-desktop-link-monitor.c:103
+#, c-format
+msgid "You cannot move the volume \"%s\" to the trash."
+msgstr ""
+
+#: ../libnautilus-private/nautilus-desktop-link-monitor.c:113
+msgid ""
+"If you want to eject the volume, please use \"Eject\" in the popup menu of "
+"the volume."
+msgstr ""
+
+#: ../libnautilus-private/nautilus-desktop-link-monitor.c:122
+msgid ""
+"If you want to unmount the volume, please use \"Unmount Volume\" in the "
+"popup menu of the volume."
+msgstr ""
+
+#: ../libnautilus-private/nautilus-dnd.c:630
+msgid "_Move Here"
+msgstr "_Bog Anseo"
+
+#: ../libnautilus-private/nautilus-dnd.c:635
+msgid "_Copy Here"
+msgstr "_Cóipeáil Anseo"
+
+#: ../libnautilus-private/nautilus-dnd.c:640
+msgid "_Link Here"
+msgstr "_Nasc Anseo"
+
+#: ../libnautilus-private/nautilus-dnd.c:645
+msgid "Set as _Background"
+msgstr "Socraigh Mar _Cúlra"
+
+#: ../libnautilus-private/nautilus-dnd.c:652
+#: ../libnautilus-private/nautilus-dnd.c:705
+msgid "Cancel"
+msgstr "Cealaigh"
+
+#: ../libnautilus-private/nautilus-dnd.c:693
+msgid "Set as background for _all folders"
+msgstr "Cuir mar an cÃºlra le haighaidh g_ach comhadlann "
+
+#: ../libnautilus-private/nautilus-dnd.c:698
+msgid "Set as background for _this folder"
+msgstr "Cuir mar an cÃºlra le haighaidh an comhadlann _seo"
+
+#: ../libnautilus-private/nautilus-emblem-utils.c:203
+#: ../libnautilus-private/nautilus-emblem-utils.c:208
+#: ../libnautilus-private/nautilus-emblem-utils.c:253
+#: ../libnautilus-private/nautilus-emblem-utils.c:267
+#: ../libnautilus-private/nautilus-emblem-utils.c:289
+msgid "The emblem cannot be installed."
+msgstr ""
+
+#: ../libnautilus-private/nautilus-emblem-utils.c:204
+msgid "Sorry, but you must specify a non-blank keyword for the new emblem."
+msgstr ""
+
+#: ../libnautilus-private/nautilus-emblem-utils.c:209
+msgid ""
+"Sorry, but emblem keywords can only contain letters, spaces and numbers."
+msgstr ""
+
+#. this really should never happen, as a user has no idea
+#. * what a keyword is, and people should be passing a unique
+#. * keyword to us anyway
+#.
+#: ../libnautilus-private/nautilus-emblem-utils.c:219
+#, c-format
+msgid "Sorry, but there is already an emblem named \"%s\"."
+msgstr ""
+
+#: ../libnautilus-private/nautilus-emblem-utils.c:220
+msgid "Please choose a different emblem name."
+msgstr ""
+
+#: ../libnautilus-private/nautilus-emblem-utils.c:254
+#: ../libnautilus-private/nautilus-emblem-utils.c:268
+msgid "Sorry, unable to save custom emblem."
+msgstr ""
+
+#: ../libnautilus-private/nautilus-emblem-utils.c:290
+msgid "Sorry, unable to save custom emblem name."
+msgstr ""
+
+#: ../libnautilus-private/nautilus-file-operations-progress.c:167
+#, c-format
+msgid "%s %ld of %ld %s"
+msgstr "%s %ld as %ld %s"
+
+#: ../libnautilus-private/nautilus-file-operations-progress.c:447
+#, c-format
+msgid "(%d:%02d:%02d Remaining)"
+msgstr ""
+
+#: ../libnautilus-private/nautilus-file-operations-progress.c:452
+#, c-format
+msgid "(%d:%02d Remaining)"
+msgstr ""
+
+#: ../libnautilus-private/nautilus-file-operations.c:177
+msgid "_Skip"
+msgstr ""
+
+#: ../libnautilus-private/nautilus-file-operations.c:178
+msgid "S_kip All"
+msgstr ""
+
+#: ../libnautilus-private/nautilus-file-operations.c:179
+msgid "_Retry"
+msgstr ""
+
+#: ../libnautilus-private/nautilus-file-operations.c:180
+msgid "Delete _All"
+msgstr "Scrios _Gach Rud"
+
+#: ../libnautilus-private/nautilus-file-operations.c:181
+msgid "_Replace"
+msgstr "_Athchuir"
+
+#: ../libnautilus-private/nautilus-file-operations.c:182
+msgid "Replace _All"
+msgstr "Athchuir _Gach rud"
+
+#: ../libnautilus-private/nautilus-file-operations.c:183
+msgid "_Merge"
+msgstr "Cu_maisc"
+
+#: ../libnautilus-private/nautilus-file-operations.c:184
+msgid "Merge _All"
+msgstr "Cumaisc _Gach Rud"
+
+#: ../libnautilus-private/nautilus-file-operations.c:209
+#, c-format
+msgid "%d second"
+msgid_plural "%d seconds"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+
+#: ../libnautilus-private/nautilus-file-operations.c:214
+#: ../libnautilus-private/nautilus-file-operations.c:225
+#, c-format
+msgid "%d minute"
+msgid_plural "%d minutes"
+msgstr[0] "%d nóiméad"
+msgstr[1] "%d nóiméad"
+msgstr[2] "%d nóiméad"
+msgstr[3] "%d nóiméad"
+msgstr[4] "%d nóiméad"
+
+#: ../libnautilus-private/nautilus-file-operations.c:224
+#, c-format
+msgid "%d hour"
+msgid_plural "%d hours"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+
+#: ../libnautilus-private/nautilus-file-operations.c:232
+#, c-format
+msgid "approximately %d hour"
+msgid_plural "approximately %d hours"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+
+#. appended to new link file
+#. Note to localizers: convert file type string for file
+#. * (e.g. "folder", "plain text") to file type for symbolic link
+#. * to that kind of file (e.g. "link to folder").
+#.
+#: ../libnautilus-private/nautilus-file-operations.c:264
+#: ../libnautilus-private/nautilus-file.c:5298
+#: ../src/file-manager/fm-directory-view.c:8355
+#, c-format
+msgid "Link to %s"
+msgstr "Nasc le %s"
+
+#. appended to new link file
+#: ../libnautilus-private/nautilus-file-operations.c:268
+#, fuzzy, c-format
+msgid "Another link to %s"
+msgstr "cengall eile go %s"
+
+#. Localizers: Feel free to leave out the "st" suffix
+#. * if there's no way to do that nicely for a
+#. * particular language.
+#.
+#: ../libnautilus-private/nautilus-file-operations.c:284
+#, c-format
+msgid "%dst link to %s"
+msgstr "%dú nasc go %s"
+
+#. appended to new link file
+#: ../libnautilus-private/nautilus-file-operations.c:288
+#, c-format
+msgid "%dnd link to %s"
+msgstr "%dú nasc go %s"
+
+#. appended to new link file
+#: ../libnautilus-private/nautilus-file-operations.c:292
+#, c-format
+msgid "%drd link to %s"
+msgstr ""
+
+#. appended to new link file
+#: ../libnautilus-private/nautilus-file-operations.c:296
+#, c-format
+msgid "%dth link to %s"
+msgstr ""
+
+#. Localizers:
+#. * Feel free to leave out the st, nd, rd and th suffix or
+#. * make some or all of them match.
+#.
+#. localizers: tag used to detect the first copy of a file
+#: ../libnautilus-private/nautilus-file-operations.c:312
+msgid " (copy)"
+msgstr " (cóip)"
+
+#. localizers: tag used to detect the second copy of a file
+#: ../libnautilus-private/nautilus-file-operations.c:314
+msgid " (another copy)"
+msgstr " (cóip eile)"
+
+#. localizers: tag used to detect the x11th copy of a file
+#. localizers: tag used to detect the x12th copy of a file
+#. localizers: tag used to detect the x13th copy of a file
+#. localizers: tag used to detect the xxth copy of a file
+#: ../libnautilus-private/nautilus-file-operations.c:317
+#: ../libnautilus-private/nautilus-file-operations.c:319
+#: ../libnautilus-private/nautilus-file-operations.c:321
+#: ../libnautilus-private/nautilus-file-operations.c:331
+msgid "th copy)"
+msgstr ""
+
+#. localizers: tag used to detect the x1st copy of a file
+#: ../libnautilus-private/nautilus-file-operations.c:324
+msgid "st copy)"
+msgstr ""
+
+#. localizers: tag used to detect the x2nd copy of a file
+#: ../libnautilus-private/nautilus-file-operations.c:326
+msgid "nd copy)"
+msgstr ""
+
+#. localizers: tag used to detect the x3rd copy of a file
+#: ../libnautilus-private/nautilus-file-operations.c:328
+msgid "rd copy)"
+msgstr ""
+
+#. localizers: appended to first file copy
+#: ../libnautilus-private/nautilus-file-operations.c:345
+#, c-format
+msgid "%s (copy)%s"
+msgstr "%s (cóip)%s"
+
+#. localizers: appended to second file copy
+#: ../libnautilus-private/nautilus-file-operations.c:347
+#, c-format
+msgid "%s (another copy)%s"
+msgstr "%s (cóip eile)%s"
+
+#. localizers: appended to x11th file copy
+#. localizers: appended to x12th file copy
+#. localizers: appended to x13th file copy
+#. localizers: appended to xxth file copy
+#: ../libnautilus-private/nautilus-file-operations.c:350
+#: ../libnautilus-private/nautilus-file-operations.c:352
+#: ../libnautilus-private/nautilus-file-operations.c:354
+#: ../libnautilus-private/nautilus-file-operations.c:363
+#, c-format
+msgid "%s (%dth copy)%s"
+msgstr ""
+
+#. localizers: appended to x1st file copy
+#: ../libnautilus-private/nautilus-file-operations.c:357
+#, c-format
+msgid "%s (%dst copy)%s"
+msgstr ""
+
+#. localizers: appended to x2nd file copy
+#: ../libnautilus-private/nautilus-file-operations.c:359
+#, c-format
+msgid "%s (%dnd copy)%s"
+msgstr ""
+
+#. localizers: appended to x3rd file copy
+#: ../libnautilus-private/nautilus-file-operations.c:361
+#, c-format
+msgid "%s (%drd copy)%s"
+msgstr ""
+
+#. localizers: opening parentheses to match the "th copy)" string
+#: ../libnautilus-private/nautilus-file-operations.c:461
+msgid " ("
+msgstr " ("
+
+#. localizers: opening parentheses of the "th copy)" string
+#: ../libnautilus-private/nautilus-file-operations.c:469
+#, c-format
+msgid " (%d"
+msgstr " (%d"
+
+#: ../libnautilus-private/nautilus-file-operations.c:1071
+msgid "Are you sure you want to permanently delete \"%B\" from the trash?"
+msgstr ""
+
+#: ../libnautilus-private/nautilus-file-operations.c:1074
+#, c-format
+msgid ""
+"Are you sure you want to permanently delete the %d selected item from the "
+"trash?"
+msgid_plural ""
+"Are you sure you want to permanently delete the %d selected items from the "
+"trash?"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../libnautilus-private/nautilus-file-operations.c:1084
+#: ../libnautilus-private/nautilus-file-operations.c:1125
+msgid "If you delete an item, it will be permanently lost."
+msgstr ""
+
+#: ../libnautilus-private/nautilus-file-operations.c:1113
+msgid "Are you sure you want to permanently delete \"%B\"?"
+msgstr ""
+
+#: ../libnautilus-private/nautilus-file-operations.c:1116
+#, c-format
+msgid "Are you sure you want to permanently delete the %d selected item?"
+msgid_plural ""
+"Are you sure you want to permanently delete the %d selected items?"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../libnautilus-private/nautilus-file-operations.c:1158
+msgid "Deleting files"
+msgstr "Ag Scríos comhadaí"
+
+#: ../libnautilus-private/nautilus-file-operations.c:1163
+#, fuzzy, c-format
+msgid "%d file left to delete"
+msgid_plural "%d files left to delete"
+msgstr[0] "fillteán amháin roghnaithe"
+msgstr[1] "%d fhillteán roghnaithe"
+msgstr[2] "%d fhillteán roghnaithe"
+msgstr[3] "%d bhfillteán roghnaithe"
+msgstr[4] "%d fillteán roghnaithe"
+
+#. To translators: %T will expand to a time like "2 minutes"
+#: ../libnautilus-private/nautilus-file-operations.c:1174
+msgid "%d file left to delete — %T left"
+msgid_plural "%d files left to delete — %T left"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+
+#: ../libnautilus-private/nautilus-file-operations.c:1234
+#: ../libnautilus-private/nautilus-file-operations.c:1267
+#: ../libnautilus-private/nautilus-file-operations.c:1305
+#: ../libnautilus-private/nautilus-file-operations.c:1387
+#: ../libnautilus-private/nautilus-file-operations.c:2008
+msgid "Error while deleting."
+msgstr "Earraidh ag dealaigh."
+
+#: ../libnautilus-private/nautilus-file-operations.c:1238
+msgid ""
+"Files in the folder \"%B\" cannot be deleted because you do not have "
+"permissions to see them."
+msgstr ""
+
+#: ../libnautilus-private/nautilus-file-operations.c:1241
+#: ../libnautilus-private/nautilus-file-operations.c:2066
+#: ../libnautilus-private/nautilus-file-operations.c:2834
+msgid ""
+"There was an error getting information about the files in the folder \"%B\"."
+msgstr ""
+
+#: ../libnautilus-private/nautilus-file-operations.c:1249
+#: ../libnautilus-private/nautilus-file-operations.c:2842
+msgid "_Skip files"
+msgstr "_Scipeáil comhaid"
+
+#: ../libnautilus-private/nautilus-file-operations.c:1270
+msgid ""
+"The folder \"%B\" cannot be deleted because you do not have permissions to "
+"read it."
+msgstr ""
+
+#: ../libnautilus-private/nautilus-file-operations.c:1273
+#: ../libnautilus-private/nautilus-file-operations.c:2104
+#: ../libnautilus-private/nautilus-file-operations.c:2878
+#, fuzzy
+msgid "There was an error reading the folder \"%B\"."
+msgstr "Bhí earraid ag rith an Clár"
+
+#: ../libnautilus-private/nautilus-file-operations.c:1306
+msgid "Couldn't remove the folder %B."
+msgstr ""
+
+#: ../libnautilus-private/nautilus-file-operations.c:1388
+#, fuzzy
+msgid "There was an error deleting %B."
+msgstr "Bhí earraid ag rith an Clár"
+
+#: ../libnautilus-private/nautilus-file-operations.c:1464
+msgid "Moving files to trash"
+msgstr "Comhaid á bhogadh go bruscar"
+
+#: ../libnautilus-private/nautilus-file-operations.c:1466
+#, c-format
+msgid "%d file left to trash"
+msgid_plural "%d files left to trash"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+
+#: ../libnautilus-private/nautilus-file-operations.c:1515
+msgid "Cannot move file to trash, do you want to delete immediately?"
+msgstr ""
+
+#: ../libnautilus-private/nautilus-file-operations.c:1516
+#, fuzzy
+msgid "The file \"%B\" cannot be moved to the trash."
+msgstr "Tá an nasc briste, an bhfuil ag iarraigh chuir sa Bosca Bruscair?"
+
+#: ../libnautilus-private/nautilus-file-operations.c:1727
+msgid "Unable to eject %V"
+msgstr ""
+
+#: ../libnautilus-private/nautilus-file-operations.c:1729
+msgid "Unable to unmount %V"
+msgstr ""
+
+#: ../libnautilus-private/nautilus-file-operations.c:1879
+msgid "Do you want to empty the trash before you unmount?"
+msgstr ""
+
+#: ../libnautilus-private/nautilus-file-operations.c:1881
+msgid ""
+"In order to regain the free space on this volume the trash must be emptied. "
+"All trashed items on the volume will be permanently lost. "
+msgstr ""
+
+#: ../libnautilus-private/nautilus-file-operations.c:1887
+msgid "Don't Empty Trash"
+msgstr "Ná Folmhaigh Bruscar"
+
+#. label, accelerator
+#: ../libnautilus-private/nautilus-file-operations.c:1889
+#: ../src/file-manager/fm-desktop-icon-view.c:707
+msgid "Empty Trash"
+msgstr "Glan an Bosca Bruscair"
+
+#: ../libnautilus-private/nautilus-file-operations.c:1963
+#, fuzzy, c-format
+msgid "Preparing to copy %d files (%S)"
+msgstr "Ag ullamhaigh chun na comhad a scíos"
+
+#: ../libnautilus-private/nautilus-file-operations.c:1967
+#, fuzzy, c-format
+msgid "Preparing to move %d files (%S)"
+msgstr "Ag ullamhaigh chun na comhad a scíos"
+
+#: ../libnautilus-private/nautilus-file-operations.c:1971
+#, fuzzy, c-format
+msgid "Preparing to delete %d files (%S)"
+msgstr "Ag ullamhaigh chun na comhad a scíos"
+
+#: ../libnautilus-private/nautilus-file-operations.c:1975
+#, fuzzy, c-format
+msgid "Preparing to trash %d files"
+msgstr "Ag ullamhaigh chun na comhad a scíos"
+
+#: ../libnautilus-private/nautilus-file-operations.c:2004
+#: ../libnautilus-private/nautilus-file-operations.c:2728
+#: ../libnautilus-private/nautilus-file-operations.c:2826
+#: ../libnautilus-private/nautilus-file-operations.c:2870
+msgid "Error while copying."
+msgstr ""
+
+#: ../libnautilus-private/nautilus-file-operations.c:2006
+#: ../libnautilus-private/nautilus-file-operations.c:2824
+#: ../libnautilus-private/nautilus-file-operations.c:2868
+msgid "Error while moving."
+msgstr ""
+
+#: ../libnautilus-private/nautilus-file-operations.c:2010
+msgid "Error while moving files to trash."
+msgstr ""
+
+#: ../libnautilus-private/nautilus-file-operations.c:2063
+msgid ""
+"Files in the folder \"%B\" cannot be handled because you do not have "
+"permissions to see them."
+msgstr ""
+
+#: ../libnautilus-private/nautilus-file-operations.c:2101
+msgid ""
+"The folder \"%B\" cannot be handled because you do not have permissions to "
+"read it."
+msgstr ""
+
+#: ../libnautilus-private/nautilus-file-operations.c:2175
+msgid ""
+"The file \"%B\" cannot be handled because you do not have permissions to "
+"read it."
+msgstr ""
+
+#: ../libnautilus-private/nautilus-file-operations.c:2178
+#, fuzzy
+msgid "There was an error getting information about \"%B\"."
+msgstr "Bhí earraid ag rith an Clár"
+
+#: ../libnautilus-private/nautilus-file-operations.c:2275
+#: ../libnautilus-private/nautilus-file-operations.c:2316
+#: ../libnautilus-private/nautilus-file-operations.c:2350
+#: ../libnautilus-private/nautilus-file-operations.c:2375
+#, fuzzy
+msgid "Error while copying to \"%B\"."
+msgstr "Earraidh ag dealaigh."
+
+#: ../libnautilus-private/nautilus-file-operations.c:2279
+msgid "You don't have permissions to access the destination folder."
+msgstr ""
+
+#: ../libnautilus-private/nautilus-file-operations.c:2281
+#, fuzzy
+msgid "There was an error getting information about the destination."
+msgstr "Bhí earraid ag rith an Clár"
+
+#: ../libnautilus-private/nautilus-file-operations.c:2317
+msgid "The destination is not a folder."
+msgstr ""
+
+#: ../libnautilus-private/nautilus-file-operations.c:2351
+msgid ""
+"There is not enough space on the destination. Try to remove files to make "
+"space."
+msgstr ""
+
+#: ../libnautilus-private/nautilus-file-operations.c:2353
+#, c-format
+msgid "There is %S available, but %S is required."
+msgstr ""
+
+#: ../libnautilus-private/nautilus-file-operations.c:2376
+msgid "The destination is read-only."
+msgstr ""
+
+#: ../libnautilus-private/nautilus-file-operations.c:2429
+msgid "Moving \"%B\" to \"%B\""
+msgstr ""
+
+#: ../libnautilus-private/nautilus-file-operations.c:2430
+msgid "Copying \"%B\" to \"%B\""
+msgstr ""
+
+#: ../libnautilus-private/nautilus-file-operations.c:2435
+msgid "Duplicating \"%B\""
+msgstr ""
+
+#: ../libnautilus-private/nautilus-file-operations.c:2443
+msgid "Moving %d file (in \"%B\") to \"%B\""
+msgid_plural "Moving %d files (in \"%B\") to \"%B\""
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+
+#: ../libnautilus-private/nautilus-file-operations.c:2447
+msgid "Copying %d file (in \"%B\") to \"%B\""
+msgid_plural "Copying %d files (in \"%B\") to \"%B\""
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+
+#: ../libnautilus-private/nautilus-file-operations.c:2455
+msgid "Duplicating %d file (in \"%B\")"
+msgid_plural "Duplicating %d files (in \"%B\")"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+
+#: ../libnautilus-private/nautilus-file-operations.c:2465
+#, fuzzy
+msgid "Moving %d file to \"%B\""
+msgid_plural "Moving %d files to \"%B\""
+msgstr[0] "Ag bogadh comhaid"
+msgstr[1] "Ag bogadh comhaid"
+msgstr[2] "Ag bogadh comhaid"
+msgstr[3] "Ag bogadh comhaid"
+msgstr[4] "Ag bogadh comhaid"
+
+#: ../libnautilus-private/nautilus-file-operations.c:2469
+#, fuzzy
+msgid "Copying %d file to \"%B\""
+msgid_plural "Copying %d files to \"%B\""
+msgstr[0] "Ag Cópáil comhaid"
+msgstr[1] "Ag Cópáil comhaid"
+msgstr[2] "Ag Cópáil comhaid"
+msgstr[3] "Ag Cópáil comhaid"
+msgstr[4] "Ag Cópáil comhaid"
+
+#: ../libnautilus-private/nautilus-file-operations.c:2475
+#, fuzzy, c-format
+msgid "Duplicating %d file"
+msgid_plural "Duplicating %d files"
+msgstr[0] "Ag Scríos comhadaí"
+msgstr[1] "Ag Scríos comhadaí"
+msgstr[2] "Ag Scríos comhadaí"
+msgstr[3] "Ag Scríos comhadaí"
+msgstr[4] "Ag Scríos comhadaí"
+
+#. To translators: %S will expand to a size like "2 bytes" or "3 MB", so something like "4 kb of 4 MB"
+#: ../libnautilus-private/nautilus-file-operations.c:2494
+#, c-format
+msgid "%S of %S"
+msgstr "%S as %S"
+
+#. To translators: %S will expand to a size like "2 bytes" or "3 MB", %T to a time duration like
+#. * "2 minutes". So the whole thing will be something like "2 kb of 4 MB -- 2 hours left (4kb/sec)"
+#.
+#: ../libnautilus-private/nautilus-file-operations.c:2503
+msgid "%S of %S — %T left (%S/sec)"
+msgstr ""
+
+#: ../libnautilus-private/nautilus-file-operations.c:2732
+msgid ""
+"The folder \"%B\" cannot be copied because you do not have permissions to "
+"create it in the destination."
+msgstr ""
+
+#: ../libnautilus-private/nautilus-file-operations.c:2735
+#, fuzzy
+msgid "There was an error creating the folder \"%B\"."
+msgstr "Bhí earraid ag rith an Clár"
+
+#: ../libnautilus-private/nautilus-file-operations.c:2831
+msgid ""
+"Files in the folder \"%B\" cannot be copied because you do not have "
+"permissions to see them."
+msgstr ""
+
+#: ../libnautilus-private/nautilus-file-operations.c:2875
+msgid ""
+"The folder \"%B\" cannot be copied because you do not have permissions to "
+"read it."
+msgstr ""
+
+#: ../libnautilus-private/nautilus-file-operations.c:2917
+#: ../libnautilus-private/nautilus-file-operations.c:3299
+#: ../libnautilus-private/nautilus-file-operations.c:3746
+#, fuzzy
+msgid "Error while moving \"%B\"."
+msgstr "Earraidh ag dealaigh."
+
+#: ../libnautilus-private/nautilus-file-operations.c:2918
+msgid "Couldn't remove the source folder."
+msgstr ""
+
+#: ../libnautilus-private/nautilus-file-operations.c:2998
+#: ../libnautilus-private/nautilus-file-operations.c:3035
+#: ../libnautilus-private/nautilus-file-operations.c:3301
+#: ../libnautilus-private/nautilus-file-operations.c:3356
+#, fuzzy
+msgid "Error while copying \"%B\"."
+msgstr "Earraidh ag dealaigh."
+
+#: ../libnautilus-private/nautilus-file-operations.c:2999
+#, c-format
+msgid "Couldn't remove files from the already existing folder %F."
+msgstr ""
+
+#: ../libnautilus-private/nautilus-file-operations.c:3036
+#, c-format
+msgid "Couldn't remove the already existing file %F."
+msgstr ""
+
+#: ../libnautilus-private/nautilus-file-operations.c:3199
+#: ../libnautilus-private/nautilus-file-operations.c:3644
+msgid ""
+"A folder named \"%B\" already exists.  Do you want to merge the source "
+"folder?"
+msgstr ""
+
+#: ../libnautilus-private/nautilus-file-operations.c:3201
+msgid ""
+"The source folder already exists in \"%B\".  Merging will ask for "
+"confirmation before replacing any files in the folder that conflict with the "
+"files being copied."
+msgstr ""
+
+#: ../libnautilus-private/nautilus-file-operations.c:3206
+#: ../libnautilus-private/nautilus-file-operations.c:3651
+msgid "A folder named \"%B\" already exists.  Do you want to replace it?"
+msgstr ""
+
+#: ../libnautilus-private/nautilus-file-operations.c:3208
+#: ../libnautilus-private/nautilus-file-operations.c:3653
+#, c-format
+msgid ""
+"The folder already exists in \"%F\".  Replacing it will remove all files in "
+"the folder."
+msgstr ""
+
+#: ../libnautilus-private/nautilus-file-operations.c:3213
+#: ../libnautilus-private/nautilus-file-operations.c:3658
+msgid "A file named \"%B\" already exists.  Do you want to replace it?"
+msgstr ""
+
+#: ../libnautilus-private/nautilus-file-operations.c:3215
+#: ../libnautilus-private/nautilus-file-operations.c:3660
+#, c-format
+msgid ""
+"The file already exists in \"%F\".  Replacing it will overwrite its content."
+msgstr ""
+
+#: ../libnautilus-private/nautilus-file-operations.c:3303
+#, c-format
+msgid "Couldn't remove the already existing file with the same name in %F."
+msgstr ""
+
+#: ../libnautilus-private/nautilus-file-operations.c:3357
+#, fuzzy, c-format
+msgid "There was an error copying the file into %F."
+msgstr "Bhí earraid ag rith an Clár"
+
+#: ../libnautilus-private/nautilus-file-operations.c:3567
+#, fuzzy
+msgid "Preparing to Move to \"%B\""
+msgstr "Ag ullamhaigh chun na comhad a scíos"
+
+#: ../libnautilus-private/nautilus-file-operations.c:3571
+#, fuzzy, c-format
+msgid "Preparing to move %d file"
+msgid_plural "Preparing to move %d files"
+msgstr[0] "Ag ullamhaigh chun na comhad a scíos"
+msgstr[1] "Ag ullamhaigh chun na comhad a scíos"
+msgstr[2] "Ag ullamhaigh chun na comhad a scíos"
+msgstr[3] "Ag ullamhaigh chun na comhad a scíos"
+msgstr[4] "Ag ullamhaigh chun na comhad a scíos"
+
+#: ../libnautilus-private/nautilus-file-operations.c:3646
+msgid ""
+"The source folder already exists in \"%B\".  Merging will ask for "
+"confirmation before replacing any files in the folder that conflict with the "
+"files being moved."
+msgstr ""
+
+#: ../libnautilus-private/nautilus-file-operations.c:3747
+#, c-format
+msgid "There was an error moving the file into %F."
+msgstr "Tharla earráid ag bogadh an comhad isteach i %F."
+
+#: ../libnautilus-private/nautilus-file-operations.c:4018
+msgid "Creating links in to \"%B\""
+msgstr ""
+
+#: ../libnautilus-private/nautilus-file-operations.c:4022
+#, c-format
+msgid "Making links to %d file"
+msgid_plural "Making links to %d files"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+
+#: ../libnautilus-private/nautilus-file-operations.c:4096
+#, fuzzy
+msgid "Error while creating link to %B."
+msgstr "Earraidh ag dealaigh."
+
+#: ../libnautilus-private/nautilus-file-operations.c:4098
+msgid "Symbolic links only supported for local files"
+msgstr ""
+
+#: ../libnautilus-private/nautilus-file-operations.c:4101
+msgid "The target doesn't support symbolic links."
+msgstr ""
+
+#: ../libnautilus-private/nautilus-file-operations.c:4104
+#, fuzzy, c-format
+msgid "There was an error creating the symlink in %F."
+msgstr "Bhí earraid ag rith an Clár"
+
+#: ../libnautilus-private/nautilus-file-operations.c:4390
+msgid "Setting permissions"
+msgstr ""
+
+#. localizers: the initial name of a new folder
+#: ../libnautilus-private/nautilus-file-operations.c:4579
+msgid "untitled folder"
+msgstr "fillteán gan teideal"
+
+#. localizers: the initial name of a new empty file
+#: ../libnautilus-private/nautilus-file-operations.c:4587
+msgid "new file"
+msgstr "comhad nua"
+
+#: ../libnautilus-private/nautilus-file-operations.c:4677
+msgid "Error while creating directory %B."
+msgstr "Earráid agus comhadlann %B á chruthú."
+
+#: ../libnautilus-private/nautilus-file-operations.c:4679
+msgid "Error while creating file %B."
+msgstr "Earráid agus comhad %B á chruthú."
+
+#: ../libnautilus-private/nautilus-file-operations.c:4681
+#, c-format
+msgid "There was an error creating the directory in %F."
+msgstr "Tharla earráid ag cruthú an chomhadlann i %F."
+
+#: ../libnautilus-private/nautilus-file.c:867
+#: ../libnautilus-private/nautilus-vfs-file.c:265
+msgid "This file cannot be mounted"
+msgstr ""
+
+#: ../libnautilus-private/nautilus-file.c:887
+msgid "This file cannot be unmounted"
+msgstr ""
+
+#: ../libnautilus-private/nautilus-file.c:907
+msgid "This file cannot be eject"
+msgstr ""
+
+#: ../libnautilus-private/nautilus-file.c:1293
+msgid "Slashes are not allowed in filenames"
+msgstr ""
+
+#: ../libnautilus-private/nautilus-file.c:1311
+msgid "File not found"
+msgstr ""
+
+#: ../libnautilus-private/nautilus-file.c:1337
+msgid "Toplevel files cannot be renamed"
+msgstr ""
+
+#: ../libnautilus-private/nautilus-file.c:1354
+msgid "Unable to rename desktop icon"
+msgstr ""
+
+#: ../libnautilus-private/nautilus-file.c:1386
+msgid "Unable to rename desktop file"
+msgstr ""
+
+#. Today, use special word.
+#. * strftime patterns preceeded with the widest
+#. * possible resulting string for that pattern.
+#. *
+#. * Note to localizers: You can look at man strftime
+#. * for details on the format, but you should only use
+#. * the specifiers from the C standard, not extensions.
+#. * These include "%" followed by one of
+#. * "aAbBcdHIjmMpSUwWxXyYZ". There are two extensions
+#. * in the Nautilus version of strftime that can be
+#. * used (and match GNU extensions). Putting a "-"
+#. * between the "%" and any numeric directive will turn
+#. * off zero padding, and putting a "_" there will use
+#. * space padding instead of zero padding.
+#.
+#: ../libnautilus-private/nautilus-file.c:3410
+msgid "today at 00:00:00 PM"
+msgstr "inniu ar 00:00:00 PM"
+
+#: ../libnautilus-private/nautilus-file.c:3411
+#: ../src/nautilus-file-management-properties.c:465
+msgid "today at %-I:%M:%S %p"
+msgstr "inniu ar %-I:%M:%S %p"
+
+#: ../libnautilus-private/nautilus-file.c:3413
+msgid "today at 00:00 PM"
+msgstr "inniu ar 00:00 PM"
+
+#: ../libnautilus-private/nautilus-file.c:3414
+msgid "today at %-I:%M %p"
+msgstr "inniu ar %-I:%M %p"
+
+#: ../libnautilus-private/nautilus-file.c:3416
+msgid "today, 00:00 PM"
+msgstr "inniu, 00:00 PM"
+
+#: ../libnautilus-private/nautilus-file.c:3417
+msgid "today, %-I:%M %p"
+msgstr "inniu, %-I:%M %p"
+
+#: ../libnautilus-private/nautilus-file.c:3419
+#: ../libnautilus-private/nautilus-file.c:3420
+msgid "today"
+msgstr "inniu"
+
+#. Yesterday, use special word.
+#. * Note to localizers: Same issues as "today" string.
+#.
+#: ../libnautilus-private/nautilus-file.c:3429
+msgid "yesterday at 00:00:00 PM"
+msgstr "inné ar 00:00:00 PM"
+
+#: ../libnautilus-private/nautilus-file.c:3430
+msgid "yesterday at %-I:%M:%S %p"
+msgstr "inné ar %-I:%M:%S %p"
+
+#: ../libnautilus-private/nautilus-file.c:3432
+msgid "yesterday at 00:00 PM"
+msgstr "inné ar 00:00 PM"
+
+#: ../libnautilus-private/nautilus-file.c:3433
+msgid "yesterday at %-I:%M %p"
+msgstr "inné ar %-I:%M %p"
+
+#: ../libnautilus-private/nautilus-file.c:3435
+msgid "yesterday, 00:00 PM"
+msgstr "inné, 00:00 PM"
+
+#: ../libnautilus-private/nautilus-file.c:3436
+msgid "yesterday, %-I:%M %p"
+msgstr "inné, %-I:%M %p"
+
+#: ../libnautilus-private/nautilus-file.c:3438
+#: ../libnautilus-private/nautilus-file.c:3439
+msgid "yesterday"
+msgstr "inné"
+
+#. Current week, include day of week.
+#. * Note to localizers: Same issues as "today" string.
+#. * The width measurement templates correspond to
+#. * the day/month name with the most letters.
+#.
+#: ../libnautilus-private/nautilus-file.c:3450
+msgid "Wednesday, September 00 0000 at 00:00:00 PM"
+msgstr "Céad, 00 MFómh 0000 ar 00:00:00 PM"
+
+#: ../libnautilus-private/nautilus-file.c:3451
+msgid "%A, %B %-d %Y at %-I:%M:%S %p"
+msgstr "%A, %-d %B %Y ar %-I:%M:%S %p"
+
+#: ../libnautilus-private/nautilus-file.c:3453
+msgid "Mon, Oct 00 0000 at 00:00:00 PM"
+msgstr "Luan, 00 DFómh 0000 ar 00:00 PM"
+
+#: ../libnautilus-private/nautilus-file.c:3454
+msgid "%a, %b %-d %Y at %-I:%M:%S %p"
+msgstr "%a, %-d %b %Y ar %-I:%M:%S %p"
+
+#: ../libnautilus-private/nautilus-file.c:3456
+msgid "Mon, Oct 00 0000 at 00:00 PM"
+msgstr "Luan, 00 DFómh 0000 ar 00:00 PM"
+
+#: ../libnautilus-private/nautilus-file.c:3457
+msgid "%a, %b %-d %Y at %-I:%M %p"
+msgstr "%a, %-d %b %Y ag %-I:%M %p"
+
+#: ../libnautilus-private/nautilus-file.c:3459
+msgid "Oct 00 0000 at 00:00 PM"
+msgstr "00 DFómh 0000 ar 00:00 PM"
+
+#: ../libnautilus-private/nautilus-file.c:3460
+msgid "%b %-d %Y at %-I:%M %p"
+msgstr "%-d %b %Y ar %-I:%M %p"
+
+#: ../libnautilus-private/nautilus-file.c:3462
+msgid "Oct 00 0000, 00:00 PM"
+msgstr "00 DFómh 0000, 00:00 PM"
+
+#: ../libnautilus-private/nautilus-file.c:3463
+msgid "%b %-d %Y, %-I:%M %p"
+msgstr "%-d %b %Y, %-I:%M %p"
+
+#: ../libnautilus-private/nautilus-file.c:3465
+msgid "00/00/00, 00:00 PM"
+msgstr "00/00/00, 00:00 PM"
+
+#: ../libnautilus-private/nautilus-file.c:3466
+msgid "%m/%-d/%y, %-I:%M %p"
+msgstr "%-d/%m/%y, %-I:%M %p"
+
+#: ../libnautilus-private/nautilus-file.c:3468
+msgid "00/00/00"
+msgstr "00/00/00"
+
+#: ../libnautilus-private/nautilus-file.c:3469
+msgid "%m/%d/%y"
+msgstr "%d/%m/%y"
+
+#: ../libnautilus-private/nautilus-file.c:4063
+msgid "Not allowed to set permissions"
+msgstr ""
+
+#: ../libnautilus-private/nautilus-file.c:4371
+msgid "Not allowed to set owner"
+msgstr ""
+
+#: ../libnautilus-private/nautilus-file.c:4389
+#, c-format
+msgid "Specified owner '%s' doesn't exist"
+msgstr ""
+
+#: ../libnautilus-private/nautilus-file.c:4653
+msgid "Not allowed to set group"
+msgstr ""
+
+#: ../libnautilus-private/nautilus-file.c:4671
+#, c-format
+msgid "Specified group '%s' doesn't exist"
+msgstr ""
+
+#: ../libnautilus-private/nautilus-file.c:4814
+#: ../src/file-manager/fm-directory-view.c:2112
+#, c-format
+msgid "%u item"
+msgid_plural "%u items"
+msgstr[0] "mír amháin"
+msgstr[1] "%u mhír"
+msgstr[2] "%u mhír"
+msgstr[3] "%u mír"
+msgstr[4] "%u mír"
+
+#: ../libnautilus-private/nautilus-file.c:4815
+#, c-format
+msgid "%u folder"
+msgid_plural "%u folders"
+msgstr[0] "fillteán amháin"
+msgstr[1] "%u fhillteán"
+msgstr[2] "%u fhillteán"
+msgstr[3] "%u bhfillteán"
+msgstr[4] "%u fillteán"
+
+#: ../libnautilus-private/nautilus-file.c:4816
+#, c-format
+msgid "%u file"
+msgid_plural "%u files"
+msgstr[0] "comhad amháin"
+msgstr[1] "%u chomhad"
+msgstr[2] "%u chomhad"
+msgstr[3] "%u gcomhad"
+msgstr[4] "%u comhad"
+
+#. Do this in a separate stage so that we don't have to put G_GUINT64_FORMAT in the translated string
+#: ../libnautilus-private/nautilus-file.c:4895
+msgid "%"
+msgstr "%"
+
+#: ../libnautilus-private/nautilus-file.c:4896
+#, c-format
+msgid "%s (%s bytes)"
+msgstr "%s (%s beart)"
+
+#. This means no contents at all were readable
+#: ../libnautilus-private/nautilus-file.c:5195
+#: ../libnautilus-private/nautilus-file.c:5211
+msgid "? items"
+msgstr "? mír"
+
+#. This means no contents at all were readable
+#: ../libnautilus-private/nautilus-file.c:5201
+msgid "? bytes"
+msgstr "? beart"
+
+#: ../libnautilus-private/nautilus-file.c:5216
+msgid "unknown type"
+msgstr "cineál anaithnid"
+
+#: ../libnautilus-private/nautilus-file.c:5219
+msgid "unknown MIME type"
+msgstr "cineál MIME anaithnid"
+
+#. Fallback, use for both unknown attributes and attributes
+#. * for which we have no more appropriate default.
+#.
+#: ../libnautilus-private/nautilus-file.c:5225
+#: ../src/file-manager/fm-properties-window.c:1322
+msgid "unknown"
+msgstr "anaithnid"
+
+#: ../libnautilus-private/nautilus-file.c:5254
+msgid "program"
+msgstr "ríomhchlár"
+
+#: ../libnautilus-private/nautilus-file.c:5272
+msgid ""
+"Can't find description even for \"x-directory/normal\". This probably means "
+"that your gnome-vfs.keys file is in the wrong place or isn't being found for "
+"some other reason."
+msgstr ""
+
+#: ../libnautilus-private/nautilus-file.c:5276
+#, c-format
+msgid ""
+"No description found for mime type \"%s\" (file is \"%s\"), please tell the "
+"gnome-vfs mailing list."
+msgstr ""
+
+#: ../libnautilus-private/nautilus-file.c:5292
+msgid "link"
+msgstr "nasc"
+
+#: ../libnautilus-private/nautilus-file.c:5312
+msgid "link (broken)"
+msgstr "nasc (briste)"
+
+#: ../libnautilus-private/nautilus-global-preferences.c:69
+msgid "_Always"
+msgstr "_I gCónaí"
+
+#: ../libnautilus-private/nautilus-global-preferences.c:70
+msgid "_Local File Only"
+msgstr ""
+
+#: ../libnautilus-private/nautilus-global-preferences.c:71
+msgid "_Never"
+msgstr "_Riamh"
+
+#: ../libnautilus-private/nautilus-global-preferences.c:76
+#, no-c-format
+msgid "25%"
+msgstr "25%"
+
+#: ../libnautilus-private/nautilus-global-preferences.c:78
+#, no-c-format
+msgid "50%"
+msgstr "50%"
+
+#: ../libnautilus-private/nautilus-global-preferences.c:80
+#, no-c-format
+msgid "75%"
+msgstr "75%"
+
+#: ../libnautilus-private/nautilus-global-preferences.c:82
+#, no-c-format
+msgid "100%"
+msgstr "100%"
+
+#: ../libnautilus-private/nautilus-global-preferences.c:84
+#, no-c-format
+msgid "150%"
+msgstr "150%"
+
+#: ../libnautilus-private/nautilus-global-preferences.c:86
+#, no-c-format
+msgid "200%"
+msgstr "200%"
+
+#: ../libnautilus-private/nautilus-global-preferences.c:88
+#, no-c-format
+msgid "400%"
+msgstr "400%"
+
+#: ../libnautilus-private/nautilus-global-preferences.c:92
+msgid "100 K"
+msgstr "100 K"
+
+#: ../libnautilus-private/nautilus-global-preferences.c:93
+msgid "500 K"
+msgstr "500 K"
+
+#: ../libnautilus-private/nautilus-global-preferences.c:94
+msgid "1 MB"
+msgstr "1 MB"
+
+#: ../libnautilus-private/nautilus-global-preferences.c:95
+msgid "3 MB"
+msgstr "3 MB"
+
+#: ../libnautilus-private/nautilus-global-preferences.c:96
+msgid "5 MB"
+msgstr "5 MB"
+
+#: ../libnautilus-private/nautilus-global-preferences.c:97
+msgid "10 MB"
+msgstr "10 MB"
+
+#: ../libnautilus-private/nautilus-global-preferences.c:98
+msgid "100 MB"
+msgstr "100 MB"
+
+#: ../libnautilus-private/nautilus-global-preferences.c:103
+msgid "Activate items with a _single click"
+msgstr ""
+
+#: ../libnautilus-private/nautilus-global-preferences.c:107
+msgid "Activate items with a _double click"
+msgstr ""
+
+#: ../libnautilus-private/nautilus-global-preferences.c:114
+msgid "E_xecute files when they are clicked"
+msgstr ""
+
+#: ../libnautilus-private/nautilus-global-preferences.c:118
+msgid "Display _files when they are clicked"
+msgstr ""
+
+#: ../libnautilus-private/nautilus-global-preferences.c:122
+#: ../src/nautilus-file-management-properties.glade.h:63
+msgid "_Ask each time"
+msgstr "_Fiafraigh gach uair"
+
+#: ../libnautilus-private/nautilus-global-preferences.c:129
+msgid "Search for files by file name only"
+msgstr ""
+
+#: ../libnautilus-private/nautilus-global-preferences.c:133
+msgid "Search for files by file name and file properties"
+msgstr ""
+
+#: ../libnautilus-private/nautilus-global-preferences.c:139
+#: ../src/file-manager/fm-icon-container.c:526
+msgid "Icon View"
+msgstr "Amharc Deilbhíní"
+
+#: ../libnautilus-private/nautilus-global-preferences.c:140
+#: ../src/file-manager/fm-list-view.c:1455
+msgid "List View"
+msgstr "Radharc Líosta"
+
+#: ../libnautilus-private/nautilus-global-preferences.c:144
+msgid "Manually"
+msgstr "De Láimh"
+
+#: ../libnautilus-private/nautilus-global-preferences.c:146
+msgid "By Name"
+msgstr "le Ainm"
+
+#: ../libnautilus-private/nautilus-global-preferences.c:147
+msgid "By Size"
+msgstr "le Meid"
+
+#: ../libnautilus-private/nautilus-global-preferences.c:148
+msgid "By Type"
+msgstr "le Saghas"
+
+#: ../libnautilus-private/nautilus-global-preferences.c:149
+msgid "By Modification Date"
+msgstr "De Réir Dháta Athraithe"
+
+#: ../libnautilus-private/nautilus-global-preferences.c:150
+msgid "By Emblems"
+msgstr "De Réir Suaitheantas"
+
+#: ../libnautilus-private/nautilus-global-preferences.c:154
+msgid "8"
+msgstr "8"
+
+#: ../libnautilus-private/nautilus-global-preferences.c:155
+msgid "10"
+msgstr "10"
+
+#: ../libnautilus-private/nautilus-global-preferences.c:156
+msgid "12"
+msgstr "12"
+
+#: ../libnautilus-private/nautilus-global-preferences.c:157
+msgid "14"
+msgstr "14"
+
+#: ../libnautilus-private/nautilus-global-preferences.c:158
+msgid "16"
+msgstr "16"
+
+#: ../libnautilus-private/nautilus-global-preferences.c:159
+msgid "18"
+msgstr "18"
+
+#: ../libnautilus-private/nautilus-global-preferences.c:160
+msgid "20"
+msgstr "20"
+
+#: ../libnautilus-private/nautilus-global-preferences.c:161
+msgid "22"
+msgstr "22"
+
+#: ../libnautilus-private/nautilus-global-preferences.c:162
+msgid "24"
+msgstr "24"
+
+#. Note to translators: If it's hard to compose a good home
+#. * icon name from the user name, you can use a string without
+#. * an "%s" here, in which case the home icon name will not
+#. * include the user's name, which should be fine. To avoid a
+#. * warning, put "%.0s" somewhere in the string, which will
+#. * match the user name string passed by the C code, but not
+#. * put the user name in the final string.
+#.
+#: ../libnautilus-private/nautilus-global-preferences.c:501
+#, c-format
+msgid "%s's Home"
+msgstr "Baile do %s"
+
+#: ../libnautilus-private/nautilus-global-preferences.c:507
+#: ../nautilus-computer.desktop.in.in.h:2
+msgid "Computer"
+msgstr "Ríomhaire"
+
+#: ../libnautilus-private/nautilus-global-preferences.c:513
+#: ../src/nautilus-places-sidebar.c:439 ../src/nautilus-trash-bar.c:121
+msgid "Trash"
+msgstr "Bosca Bruscair"
+
+#: ../libnautilus-private/nautilus-global-preferences.c:519
+msgid "Network Servers"
+msgstr "Freastalaí Líonra"
+
+#: ../libnautilus-private/nautilus-icon-container.c:2185
+msgid "The selection rectangle"
+msgstr ""
+
+#: ../libnautilus-private/nautilus-icon-dnd.c:910
+msgid "Switch to Manual Layout?"
+msgstr ""
+
+#: ../libnautilus-private/nautilus-mime-actions.c:568
+#, c-format
+msgid "The Link \"%s\" is Broken."
+msgstr ""
+
+#: ../libnautilus-private/nautilus-mime-actions.c:570
+#, c-format
+msgid "The Link \"%s\" is Broken. Move it to Trash?"
+msgstr "Is Briste é Nasc \"%s\". Bog go Bruscar?"
+
+#: ../libnautilus-private/nautilus-mime-actions.c:576
+msgid "This link can't be used, because it has no target."
+msgstr ""
+
+#: ../libnautilus-private/nautilus-mime-actions.c:578
+#, c-format
+msgid "This link can't be used, because its target \"%s\" doesn't exist."
+msgstr ""
+
+#. name, stock id
+#: ../libnautilus-private/nautilus-mime-actions.c:588
+#: ../src/file-manager/fm-directory-view.c:6246
+#: ../src/file-manager/fm-directory-view.c:6327
+#: ../src/file-manager/fm-directory-view.c:6848
+#: ../src/file-manager/fm-directory-view.c:7041
+msgid "Mo_ve to Trash"
+msgstr "_Bog go Bruscar"
+
+#: ../libnautilus-private/nautilus-mime-actions.c:648
+#, c-format
+msgid "Do you want to run \"%s\", or display its contents?"
+msgstr "An bhfuil tú ag iarraigh \"%s\" a rith, nó taispáin a ábhar?"
+
+#: ../libnautilus-private/nautilus-mime-actions.c:650
+#, c-format
+msgid "\"%s\" is an executable text file."
+msgstr ""
+
+#: ../libnautilus-private/nautilus-mime-actions.c:656
+msgid "Run in _Terminal"
+msgstr "Rith i d_Teirminéal"
+
+#: ../libnautilus-private/nautilus-mime-actions.c:657
+msgid "_Display"
+msgstr "_Taispeáin"
+
+#: ../libnautilus-private/nautilus-mime-actions.c:660
+msgid "_Run"
+msgstr "_Rith"
+
+#: ../libnautilus-private/nautilus-mime-actions.c:953
+#: ../src/file-manager/fm-directory-view.c:610
+msgid "Are you sure you want to open all files?"
+msgstr ""
+
+#: ../libnautilus-private/nautilus-mime-actions.c:954
+#: ../src/file-manager/fm-directory-view.c:611
+#: ../src/nautilus-location-bar.c:151
+#, c-format
+msgid "This will open %d separate window."
+msgid_plural "This will open %d separate windows."
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../libnautilus-private/nautilus-mime-actions.c:1187
+#: ../src/nautilus-window-manage-views.c:1576
+#: ../src/nautilus-window-manage-views.c:1582
+#: ../src/nautilus-window-manage-views.c:1599
+#: ../src/nautilus-window-manage-views.c:1610
+#: ../src/nautilus-window-manage-views.c:1616
+#: ../src/nautilus-window-manage-views.c:1641
+#, c-format
+msgid "Couldn't display \"%s\"."
+msgstr ""
+
+#: ../libnautilus-private/nautilus-mime-actions.c:1193
+msgid "There is no application installed for this file type"
+msgstr ""
+
+#: ../libnautilus-private/nautilus-mime-actions.c:1235
+#: ../libnautilus-private/nautilus-mime-actions.c:1459
+msgid "Unable to mount location"
+msgstr "Ní féidir suíomh a fheistiú"
+
+#: ../libnautilus-private/nautilus-mime-actions.c:1544
+#, c-format
+msgid "Opening \"%s\"."
+msgstr "\"%s\" á Oscailt."
+
+#: ../libnautilus-private/nautilus-mime-actions.c:1547
+#, c-format
+msgid "Opening %d item."
+msgid_plural "Opening %d items."
+msgstr[0] "%d mhír á oscailt."
+msgstr[1] "%d mhír á oscailt."
+msgstr[2] "%d mhír á oscailt."
+msgstr[3] "%d mír á oscailt."
+msgstr[4] "%d mír á oscailt."
+
+#: ../libnautilus-private/nautilus-mime-application-chooser.c:172
+#: ../libnautilus-private/nautilus-open-with-dialog.c:271
+#, c-format
+msgid "Could not set application as the default: %s"
+msgstr ""
+
+#: ../libnautilus-private/nautilus-mime-application-chooser.c:173
+#: ../libnautilus-private/nautilus-open-with-dialog.c:272
+msgid "Could not set as default application"
+msgstr ""
+
+#: ../libnautilus-private/nautilus-mime-application-chooser.c:262
+msgid "Default"
+msgstr "Réamhshocrú"
+
+#: ../libnautilus-private/nautilus-mime-application-chooser.c:270
+msgid "Icon"
+msgstr "Deilbhín"
+
+#: ../libnautilus-private/nautilus-mime-application-chooser.c:327
+msgid "Could not remove application"
+msgstr ""
+
+#: ../libnautilus-private/nautilus-mime-application-chooser.c:563
+msgid "No applications selected"
+msgstr "Níl aon fheidhmchlár roghnaithe"
+
+#: ../libnautilus-private/nautilus-mime-application-chooser.c:606
+#: ../libnautilus-private/nautilus-open-with-dialog.c:905
+#, c-format
+msgid "%s document"
+msgstr "cáipéis %s"
+
+#: ../libnautilus-private/nautilus-mime-application-chooser.c:614
+#: ../libnautilus-private/nautilus-open-with-dialog.c:911
+msgid "Unknown"
+msgstr "Anaithnid"
+
+#: ../libnautilus-private/nautilus-mime-application-chooser.c:623
+#, c-format
+msgid "Select an application to open %s and other files of type \"%s\""
+msgstr ""
+"Roghnaigh feidhmchlár chun %s agus comhaid eile den chineál \"%s\" a oscailt"
+
+#: ../libnautilus-private/nautilus-open-with-dialog.c:162
+msgid "Could not run application"
+msgstr ""
+
+#: ../libnautilus-private/nautilus-open-with-dialog.c:174
+#, c-format
+msgid "Could not find '%s'"
+msgstr ""
+
+#: ../libnautilus-private/nautilus-open-with-dialog.c:177
+msgid "Could not find application"
+msgstr ""
+
+#: ../libnautilus-private/nautilus-open-with-dialog.c:250
+#, c-format
+msgid "Could not add application to the application database: %s"
+msgstr ""
+
+#: ../libnautilus-private/nautilus-open-with-dialog.c:251
+msgid "Could not add application"
+msgstr "Níorbh fhéidir feidhmchlár a chur leis"
+
+#: ../libnautilus-private/nautilus-open-with-dialog.c:391
+msgid "Select an Application"
+msgstr "Roghnaigh Feidhmchlár"
+
+#: ../libnautilus-private/nautilus-open-with-dialog.c:739
+#: ../src/file-manager/fm-properties-window.c:4740
+msgid "Open With"
+msgstr "Oscail Le"
+
+#: ../libnautilus-private/nautilus-open-with-dialog.c:776
+msgid "Select an application to view its description."
+msgstr ""
+
+#: ../libnautilus-private/nautilus-open-with-dialog.c:801
+msgid "_Use a custom command"
+msgstr "Ú_sáid ordú saincheaptha"
+
+#: ../libnautilus-private/nautilus-open-with-dialog.c:818
+msgid "_Browse..."
+msgstr "_Brabhsáil..."
+
+#. name, stock id
+#: ../libnautilus-private/nautilus-open-with-dialog.c:840
+#: ../src/file-manager/fm-directory-view.c:6172
+#: ../src/file-manager/fm-directory-view.c:6981
+#: ../src/file-manager/fm-tree-view.c:1116
+#: ../src/nautilus-places-sidebar.c:1703
+msgid "_Open"
+msgstr "_Oscail"
+
+#: ../libnautilus-private/nautilus-open-with-dialog.c:919
+#, c-format
+msgid "Open %s and other files of type \"%s\" with:"
+msgstr ""
+
+#: ../libnautilus-private/nautilus-open-with-dialog.c:950
+msgid "_Add"
+msgstr "Cuir _Leis"
+
+#: ../libnautilus-private/nautilus-open-with-dialog.c:951
+msgid "Add Application"
+msgstr "Cuir Feidhmchlár Leis"
+
+#: ../libnautilus-private/nautilus-program-choosing.c:124
+msgid "Open Failed, would you like to choose another application?"
+msgstr ""
+
+#: ../libnautilus-private/nautilus-program-choosing.c:125
+#: ../libnautilus-private/nautilus-program-choosing.c:156
+#, c-format
+msgid ""
+"\"%s\" can't open \"%s\" because \"%s\" can't access files at \"%s\" "
+"locations."
+msgstr ""
+
+#: ../libnautilus-private/nautilus-program-choosing.c:130
+msgid "Open Failed, would you like to choose another action?"
+msgstr ""
+
+#: ../libnautilus-private/nautilus-program-choosing.c:131
+#: ../libnautilus-private/nautilus-program-choosing.c:163
+#, c-format
+msgid ""
+"The default action can't open \"%s\" because it can't access files at \"%s\" "
+"locations."
+msgstr ""
+
+#: ../libnautilus-private/nautilus-program-choosing.c:159
+msgid ""
+"No other applications are available to view this file.  If you copy this "
+"file onto your computer, you may be able to open it."
+msgstr ""
+
+#: ../libnautilus-private/nautilus-program-choosing.c:165
+msgid ""
+"No other actions are available to view this file.  If you copy this file "
+"onto your computer, you may be able to open it."
+msgstr ""
+
+#: ../libnautilus-private/nautilus-program-choosing.c:395
+msgid "Sorry, but you can't execute commands from a remote site."
+msgstr ""
+
+#: ../libnautilus-private/nautilus-program-choosing.c:397
+msgid "This is disabled due to security considerations."
+msgstr ""
+
+#: ../libnautilus-private/nautilus-program-choosing.c:408
+#: ../libnautilus-private/nautilus-program-choosing.c:474
+msgid "Details: "
+msgstr "Sonraí:"
+
+#: ../libnautilus-private/nautilus-program-choosing.c:410
+#: ../libnautilus-private/nautilus-program-choosing.c:476
+msgid "There was an error launching the application."
+msgstr "Tharla earráid ag tosú an feidhmchlár."
+
+#: ../libnautilus-private/nautilus-program-choosing.c:439
+#: ../libnautilus-private/nautilus-program-choosing.c:450
+msgid "This drop target only supports local files."
+msgstr ""
+
+#: ../libnautilus-private/nautilus-program-choosing.c:440
+msgid ""
+"To open non-local files copy them to a local folder and then drop them again."
+msgstr ""
+
+#: ../libnautilus-private/nautilus-program-choosing.c:451
+msgid ""
+"To open non-local files copy them to a local folder and then drop them "
+"again. The local files you dropped have already been opened."
+msgstr ""
+
+#: ../libnautilus-private/nautilus-progress-info.c:210
+msgid "File operations"
+msgstr ""
+
+#: ../libnautilus-private/nautilus-progress-info.c:284
+#, c-format
+msgid "%d file operation active"
+msgid_plural "%d file operations active"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+
+#: ../libnautilus-private/nautilus-progress-info.c:474
+#: ../libnautilus-private/nautilus-progress-info.c:492
+msgid "Preparing"
+msgstr "Á Ullmhú"
+
+#: ../libnautilus-private/nautilus-query.c:135
+#: ../libnautilus-private/nautilus-search-directory-file.c:166
+#: ../libnautilus-private/nautilus-search-directory-file.c:192
+#: ../libnautilus-private/nautilus-search-directory-file.c:224
+msgid "Search"
+msgstr "Cuardaigh"
+
+#: ../libnautilus-private/nautilus-query.c:138
+#, c-format
+msgid "Search for \"%s\""
+msgstr "Cuardaigh ar \"%s\""
+
+#: ../libnautilus-private/nautilus-undo-signal-handlers.c:174
+#: ../src/nautilus-query-editor.c:990
+msgid "Edit"
+msgstr "Eagar"
+
+#: ../libnautilus-private/nautilus-undo-signal-handlers.c:175
+msgid "Undo Edit"
+msgstr "Cealaigh Eagarthóireacht"
+
+#: ../libnautilus-private/nautilus-undo-signal-handlers.c:176
+msgid "Undo the edit"
+msgstr "Cealaigh an eagarthóireacht"
+
+#: ../libnautilus-private/nautilus-undo-signal-handlers.c:177
+msgid "Redo Edit"
+msgstr "Athfheidhmigh Eagarthóireacht"
+
+#: ../libnautilus-private/nautilus-undo-signal-handlers.c:178
+msgid "Redo the edit"
+msgstr "Athfheidhmigh an eagarthóireacht"
+
+#. label, accelerator
+#: ../nautilus-computer.desktop.in.in.h:1 ../src/nautilus-window-menus.c:674
+msgid ""
+"Browse all local and remote disks and folders accessible from this computer"
+msgstr ""
+"Brábhsáil gach diosca logánta agus cianda agus fillteáin inrochtana ón "
+"ríomhaire seo"
+
+#: ../nautilus-file-management-properties.desktop.in.in.h:1
+msgid "Change the behaviour and appearance of file manager windows"
+msgstr "Athraigh oibriú agus cuma fuinneoga bhainisteoir comhad"
+
+#: ../nautilus-file-management-properties.desktop.in.in.h:2
+msgid "File Management"
+msgstr "Bainisteoireacht Chomhad"
+
+#: ../nautilus-folder-handler.desktop.in.in.h:1
+msgid "Open Folder"
+msgstr "Oscail Fillteán"
+
+#: ../nautilus-home.desktop.in.in.h:1 ../src/file-manager/fm-tree-view.c:1259
+msgid "Home Folder"
+msgstr "Fillteán Baile"
+
+#. label, accelerator
+#: ../nautilus-home.desktop.in.in.h:2 ../src/nautilus-window-menus.c:670
+msgid "Open your personal folder"
+msgstr "Oscail d'fhillteán pearsanta"
+
+#: ../nautilus.desktop.in.in.h:1
+#, fuzzy
+msgid "Browse the file system with the file manager"
+msgstr "Brabhsáil an córais-comhad le Bainisteoir na gComhad"
+
+#: ../nautilus.desktop.in.in.h:2
+msgid "File Browser"
+msgstr "Brabhsálaí Comhad"
+
+#: ../src/Nautilus_shell.server.in.h:1
+msgid "Factory for Nautilus shell and file manager"
+msgstr ""
+
+#: ../src/Nautilus_shell.server.in.h:2
+msgid "Nautilus factory"
+msgstr "Monarcha Nautilus"
+
+#: ../src/Nautilus_shell.server.in.h:3
+msgid "Nautilus metafile factory"
+msgstr ""
+
+#: ../src/Nautilus_shell.server.in.h:4
+msgid "Nautilus shell"
+msgstr "Blaosc Nautilus"
+
+#: ../src/Nautilus_shell.server.in.h:5
+msgid ""
+"Nautilus shell operations that can be done from subsequent command-line "
+"invocations"
+msgstr ""
+
+#: ../src/Nautilus_shell.server.in.h:6
+msgid "Produces metafile objects for accessing Nautilus metadata"
+msgstr ""
+
+#: ../src/file-manager/fm-desktop-icon-view.c:618
+msgid "Background"
+msgstr "Cúlra"
+
+#. name, stock id
+#: ../src/file-manager/fm-desktop-icon-view.c:681
+#: ../src/file-manager/fm-directory-view.c:6200
+#: ../src/file-manager/fm-directory-view.c:7099
+msgid "E_mpty Trash"
+msgstr "Fol_mhaigh Bruscar"
+
+#. label, accelerator
+#. name, stock id
+#: ../src/file-manager/fm-desktop-icon-view.c:693
+#: ../src/file-manager/fm-directory-view.c:6168
+msgid "Create L_auncher..."
+msgstr "Cruthaigh _Tosaitheoir"
+
+#. tooltip
+#. label, accelerator
+#: ../src/file-manager/fm-desktop-icon-view.c:695
+#: ../src/file-manager/fm-directory-view.c:6169
+msgid "Create a new launcher"
+msgstr ""
+
+#. label, accelerator
+#: ../src/file-manager/fm-desktop-icon-view.c:700
+msgid "Change Desktop _Background"
+msgstr "Athraigh Cúl_ra na Deisce"
+
+#. tooltip
+#: ../src/file-manager/fm-desktop-icon-view.c:702
+msgid ""
+"Show a window that lets you set your desktop background's pattern or color"
+msgstr ""
+
+#. tooltip
+#. label, accelerator
+#: ../src/file-manager/fm-desktop-icon-view.c:709
+#: ../src/file-manager/fm-directory-view.c:6201
+#: ../src/nautilus-trash-bar.c:132
+msgid "Delete all items in the Trash"
+msgstr ""
+
+#: ../src/file-manager/fm-desktop-icon-view.c:798
+#: ../src/nautilus-desktop-window.c:250 ../src/nautilus-pathbar.c:1096
+#: ../src/nautilus-places-sidebar.c:277
+msgid "Desktop"
+msgstr "Deasc"
+
+#: ../src/file-manager/fm-desktop-icon-view.c:799
+msgid "View as Desktop"
+msgstr "Taispeáin Mar Deasc"
+
+#: ../src/file-manager/fm-desktop-icon-view.c:800
+msgid "View as _Desktop"
+msgstr "Taispeáin Mar _Deasc"
+
+#: ../src/file-manager/fm-desktop-icon-view.c:801
+msgid "The desktop view encountered an error."
+msgstr ""
+
+#: ../src/file-manager/fm-desktop-icon-view.c:802
+msgid "The desktop view encountered an error while starting up."
+msgstr ""
+
+#: ../src/file-manager/fm-desktop-icon-view.c:803
+msgid "Display this location with the desktop view."
+msgstr ""
+
+#: ../src/file-manager/fm-directory-view.c:1060
+#: ../src/file-manager/fm-properties-window.c:4678
+#: ../src/nautilus-connect-server-dialog.c:401
+#: ../src/nautilus-location-dialog.c:111
+msgid "There was an error displaying help."
+msgstr ""
+
+#: ../src/file-manager/fm-directory-view.c:1080
+msgid "Select Pattern"
+msgstr "Roghnaigh Patrún"
+
+#: ../src/file-manager/fm-directory-view.c:1098
+msgid "_Pattern:"
+msgstr "_Patrún:"
+
+#: ../src/file-manager/fm-directory-view.c:1208
+msgid "Save Search as"
+msgstr "Sábháil Cuardach Mar"
+
+#: ../src/file-manager/fm-directory-view.c:1226
+msgid "Search _name:"
+msgstr "_Ainm cuardaigh:"
+
+#: ../src/file-manager/fm-directory-view.c:1239
+#: ../src/nautilus-connect-server-dialog.c:574
+msgid "_Folder:"
+msgstr "_Fillteán:"
+
+#: ../src/file-manager/fm-directory-view.c:1244
+msgid "Select Folder to Save Search In"
+msgstr ""
+
+#: ../src/file-manager/fm-directory-view.c:2032
+#: ../src/file-manager/fm-directory-view.c:2069
+#, c-format
+msgid "\"%s\" selected"
+msgstr "\"%s\" roghnaithe"
+
+#: ../src/file-manager/fm-directory-view.c:2034
+#, c-format
+msgid "%d folder selected"
+msgid_plural "%d folders selected"
+msgstr[0] "fillteán amháin roghnaithe"
+msgstr[1] "%d fhillteán roghnaithe"
+msgstr[2] "%d fhillteán roghnaithe"
+msgstr[3] "%d bhfillteán roghnaithe"
+msgstr[4] "%d fillteán roghnaithe"
+
+#: ../src/file-manager/fm-directory-view.c:2044
+#, c-format
+msgid " (containing %d item)"
+msgid_plural " (containing %d items)"
+msgstr[0] " (ina bhfuil %d mhír)"
+msgstr[1] " (ina bhfuil %d mhír)"
+msgstr[2] " (ina bhfuil %d mhír)"
+msgstr[3] " (ina bhfuil %d mír)"
+msgstr[4] " (ina bhfuil %d mír)"
+
+#. translators: this is preceded with a string of form 'N folders' (N more than 1)
+#: ../src/file-manager/fm-directory-view.c:2055
+#, c-format
+msgid " (containing a total of %d item)"
+msgid_plural " (containing a total of %d items)"
+msgstr[0] " (ina bhfuil %d mhír ar fad)"
+msgstr[1] " (ina bhfuil %d mhír ar fad)"
+msgstr[2] " (ina bhfuil %d mhír ar fad)"
+msgstr[3] " (ina bhfuil %d mír ar fad)"
+msgstr[4] " (ina bhfuil %d mír ar fad)"
+
+#: ../src/file-manager/fm-directory-view.c:2072
+#, c-format
+msgid "%d item selected"
+msgid_plural "%d items selected"
+msgstr[0] "mír amháin roghnaithe"
+msgstr[1] "%d mhír roghnaithe"
+msgstr[2] "%d mhír roghnaithe"
+msgstr[3] "%d mír roghnaithe"
+msgstr[4] "%d mír roghnaithe"
+
+#. Folders selected also, use "other" terminology
+#: ../src/file-manager/fm-directory-view.c:2079
+#, fuzzy, c-format
+msgid "%d other item selected"
+msgid_plural "%d other items selected"
+msgstr[0] "\"%s\" tógtha (%s)"
+msgstr[1] "\"%s\" tógtha (%s)"
+msgstr[2] "\"%s\" tógtha (%s)"
+
+#. This is marked for translation in case a localiser
+#. * needs to use something other than parentheses. The
+#. * first message gives the number of items selected;
+#. * the message in parentheses the size of those items.
+#.
+#: ../src/file-manager/fm-directory-view.c:2094
+#, c-format
+msgid "%s (%s)"
+msgstr "%s (%s)"
+
+#: ../src/file-manager/fm-directory-view.c:2116
+#, c-format
+msgid "%s, Free space: %s"
+msgstr "%s, Spás saor: %s"
+
+#. This is marked for translation in case a localizer
+#. * needs to change ", " to something else. The comma
+#. * is between the message about the number of folders
+#. * and the number of items in those folders and the
+#. * message about the number of other items and the
+#. * total size of those items.
+#.
+#: ../src/file-manager/fm-directory-view.c:2141
+#, c-format
+msgid "%s%s, %s"
+msgstr "%s%s, %s"
+
+#. Note that the number of items actually displayed varies somewhat due
+#. * to the way files are collected in batches. So you can't assume that
+#. * no more than the constant limit are displayed.
+#.
+#: ../src/file-manager/fm-directory-view.c:2223
+#, c-format
+msgid "The folder \"%s\" contains more files than Nautilus can handle."
+msgstr ""
+
+#: ../src/file-manager/fm-directory-view.c:2229
+msgid "Some files will not be displayed."
+msgstr ""
+
+#: ../src/file-manager/fm-directory-view.c:4120
+#, c-format
+msgid "Open with \"%s\""
+msgstr "Oscail le \"%s\""
+
+#: ../src/file-manager/fm-directory-view.c:4121
+#, c-format
+msgid "Use \"%s\" to open the selected item"
+msgid_plural "Use \"%s\" to open the selected items"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+
+#: ../src/file-manager/fm-directory-view.c:4795
+#, c-format
+msgid "Run \"%s\" on any selected items"
+msgstr "Rith \"%s\" ar aon ceann de na rud atá roghnach"
+
+#: ../src/file-manager/fm-directory-view.c:5042
+#, c-format
+msgid "Create Document from template \"%s\""
+msgstr ""
+
+#: ../src/file-manager/fm-directory-view.c:5298
+msgid "All executable files in this folder will appear in the Scripts menu."
+msgstr ""
+
+#: ../src/file-manager/fm-directory-view.c:5300
+msgid ""
+"Choosing a script from the menu will run that script with any selected items "
+"as input."
+msgstr ""
+
+#: ../src/file-manager/fm-directory-view.c:5302
+msgid ""
+"All executable files in this folder will appear in the Scripts menu. "
+"Choosing a script from the menu will run that script.\n"
+"\n"
+"When executed from a local folder, scripts will be passed the selected file "
+"names. When executed from a remote folder (e.g. a folder showing web or ftp "
+"content), scripts will be passed no parameters.\n"
+"\n"
+"In all cases, the following environment variables will be set by Nautilus, "
+"which the scripts may use:\n"
+"\n"
+"NAUTILUS_SCRIPT_SELECTED_FILE_PATHS: newline-delimited paths for selected "
+"files (only if local)\n"
+"\n"
+"NAUTILUS_SCRIPT_SELECTED_URIS: newline-delimited URIs for selected files\n"
+"\n"
+"NAUTILUS_SCRIPT_CURRENT_URI: URI for current location\n"
+"\n"
+"NAUTILUS_SCRIPT_WINDOW_GEOMETRY: position and size of current window"
+msgstr ""
+
+#: ../src/file-manager/fm-directory-view.c:5460
+#: ../src/file-manager/fm-tree-view.c:904
+#, c-format
+msgid "\"%s\" will be moved if you select the Paste command"
+msgstr ""
+
+#: ../src/file-manager/fm-directory-view.c:5464
+#: ../src/file-manager/fm-tree-view.c:908
+#, c-format
+msgid "\"%s\" will be copied if you select the Paste command"
+msgstr ""
+
+#: ../src/file-manager/fm-directory-view.c:5471
+#, c-format
+msgid "The %d selected item will be moved if you select the Paste command"
+msgid_plural ""
+"The %d selected items will be moved if you select the Paste command"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+
+#: ../src/file-manager/fm-directory-view.c:5478
+#, c-format
+msgid "The %d selected item will be copied if you select the Paste command"
+msgid_plural ""
+"The %d selected items will be copied if you select the Paste command"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+
+#: ../src/file-manager/fm-directory-view.c:5572
+#: ../src/file-manager/fm-tree-view.c:985
+msgid "There is nothing on the clipboard to paste."
+msgstr ""
+
+#: ../src/file-manager/fm-directory-view.c:5932
+#, c-format
+msgid "Connect to Server %s"
+msgstr "Nasc le Freastalaí %s"
+
+#: ../src/file-manager/fm-directory-view.c:5937
+msgid "_Connect"
+msgstr "_Nasc"
+
+#: ../src/file-manager/fm-directory-view.c:5951
+msgid "Link _name:"
+msgstr "_Ainm naisc:"
+
+#: ../src/file-manager/fm-directory-view.c:6142
+msgid "Create _Document"
+msgstr "Cruthaigh _Cáipéis"
+
+#. name, stock id, label
+#: ../src/file-manager/fm-directory-view.c:6143
+msgid "Open Wit_h"
+msgstr "Oscail _Le"
+
+#. name, stock id, label
+#: ../src/file-manager/fm-directory-view.c:6144
+msgid "Choose a program with which to open the selected item"
+msgstr ""
+
+#. name, stock id
+#: ../src/file-manager/fm-directory-view.c:6146
+#: ../src/file-manager/fm-directory-view.c:6154
+msgid "_Properties"
+msgstr "_Airíonna"
+
+#. label, accelerator
+#: ../src/file-manager/fm-directory-view.c:6147
+msgid "View or modify the properties of each selected item"
+msgstr ""
+
+#. label, accelerator
+#: ../src/file-manager/fm-directory-view.c:6155
+#, fuzzy
+msgid "View or modify the properties of the open folder"
+msgstr "Radharc an comhad nó an comhadlann láithreach"
+
+#. name, stock id
+#: ../src/file-manager/fm-directory-view.c:6158
+msgid "Create _Folder"
+msgstr "Cruthaigh _Fillteán"
+
+#. label, accelerator
+#: ../src/file-manager/fm-directory-view.c:6159
+msgid "Create a new empty folder inside this folder"
+msgstr ""
+
+#: ../src/file-manager/fm-directory-view.c:6161
+msgid "No templates Installed"
+msgstr "Níl aon teimpléad suiteáilte"
+
+#. name, stock id, label
+#. name, stock id
+#. translators: this is used to indicate that a file doesn't contain anything
+#: ../src/file-manager/fm-directory-view.c:6164
+msgid "_Empty File"
+msgstr "Comhad _Folamh"
+
+#. label, accelerator
+#: ../src/file-manager/fm-directory-view.c:6165
+msgid "Create a new empty file inside this folder"
+msgstr ""
+
+#. label, accelerator
+#: ../src/file-manager/fm-directory-view.c:6173
+msgid "Open the selected item in this window"
+msgstr "Oscail an mhír roghnaithe san fhuinneog seo"
+
+#. name, stock id
+#. Location-specific actions
+#. name, stock id
+#: ../src/file-manager/fm-directory-view.c:6180
+#: ../src/file-manager/fm-directory-view.c:6308
+msgid "Open in Navigation Window"
+msgstr "Oscail i bhFuinneog Neascleanúna"
+
+#. label, accelerator
+#: ../src/file-manager/fm-directory-view.c:6181
+msgid "Open each selected item in a navigation window"
+msgstr ""
+
+#. name, stock id
+#: ../src/file-manager/fm-directory-view.c:6184
+#: ../src/file-manager/fm-directory-view.c:6313
+msgid "Open in Folder Window"
+msgstr "Oscail i bhFuinneog Fhillteáin"
+
+#. label, accelerator
+#: ../src/file-manager/fm-directory-view.c:6185
+#, fuzzy
+msgid "Open each selected item in a folder window"
+msgstr "Oscail an rud atá roghnaigh sa fhuinneog seo"
+
+#. name, stock id
+#: ../src/file-manager/fm-directory-view.c:6188
+#: ../src/file-manager/fm-directory-view.c:6192
+msgid "Open with Other _Application..."
+msgstr "Oscail le Feidhmchlár _Eile..."
+
+#. label, accelerator
+#: ../src/file-manager/fm-directory-view.c:6189
+#: ../src/file-manager/fm-directory-view.c:6193
+msgid "Choose another application with which to open the selected item"
+msgstr ""
+
+#. name, stock id
+#: ../src/file-manager/fm-directory-view.c:6196
+msgid "_Open Scripts Folder"
+msgstr ""
+
+#. label, accelerator
+#: ../src/file-manager/fm-directory-view.c:6197
+msgid "Show the folder containing the scripts that appear in this menu"
+msgstr ""
+
+#. name, stock id
+#. label, accelerator
+#: ../src/file-manager/fm-directory-view.c:6205
+msgid "Prepare the selected files to be moved with a Paste command"
+msgstr ""
+
+#. name, stock id
+#. label, accelerator
+#: ../src/file-manager/fm-directory-view.c:6209
+msgid "Prepare the selected files to be copied with a Paste command"
+msgstr ""
+
+#. name, stock id
+#. label, accelerator
+#: ../src/file-manager/fm-directory-view.c:6213
+msgid "Move or copy files previously selected by a Cut or Copy command"
+msgstr ""
+
+#. We make accelerator "" instead of null here to not inherit the stock
+#. accelerator for paste
+#. name, stock id
+#: ../src/file-manager/fm-directory-view.c:6218
+#: ../src/file-manager/fm-tree-view.c:1170
+msgid "_Paste Into Folder"
+msgstr "G_reamaigh Isteach i bhFillteán"
+
+#. label, accelerator
+#: ../src/file-manager/fm-directory-view.c:6219
+msgid ""
+"Move or copy files previously selected by a Cut or Copy command into the "
+"selected folder"
+msgstr ""
+
+#. label, accelerator
+#: ../src/file-manager/fm-directory-view.c:6223
+msgid "Select all items in this window"
+msgstr ""
+
+#. name, stock id
+#: ../src/file-manager/fm-directory-view.c:6226
+msgid "Select _Pattern"
+msgstr "Roghnaigh _Patrún"
+
+#. label, accelerator
+#: ../src/file-manager/fm-directory-view.c:6227
+msgid "Select items in this window matching a given pattern"
+msgstr ""
+
+#. name, stock id
+#: ../src/file-manager/fm-directory-view.c:6230
+msgid "D_uplicate"
+msgstr "Dú_bail"
+
+#. label, accelerator
+#: ../src/file-manager/fm-directory-view.c:6231
+msgid "Duplicate each selected item"
+msgstr ""
+
+#. name, stock id
+#: ../src/file-manager/fm-directory-view.c:6234
+#: ../src/file-manager/fm-directory-view.c:7073
+msgid "Ma_ke Link"
+msgid_plural "Ma_ke Links"
+msgstr[0] "_Déan Nasc"
+msgstr[1] "_Déan Naisc"
+msgstr[2] "_Déan Naisc"
+msgstr[3] "_Déan Naisc"
+msgstr[4] "_Déan Naisc"
+
+#. label, accelerator
+#: ../src/file-manager/fm-directory-view.c:6235
+msgid "Create a symbolic link for each selected item"
+msgstr ""
+
+#. name, stock id
+#: ../src/file-manager/fm-directory-view.c:6238
+msgid "_Rename..."
+msgstr "_Athainmigh..."
+
+#. label, accelerator
+#: ../src/file-manager/fm-directory-view.c:6239
+msgid "Rename selected item"
+msgstr ""
+
+#. label, accelerator
+#: ../src/file-manager/fm-directory-view.c:6247
+#: ../src/file-manager/fm-directory-view.c:7042
+msgid "Move each selected item to the Trash"
+msgstr ""
+
+#. name, stock id
+#. add the "delete" menu item
+#: ../src/file-manager/fm-directory-view.c:6250
+#: ../src/file-manager/fm-directory-view.c:6331
+#: ../src/file-manager/fm-directory-view.c:7060
+#: ../src/file-manager/fm-tree-view.c:1197
+msgid "_Delete"
+msgstr "_Scrios"
+
+#. label, accelerator
+#: ../src/file-manager/fm-directory-view.c:6251
+msgid "Delete each selected item, without moving to the Trash"
+msgstr ""
+
+#. name, stock id
+#: ../src/file-manager/fm-directory-view.c:6254
+msgid "Reset View to _Defaults"
+msgstr "Athshocraigh Amharc go _Réamshocruithe"
+
+#. label, accelerator
+#: ../src/file-manager/fm-directory-view.c:6255
+msgid "Reset sorting order and zoom level to match preferences for this view"
+msgstr ""
+
+#. name, stock id
+#: ../src/file-manager/fm-directory-view.c:6258
+msgid "Connect To This Server"
+msgstr "Nasc Leis an Freastalaí Seo"
+
+#. label, accelerator
+#: ../src/file-manager/fm-directory-view.c:6259
+msgid "Make a permanent connection to this server"
+msgstr ""
+
+#. name, stock id
+#: ../src/file-manager/fm-directory-view.c:6262
+#: ../src/file-manager/fm-directory-view.c:6278
+msgid "_Mount Volume"
+msgstr "_Feistigh Imleabhar"
+
+#. label, accelerator
+#: ../src/file-manager/fm-directory-view.c:6263
+msgid "Mount the selected volume"
+msgstr ""
+
+#. name, stock id
+#: ../src/file-manager/fm-directory-view.c:6266
+#: ../src/file-manager/fm-directory-view.c:6282
+#: ../src/file-manager/fm-tree-view.c:753
+msgid "_Unmount Volume"
+msgstr "_Dífheistigh Imleabhar"
+
+#. label, accelerator
+#: ../src/file-manager/fm-directory-view.c:6267
+msgid "Unmount the selected volume"
+msgstr ""
+
+#. name, stock id
+#: ../src/file-manager/fm-directory-view.c:6270
+#: ../src/file-manager/fm-directory-view.c:6286
+#: ../src/nautilus-places-sidebar.c:1752
+msgid "_Eject"
+msgstr "_Díchuir"
+
+#. label, accelerator
+#: ../src/file-manager/fm-directory-view.c:6271
+msgid "Eject the selected volume"
+msgstr ""
+
+#. name, stock id
+#: ../src/file-manager/fm-directory-view.c:6274
+#: ../src/file-manager/fm-directory-view.c:6290
+#: ../src/nautilus-places-sidebar.c:1766
+msgid "_Format"
+msgstr "_Formaid"
+
+#. label, accelerator
+#: ../src/file-manager/fm-directory-view.c:6275
+msgid "Format the selected volume"
+msgstr ""
+
+#. label, accelerator
+#: ../src/file-manager/fm-directory-view.c:6279
+msgid "Mount the volume associated with the open folder"
+msgstr ""
+
+#. label, accelerator
+#: ../src/file-manager/fm-directory-view.c:6283
+msgid "Unmount the volume associated with the open folder"
+msgstr ""
+
+#. label, accelerator
+#: ../src/file-manager/fm-directory-view.c:6287
+msgid "Eject the volume associated with the open folder"
+msgstr ""
+
+#. label, accelerator
+#: ../src/file-manager/fm-directory-view.c:6291
+msgid "Format the volume associated with the open folder"
+msgstr ""
+
+#. name, stock id
+#: ../src/file-manager/fm-directory-view.c:6294
+msgid "Open File and Close window"
+msgstr "Oscail Comhad agus Dún fuinneog"
+
+#. name, stock id
+#: ../src/file-manager/fm-directory-view.c:6298
+msgid "Sa_ve Search"
+msgstr "Sá_bháil Cuardach"
+
+#. label, accelerator
+#: ../src/file-manager/fm-directory-view.c:6299
+msgid "Save the edited search"
+msgstr ""
+
+#. name, stock id
+#: ../src/file-manager/fm-directory-view.c:6302
+msgid "Sa_ve Search As..."
+msgstr "Sá_bháil Cuardach Mar..."
+
+#. label, accelerator
+#: ../src/file-manager/fm-directory-view.c:6303
+msgid "Save the current search as a file"
+msgstr ""
+
+#. label, accelerator
+#: ../src/file-manager/fm-directory-view.c:6309
+#, fuzzy
+msgid "Open this folder in a navigation window"
+msgstr "Oscail i Fhuinneog an Inseoltóireacht"
+
+#. label, accelerator
+#: ../src/file-manager/fm-directory-view.c:6314
+#, fuzzy
+msgid "Open this folder in a folder window"
+msgstr "Oscail i Fhuinneog an Inseoltóireacht"
+
+#. name, stock id
+#. label, accelerator
+#: ../src/file-manager/fm-directory-view.c:6319
+msgid "Prepare this folder to be moved with a Paste command"
+msgstr ""
+
+#. name, stock id
+#. label, accelerator
+#: ../src/file-manager/fm-directory-view.c:6323
+msgid "Prepare this folder to be copied with a Paste command"
+msgstr ""
+
+#. label, accelerator
+#: ../src/file-manager/fm-directory-view.c:6328
+#, fuzzy
+msgid "Move this folder to the Trash"
+msgstr "Bog go dtí an Bruscar"
+
+#. label, accelerator
+#: ../src/file-manager/fm-directory-view.c:6332
+#, fuzzy
+msgid "Delete this folder, without moving to the Trash"
+msgstr "Tá an nasc briste, an bhfuil ag iarraigh chuir sa Bosca Bruscair?"
+
+#. name, stock id
+#: ../src/file-manager/fm-directory-view.c:6338
+msgid "Show _Hidden Files"
+msgstr "Taispeáin Comhaid _Folaithe"
+
+#. label, accelerator
+#: ../src/file-manager/fm-directory-view.c:6339
+msgid "Toggle the display of hidden files in the current window"
+msgstr ""
+
+#. Translators: %s is a directory
+#: ../src/file-manager/fm-directory-view.c:6424
+#, c-format
+msgid "Run or manage scripts from %s"
+msgstr ""
+
+#. Create a script action here specially because its tooltip is dynamic
+#: ../src/file-manager/fm-directory-view.c:6426
+msgid "_Scripts"
+msgstr "_Scripteanna"
+
+#. add the "open in new window" menu item
+#: ../src/file-manager/fm-directory-view.c:6809
+#: ../src/file-manager/fm-directory-view.c:6992
+#: ../src/file-manager/fm-tree-view.c:1127
+msgid "Open in New Window"
+msgstr "Oscail i bhFuinneog Nua"
+
+#: ../src/file-manager/fm-directory-view.c:6811
+#: ../src/file-manager/fm-directory-view.c:7002
+msgid "Browse in New Window"
+msgstr "Brabhsáil i bhFuinneog Nua"
+
+#: ../src/file-manager/fm-directory-view.c:6815
+#: ../src/file-manager/fm-directory-view.c:7012
+msgid "_Browse Folder"
+msgid_plural "_Browse Folders"
+msgstr[0] "_Brabhsáil Fillteán"
+msgstr[1] "_Brabhsáil Fillteáin"
+msgstr[2] "_Brabhsáil Fillteáin"
+msgstr[3] "_Brabhsáil Fillteáin"
+msgstr[4] "_Brabhsáil Fillteáin"
+
+#: ../src/file-manager/fm-directory-view.c:6844
+#: ../src/file-manager/fm-directory-view.c:7037
+msgid "_Delete from Trash"
+msgstr "_Scrios ón mBruscar"
+
+#: ../src/file-manager/fm-directory-view.c:6845
+msgid "Delete the open folder permanently"
+msgstr ""
+
+#: ../src/file-manager/fm-directory-view.c:6849
+msgid "Move the open folder to the Trash"
+msgstr ""
+
+#: ../src/file-manager/fm-directory-view.c:6974
+#, c-format
+msgid "_Open with \"%s\""
+msgstr "_Oscail le \"%s\""
+
+#: ../src/file-manager/fm-directory-view.c:6994
+#, c-format
+msgid "Open in %d New Window"
+msgid_plural "Open in %d New Windows"
+msgstr[0] "Oscail i %d Fhuinneog Nua"
+msgstr[1] "Oscail i %d Fhuinneog Nua"
+msgstr[2] "Oscail i %d Fhuinneog Nua"
+msgstr[3] "Oscail i %d bhFuinneog Nua"
+msgstr[4] "Oscail i %d Fuinneog Nua"
+
+#: ../src/file-manager/fm-directory-view.c:7004
+#, fuzzy, c-format
+msgid "Browse in %d New Window"
+msgid_plural "Browse in %d New Windows"
+msgstr[0] "Oscail %d i Fhuinneoga Nua"
+msgstr[1] "Oscail %d i Fhuinneoga Nua"
+msgstr[2] "Oscail %d i Fhuinneoga Nua"
+msgstr[3] "Oscail %d i Fhuinneoga Nua"
+msgstr[4] "Oscail %d i Fhuinneoga Nua"
+
+#: ../src/file-manager/fm-directory-view.c:7038
+msgid "Delete all selected items permanently"
+msgstr ""
+
+#: ../src/file-manager/fm-directory-view.c:8199
+msgid "Download location?"
+msgstr "Íosluchtaigh suíomh?"
+
+#: ../src/file-manager/fm-directory-view.c:8202
+msgid "You can download it or make a link to it."
+msgstr ""
+
+#: ../src/file-manager/fm-directory-view.c:8205
+msgid "Make a _Link"
+msgstr "_Déan Nasc"
+
+#: ../src/file-manager/fm-directory-view.c:8209
+msgid "_Download"
+msgstr "Í_osluchtaigh"
+
+#: ../src/file-manager/fm-directory-view.c:8271
+#: ../src/file-manager/fm-directory-view.c:8336
+#: ../src/file-manager/fm-directory-view.c:8441
+msgid "Drag and drop is not supported."
+msgstr ""
+
+#: ../src/file-manager/fm-directory-view.c:8272
+msgid "Drag and drop is only supported on local file systems."
+msgstr ""
+
+#: ../src/file-manager/fm-directory-view.c:8337
+#: ../src/file-manager/fm-directory-view.c:8442
+msgid "An invalid drag type was used."
+msgstr ""
+
+#. Translator: This is the filename used for when you dnd text to a directory
+#: ../src/file-manager/fm-directory-view.c:8509
+msgid "dropped text.txt"
+msgstr ""
+
+#: ../src/file-manager/fm-ditem-page.c:323
+#: ../src/file-manager/fm-ditem-page.c:334
+msgid "Comment"
+msgstr "Nóta"
+
+#: ../src/file-manager/fm-ditem-page.c:326
+msgid "URL"
+msgstr "URL"
+
+#: ../src/file-manager/fm-ditem-page.c:329
+#: ../src/file-manager/fm-ditem-page.c:340
+#: ../src/nautilus-image-properties-page.c:311
+msgid "Description"
+msgstr "Cur Síos"
+
+#: ../src/file-manager/fm-ditem-page.c:330
+msgid "Link"
+msgstr "Nasc"
+
+#: ../src/file-manager/fm-ditem-page.c:337
+msgid "Command"
+msgstr "Ordú"
+
+#: ../src/file-manager/fm-ditem-page.c:341
+msgid "Launcher"
+msgstr "Tosaitheoir"
+
+#: ../src/file-manager/fm-error-reporting.c:59
+#, c-format
+msgid ""
+"You do not have the permissions necessary to view the contents of \"%s\"."
+msgstr ""
+
+#: ../src/file-manager/fm-error-reporting.c:63
+#, c-format
+msgid "\"%s\" couldn't be found. Perhaps it has recently been deleted."
+msgstr ""
+
+#: ../src/file-manager/fm-error-reporting.c:67
+#, c-format
+msgid "Sorry, couldn't display all the contents of \"%s\": %s"
+msgstr ""
+
+#: ../src/file-manager/fm-error-reporting.c:74
+msgid "The folder contents could not be displayed."
+msgstr ""
+
+#: ../src/file-manager/fm-error-reporting.c:103
+#, c-format
+msgid ""
+"The name \"%s\" is already used in this folder. Please use a different name."
+msgstr ""
+
+#: ../src/file-manager/fm-error-reporting.c:108
+#, c-format
+msgid ""
+"There is no \"%s\" in this folder. Perhaps it was just moved or deleted?"
+msgstr ""
+
+#: ../src/file-manager/fm-error-reporting.c:113
+#, c-format
+msgid "You do not have the permissions necessary to rename \"%s\"."
+msgstr ""
+
+#: ../src/file-manager/fm-error-reporting.c:118
+#, c-format
+msgid ""
+"The name \"%s\" is not valid because it contains the character \"/\". Please "
+"use a different name."
+msgstr ""
+
+#: ../src/file-manager/fm-error-reporting.c:122
+#, c-format
+msgid "The name \"%s\" is not valid. Please use a different name."
+msgstr ""
+
+#. fall through
+#: ../src/file-manager/fm-error-reporting.c:137
+#, c-format
+msgid "Sorry, couldn't rename \"%s\" to \"%s\": %s"
+msgstr ""
+
+#: ../src/file-manager/fm-error-reporting.c:145
+msgid "The item could not be renamed."
+msgstr ""
+
+#: ../src/file-manager/fm-error-reporting.c:167
+#, c-format
+msgid ""
+"You do not have the permissions necessary to change the group of \"%s\"."
+msgstr ""
+
+#. fall through
+#: ../src/file-manager/fm-error-reporting.c:180
+#, c-format
+msgid "Sorry, couldn't change the group of \"%s\": %s"
+msgstr ""
+
+#: ../src/file-manager/fm-error-reporting.c:185
+msgid "The group could not be changed."
+msgstr ""
+
+#: ../src/file-manager/fm-error-reporting.c:205
+#, c-format
+msgid "Sorry, couldn't change the owner of \"%s\": %s"
+msgstr ""
+
+#: ../src/file-manager/fm-error-reporting.c:207
+msgid "The owner could not be changed."
+msgstr ""
+
+#: ../src/file-manager/fm-error-reporting.c:227
+#, c-format
+msgid "Sorry, couldn't change the permissions of \"%s\": %s"
+msgstr ""
+
+#: ../src/file-manager/fm-error-reporting.c:229
+msgid "The permissions could not be changed."
+msgstr ""
+
+#: ../src/file-manager/fm-error-reporting.c:334
+#, c-format
+msgid "Renaming \"%s\" to \"%s\"."
+msgstr ""
+
+#: ../src/file-manager/fm-icon-view.c:123
+msgid "by _Name"
+msgstr "de réir _Ainm"
+
+#: ../src/file-manager/fm-icon-view.c:124
+#: ../src/file-manager/fm-icon-view.c:1464
+msgid "Keep icons sorted by name in rows"
+msgstr ""
+
+#: ../src/file-manager/fm-icon-view.c:130
+msgid "by _Size"
+msgstr "de réir _Méide"
+
+#: ../src/file-manager/fm-icon-view.c:131
+#: ../src/file-manager/fm-icon-view.c:1468
+msgid "Keep icons sorted by size in rows"
+msgstr ""
+
+#: ../src/file-manager/fm-icon-view.c:137
+msgid "by _Type"
+msgstr "de réir _Cineáil"
+
+#: ../src/file-manager/fm-icon-view.c:138
+#: ../src/file-manager/fm-icon-view.c:1472
+msgid "Keep icons sorted by type in rows"
+msgstr ""
+
+#: ../src/file-manager/fm-icon-view.c:144
+msgid "by Modification _Date"
+msgstr "de réir Dháta Athraithe"
+
+#: ../src/file-manager/fm-icon-view.c:145
+#: ../src/file-manager/fm-icon-view.c:1476
+msgid "Keep icons sorted by modification date in rows"
+msgstr ""
+
+#: ../src/file-manager/fm-icon-view.c:151
+msgid "by _Emblems"
+msgstr "de réir _Suaitheantas"
+
+#: ../src/file-manager/fm-icon-view.c:152
+#: ../src/file-manager/fm-icon-view.c:1480
+msgid "Keep icons sorted by emblems in rows"
+msgstr ""
+
+#: ../src/file-manager/fm-icon-view.c:1424
+msgid "Arran_ge Items"
+msgstr ""
+
+#. name, stock id, label
+#. name, stock id
+#: ../src/file-manager/fm-icon-view.c:1426
+msgid "Str_etch Icon"
+msgstr ""
+
+#. label, accelerator
+#: ../src/file-manager/fm-icon-view.c:1427
+msgid "Make the selected icon stretchable"
+msgstr ""
+
+#. name, stock id
+#: ../src/file-manager/fm-icon-view.c:1430
+#: ../src/file-manager/fm-icon-view.c:1582
+msgid "Restore Icons' Original Si_zes"
+msgstr ""
+
+#. label, accelerator
+#: ../src/file-manager/fm-icon-view.c:1431
+msgid "Restore each selected icon to its original size"
+msgstr ""
+
+#. name, stock id
+#: ../src/file-manager/fm-icon-view.c:1434
+msgid "Clean _Up by Name"
+msgstr ""
+
+#. label, accelerator
+#: ../src/file-manager/fm-icon-view.c:1435
+msgid "Reposition icons to better fit in the window and avoid overlapping"
+msgstr ""
+
+#. name, stock id
+#: ../src/file-manager/fm-icon-view.c:1441
+msgid "Compact _Layout"
+msgstr ""
+
+#. label, accelerator
+#: ../src/file-manager/fm-icon-view.c:1442
+msgid "Toggle using a tighter layout scheme"
+msgstr ""
+
+#. name, stock id
+#: ../src/file-manager/fm-icon-view.c:1446
+msgid "Re_versed Order"
+msgstr ""
+
+#. label, accelerator
+#: ../src/file-manager/fm-icon-view.c:1447
+msgid "Display icons in the opposite order"
+msgstr ""
+
+#. name, stock id
+#: ../src/file-manager/fm-icon-view.c:1451
+msgid "_Keep Aligned"
+msgstr ""
+
+#. label, accelerator
+#: ../src/file-manager/fm-icon-view.c:1452
+msgid "Keep icons lined up on a grid"
+msgstr ""
+
+#: ../src/file-manager/fm-icon-view.c:1459
+msgid "_Manually"
+msgstr "De _Láimh"
+
+#: ../src/file-manager/fm-icon-view.c:1460
+msgid "Leave icons wherever they are dropped"
+msgstr ""
+
+#: ../src/file-manager/fm-icon-view.c:1463
+msgid "By _Name"
+msgstr "De Réir _Ainm"
+
+#: ../src/file-manager/fm-icon-view.c:1467
+msgid "By _Size"
+msgstr "De Réir _Méide"
+
+#: ../src/file-manager/fm-icon-view.c:1471
+msgid "By _Type"
+msgstr "De Réir _Cineáil"
+
+#: ../src/file-manager/fm-icon-view.c:1475
+msgid "By Modification _Date"
+msgstr "De Réir _Dháta Athraithe"
+
+#: ../src/file-manager/fm-icon-view.c:1479
+msgid "By _Emblems"
+msgstr "De Réir _Suaitheantas"
+
+#: ../src/file-manager/fm-icon-view.c:1583
+msgid "Restore Icon's Original Si_ze"
+msgstr ""
+
+#: ../src/file-manager/fm-icon-view.c:1937
+#, c-format
+msgid "pointing at \"%s\""
+msgstr ""
+
+#: ../src/file-manager/fm-icon-view.c:2710
+msgid "Icons"
+msgstr "Deilbhíní"
+
+#: ../src/file-manager/fm-icon-view.c:2711
+msgid "View as Icons"
+msgstr "Taispeáin Mar Deilbhíní"
+
+#: ../src/file-manager/fm-icon-view.c:2712
+msgid "View as _Icons"
+msgstr "Taispeáin Mar De_ilbhíní"
+
+#: ../src/file-manager/fm-icon-view.c:2713
+msgid "The icon view encountered an error."
+msgstr ""
+
+#: ../src/file-manager/fm-icon-view.c:2714
+msgid "The icon view encountered an error while starting up."
+msgstr ""
+
+#: ../src/file-manager/fm-icon-view.c:2715
+msgid "Display this location with the icon view."
+msgstr ""
+
+#: ../src/file-manager/fm-list-model.c:379
+#: ../src/file-manager/fm-tree-model.c:1265
+msgid "(Empty)"
+msgstr "(Folamh)"
+
+#: ../src/file-manager/fm-list-model.c:381
+#: ../src/file-manager/fm-tree-model.c:1265
+msgid "Loading..."
+msgstr "Á luchtú..."
+
+#: ../src/file-manager/fm-list-view.c:2032
+#, c-format
+msgid "%s Visible Columns"
+msgstr "Colúin Infheicthe %s"
+
+#: ../src/file-manager/fm-list-view.c:2051
+msgid "Choose the order of information to appear in this folder."
+msgstr ""
+
+#. name, stock id
+#: ../src/file-manager/fm-list-view.c:2093
+msgid "Visible _Columns..."
+msgstr "_Colúin Infheicthe..."
+
+#. label, accelerator
+#: ../src/file-manager/fm-list-view.c:2094
+msgid "Select the columns visible in this folder"
+msgstr ""
+
+#: ../src/file-manager/fm-list-view.c:2796
+msgid "List"
+msgstr "Liosta"
+
+#: ../src/file-manager/fm-list-view.c:2797
+msgid "View as List"
+msgstr "Taispeáin Mar Liosta"
+
+#: ../src/file-manager/fm-list-view.c:2798
+msgid "View as _List"
+msgstr "Taispeáin Mar _Liosta"
+
+#: ../src/file-manager/fm-list-view.c:2799
+msgid "The list view encountered an error."
+msgstr ""
+
+#: ../src/file-manager/fm-list-view.c:2800
+msgid "The list view encountered an error while starting up."
+msgstr ""
+
+#: ../src/file-manager/fm-list-view.c:2801
+msgid "Display this location with the list view."
+msgstr ""
+
+#: ../src/file-manager/fm-properties-window.c:519
+msgid "You can't assign more than one custom icon at a time!"
+msgstr ""
+
+#: ../src/file-manager/fm-properties-window.c:520
+#: ../src/nautilus-information-panel.c:496
+msgid "Please drag just one image to set a custom icon."
+msgstr ""
+
+#: ../src/file-manager/fm-properties-window.c:531
+#: ../src/nautilus-information-panel.c:518
+msgid "The file that you dropped is not local."
+msgstr ""
+
+#: ../src/file-manager/fm-properties-window.c:532
+#: ../src/file-manager/fm-properties-window.c:538
+#: ../src/nautilus-information-panel.c:519
+msgid "You can only use local images as custom icons."
+msgstr ""
+
+#: ../src/file-manager/fm-properties-window.c:537
+#: ../src/nautilus-information-panel.c:524
+msgid "The file that you dropped is not an image."
+msgstr ""
+
+#: ../src/file-manager/fm-properties-window.c:1027
+msgid "Properties"
+msgstr "Airíonna"
+
+#: ../src/file-manager/fm-properties-window.c:1035
+#, c-format
+msgid "%s Properties"
+msgstr "Airíonna %s"
+
+#: ../src/file-manager/fm-properties-window.c:1567
+msgid "Cancel Group Change?"
+msgstr ""
+
+#: ../src/file-manager/fm-properties-window.c:1984
+msgid "Cancel Owner Change?"
+msgstr ""
+
+#: ../src/file-manager/fm-properties-window.c:2279
+msgid "nothing"
+msgstr "neamhní"
+
+#: ../src/file-manager/fm-properties-window.c:2281
+msgid "unreadable"
+msgstr ""
+
+#: ../src/file-manager/fm-properties-window.c:2291
+#, c-format
+msgid "%d item, with size %s"
+msgid_plural "%d items, totalling %s"
+msgstr[0] "%d mhír, le méid %s"
+msgstr[1] "%d mhír, %s iomlán"
+msgstr[2] "%d mhír, %s iomlán"
+msgstr[3] "%d mír, %s iomlán"
+msgstr[4] "%d mír, %s iomlán"
+
+#: ../src/file-manager/fm-properties-window.c:2300
+msgid "(some contents unreadable)"
+msgstr ""
+
+#. Also set the title field here, with a trailing carriage return &
+#. * space if the value field has two lines. This is a hack to get the
+#. * "Contents:" title to line up with the first line of the
+#. * 2-line value. Maybe there's a better way to do this, but I
+#. * couldn't think of one.
+#.
+#: ../src/file-manager/fm-properties-window.c:2317
+msgid "Contents:"
+msgstr "Ábhair:"
+
+#. Translators: "used" refers to the capacity of the filesystem
+#: ../src/file-manager/fm-properties-window.c:2806
+msgid "used"
+msgstr "úsáidte"
+
+#. Translators: "free" refers to the capacity of the filesystem
+#: ../src/file-manager/fm-properties-window.c:2811
+msgid "free"
+msgstr "saor"
+
+#: ../src/file-manager/fm-properties-window.c:2813
+msgid "Total capacity: "
+msgstr ""
+
+#: ../src/file-manager/fm-properties-window.c:2822
+msgid "Filesystem type: "
+msgstr "Cineál chóras comhad"
+
+#: ../src/file-manager/fm-properties-window.c:2900
+msgid "Basic"
+msgstr "Bunúsach"
+
+#. Name label
+#: ../src/file-manager/fm-properties-window.c:2930
+msgid "_Name:"
+msgid_plural "_Names:"
+msgstr[0] "_Ainm:"
+msgstr[1] "_Ainmneacha:"
+msgstr[2] "_Ainmneacha:"
+msgstr[3] "_Ainmneacha:"
+msgstr[4] "_Ainmneacha:"
+
+#: ../src/file-manager/fm-properties-window.c:2949
+msgid "Type:"
+msgstr "Cineál:"
+
+#: ../src/file-manager/fm-properties-window.c:2951
+#: ../src/file-manager/fm-properties-window.c:2961
+#: ../src/file-manager/fm-properties-window.c:2967
+#: ../src/file-manager/fm-properties-window.c:2973
+#: ../src/file-manager/fm-properties-window.c:2978
+#: ../src/file-manager/fm-properties-window.c:2986
+#: ../src/file-manager/fm-properties-window.c:2992
+#: ../src/file-manager/fm-properties-window.c:3001
+#: ../src/file-manager/fm-properties-window.c:3007
+#: ../src/file-manager/fm-properties-window.c:4057
+#: ../src/file-manager/fm-properties-window.c:4090
+#: ../src/file-manager/fm-properties-window.c:4263
+#: ../src/file-manager/fm-properties-window.c:4285
+#: ../src/file-manager/fm-properties-window.c:4320
+#: ../src/file-manager/fm-properties-window.c:4490
+#: ../src/file-manager/fm-properties-window.c:4494
+msgid "--"
+msgstr "--"
+
+#: ../src/file-manager/fm-properties-window.c:2959
+msgid "Size:"
+msgstr "Méid:"
+
+#: ../src/file-manager/fm-properties-window.c:2965
+#: ../src/nautilus-location-bar.c:58
+msgid "Location:"
+msgstr "Suíomh:"
+
+#: ../src/file-manager/fm-properties-window.c:2971
+msgid "Volume:"
+msgstr "Toirt:"
+
+#: ../src/file-manager/fm-properties-window.c:2976
+msgid "Free space:"
+msgstr "Spás saor:"
+
+#: ../src/file-manager/fm-properties-window.c:2984
+msgid "Link target:"
+msgstr ""
+
+#: ../src/file-manager/fm-properties-window.c:2990
+msgid "MIME type:"
+msgstr "Cineál MIME:"
+
+#: ../src/file-manager/fm-properties-window.c:2999
+msgid "Modified:"
+msgstr "Athraithe:"
+
+#: ../src/file-manager/fm-properties-window.c:3005
+msgid "Accessed:"
+msgstr "Rochtain:"
+
+#: ../src/file-manager/fm-properties-window.c:3115
+#: ../src/nautilus-emblem-sidebar.c:1047
+msgid "Emblems"
+msgstr "Suaitheantais"
+
+#: ../src/file-manager/fm-properties-window.c:3518
+msgid "_Read"
+msgstr "_Léigh"
+
+#: ../src/file-manager/fm-properties-window.c:3520
+msgid "_Write"
+msgstr "_Scríobh"
+
+#: ../src/file-manager/fm-properties-window.c:3522
+msgid "E_xecute"
+msgstr "_Rith"
+
+#. translators: this gets concatenated to "no read",
+#. * "no access", etc. (see following strings)
+#.
+#: ../src/file-manager/fm-properties-window.c:3790
+#: ../src/file-manager/fm-properties-window.c:3801
+#: ../src/file-manager/fm-properties-window.c:3813
+msgid "no "
+msgstr "gan"
+
+#: ../src/file-manager/fm-properties-window.c:3793
+msgid "list"
+msgstr "liosta"
+
+#: ../src/file-manager/fm-properties-window.c:3795
+msgid "read"
+msgstr "léigh"
+
+#: ../src/file-manager/fm-properties-window.c:3804
+msgid "create/delete"
+msgstr ""
+
+#: ../src/file-manager/fm-properties-window.c:3806
+msgid "write"
+msgstr "scríobh"
+
+#: ../src/file-manager/fm-properties-window.c:3815
+msgid "access"
+msgstr "rochtain"
+
+#: ../src/file-manager/fm-properties-window.c:3864
+msgid "Access:"
+msgstr "Rochtain:"
+
+#: ../src/file-manager/fm-properties-window.c:3866
+msgid "Folder access:"
+msgstr "Rochtain fhillteáin:"
+
+#: ../src/file-manager/fm-properties-window.c:3868
+msgid "File access:"
+msgstr "Rochtain chomhaid:"
+
+#: ../src/file-manager/fm-properties-window.c:3880
+#: ../src/file-manager/fm-properties-window.c:3891
+#: ../src/nautilus-file-management-properties.c:288
+msgid "None"
+msgstr "Neamhní"
+
+#: ../src/file-manager/fm-properties-window.c:3883
+msgid "List files only"
+msgstr ""
+
+#: ../src/file-manager/fm-properties-window.c:3885
+msgid "Access files"
+msgstr "Déan rochtain ar chomhaid"
+
+#: ../src/file-manager/fm-properties-window.c:3887
+msgid "Create and delete files"
+msgstr "Cruthaigh agus scrios comhaid"
+
+#: ../src/file-manager/fm-properties-window.c:3894
+msgid "Read-only"
+msgstr "Léigh-amháin"
+
+#: ../src/file-manager/fm-properties-window.c:3896
+msgid "Read and write"
+msgstr "Léigh agus scríobh"
+
+#: ../src/file-manager/fm-properties-window.c:3961
+msgid "Set _user ID"
+msgstr "Socraigh CA ú_sáideora"
+
+#: ../src/file-manager/fm-properties-window.c:3963
+msgid "Special flags:"
+msgstr ""
+
+#: ../src/file-manager/fm-properties-window.c:3965
+msgid "Set gro_up ID"
+msgstr "Socraigh CA _grúpa"
+
+#: ../src/file-manager/fm-properties-window.c:3966
+msgid "_Sticky"
+msgstr "_Greamaitheach"
+
+#: ../src/file-manager/fm-properties-window.c:4046
+#: ../src/file-manager/fm-properties-window.c:4250
+msgid "_Owner:"
+msgstr "Úi_néir:"
+
+#: ../src/file-manager/fm-properties-window.c:4052
+#: ../src/file-manager/fm-properties-window.c:4147
+#: ../src/file-manager/fm-properties-window.c:4258
+msgid "Owner:"
+msgstr "Úinéir:"
+
+#: ../src/file-manager/fm-properties-window.c:4075
+#: ../src/file-manager/fm-properties-window.c:4270
+msgid "_Group:"
+msgstr "_Grúpa:"
+
+#: ../src/file-manager/fm-properties-window.c:4084
+#: ../src/file-manager/fm-properties-window.c:4148
+#: ../src/file-manager/fm-properties-window.c:4279
+msgid "Group:"
+msgstr "Grúpa:"
+
+#: ../src/file-manager/fm-properties-window.c:4109
+msgid "Others"
+msgstr "Eile"
+
+#: ../src/file-manager/fm-properties-window.c:4126
+msgid "Execute:"
+msgstr "Rith:"
+
+#: ../src/file-manager/fm-properties-window.c:4130
+msgid "Allow _executing file as program"
+msgstr ""
+
+#: ../src/file-manager/fm-properties-window.c:4149
+msgid "Others:"
+msgstr "Eile:"
+
+#: ../src/file-manager/fm-properties-window.c:4297
+msgid "Folder Permissions:"
+msgstr "Ceadanna Fillteáin:"
+
+#: ../src/file-manager/fm-properties-window.c:4309
+msgid "File Permissions:"
+msgstr "Ceadanna Comhaid:"
+
+#: ../src/file-manager/fm-properties-window.c:4319
+msgid "Text view:"
+msgstr "Amharc téacs:"
+
+#: ../src/file-manager/fm-properties-window.c:4466
+msgid "You are not the owner, so you can't change these permissions."
+msgstr ""
+
+#: ../src/file-manager/fm-properties-window.c:4489
+msgid "SELinux context:"
+msgstr "Comhthéacs SELinux:"
+
+#: ../src/file-manager/fm-properties-window.c:4493
+msgid "Last changed:"
+msgstr "Athrú is déanaí:"
+
+#: ../src/file-manager/fm-properties-window.c:4507
+msgid "Apply Permissions to Enclosed Files"
+msgstr "Cuir Ceadanna i bhFeidhm ar Chomaid Iata"
+
+#: ../src/file-manager/fm-properties-window.c:4517
+#, c-format
+msgid "The permissions of \"%s\" could not be determined."
+msgstr ""
+
+#: ../src/file-manager/fm-properties-window.c:4520
+msgid "The permissions of the selected file could not be determined."
+msgstr ""
+
+#: ../src/file-manager/fm-properties-window.c:5081
+msgid "Creating Properties window."
+msgstr "Ag cruthaigh fhuinneog Álbachta."
+
+#: ../src/file-manager/fm-properties-window.c:5322
+msgid "Select Custom Icon"
+msgstr "Roghnaigh Deilbhín Saincheaptha"
+
+#: ../src/file-manager/fm-tree-view.c:753
+msgid "E_ject"
+msgstr "_Díchuir"
+
+#. add the "create folder" menu item
+#: ../src/file-manager/fm-tree-view.c:1138
+msgid "Create Folder"
+msgstr "Cruthaigh Fillteán"
+
+#: ../src/file-manager/fm-tree-view.c:1186
+msgid "Move to Trash"
+msgstr "Bog go Bruscar"
+
+#: ../src/file-manager/fm-tree-view.c:1263
+#: ../src/nautilus-places-sidebar.c:289
+msgid "File System"
+msgstr "Córas Comhad"
+
+#: ../src/file-manager/fm-tree-view.c:1267
+msgid "Network Neighbourhood"
+msgstr "Aitiúil an Líontán"
+
+#: ../src/file-manager/fm-tree-view.c:1509
+msgid "Tree"
+msgstr "Crann"
+
+#: ../src/file-manager/fm-tree-view.c:1515
+msgid "Show Tree"
+msgstr "Taispeáin Crann"
+
+#: ../src/nautilus-application.c:285
+#, c-format
+msgid "Nautilus could not create the required folder \"%s\"."
+msgstr ""
+
+#: ../src/nautilus-application.c:287
+msgid ""
+"Before running Nautilus, please create the following folder, or set "
+"permissions such that Nautilus can create it."
+msgstr ""
+
+#: ../src/nautilus-application.c:290
+#, c-format
+msgid "Nautilus could not create the following required folders: %s."
+msgstr ""
+
+#: ../src/nautilus-application.c:292
+msgid ""
+"Before running Nautilus, please create these folders, or set permissions "
+"such that Nautilus can create them."
+msgstr ""
+
+#: ../src/nautilus-application.c:356
+msgid "Link To Old Desktop"
+msgstr "Nasc le Sean-Deasc"
+
+#: ../src/nautilus-application.c:372
+msgid "A link called \"Link To Old Desktop\" has been created on the desktop."
+msgstr ""
+
+#: ../src/nautilus-application.c:373
+msgid ""
+"The location of the desktop directory has changed in GNOME 2.4. You can open "
+"the link and move over the files you want, then delete the link."
+msgstr ""
+
+#. Can't register myself due to trouble locating the
+#. * Nautilus_Shell.server file. This has happened when you
+#. * launch Nautilus with an LD_LIBRARY_PATH that
+#. * doesn't include the directory containing the oaf
+#. * library. It could also happen if the
+#. * Nautilus_Shell.server file was not present for some
+#. * reason. Sometimes killing oafd and gconfd fixes
+#. * this problem but we don't exactly understand why,
+#. * since neither of the above causes explain it.
+#.
+#: ../src/nautilus-application.c:569
+msgid ""
+"Nautilus can't be used now. Running the command \"bonobo-slay\" from the "
+"console may fix the problem. If not, you can try rebooting the computer or "
+"installing Nautilus again."
+msgstr ""
+
+#. FIXME bugzilla.gnome.org 42536: The guesses and stuff here are lame.
+#: ../src/nautilus-application.c:575
+msgid ""
+"Nautilus can't be used now. Running the command \"bonobo-slay\" from the "
+"console may fix the problem. If not, you can try rebooting the computer or "
+"installing Nautilus again.\n"
+"\n"
+"Bonobo couldn't locate the Nautilus_shell.server file. One cause of this "
+"seems to be an LD_LIBRARY_PATH that does not include the bonobo-activation "
+"library's directory. Another possible cause would be bad install with a "
+"missing Nautilus_Shell.server file.\n"
+"\n"
+"Running \"bonobo-slay\" will kill all Bonobo Activation and GConf processes, "
+"which may be needed by other applications.\n"
+"\n"
+"Sometimes killing bonobo-activation-server and gconfd fixes the problem, but "
+"we don't know why.\n"
+"\n"
+"We have also seen this error when a faulty version of bonobo-activation was "
+"installed."
+msgstr ""
+
+#. Some misc. error (can never happen with current
+#. * version of bonobo-activation). Show dialog and terminate the
+#. * program.
+#.
+#. FIXME bugzilla.gnome.org 42537: Looks like this does happen with the
+#. * current OAF. I guess I read the code wrong. Need to figure out when and make a
+#. * good message.
+#.
+#. FIXME bugzilla.gnome.org 42538: When can this happen?
+#: ../src/nautilus-application.c:605 ../src/nautilus-application.c:623
+#: ../src/nautilus-application.c:630
+msgid "Nautilus can't be used now, due to an unexpected error."
+msgstr ""
+
+#: ../src/nautilus-application.c:606
+msgid ""
+"Nautilus can't be used now, due to an unexpected error from Bonobo when "
+"attempting to register the file manager view server."
+msgstr ""
+
+#: ../src/nautilus-application.c:624
+msgid ""
+"Nautilus can't be used now, due to an unexpected error from Bonobo when "
+"attempting to locate the factory. Killing bonobo-activation-server and "
+"restarting Nautilus may help fix the problem."
+msgstr ""
+
+#: ../src/nautilus-application.c:631
+msgid ""
+"Nautilus can't be used now, due to an unexpected error from Bonobo when "
+"attempting to locate the shell object. Killing bonobo-activation-server and "
+"restarting Nautilus may help fix the problem."
+msgstr ""
+
+#: ../src/nautilus-bookmarks-window.c:156
+#: ../src/nautilus-file-management-properties.c:204
+#: ../src/nautilus-property-browser.c:1562 ../src/nautilus-window-menus.c:509
+#, c-format
+msgid ""
+"There was an error displaying help: \n"
+"%s"
+msgstr ""
+
+#: ../src/nautilus-bookmarks-window.c:190
+msgid "No bookmarks defined"
+msgstr ""
+
+#: ../src/nautilus-bookmarks-window.glade.h:1
+msgid "<b>_Bookmarks</b>"
+msgstr "<b>_Leabharmharcanna</b>"
+
+#: ../src/nautilus-bookmarks-window.glade.h:2
+msgid "<b>_Location</b>"
+msgstr "<b>_Suíomh</b>"
+
+#: ../src/nautilus-bookmarks-window.glade.h:3
+msgid "<b>_Name</b>"
+msgstr "<b>Ai_nm</b>"
+
+#: ../src/nautilus-bookmarks-window.glade.h:4
+msgid "Edit Bookmarks"
+msgstr "Cuir Leabharmharcanna in Eagar"
+
+#: ../src/nautilus-connect-server-dialog-main.c:67
+#, c-format
+msgid "Can't display location \"%s\""
+msgstr ""
+
+#: ../src/nautilus-connect-server-dialog-main.c:102
+msgid "[URI]"
+msgstr "[URI]"
+
+#: ../src/nautilus-connect-server-dialog-main.c:111
+#, fuzzy
+msgid ""
+"\n"
+"\n"
+"Add connect to server mount"
+msgstr "Nasc le Freastalaí %s"
+
+#: ../src/nautilus-connect-server-dialog.c:118
+msgid "Custom Location"
+msgstr "Suíomh Saincheaptha"
+
+#: ../src/nautilus-connect-server-dialog.c:120
+msgid "SSH"
+msgstr "SSH"
+
+#: ../src/nautilus-connect-server-dialog.c:123
+msgid "Public FTP"
+msgstr "FTP Poiblí"
+
+#: ../src/nautilus-connect-server-dialog.c:125
+msgid "FTP (with login)"
+msgstr "FTP (le logáil isteach)"
+
+#: ../src/nautilus-connect-server-dialog.c:128
+msgid "Windows share"
+msgstr "Comhroinnt Windows"
+
+#: ../src/nautilus-connect-server-dialog.c:130
+msgid "WebDAV (HTTP)"
+msgstr "WebDAV (HTTP)"
+
+#: ../src/nautilus-connect-server-dialog.c:132
+msgid "Secure WebDAV (HTTPS)"
+msgstr "WebDAV Daingean (HTTPS)"
+
+#: ../src/nautilus-connect-server-dialog.c:200
+#, c-format
+msgid "Can't Connect to Server. \"%s\" is not a valid location."
+msgstr ""
+
+#: ../src/nautilus-connect-server-dialog.c:202
+#: ../src/nautilus-property-browser.c:1188
+#: ../src/nautilus-window-manage-views.c:1594
+msgid "Please check the spelling and try again."
+msgstr ""
+
+#: ../src/nautilus-connect-server-dialog.c:216
+msgid "Can't Connect to Server. You must enter a name for the server."
+msgstr ""
+
+#: ../src/nautilus-connect-server-dialog.c:217
+msgid "Please enter a name and try again."
+msgstr ""
+
+#: ../src/nautilus-connect-server-dialog.c:337
+#, c-format
+msgid "%s on %s"
+msgstr "%s ar %s"
+
+#: ../src/nautilus-connect-server-dialog.c:480
+msgid "_Location (URI):"
+msgstr "_Suíomh (URI):"
+
+#: ../src/nautilus-connect-server-dialog.c:502
+msgid "_Server:"
+msgstr "_Freastalaí:"
+
+#: ../src/nautilus-connect-server-dialog.c:521
+msgid "Optional information:"
+msgstr "Eolas breise:"
+
+#: ../src/nautilus-connect-server-dialog.c:533
+msgid "_Share:"
+msgstr "Comh_roinnt:"
+
+#: ../src/nautilus-connect-server-dialog.c:554
+msgid "_Port:"
+msgstr "_Port:"
+
+#: ../src/nautilus-connect-server-dialog.c:594
+msgid "_User Name:"
+msgstr "_Ainm Úsáideora:"
+
+#: ../src/nautilus-connect-server-dialog.c:615
+msgid "_Domain Name:"
+msgstr "Ainm _Fearainn:"
+
+#: ../src/nautilus-connect-server-dialog.c:639
+msgid "_Name to use for connection:"
+msgstr ""
+
+#: ../src/nautilus-connect-server-dialog.c:821
+msgid "Connect to Server"
+msgstr "Nasc le Freastalaí"
+
+#: ../src/nautilus-connect-server-dialog.c:838
+msgid "Service _type:"
+msgstr "Ci_neál seirbhíse:"
+
+#: ../src/nautilus-connect-server-dialog.c:943
+msgid "Browse _Network"
+msgstr "Brabhsáil _Líonra"
+
+#: ../src/nautilus-connect-server-dialog.c:949
+msgid "C_onnect"
+msgstr "_Nasc"
+
+#: ../src/nautilus-emblem-sidebar.c:238
+#, c-format
+msgid "Couldn't remove emblem with name '%s'."
+msgstr ""
+
+#: ../src/nautilus-emblem-sidebar.c:239 ../src/nautilus-emblem-sidebar.c:273
+msgid ""
+"This is probably because the emblem is a permanent one, and not one that you "
+"added yourself."
+msgstr ""
+
+#: ../src/nautilus-emblem-sidebar.c:272
+#, c-format
+msgid "Couldn't rename emblem with name '%s'."
+msgstr ""
+
+#: ../src/nautilus-emblem-sidebar.c:292
+msgid "Rename Emblem"
+msgstr "Athainmnigh Suaitheantas"
+
+#: ../src/nautilus-emblem-sidebar.c:311
+msgid "Enter a new name for the displayed emblem:"
+msgstr ""
+
+#: ../src/nautilus-emblem-sidebar.c:365
+msgid "Rename"
+msgstr "Athainmnigh"
+
+#: ../src/nautilus-emblem-sidebar.c:540
+msgid "Add Emblems..."
+msgstr "Cuir Suaitheantais Leis..."
+
+#: ../src/nautilus-emblem-sidebar.c:556
+msgid ""
+"Enter a descriptive name next to each emblem.  This name will be used in "
+"other places to identify the emblem."
+msgstr ""
+
+#: ../src/nautilus-emblem-sidebar.c:558
+msgid ""
+"Enter a descriptive name next to the emblem.  This name will be used in "
+"other places to identify the emblem."
+msgstr ""
+
+#: ../src/nautilus-emblem-sidebar.c:779
+msgid "Some of the files could not be added as emblems."
+msgstr ""
+
+#: ../src/nautilus-emblem-sidebar.c:779 ../src/nautilus-emblem-sidebar.c:781
+msgid "The emblems do not appear to be valid images."
+msgstr ""
+
+#: ../src/nautilus-emblem-sidebar.c:781
+msgid "None of the files could be added as emblems."
+msgstr ""
+
+#: ../src/nautilus-emblem-sidebar.c:818 ../src/nautilus-emblem-sidebar.c:873
+#, c-format
+msgid "The file '%s' does not appear to be a valid image."
+msgstr ""
+
+#: ../src/nautilus-emblem-sidebar.c:821
+msgid "The dragged file does not appear to be a valid image."
+msgstr ""
+
+#: ../src/nautilus-emblem-sidebar.c:823 ../src/nautilus-emblem-sidebar.c:874
+msgid "The emblem cannot be added."
+msgstr ""
+
+#: ../src/nautilus-emblem-sidebar.c:1053
+msgid "Show Emblems"
+msgstr "Taispeáin Suaitheantais"
+
+#: ../src/nautilus-file-management-properties.glade.h:1
+msgid "    "
+msgstr "    "
+
+#: ../src/nautilus-file-management-properties.glade.h:2
+msgid ""
+"100 KB\n"
+"500 KB\n"
+"1 MB\n"
+"3 MB\n"
+"5 MB\n"
+"10 MB\n"
+"100 MB\n"
+"1 GB"
+msgstr ""
+"100 KB\n"
+"500 KB\n"
+"1 MB\n"
+"3 MB\n"
+"5 MB\n"
+"10 MB\n"
+"100 MB\n"
+"1 GB"
+
+#: ../src/nautilus-file-management-properties.glade.h:11
+#, no-c-format
+msgid ""
+"25%\n"
+"50%\n"
+"75%\n"
+"100%\n"
+"150%\n"
+"200%\n"
+"400%"
+msgstr ""
+"25%\n"
+"50%\n"
+"75%\n"
+"100%\n"
+"150%\n"
+"200%\n"
+"400%"
+
+#: ../src/nautilus-file-management-properties.glade.h:18
+msgid "<span weight=\"bold\">Behavior</span>"
+msgstr "<span weight=\"bold\">Oibriú</span>"
+
+#: ../src/nautilus-file-management-properties.glade.h:19
+msgid "<span weight=\"bold\">Date</span>"
+msgstr "<span weight=\"bold\">Dáta</span>"
+
+#: ../src/nautilus-file-management-properties.glade.h:20
+msgid "<span weight=\"bold\">Default View</span>"
+msgstr "<span weight=\"bold\">Amharc Réamhshocraithe</span>"
+
+#: ../src/nautilus-file-management-properties.glade.h:21
+msgid "<span weight=\"bold\">Executable Text Files</span>"
+msgstr "<span weight=\"bold\">Comhaid Téacs Inrite</span>"
+
+#: ../src/nautilus-file-management-properties.glade.h:22
+msgid "<span weight=\"bold\">Folders</span>"
+msgstr "<span weight=\"bold\">Fillteáin</span>"
+
+#: ../src/nautilus-file-management-properties.glade.h:23
+msgid "<span weight=\"bold\">Icon Captions</span>"
+msgstr "<span weight=\"bold\">Foscríbhinní Deilbhíní</span>"
+
+#: ../src/nautilus-file-management-properties.glade.h:24
+msgid "<span weight=\"bold\">Icon View Defaults</span>"
+msgstr "<span weight=\"bold\">Réamhshocruithe Amharc Deilbhíní</span>"
+
+#: ../src/nautilus-file-management-properties.glade.h:25
+msgid "<span weight=\"bold\">List Columns</span>"
+msgstr "<span weight=\"bold\">Colúin Liosta</span>"
+
+#: ../src/nautilus-file-management-properties.glade.h:26
+msgid "<span weight=\"bold\">List View Defaults</span>"
+msgstr "<span weight=\"bold\">Réamhshocruithe Amharc Liosta</span>"
+
+#: ../src/nautilus-file-management-properties.glade.h:27
+msgid "<span weight=\"bold\">Other Previewable Files</span>"
+msgstr "<span weight=\"bold\">Comhaid Inréamhamharctha Eile</span>"
+
+#: ../src/nautilus-file-management-properties.glade.h:28
+msgid "<span weight=\"bold\">Sound Files</span>"
+msgstr "<span weight=\"bold\">Comhaid Fuaime</span>"
+
+#: ../src/nautilus-file-management-properties.glade.h:29
+msgid "<span weight=\"bold\">Text Files</span>"
+msgstr "<span weight=\"bold\">Comhaid Téacs</span>"
+
+#: ../src/nautilus-file-management-properties.glade.h:30
+msgid "<span weight=\"bold\">Trash</span>"
+msgstr "<span weight=\"bold\">Bruscar</span>"
+
+#: ../src/nautilus-file-management-properties.glade.h:31
+msgid "<span weight=\"bold\">Tree View Defaults</span>"
+msgstr "<span weight=\"bold\">Réamhshocruithe Amharc Crainn</span>"
+
+#: ../src/nautilus-file-management-properties.glade.h:32
+msgid ""
+"Always\n"
+"Local Files Only\n"
+"Never"
+msgstr ""
+"I gCónaí\n"
+"Comhaid Logánta Amháin\n"
+"Riamh"
+
+#: ../src/nautilus-file-management-properties.glade.h:35
+msgid "Always open in _browser windows"
+msgstr "Oscail i bhfuinneoga _brabhsála i gcónaí"
+
+#: ../src/nautilus-file-management-properties.glade.h:36
+msgid "Ask before _emptying the Trash or deleting files"
+msgstr "Fiafraigh roimh an Bruscar a fholmhú nó comhaid a scriosadh"
+
+#: ../src/nautilus-file-management-properties.glade.h:37
+msgid "Behavior"
+msgstr "Oibriú"
+
+#: ../src/nautilus-file-management-properties.glade.h:38
+msgid ""
+"By Name\n"
+"By Size\n"
+"By Type\n"
+"By Modification Date\n"
+"By Emblems"
+msgstr ""
+"De Réir Ainm\n"
+"De Réir Méide\n"
+"De Réir Cineáil\n"
+"De Réir Dháta Athraithe\n"
+"De Réir Suaitheantas"
+
+#: ../src/nautilus-file-management-properties.glade.h:43
+msgid ""
+"Choose the order of information to appear beneath icon names. More "
+"information will appear when zooming in closer."
+msgstr ""
+
+#: ../src/nautilus-file-management-properties.glade.h:44
+msgid "Choose the order of information to appear in the list view."
+msgstr ""
+
+#: ../src/nautilus-file-management-properties.glade.h:45
+msgid "Count _number of items:"
+msgstr "Comhair _líon míreanna:"
+
+#: ../src/nautilus-file-management-properties.glade.h:46
+msgid "Default _zoom level:"
+msgstr "Leibhéal _súmáil réamhshocraithe:"
+
+#: ../src/nautilus-file-management-properties.glade.h:47
+msgid "Display"
+msgstr "Taispeáin"
+
+#: ../src/nautilus-file-management-properties.glade.h:48
+msgid "File Management Preferences"
+msgstr "Sainroghanna Bhainisteoireacht Chomhad"
+
+#: ../src/nautilus-file-management-properties.glade.h:49
+msgid "I_nclude a Delete command that bypasses Trash"
+msgstr "Cuimsi_gh ordú Scrios a sheachthreorú Bruscar"
+
+#: ../src/nautilus-file-management-properties.glade.h:50
+msgid ""
+"Icon View\n"
+"List View"
+msgstr ""
+"Amharcán Deilbhíní\n"
+"Amharcán Liosta"
+
+#: ../src/nautilus-file-management-properties.glade.h:52
+msgid "List Columns"
+msgstr "Colúin Liosta"
+
+#: ../src/nautilus-file-management-properties.glade.h:53
+msgid "Preview"
+msgstr "Reámhamharc"
+
+#: ../src/nautilus-file-management-properties.glade.h:54
+msgid "Preview _sound files:"
+msgstr "Réamhamharc comhaid _fuaime:"
+
+#: ../src/nautilus-file-management-properties.glade.h:55
+msgid "Show _only folders"
+msgstr "Taispeáin fillteáin _amháin"
+
+#: ../src/nautilus-file-management-properties.glade.h:56
+msgid "Show _thumbnails:"
+msgstr "Taispeáin _mionsamhlacha:"
+
+#: ../src/nautilus-file-management-properties.glade.h:57
+msgid "Show hidden and _backup files"
+msgstr "Taispeáin comhaid folaithe agus _cúltaca"
+
+#: ../src/nautilus-file-management-properties.glade.h:58
+msgid "Show te_xt in icons:"
+msgstr "Taispeáin _téacs i ndeilbhíní:"
+
+#: ../src/nautilus-file-management-properties.glade.h:59
+msgid "Sort _folders before files"
+msgstr "Sórtáil _fillteáin roimh chomhaid"
+
+#: ../src/nautilus-file-management-properties.glade.h:60
+msgid "View _new folders using:"
+msgstr "Amharc ar fillteáin _nua le:"
+
+#: ../src/nautilus-file-management-properties.glade.h:61
+msgid "Views"
+msgstr "Amharcanna"
+
+#: ../src/nautilus-file-management-properties.glade.h:62
+msgid "_Arrange items:"
+msgstr "Có_irigh míreanna:"
+
+#: ../src/nautilus-file-management-properties.glade.h:64
+msgid "_Default zoom level:"
+msgstr "Leibhéal súmáil réamhshocraithe:"
+
+#: ../src/nautilus-file-management-properties.glade.h:65
+msgid "_Double click to open items"
+msgstr "_Déchliceáil chun míreanna a oscailt"
+
+#: ../src/nautilus-file-management-properties.glade.h:66
+msgid "_Format:"
+msgstr "_Formáid:"
+
+#: ../src/nautilus-file-management-properties.glade.h:67
+msgid "_Only for files smaller than:"
+msgstr "_Amháin le comhaid níos ísle ná:"
+
+#: ../src/nautilus-file-management-properties.glade.h:68
+msgid "_Run executable text files when they are opened"
+msgstr "_Rith comhaid téacs inrite nuair a bhfuil siad oscailte"
+
+#: ../src/nautilus-file-management-properties.glade.h:69
+msgid "_Single click to open items"
+msgstr "_Aonchliceáil chun míreanna a oscailt"
+
+#: ../src/nautilus-file-management-properties.glade.h:70
+msgid "_Text beside icons"
+msgstr "_Téacs in aice le deilbhíní"
+
+#: ../src/nautilus-file-management-properties.glade.h:71
+msgid "_Use compact layout"
+msgstr "Ú_sáid dlúthleagan amach"
+
+#: ../src/nautilus-file-management-properties.glade.h:72
+msgid "_View executable text files when they are opened"
+msgstr "A_mharc comhaid téacs inrite nuair a bhfuil siad oscailte"
+
+#: ../src/nautilus-first-time-druid.c:40
+msgid ""
+"Existence of this file indicates that the Nautilus configuration druid\n"
+"has been presented.\n"
+"\n"
+"You can manually erase this file to present the druid again.\n"
+msgstr ""
+
+#: ../src/nautilus-history-sidebar.c:285
+msgid "History"
+msgstr "Stair"
+
+#: ../src/nautilus-history-sidebar.c:291
+msgid "Show History"
+msgstr "Taispeáin Stair"
+
+#: ../src/nautilus-image-properties-page.c:232
+msgid "Camera Brand"
+msgstr ""
+
+#: ../src/nautilus-image-properties-page.c:233
+msgid "Camera Model"
+msgstr "Saghas Ceamara"
+
+#. Choose which date to show in order of relevance
+#: ../src/nautilus-image-properties-page.c:236
+msgid "Date Taken"
+msgstr ""
+
+#: ../src/nautilus-image-properties-page.c:238
+msgid "Date Digitized"
+msgstr ""
+
+#: ../src/nautilus-image-properties-page.c:244
+msgid "Exposure Time"
+msgstr ""
+
+#: ../src/nautilus-image-properties-page.c:245
+msgid "Aperture Value"
+msgstr ""
+
+#: ../src/nautilus-image-properties-page.c:246
+msgid "ISO Speed Rating"
+msgstr ""
+
+#: ../src/nautilus-image-properties-page.c:247
+msgid "Flash Fired"
+msgstr ""
+
+#: ../src/nautilus-image-properties-page.c:248
+msgid "Metering Mode"
+msgstr ""
+
+#: ../src/nautilus-image-properties-page.c:249
+msgid "Exposure Program"
+msgstr ""
+
+#: ../src/nautilus-image-properties-page.c:250
+msgid "Focal Length"
+msgstr ""
+
+#: ../src/nautilus-image-properties-page.c:251
+msgid "Software"
+msgstr "Bogearraí"
+
+#: ../src/nautilus-image-properties-page.c:310
+#: ../src/nautilus-query-editor.c:128
+msgid "Location"
+msgstr "Suíomh"
+
+#: ../src/nautilus-image-properties-page.c:312
+msgid "Keywords"
+msgstr "Lorgfhocail"
+
+#: ../src/nautilus-image-properties-page.c:313
+msgid "Creator"
+msgstr "Cruthaitheoir"
+
+#: ../src/nautilus-image-properties-page.c:314
+msgid "Copyright"
+msgstr "Cóipcheart"
+
+#: ../src/nautilus-image-properties-page.c:315
+msgid "Rating"
+msgstr "Grádú"
+
+#: ../src/nautilus-image-properties-page.c:335
+msgid "Image Type:"
+msgstr "Cineál Íomhá:"
+
+#: ../src/nautilus-image-properties-page.c:336
+#, c-format
+msgid "<b>Width:</b> %d pixel\n"
+msgid_plural "<b>Width:</b> %d pixels\n"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+
+#: ../src/nautilus-image-properties-page.c:340
+#, c-format
+msgid "<b>Height:</b> %d pixel\n"
+msgid_plural "<b>Height:</b> %d pixels\n"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+
+#: ../src/nautilus-image-properties-page.c:358
+msgid "Failed to load image information"
+msgstr "Theip ar luchtú eolas íomhá"
+
+#: ../src/nautilus-image-properties-page.c:570
+msgid "loading..."
+msgstr "á luchtú..."
+
+#: ../src/nautilus-image-properties-page.c:637
+msgid "Image"
+msgstr "Íomhá"
+
+#: ../src/nautilus-information-panel.c:161
+msgid "Information"
+msgstr "Eolas"
+
+#: ../src/nautilus-information-panel.c:167
+msgid "Show Information"
+msgstr "Taispeáin Eolas"
+
+#. add the reset background item, possibly disabled
+#: ../src/nautilus-information-panel.c:356
+msgid "Use _Default Background"
+msgstr "Úsáid Cúlra _Réamhshocraithe"
+
+#: ../src/nautilus-information-panel.c:495
+msgid "You can't assign more than one custom icon at a time."
+msgstr ""
+
+#: ../src/nautilus-information-panel.c:525
+msgid "You can only use images as custom icons."
+msgstr ""
+
+#: ../src/nautilus-information-panel.c:837
+#, c-format
+msgid "Open with %s"
+msgstr "Oscail le %s"
+
+#: ../src/nautilus-location-bar.c:59
+msgid "Go To:"
+msgstr "Téigh Go:"
+
+#: ../src/nautilus-location-bar.c:147
+#, fuzzy, c-format
+msgid "Do you want to view %d location?"
+msgid_plural "Do you want to view %d locations?"
+msgstr[0] "Dul go dtí an áit atá baile"
+msgstr[1] "Dul go dtí an áit atá baile"
+msgstr[2] "Dul go dtí an áit atá baile"
+
+#: ../src/nautilus-location-dialog.c:152
+msgid "Open Location"
+msgstr "Oscail Suíomh"
+
+#: ../src/nautilus-location-dialog.c:163
+msgid "_Location:"
+msgstr "_Suíomh:"
+
+#: ../src/nautilus-main.c:388
+msgid "Perform a quick set of self-check tests."
+msgstr ""
+
+#: ../src/nautilus-main.c:391
+msgid "Create the initial window with the given geometry."
+msgstr ""
+
+#: ../src/nautilus-main.c:391
+msgid "GEOMETRY"
+msgstr "CÉIMSEATA"
+
+#: ../src/nautilus-main.c:393
+msgid "Only create windows for explicitly specified URIs."
+msgstr ""
+
+#: ../src/nautilus-main.c:395
+msgid ""
+"Do not manage the desktop (ignore the preference set in the preferences "
+"dialog)."
+msgstr ""
+
+#: ../src/nautilus-main.c:397
+msgid "open a browser window."
+msgstr ""
+
+#: ../src/nautilus-main.c:399
+msgid "Quit Nautilus."
+msgstr "Scoir Nautilus."
+
+#: ../src/nautilus-main.c:401
+msgid "Restart Nautilus."
+msgstr "Atosaigh Nautilus."
+
+#: ../src/nautilus-main.c:402
+msgid "[URI...]"
+msgstr "[URI...]"
+
+#. Translators: --no-default-window is a nautilus command line parameter, don't modify it.
+#: ../src/nautilus-main.c:405
+msgid ""
+"Load a saved session from the specified file. Implies \"--no-default-window"
+"\"."
+msgstr ""
+
+#: ../src/nautilus-main.c:405
+msgid "FILENAME"
+msgstr "AINMCOMHAID"
+
+#: ../src/nautilus-main.c:445
+msgid "File Manager"
+msgstr "Bainisteoir Comhad"
+
+#: ../src/nautilus-main.c:446
+#, fuzzy
+msgid ""
+"\n"
+"\n"
+"Browse the file system with the file manager"
+msgstr "Brabhsáil an córais-comhad le Bainisteoir na gComhad"
+
+#. Set initial window title
+#: ../src/nautilus-main.c:458 ../src/nautilus-spatial-window.c:420
+#: ../src/nautilus-window-menus.c:447 ../src/nautilus-window-menus.c:449
+#: ../src/nautilus-window.c:156
+msgid "Nautilus"
+msgstr "Nautilus"
+
+#. translators: %s is an option (e.g. --check)
+#: ../src/nautilus-main.c:491 ../src/nautilus-main.c:500
+#: ../src/nautilus-main.c:505
+#, c-format
+msgid "nautilus: %s cannot be used with URIs.\n"
+msgstr ""
+
+#: ../src/nautilus-main.c:496
+#, c-format
+msgid "nautilus: --check cannot be used with other options.\n"
+msgstr ""
+
+#: ../src/nautilus-main.c:510
+#, c-format
+msgid "nautilus: --geometry cannot be used with more than one URI.\n"
+msgstr ""
+
+#. This is a little joke, shows up occasionally. I only
+#. * implemented this feature so I could use this joke.
+#.
+#: ../src/nautilus-navigation-window-menus.c:113
+msgid "Are you sure you want to forget history?"
+msgstr ""
+
+#: ../src/nautilus-navigation-window-menus.c:114
+msgid "If you do, you will be doomed to repeat it."
+msgstr ""
+
+#: ../src/nautilus-navigation-window-menus.c:116
+msgid "Are you sure you want to clear the list of locations you have visited?"
+msgstr ""
+
+#: ../src/nautilus-navigation-window-menus.c:118
+msgid "If you clear the list of locations, they will be permanently deleted."
+msgstr ""
+
+#: ../src/nautilus-navigation-window-menus.c:298
+#: ../src/nautilus-window-bookmarks.c:98
+#, c-format
+msgid "The location \"%s\" does not exist."
+msgstr ""
+
+#: ../src/nautilus-navigation-window-menus.c:300
+msgid "The history location doesn't exist."
+msgstr ""
+
+#: ../src/nautilus-navigation-window-menus.c:472
+msgid "_Go"
+msgstr "_Téigh"
+
+#. name, stock id, label
+#: ../src/nautilus-navigation-window-menus.c:473
+msgid "_Bookmarks"
+msgstr "_Leabharmharcanna"
+
+#. name, stock id, label
+#: ../src/nautilus-navigation-window-menus.c:474
+msgid "New _Window"
+msgstr "_Fuinneog Nua"
+
+#. name, stock id, label
+#: ../src/nautilus-navigation-window-menus.c:475
+msgid "Open another Nautilus window for the displayed location"
+msgstr ""
+
+#: ../src/nautilus-navigation-window-menus.c:477
+#, fuzzy
+msgid "Open Folder W_indow"
+msgstr "Oscail i Fhuinneog Nua"
+
+#. name, stock id, label
+#: ../src/nautilus-navigation-window-menus.c:478
+msgid "Open a folder window for the displayed location"
+msgstr ""
+
+#: ../src/nautilus-navigation-window-menus.c:480
+msgid "Close _All Windows"
+msgstr "Dún _Gach Fuinneog"
+
+#. name, stock id, label
+#: ../src/nautilus-navigation-window-menus.c:481
+msgid "Close all Navigation windows"
+msgstr "Dún gach fuinneog Nascleanúna"
+
+#: ../src/nautilus-navigation-window-menus.c:483
+msgid "_Location..."
+msgstr "_Suíomh..."
+
+#. name, stock id, label
+#: ../src/nautilus-navigation-window-menus.c:484
+#: ../src/nautilus-spatial-window.c:883
+msgid "Specify a location to open"
+msgstr ""
+
+#: ../src/nautilus-navigation-window-menus.c:486
+msgid "Clea_r History"
+msgstr "_Glan Stair"
+
+#. name, stock id, label
+#: ../src/nautilus-navigation-window-menus.c:487
+msgid "Clear contents of Go menu and Back/Forward lists"
+msgstr ""
+
+#: ../src/nautilus-navigation-window-menus.c:489
+#: ../src/nautilus-spatial-window.c:891
+msgid "_Add Bookmark"
+msgstr "Cuir Leabharmharc _Leis"
+
+#. name, stock id, label
+#: ../src/nautilus-navigation-window-menus.c:490
+#: ../src/nautilus-spatial-window.c:892
+msgid "Add a bookmark for the current location to this menu"
+msgstr ""
+
+#: ../src/nautilus-navigation-window-menus.c:492
+#: ../src/nautilus-spatial-window.c:894
+msgid "_Edit Bookmarks"
+msgstr "Cuir Leabharmharcanna in _Eagar"
+
+#. name, stock id, label
+#: ../src/nautilus-navigation-window-menus.c:493
+#: ../src/nautilus-spatial-window.c:895
+msgid "Display a window that allows editing the bookmarks in this menu"
+msgstr ""
+
+#: ../src/nautilus-navigation-window-menus.c:495
+#: ../src/nautilus-spatial-window.c:897
+msgid "_Search for Files..."
+msgstr "Cuar_daigh ar Comhaid..."
+
+#. name, stock id, label
+#: ../src/nautilus-navigation-window-menus.c:496
+#: ../src/nautilus-spatial-window.c:898
+msgid "Locate documents and folders on this computer by name or content"
+msgstr ""
+
+#. name, stock id
+#: ../src/nautilus-navigation-window-menus.c:503
+msgid "_Main Toolbar"
+msgstr "_Príomhbharra Uirlisí"
+
+#. label, accelerator
+#: ../src/nautilus-navigation-window-menus.c:504
+msgid "Change the visibility of this window's main toolbar"
+msgstr ""
+
+#. is_active
+#. name, stock id
+#: ../src/nautilus-navigation-window-menus.c:508
+msgid "_Side Pane"
+msgstr "_Pána Taoibh"
+
+#. label, accelerator
+#: ../src/nautilus-navigation-window-menus.c:509
+msgid "Change the visibility of this window's side pane"
+msgstr ""
+
+#. is_active
+#. name, stock id
+#: ../src/nautilus-navigation-window-menus.c:513
+msgid "Location _Bar"
+msgstr "_Barra Suímh"
+
+#. label, accelerator
+#: ../src/nautilus-navigation-window-menus.c:514
+msgid "Change the visibility of this window's location bar"
+msgstr ""
+
+#. is_active
+#. name, stock id
+#: ../src/nautilus-navigation-window-menus.c:518
+msgid "St_atusbar"
+msgstr "Barra _Stádais"
+
+#. label, accelerator
+#: ../src/nautilus-navigation-window-menus.c:519
+msgid "Change the visibility of this window's statusbar"
+msgstr ""
+
+#: ../src/nautilus-navigation-window-menus.c:543
+msgid "_Back"
+msgstr "_Siar"
+
+#: ../src/nautilus-navigation-window-menus.c:545
+msgid "Go to the previous visited location"
+msgstr ""
+
+#: ../src/nautilus-navigation-window-menus.c:546
+#, fuzzy
+msgid "Back history"
+msgstr "Glan Stair"
+
+#: ../src/nautilus-navigation-window-menus.c:560
+msgid "_Forward"
+msgstr "Ar _Aghaidh"
+
+#: ../src/nautilus-navigation-window-menus.c:562
+msgid "Go to the next visited location"
+msgstr ""
+
+#: ../src/nautilus-navigation-window-menus.c:563
+#, fuzzy
+msgid "Forward history"
+msgstr "Glan Stair"
+
+#: ../src/nautilus-navigation-window-menus.c:577
+msgid "_Search"
+msgstr "_Cuardaigh"
+
+#: ../src/nautilus-navigation-window.c:183
+msgid "Toggle between button and text-based location bar"
+msgstr ""
+
+#: ../src/nautilus-navigation-window.c:938
+#, c-format
+msgid "%s - File Browser"
+msgstr "%s - Brabhsálaí Comhad"
+
+#: ../src/nautilus-notes-viewer.c:388 ../src/nautilus-notes-viewer.c:498
+msgid "Notes"
+msgstr "Nótaí"
+
+#: ../src/nautilus-notes-viewer.c:394
+msgid "Show Notes"
+msgstr "Taispeáin Nótaí"
+
+#: ../src/nautilus-places-sidebar.c:1283
+#, c-format
+msgid "Unable to mount %s"
+msgstr ""
+
+#: ../src/nautilus-places-sidebar.c:1510 ../src/nautilus-places-sidebar.c:1533
+#: ../src/nautilus-places-sidebar.c:1556
+#, c-format
+msgid "Unable to eject %s"
+msgstr ""
+
+#: ../src/nautilus-places-sidebar.c:1615
+#, c-format
+msgid "Unable to poll %s for media changes"
+msgstr ""
+
+#: ../src/nautilus-places-sidebar.c:1711
+msgid "Open in New _Window"
+msgstr "Oscail i bh_Fuinneog Nua"
+
+#: ../src/nautilus-places-sidebar.c:1717
+msgid "Remove"
+msgstr "Bain"
+
+#: ../src/nautilus-places-sidebar.c:1726
+msgid "Rename..."
+msgstr "Athainmigh..."
+
+#: ../src/nautilus-places-sidebar.c:1738
+msgid "_Mount"
+msgstr "_Feistigh"
+
+#: ../src/nautilus-places-sidebar.c:1745
+msgid "_Unmount"
+msgstr "_Dífheistigh"
+
+#: ../src/nautilus-places-sidebar.c:1759
+msgid "_Rescan"
+msgstr "_Athscan"
+
+#. Empty Trash menu item
+#: ../src/nautilus-places-sidebar.c:1775 ../src/nautilus-trash-bar.c:125
+msgid "Empty _Trash"
+msgstr "Folmhaigh _Bruscar"
+
+#: ../src/nautilus-places-sidebar.c:2040
+msgid "Places"
+msgstr "̈́Áiteanna"
+
+#: ../src/nautilus-places-sidebar.c:2046
+msgid "Show Places"
+msgstr "Taispeáin Áiteanna"
+
+#. set the title and standard close accelerator
+#: ../src/nautilus-property-browser.c:279
+msgid "Backgrounds and Emblems"
+msgstr "Cúlraí agus Suaitheantais"
+
+#: ../src/nautilus-property-browser.c:388
+msgid "_Remove..."
+msgstr "_Bain..."
+
+#: ../src/nautilus-property-browser.c:408
+msgid "_Add new..."
+msgstr "Cuir nua _leis..."
+
+#: ../src/nautilus-property-browser.c:976
+#, c-format
+msgid "Sorry, but pattern %s couldn't be deleted."
+msgstr ""
+
+#: ../src/nautilus-property-browser.c:977
+msgid "Check that you have permission to delete the pattern."
+msgstr ""
+
+#: ../src/nautilus-property-browser.c:1005
+#, c-format
+msgid "Sorry, but emblem %s couldn't be deleted."
+msgstr ""
+
+#: ../src/nautilus-property-browser.c:1006
+msgid "Check that you have permission to delete the emblem."
+msgstr ""
+
+#: ../src/nautilus-property-browser.c:1052
+msgid "Create a New Emblem"
+msgstr "Cruthaigh Suaitheantas Nua"
+
+#. make the keyword label and field
+#: ../src/nautilus-property-browser.c:1074
+msgid "_Keyword:"
+msgstr ""
+
+#. set up a gnome icon entry to pick the image file
+#: ../src/nautilus-property-browser.c:1093
+msgid "_Image:"
+msgstr "Í_omhá:"
+
+#: ../src/nautilus-property-browser.c:1101
+msgid "Select an Image File for the New Emblem"
+msgstr ""
+
+#: ../src/nautilus-property-browser.c:1126
+msgid "Create a New Color:"
+msgstr "Cruthaigh Dath Nua:"
+
+#. make the name label and field
+#: ../src/nautilus-property-browser.c:1140
+msgid "Color _name:"
+msgstr "_Ainm datha:"
+
+#: ../src/nautilus-property-browser.c:1156
+msgid "Color _value:"
+msgstr "_Luach datha:"
+
+#: ../src/nautilus-property-browser.c:1187
+#, c-format
+msgid "Sorry, but \"%s\" is not a valid file name."
+msgstr ""
+
+#: ../src/nautilus-property-browser.c:1190
+msgid "Sorry, but you did not supply a valid file name."
+msgstr ""
+
+#: ../src/nautilus-property-browser.c:1191
+msgid "Please try again."
+msgstr ""
+
+#: ../src/nautilus-property-browser.c:1204
+msgid "Sorry, but you can't replace the reset image."
+msgstr ""
+
+#: ../src/nautilus-property-browser.c:1205
+msgid "Reset is a special image that cannot be deleted."
+msgstr ""
+
+#: ../src/nautilus-property-browser.c:1235
+#, c-format
+msgid "Sorry, but the pattern %s couldn't be installed."
+msgstr ""
+
+#: ../src/nautilus-property-browser.c:1257
+msgid "Select an Image File to Add as a Pattern"
+msgstr ""
+
+#: ../src/nautilus-property-browser.c:1309
+#: ../src/nautilus-property-browser.c:1340
+msgid "The color cannot be installed."
+msgstr ""
+
+#: ../src/nautilus-property-browser.c:1310
+msgid "Sorry, but you must specify an unused color name for the new color."
+msgstr ""
+
+#: ../src/nautilus-property-browser.c:1341
+msgid "Sorry, but you must specify a non-blank name for the new color."
+msgstr ""
+
+#: ../src/nautilus-property-browser.c:1393
+#, fuzzy
+msgid "Select a Color to Add"
+msgstr "Roghnaigh dath chun cur leis"
+
+#: ../src/nautilus-property-browser.c:1431
+#: ../src/nautilus-property-browser.c:1448
+#, c-format
+msgid "Sorry, but \"%s\" is not a usable image file."
+msgstr ""
+
+#: ../src/nautilus-property-browser.c:1432
+#: ../src/nautilus-property-browser.c:1449
+msgid "The file is not an image."
+msgstr ""
+
+#: ../src/nautilus-property-browser.c:2156
+msgid "Select a Category:"
+msgstr "Roghnaigh Catagóir:"
+
+#: ../src/nautilus-property-browser.c:2165
+msgid "C_ancel Remove"
+msgstr "Ce_alaigh Baint"
+
+#: ../src/nautilus-property-browser.c:2171
+msgid "_Add a New Pattern..."
+msgstr "Cuir Patrún Nua _Leis..."
+
+#: ../src/nautilus-property-browser.c:2174
+msgid "_Add a New Color..."
+msgstr "Cuir Dath Nua _Leis..."
+
+#: ../src/nautilus-property-browser.c:2177
+msgid "_Add a New Emblem..."
+msgstr "Cuir Suaitheantas Nua _Leis..."
+
+#: ../src/nautilus-property-browser.c:2200
+msgid "Click on a pattern to remove it"
+msgstr ""
+
+#: ../src/nautilus-property-browser.c:2203
+msgid "Click on a color to remove it"
+msgstr ""
+
+#: ../src/nautilus-property-browser.c:2206
+msgid "Click on an emblem to remove it"
+msgstr ""
+
+#: ../src/nautilus-property-browser.c:2215
+msgid "Patterns:"
+msgstr "_Patrúin:"
+
+#: ../src/nautilus-property-browser.c:2218
+msgid "Colors:"
+msgstr "Dathanna:"
+
+#: ../src/nautilus-property-browser.c:2221
+msgid "Emblems:"
+msgstr "Suaitheantais:"
+
+#: ../src/nautilus-property-browser.c:2241
+msgid "_Remove a Pattern..."
+msgstr "_Bain Patrún..."
+
+#: ../src/nautilus-property-browser.c:2244
+msgid "_Remove a Color..."
+msgstr "_Bain Dath..."
+
+#: ../src/nautilus-property-browser.c:2247
+msgid "_Remove an Emblem..."
+msgstr "_Bain Suaitheantas..."
+
+#: ../src/nautilus-query-editor.c:134
+msgid "File Type"
+msgstr "Cineál Comhaid"
+
+#: ../src/nautilus-query-editor.c:271
+#, fuzzy
+msgid "Select folder to search in"
+msgstr "Roghnaigh dath chun cur leis"
+
+#: ../src/nautilus-query-editor.c:361
+msgid "Documents"
+msgstr "Cáipéisí"
+
+#: ../src/nautilus-query-editor.c:379
+msgid "Music"
+msgstr "Ceol"
+
+#: ../src/nautilus-query-editor.c:393
+msgid "Video"
+msgstr "Físeán"
+
+#: ../src/nautilus-query-editor.c:409
+msgid "Picture"
+msgstr "Pictiúr"
+
+#: ../src/nautilus-query-editor.c:429
+msgid "Illustration"
+msgstr "Léaráid"
+
+#: ../src/nautilus-query-editor.c:443
+msgid "Spreadsheet"
+msgstr "Scarbhileog"
+
+#: ../src/nautilus-query-editor.c:459
+msgid "Presentation"
+msgstr "Láithreoireacht"
+
+#: ../src/nautilus-query-editor.c:468
+msgid "Pdf / Postscript"
+msgstr "Pdf / Postscript"
+
+#: ../src/nautilus-query-editor.c:476
+msgid "Text File"
+msgstr "Comhad Téacs"
+
+#: ../src/nautilus-query-editor.c:555
+msgid "Select type"
+msgstr "Roghnaigh cineál"
+
+#: ../src/nautilus-query-editor.c:639
+msgid "Any"
+msgstr "Ar Bith"
+
+#: ../src/nautilus-query-editor.c:654
+msgid "Other Type..."
+msgstr "Cineál Eile..."
+
+#: ../src/nautilus-query-editor.c:939
+msgid "Remove this criterion from the search"
+msgstr ""
+
+#: ../src/nautilus-query-editor.c:984
+msgid "Search Folder"
+msgstr "Cuardaigh Fillteán"
+
+#: ../src/nautilus-query-editor.c:998
+msgid "Edit the saved search"
+msgstr ""
+
+#: ../src/nautilus-query-editor.c:1029
+msgid "Add a new criterion to this search"
+msgstr ""
+
+#: ../src/nautilus-query-editor.c:1033
+msgid "Go"
+msgstr "Téigh"
+
+#: ../src/nautilus-query-editor.c:1035
+msgid "Reload"
+msgstr "Athlód"
+
+#: ../src/nautilus-query-editor.c:1040
+msgid "Perform or update the search"
+msgstr ""
+
+#: ../src/nautilus-query-editor.c:1061
+msgid "_Search for:"
+msgstr "Cuar_daigh ar:"
+
+#: ../src/nautilus-query-editor.c:1090
+#, fuzzy
+msgid "Search results"
+msgstr "Toradh an Curdach"
+
+#: ../src/nautilus-search-bar.c:143
+msgid "Search:"
+msgstr "Cuardaigh:"
+
+#: ../src/nautilus-side-pane.c:420
+msgid "Close the side pane"
+msgstr "Dún an pána taoibh"
+
+#: ../src/nautilus-spatial-window.c:881
+msgid "_Places"
+msgstr "̈́Á_iteanna"
+
+#. name, stock id, label
+#: ../src/nautilus-spatial-window.c:882
+msgid "Open _Location..."
+msgstr "Oscail _Suíomh..."
+
+#: ../src/nautilus-spatial-window.c:885
+msgid "Close P_arent Folders"
+msgstr "Dún Máthai_rfhillteáin"
+
+#. name, stock id, label
+#: ../src/nautilus-spatial-window.c:886
+msgid "Close this folder's parents"
+msgstr "Dún máithreacha an fhillteáin seo"
+
+#: ../src/nautilus-spatial-window.c:888
+msgid "Clos_e All Folders"
+msgstr "Dú_n Gach Fillteán"
+
+#. name, stock id, label
+#: ../src/nautilus-spatial-window.c:889
+#, fuzzy
+msgid "Close all folder windows"
+msgstr "Dún gach fhuinneoga Inseoltóireacht"
+
+#: ../src/nautilus-throbber.c:82
+msgid "throbber"
+msgstr ""
+
+#: ../src/nautilus-throbber.c:83
+msgid "provides visual status"
+msgstr ""
+
+#: ../src/nautilus-window-bookmarks.c:96
+msgid ""
+"Do you want to remove any bookmarks with the non-existing location from your "
+"list?"
+msgstr ""
+
+#: ../src/nautilus-window-bookmarks.c:101
+msgid "Bookmark for Nonexistent Location"
+msgstr ""
+
+#: ../src/nautilus-window-manage-views.c:664
+msgid "You can choose another view or go to a different location."
+msgstr ""
+
+#: ../src/nautilus-window-manage-views.c:677
+msgid "The location cannot be displayed with this viewer."
+msgstr ""
+
+#: ../src/nautilus-window-manage-views.c:1135
+msgid "Content View"
+msgstr "Amharc Ábhair"
+
+#: ../src/nautilus-window-manage-views.c:1136
+#, fuzzy
+msgid "View of the current folder"
+msgstr "Radharc an comhad nó an comhadlann láithreach"
+
+#: ../src/nautilus-window-manage-views.c:1579
+msgid "Nautilus has no installed viewer capable of displaying the folder."
+msgstr ""
+
+#: ../src/nautilus-window-manage-views.c:1585
+msgid "The location is not a folder."
+msgstr ""
+
+#: ../src/nautilus-window-manage-views.c:1591
+#, c-format
+msgid "Couldn't find \"%s\"."
+msgstr ""
+
+#: ../src/nautilus-window-manage-views.c:1602
+#, c-format
+msgid "Nautilus cannot handle %s: locations."
+msgstr ""
+
+#: ../src/nautilus-window-manage-views.c:1605
+msgid "Nautilus cannot handle this kind of locations."
+msgstr ""
+
+#: ../src/nautilus-window-manage-views.c:1612
+msgid "Unable to mount the location."
+msgstr ""
+
+#: ../src/nautilus-window-manage-views.c:1618
+msgid "Access was denied."
+msgstr "Diúltaíodh cead."
+
+#. This case can be hit for user-typed strings like "foo" due to
+#. * the code that guesses web addresses when there's no initial "/".
+#. * But this case is also hit for legitimate web addresses when
+#. * the proxy is set up wrong.
+#.
+#: ../src/nautilus-window-manage-views.c:1627
+#, c-format
+msgid "Couldn't display \"%s\", because the host could be found."
+msgstr ""
+
+#: ../src/nautilus-window-manage-views.c:1629
+msgid ""
+"Check that the spelling is correct and that your proxy settings are correct."
+msgstr ""
+
+#: ../src/nautilus-window-manage-views.c:1643
+#, c-format
+msgid ""
+"Error: %s\n"
+"Please select another viewer and try again."
+msgstr ""
+
+#: ../src/nautilus-window-menus.c:162
+msgid "Go to the location specified by this bookmark"
+msgstr ""
+
+#: ../src/nautilus-window-menus.c:428
+msgid ""
+"Nautilus is free software; you can redistribute it and/or modify it under "
+"the terms of the GNU General Public License as published by the Free "
+"Software Foundation; either version 2 of the License, or (at your option) "
+"any later version."
+msgstr ""
+
+#: ../src/nautilus-window-menus.c:432
+msgid ""
+"Nautilus is distributed in the hope that it will be useful, but WITHOUT ANY "
+"WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
+"FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
+"details."
+msgstr ""
+
+#: ../src/nautilus-window-menus.c:436
+msgid ""
+"You should have received a copy of the GNU General Public License along with "
+"Nautilus; if not, write to the Free Software Foundation, Inc., 59 Temple "
+"Place, Suite 330, Boston, MA  02111-1307  USA"
+msgstr ""
+
+#: ../src/nautilus-window-menus.c:452
+msgid ""
+"Nautilus is a graphical shell for GNOME that makes it easy to manage your "
+"files and the rest of your system."
+msgstr ""
+
+#: ../src/nautilus-window-menus.c:456
+msgid "Copyright © 1999-2007 The Nautilus authors"
+msgstr "Cóipcheart © 1999-2007 Na húdair Nautilus"
+
+#. Translators should localize the following string
+#. * which will be displayed at the bottom of the about
+#. * box to give credit to the translator(s).
+#.
+#: ../src/nautilus-window-menus.c:466
+msgid "translator-credits"
+msgstr ""
+"Alastair McKinstry <mckinstry@computer.org>\n"
+"Paul Duffy <dubhthach@frink.nuigalway.ie>\n"
+"Seán de Búrca <leftmostcat@gmail.com>"
+
+#: ../src/nautilus-window-menus.c:469
+msgid "Nautilus Web Site"
+msgstr "Suíomh Gréasáin Nautilus"
+
+#: ../src/nautilus-window-menus.c:597
+msgid "_File"
+msgstr "_Comhad"
+
+#. name, stock id, label
+#: ../src/nautilus-window-menus.c:598
+msgid "_Edit"
+msgstr "_Eagar"
+
+#. name, stock id, label
+#: ../src/nautilus-window-menus.c:599
+msgid "_View"
+msgstr "_Amharc"
+
+#. name, stock id, label
+#: ../src/nautilus-window-menus.c:600
+msgid "_Help"
+msgstr "Cab_hair"
+
+#. name, stock id, label
+#. name, stock id
+#: ../src/nautilus-window-menus.c:602
+msgid "_Close"
+msgstr "_Dún"
+
+#. label, accelerator
+#: ../src/nautilus-window-menus.c:603
+msgid "Close this folder"
+msgstr "Dún an fillteán seo"
+
+#: ../src/nautilus-window-menus.c:606
+msgid "_Backgrounds and Emblems..."
+msgstr "Cúlraí agus Sua_itheantais..."
+
+#: ../src/nautilus-window-menus.c:607
+msgid ""
+"Display patterns, colors, and emblems that can be used to customize "
+"appearance"
+msgstr ""
+
+#: ../src/nautilus-window-menus.c:610
+msgid "Prefere_nces"
+msgstr "_Sainroghanna"
+
+#: ../src/nautilus-window-menus.c:611
+msgid "Edit Nautilus preferences"
+msgstr "Cuir sainroghanna Nautilus in eagar"
+
+#: ../src/nautilus-window-menus.c:613
+msgid "_Undo"
+msgstr "Cea_laigh"
+
+#. name, stock id, label
+#: ../src/nautilus-window-menus.c:614
+msgid "Undo the last text change"
+msgstr ""
+
+#: ../src/nautilus-window-menus.c:616
+msgid "Open _Parent"
+msgstr "Oscail _Máthair"
+
+#. name, stock id, label
+#: ../src/nautilus-window-menus.c:617
+msgid "Open the parent folder"
+msgstr "Oscail an máthairfhillteán"
+
+#. name, stock id
+#: ../src/nautilus-window-menus.c:623
+msgid "_Stop"
+msgstr "_Stad"
+
+#. label, accelerator
+#: ../src/nautilus-window-menus.c:624
+#, fuzzy
+msgid "Stop loading the current location"
+msgstr "Dul go dtí an áit atá baile"
+
+#. name, stock id
+#: ../src/nautilus-window-menus.c:627
+msgid "_Reload"
+msgstr "_Athluchtaigh"
+
+#. label, accelerator
+#: ../src/nautilus-window-menus.c:628
+#, fuzzy
+msgid "Reload the current location"
+msgstr "Dul go dtí an áit atá baile"
+
+#. name, stock id
+#: ../src/nautilus-window-menus.c:631
+msgid "_Contents"
+msgstr "_Inneachar"
+
+#. label, accelerator
+#: ../src/nautilus-window-menus.c:632
+msgid "Display Nautilus help"
+msgstr "Taispeáin cabhair Nautilus"
+
+#. name, stock id
+#: ../src/nautilus-window-menus.c:635
+msgid "_About"
+msgstr "_Maidir Leis Seo"
+
+#. label, accelerator
+#: ../src/nautilus-window-menus.c:636
+msgid "Display credits for the creators of Nautilus"
+msgstr ""
+
+#. name, stock id
+#: ../src/nautilus-window-menus.c:639
+msgid "Zoom _In"
+msgstr "Súmáil _Isteach"
+
+#. label, accelerator
+#: ../src/nautilus-window-menus.c:640 ../src/nautilus-zoom-control.c:96
+msgid "Show the contents in more detail"
+msgstr ""
+
+#. name, stock id
+#: ../src/nautilus-window-menus.c:651
+msgid "Zoom _Out"
+msgstr "Súmáil _Amach"
+
+#. label, accelerator
+#: ../src/nautilus-window-menus.c:652 ../src/nautilus-zoom-control.c:97
+msgid "Show the contents in less detail"
+msgstr ""
+
+#. name, stock id
+#: ../src/nautilus-window-menus.c:659
+msgid "Normal Si_ze"
+msgstr "_Gnáthmhéid"
+
+#. label, accelerator
+#: ../src/nautilus-window-menus.c:660
+msgid "Show the contents at the normal size"
+msgstr ""
+
+#. name, stock id
+#: ../src/nautilus-window-menus.c:664
+msgid "Connect to _Server..."
+msgstr "Nasc le _Freastalaí..."
+
+#. label, accelerator
+#: ../src/nautilus-window-menus.c:665
+msgid "Connect to a remote computer or shared disk"
+msgstr ""
+
+#. name, stock id
+#: ../src/nautilus-window-menus.c:669
+msgid "_Home Folder"
+msgstr "_Fillteán Baile"
+
+#. name, stock id
+#: ../src/nautilus-window-menus.c:673
+msgid "_Computer"
+msgstr "_Ríomhaire"
+
+#. name, stock id
+#: ../src/nautilus-window-menus.c:677
+msgid "_Network"
+msgstr "_Líonra"
+
+#. label, accelerator
+#: ../src/nautilus-window-menus.c:678 ../src/network-scheme.desktop.in.h:1
+msgid "Browse bookmarked and local network locations"
+msgstr "Brábhsáil suíomh líonra leabharmharcáilte agus logánta"
+
+#. name, stock id
+#: ../src/nautilus-window-menus.c:681
+msgid "T_emplates"
+msgstr "_Teimpléid"
+
+#. label, accelerator
+#: ../src/nautilus-window-menus.c:682
+#, fuzzy
+msgid "Open your personal templates folder"
+msgstr "Dul go dtí an bosca bruscair"
+
+#. name, stock id
+#: ../src/nautilus-window-menus.c:685
+msgid "_Trash"
+msgstr "_Bruscar"
+
+#. label, accelerator
+#: ../src/nautilus-window-menus.c:686
+#, fuzzy
+msgid "Open your personal trash folder"
+msgstr "Radharc an comhad nó an comhadlann láithreach"
+
+#. name, stock id
+#: ../src/nautilus-window-menus.c:689
+msgid "CD/_DVD Creator"
+msgstr "Cruthaitheoir CD/_DVD"
+
+#. label, accelerator
+#: ../src/nautilus-window-menus.c:690
+msgid "Open a folder into which you can drag files to burn to a CD or DVD"
+msgstr ""
+
+#: ../src/nautilus-window-menus.c:716
+msgid "_Up"
+msgstr "_Suas"
+
+#: ../src/nautilus-window-menus.c:719
+msgid "_Home"
+msgstr "_Baile"
+
+#: ../src/nautilus-zoom-control.c:84
+msgid "Zoom In"
+msgstr "Súmáil Isteach"
+
+#: ../src/nautilus-zoom-control.c:85
+msgid "Zoom Out"
+msgstr "Súmáil Amach"
+
+#: ../src/nautilus-zoom-control.c:86
+msgid "Zoom to Default"
+msgstr "Súmáil go Réamhshocrú"
+
+#: ../src/nautilus-zoom-control.c:98
+msgid "Show in the default detail level"
+msgstr ""
+
+#: ../src/nautilus-zoom-control.c:888
+msgid "Zoom"
+msgstr "Súmáil"
+
+#: ../src/nautilus-zoom-control.c:894
+msgid "Set the zoom level of the current view"
+msgstr ""
+
+#: ../src/network-scheme.desktop.in.h:2
+msgid "Network"
+msgstr "Líonra"

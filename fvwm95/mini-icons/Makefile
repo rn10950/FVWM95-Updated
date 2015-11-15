@@ -60,6 +60,7 @@ ICONS=	apm-alert.xpm \
 	mini-doc.xpm \
 	mini-doc1.xpm \
 	mini-dog.xpm \
+	mini-dos.xpm \
 	mini-edit.xpm \
 	mini-espada.xpm \
 	mini-exclam.xpm \
@@ -69,6 +70,7 @@ ICONS=	apm-alert.xpm \
 	mini-fax.xpm \
 	mini-fdisk.xpm \
 	mini-filemgr.xpm \
+	mini-firefox.xpm \
 	mini-folder.xpm \
 	mini-font.xpm \
 	mini-fractal.xpm \
@@ -85,6 +87,7 @@ ICONS=	apm-alert.xpm \
 	mini-heart.xpm \
 	mini-hex.xpm \
 	mini-hextris.xpm \
+	mini-iceweasel.xpm \
 	mini-iconify.xpm \
 	mini-icons.xpm \
 	mini-keyboard.xpm \
@@ -123,6 +126,7 @@ ICONS=	apm-alert.xpm \
 	mini-resize.xpm \
 	mini-roach.xpm \
 	mini-run.xpm \
+	mini-seamonkey.xpm \
 	mini-sh.xpm \
 	mini-sh1.xpm \
 	mini-slon.xpm \
