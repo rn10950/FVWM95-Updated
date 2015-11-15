@@ -7,7 +7,7 @@ libxmu-headers
 libxmu-dev
 
 The following bootstrap would work (from a root terminal or prefixed with sudo):
-    apt-get install libext-dev libxpm-dev libxt-dev libx11-dev libxmu-headers libxmu-dev
+    apt-get install libxext-dev libxpm-dev libxt-dev libx11-dev libxmu-headers libxmu-dev
 
 This is fvwm-2.0.43 hacked for a look and feel similar to Windows-95.
 
