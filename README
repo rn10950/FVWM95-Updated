@@ -3,12 +3,13 @@ FVWM95 Updated README
 
 This is the FVWM95 sources and xclass applications and library forked
 to work and compile on modern Linux distributions, along with added
-features. I have included four root level directories:
+features. I have included five root level directories:
 
   - fvwm95/             - the FVWM95 window manager source
   - xclass/             - the source for the xclass library
   - all-applications/   - the source for the xclass applications
   - gtk-themes/         - the GTK+ themes for closer system integration
+  - explorer/           - a fork of Nautilus designed to look like Windows 9x
 
 Each individual directory contains its own readme and license, and 
 all modifications to the projects are licensed to their respective
@@ -36,3 +37,14 @@ to include a full-fledged theme.
 
 I am considering working on a python-based system that can change the
 GTK colors as well as the FVWM colors to create an integrated OS.
+
+
+FILE EXPLORER
+=============
+
+I am working on two file explorers simultaneously. XClass Explorer is the original
+file explorer shipped with FVWM95 and has an extremely close resemblance to the
+explorer found in Windows 95 and NT 4. The Explorer located in the root directory of
+this repository is a fork of GNOME Nautilus, which I am working on modifying to work
+like Windows 98 - XP's Explorer. In the final release of the DE, I plan to ship both
+the "classic" FVWM95 explorer and the new one.
