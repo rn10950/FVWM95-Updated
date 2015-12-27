@@ -227,7 +227,9 @@ DestroyFunc "InitFunction"
 AddToFunc "InitFunction"    "I" Exec xsetroot -solid Cyan4 \
                                               -cursor_name top_left_arrow
 +                           "I" Module FvwmButtons
-+                           "I" Module FvwmTaskBar
+#+                           "I" Module FvwmTaskBar
+# uncomment line below and comment line above to use XClass taskbar
++			    "I" Module XClassTaskbar
 +			    "I" Module FvwmBanner
 +                           "I" Read  .fvwm95rc-settings
 #+			    "I" Module FvwmAudio
