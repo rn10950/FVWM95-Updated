@@ -14,27 +14,78 @@ configure:934: checking whether the C compiler (gcc -O ) works
 configure:950: gcc -o conftest -O   conftest.c  1>&5
 configure:976: checking whether the C compiler (gcc -O ) is a cross-compiler
 configure:981: checking whether we are using GNU C
+configure:990: gcc -E conftest.c
 configure:1009: checking whether gcc accepts -g
 configure:1049: checking how to run the C preprocessor
+configure:1070: gcc -E  conftest.c >/dev/null 2>conftest.out
 configure:1129: checking for AIX
 configure:1161: checking how to run the C preprocessor
 configure:1245: checking for bison
 configure:1245: checking for byacc
 configure:1278: checking for flex
 configure:1312: checking for yywrap in -ll
+configure:1331: gcc -o conftest -O   conftest.c -ll   1>&5
+/usr/bin/ld: cannot find -ll
+collect2: error: ld returned 1 exit status
+configure: failed program was:
+#line 1320 "configure"
+#include "confdefs.h"
+/* Override any gcc2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+char yywrap();
+
+int main() {
+yywrap()
+; return 0; }
 configure:1384: checking for a BSD compatible install
 configure:1437: checking whether ln -s works
 configure:1483: checking for main in -lXbsd
+configure:1498: gcc -o conftest -O   conftest.c -lXbsd   1>&5
+/usr/bin/ld: cannot find -lXbsd
+collect2: error: ld returned 1 exit status
+configure: failed program was:
+#line 1491 "configure"
+#include "confdefs.h"
+
+int main() {
+main()
+; return 0; }
 configure:1521: checking for connect
+configure:1549: gcc -o conftest -O   conftest.c  1>&5
 configure:1662: checking for gethostbyname
+configure:1690: gcc -o conftest -O   conftest.c  1>&5
 configure:1754: checking for ANSI C header files
+configure:1767: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:1834: gcc -o conftest -O   conftest.c  1>&5
+configure: In function 'main':
+configure:1829:67: warning: incompatible implicit declaration of built-in function 'exit'
+ if (XOR (islower (i), ISLOWER (i)) || toupper (i) != TOUPPER (i)) exit(2);
+                                                                   ^
 configure:1866: checking for working const
+configure:1920: gcc -c -O  conftest.c 1>&5
 configure:1941: checking for inline
+configure:1955: gcc -c -O  conftest.c 1>&5
 configure:1992: checking for gethostname
+configure:2020: gcc -o conftest -O   conftest.c  1>&5
 configure:1992: checking for waitpid
+configure:2020: gcc -o conftest -O   conftest.c  1>&5
 configure:1992: checking for sysconf
+configure:2020: gcc -o conftest -O   conftest.c  1>&5
 configure:1992: checking for uname
+configure:2020: gcc -o conftest -O   conftest.c  1>&5
 configure:2047: checking for strerror
+configure:2075: gcc -o conftest -O   conftest.c  1>&5
 configure:2047: checking for strcasecmp
+configure:2075: gcc -o conftest -O   conftest.c  1>&5
+configure:2059:6: warning: conflicting types for built-in function 'strcasecmp'
+ char $ac_func();
+      ^
 configure:2047: checking for strncasecmp
+configure:2075: gcc -o conftest -O   conftest.c  1>&5
+configure:2059:6: warning: conflicting types for built-in function 'strncasecmp'
+ char $ac_func();
+      ^
 configure:2114: checking for X
+configure:2181: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:2257: gcc -o conftest -O   conftest.c -lXt  1>&5

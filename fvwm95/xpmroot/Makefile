@@ -9,8 +9,8 @@ srcdir=.
 prefix=/usr/local
 exec_prefix=${prefix}
 bin_dir=${prefix}/bin
-x_includes=-INONE
-x_libraries=-LNONE
+x_includes=
+x_libraries=
 
 man_dir=/usr/local/man/man1
 

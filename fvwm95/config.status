@@ -2,7 +2,7 @@
 # Generated automatically by configure.
 # Run this file to recreate the current configuration.
 # This directory was configured as follows,
-# on host debian-FVWM95:
+# on host raspberrypi:
 #
 # ./configure 
 #
@@ -74,9 +74,9 @@ s%@INSTALL_PROGRAM@%${INSTALL}%g
 s%@INSTALL_SCRIPT@%${INSTALL_PROGRAM}%g
 s%@INSTALL_DATA@%${INSTALL} -m 644%g
 s%@LN_S@%ln -s%g
-s%@x_libraries@%-LNONE%g
-s%@x_includes@%-INONE%g
-s%@fvwm_icons@%NONE/X11/bitmaps:NONE/X11/pixmaps:NONE/icons%g
+s%@x_libraries@%%g
+s%@x_includes@%%g
+s%@fvwm_icons@%/X11/bitmaps:/X11/pixmaps:NONE/icons%g
 s%@fvwm_name@%fvwm95%g
 s%@fvwm_rc@%.fvwm95rc%g
 

@@ -9,9 +9,9 @@ srcdir=.
 prefix=/usr/local
 exec_prefix=${prefix}
 lib_dir=${prefix}/lib
-x_includes=-INONE
-x_libraries=-LNONE
-fvwm_icons=NONE/X11/bitmaps:NONE/X11/pixmaps:NONE/icons
+x_includes=
+x_libraries=
+fvwm_icons=/X11/bitmaps:/X11/pixmaps:NONE/icons
 fvwm_rc=.fvwm95rc
 fvwm_name=fvwm95
 
