@@ -74,3 +74,9 @@
 
 # Debug files
 *.dSYM/
+
+# Log and autoconf files
+*.log
+*.cache
+*.status
+Makefile
