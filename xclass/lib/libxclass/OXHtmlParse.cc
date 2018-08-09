@@ -1486,12 +1486,12 @@ void OXHtml::PrintList(OHtmlElement *first, OHtmlElement *last) {
         n = 1;
         z = "";
       }
-      printf("Block 0x%08x flags=%02x cnt=%d x=%d..%d y=%d..%d z=\"%.*s\"\n",
-        (int) p, p->flags, p->count, block->left, block->right,
+      printf("Block 0x%16lx flags=%02x cnt=%d x=%d..%d y=%d..%d z=\"%.*s\"\n",
+        (long) p, p->flags, p->count, block->left, block->right,
         block->top, block->bottom, n, z);
     } else {
-      printf("Token 0x%08x font=%2d color=%2d align=%d flags=0x%04x name=%s\n",
-        (int) p, p->style.font, p->style.color,
+      printf("Token 0x%16lx font=%2d color=%2d align=%d flags=0x%04x name=%s\n",
+        (long) p, p->style.font, p->style.color,
         p->style.align, p->style.flags, DumpToken(p));
     }
   }

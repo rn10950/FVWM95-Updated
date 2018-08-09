@@ -105,13 +105,13 @@
 #define HAVE_UNISTD_H 1
 
 /* Define if you have the <GL/glx.h> header file.  */
-/* #undef HAVE_GL_GLX_H */
+#define HAVE_GL_GLX_H 1
 
 /* Define if you have the <GL/gl.h> header file.  */
-/* #undef HAVE_GL_GL_H */
+#define HAVE_GL_GL_H 1
 
 /* Define if you have the <GL/glu.h> header file.  */
-/* #undef HAVE_GL_GLU_H */
+#define HAVE_GL_GLU_H 1
 
 /* Define if you have the X shape extension.  */
 #define HAVE_SHAPE_EXT 1
@@ -120,7 +120,7 @@
 #define HAVE_XPM_LIB 1
 
 /* Define if you have the OpenGL library.  */
-/* #undef HAVE_GL_LIB */
+#define HAVE_GL_LIB 1
 
 /* Define if you have the OpenGL utility library.  */
-/* #undef HAVE_GLU_LIB */
+#define HAVE_GLU_LIB 1

@@ -110,6 +110,6 @@ if test "$echo_libs" = "yes"; then
         fi
       done
 
-      echo $libdirs $my_xclass_libs -lxclass  -lXpm -lXext -lX11
+      echo $libdirs $my_xclass_libs -lxclass  -lGLU -lGL -lXpm -lXext -lX11
 fi      
 

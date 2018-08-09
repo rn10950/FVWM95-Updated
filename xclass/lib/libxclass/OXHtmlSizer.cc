@@ -980,9 +980,9 @@ void OXHtml::AddStyle(OHtmlElement *p) {
     }
 
     TRACE(HtmlTrace_Style,
-          ("Style of 0x%08x font=%02d color=%02d bg=%02d "
+          ("Style of 0x%16lx font=%02d color=%02d bg=%02d "
            "align=%d flags=0x%04x token=%s\n",
-           (int)p, p->style.font, p->style.color, p->style.bgcolor,
+           (long)p, p->style.font, p->style.color, p->style.bgcolor,
            p->style.align, p->style.flags, DumpToken(p)));
 
     p = p->pNext;
